@@ -16,6 +16,7 @@ INSTALLED_APPS = [
 	'apps.quotations',
 	'apps.techdata',
 	'apps.calculations',
+    'apps.documents',
 ]
 
 DATABASES = {

@@ -66,7 +66,6 @@ class SAISCSteelSections(models.Model):
 	ax = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Shear Centre (mm)')
 	ay = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Shear Centre (mm)')
 	alpha = models.CharField(max_length=30, blank=True, null = True, verbose_name = '(deg)')
-
 	id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
 
@@ -93,207 +92,207 @@ class SANSPlateFlanges(models.Model):
 	NOB = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Number of Bolts')
 	boltHoleSize = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Bolt Hole Diameter (mm)')
 	PCD = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Bolt Holes Centres (mm)')
-
 	id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
 	def __str__(self):
 		return f"{self.designation}"
 
-# #------------------------------------------------------------------------------------------------------------------------#
-# # Recommended Sole Plate and Plummerblock
-# #------------------------------------------------------------------------------------------------------------------------#
-# class SolePLatePlummerBlock(models.Model):
-#     designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
-#     bearingshaftDia = models.CharField(choices = PREFERREDJOURNALSIZES, blank=True, null=True, verbose_name = 'Bearing SHaft Diameter (mm)') 
+#------------------------------------------------------------------------------------------------------------------------#
+# Recommended Sole Plate and Plummerblock
+#------------------------------------------------------------------------------------------------------------------------#
+class SolePLatePlummerBlock(models.Model):
+    designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
+    bearingshaftDia = models.CharField(max_length=40,choices = PREFERREDJOURNALSIZES, blank=True, null=True, verbose_name = 'Bearing SHaft Diameter (mm)') 
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
-#     def __str__(self):
-#         return f"{self.designation}"
+    def __str__(self):
+        return f"{self.designation}"
 
 
-# #------------------------------------------------------------------------------------------------------------------------#
-# # Standard Conveyor Belt Class
-# #------------------------------------------------------------------------------------------------------------------------#
-# class ConveyorBeltClass(models.Model):
-#     designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
+#------------------------------------------------------------------------------------------------------------------------#
+# Standard Conveyor Belt Class
+#------------------------------------------------------------------------------------------------------------------------#
+class ConveyorBeltClass(models.Model):
+    designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 	
-#     def __str__(self):
-#         return f"{self.designation}"
+    def __str__(self):
+        return f"{self.designation}"
 
-# #------------------------------------------------------------------------------------------------------------------------#
-# # Standard Belt Conveyor Idlers
-# #------------------------------------------------------------------------------------------------------------------------#
-# class CarryIdler(models.Model):
-#     designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
-#     series = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Series')
-#     beltWidth = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Belt Width (mm)')
-#     idlerDiameter = models.ForeignKey(choices = IDLERDIAMETERS, blank=True, null=True, verbose_name = 'Idler Designation')  
-#     idlerFaceLength = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Face Length (mm)')
-#     idlerFrameLength = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Idler Frame (mm)')
-#     idlerFrameMountCtrs = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Idler Mount Centres (mm)')
-#     topOfBottomRoller = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Distance to Top of Bottom Roller (mm)')
-#     numOfMountHoles = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Number of Mount Hole')
-#     mountHoleSize = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Mount Holes Dimensions')
-#     rotatingMass = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Rotating Mass (kg)')
-#     totalMass = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Total Mass (kg)')
-#     height = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Carry Idler Height (mm)')
-#     width = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Distance between Trough Idlers (mm)')
-#     bearingSpec = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Bearing Specification')
-	
-#     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+#------------------------------------------------------------------------------------------------------------------------#
+# Standard Belt Conveyor Idlers
+#------------------------------------------------------------------------------------------------------------------------#
+class CarryIdler(models.Model):
+    designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
+    series = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Series')
+    beltWidth = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Belt Width (mm)')
+    idlerDiameter = models.CharField(max_length=40,choices = IDLERDIAMETERS, blank=True, null=True, verbose_name = 'Idler Designation')  
+    idlerFaceLength = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Face Length (mm)')
+    idlerFrameLength = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Idler Frame (mm)')
+    idlerFrameMountCtrs = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Idler Mount Centres (mm)')
+    topOfBottomRoller = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Distance to Top of Bottom Roller (mm)')
+    numOfMountHoles = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Number of Mount Hole')
+    mountHoleSize = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Mount Holes Dimensions')
+    rotatingMass = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Rotating Mass (kg)')
+    totalMass = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Total Mass (kg)')
+    height = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Carry Idler Height (mm)')
+    width = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Distance between Trough Idlers (mm)')
+    bearingSpec = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Bearing Specification')
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
-#     def __str__(self):
-#         return f"{self.designation}"
+    def __str__(self):
+        return f"{self.designation}"
 
 		
-# class ReturnIdler(models.Model):
-#     designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
-#     series = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Series')
-#     beltWidth = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Belt Width (mm)')
+class ReturnIdler(models.Model):
+    designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
+    series = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Series')
+    beltWidth = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Belt Width (mm)')
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+#------------------------------------------------------------------------------------------------------------------------#
+# Standard Belt Conveyor Idler Sets
+#------------------------------------------------------------------------------------------------------------------------#
+class ConveyorCarryIdler(models.Model):
+    designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
+    beltWidth = models.CharField(max_length=40,choices = BELTWIDTH, blank=True, null = True, verbose_name = 'Belt Width (mm)')
+    series = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Series')
+    troughAngle = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Trough Angle (deg)')
+    numOfRollers = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Number of Rollers')
+    idlerDesignation = models.ForeignKey(CarryIdler, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Idler Designation')
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
-# #------------------------------------------------------------------------------------------------------------------------#
-# # Standard Belt Conveyor Idler Sets
-# #------------------------------------------------------------------------------------------------------------------------#
-# class ConveyorCarryIdler(models.Model):
-#     designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
-#     beltWidth = models.CharField(choices = BELTWIDTH, blank=True, null = True, verbose_name = 'Belt Width (mm)')
-#     series = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Series')
-#     troughAngle = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Trough Angle (deg)')
-#     numOfRollers = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Number of Rollers')
-#     idlerDesignation = models.ForeignKey(CarryIdler, blank=True, null=True, verbose_name = 'Idler Designation')
-	
-#     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    def __str__(self):
+        return f"{self.designation}"
 
-#     def __str__(self):
-#         return f"{self.designation}"
+class ConveyorReturnIdler(models.Model):
+    designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
+    beltWidth = models.CharField(max_length=40,choices = BELTWIDTH, blank=True, null = True, verbose_name = 'Belt Width (mm)')
+    series = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Series')
+    vAngle = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'V Angle (deg)')
+    numOfRollers = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Number of Rollers')
+    idlerDesignation = models.ForeignKey(ReturnIdler,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Idler Designation')
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
-# class ConveyorReturnIdler(models.Model):
-#     designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
-#     beltWidth = models.CharField(choices = BELTWIDTH, blank=True, null = True, verbose_name = 'Belt Width (mm)')
-#     series = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Series')
-#     vAngle = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'V Angle (deg)')
-#     numOfRollers = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Number of Rollers')
-#     idlerDesignation = models.ForeignKey(ReturnIdler, blank=True, null=True, verbose_name = 'Idler Designation')
-	
-#     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    def __str__(self):
+        return f"{self.designation}"
 
-#     def __str__(self):
-#         return f"{self.designation}"
+#------------------------------------------------------------------------------------------------------------------------#
+# Standard Belt Conveyor Diameter 
+#------------------------------------------------------------------------------------------------------------------------#
+class ConveyorPulley(models.Model):
 
-# #------------------------------------------------------------------------------------------------------------------------#
-# # Standard Belt Conveyor Diameter 
-# #------------------------------------------------------------------------------------------------------------------------#
-# class ConveyorPulley(models.Model):
+    designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
+    pulleyType = models.CharField(max_length=40,choices = PULLEYTYPES, blank=True, null = True, verbose_name = 'Pulley Type')
+    pulleyLoadType = models.CharField(max_length=40,choices = PULLEYLOADTYPES, blank=True, null = True, verbose_name = 'Belt Width (mm)')
+    outsideDia = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Pulley Outside Diameter (mm)')
+    beltWidth = models.CharField(max_length=40,choices = BELTWIDTH, blank=True, null = True, verbose_name = 'Belt Width (mm)')
+    faceLength = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Face Length (mm)')
+    wallThickness = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Wall Thickness (mm)')
+    hubeType = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Hub Type')
+    shaftDiameter = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Shaft Diameter (mm)')
+    bearingDiameter = models.CharField(max_length=40,choices = PREFERREDJOURNALSIZES, blank=True, null = True, verbose_name = 'Bearing Diameter (mm)')
+    soleplate = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Sole Plate)')
+    hubThickness = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Hub Thickness (mm)')
+    bearingCentre = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Bearing Centres (mm)')
+    plummberBlock = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Plummer Block')
+    lagging = models.CharField(max_length=40,choices = RUBBERLAGGING, blank=True, null = True, verbose_name = 'Lagging Type')
+    laggingThick = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Lagging Thickness (mm)')
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
-#     designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
-#     pulleyType = models.CharField(choices = PULLEYTYPES, blank=True, null = True, verbose_name = 'Pulley Type')
-#     pulleyLoadType = models.CharField(choices = PULLEYLOADTYPES, blank=True, null = True, verbose_name = 'Belt Width (mm)')
-#     outsideDia = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Pulley Outside Diameter (mm)')
-#     beltWidth = models.CharField(choices = BELTWIDTH, blank=True, null = True, verbose_name = 'Belt Width (mm)')
-#     faceLength = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Face Length (mm)')
-#     wallThickness = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Wall Thickness (mm)')
-#     hubeType = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Hub Type')
-#     shaftDiameter = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Shaft Diameter (mm)')
-#     bearingDiameter = models.CharField(choices = PREFERREDJOURNALSIZES, blank=True, null = True, verbose_name = 'Bearing Diameter (mm)')
-#     soleplate = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Sole Plate)')
-#     hubThickness = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Hub Thickness (mm)')
-#     bearingCentre = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Bearing Centres (mm)')
-#     plummberBlock = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Plummer Block')
-#     lagging = models.CharField(choices = RUBBERLAGGING, blank=True, null = True, verbose_name = 'Lagging Type')
-#     laggingThick = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Lagging Thickness (mm)')
-#     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    def __str__(self):
+        return f"{self.designation}"
 
-#     def __str__(self):
-#         return f"{self.designation}"
+#------------------------------------------------------------------------------------------------------------------------#
+# Bulk Material Data
+#------------------------------------------------------------------------------------------------------------------------#
+class BulkMaterialData(models.Model):
+    code = models.CharField(max_length=40, blank=True, null=True, unique = True, verbose_name='Code') 
+    material = models.CharField(max_length=40, blank=False, null=True, verbose_name='Material') 
+    condition = models.CharField(max_length=40, blank=False, null=True, verbose_name='Condition') 
+    minBD = models.CharField(max_length=10, blank=False, null=True, verbose_name='Minimum Bulk Density (kg/m^3)') 
+    maxBD = models.CharField(max_length=10, blank=False, null=True, verbose_name='Maximum Bulk Density (kg/m^3)') 
+    SG = models.CharField(max_length=10, blank=False, null=True, verbose_name='Specific Weight')
+    maxBeltIncline = models.CharField(max_length=10, blank=False, null=True, verbose_name='Maximum Belt Incline (deg)')
+    maxBeltLoadingAngle = models.CharField(max_length=10, blank=False, null=True, verbose_name='Maximum Belt Loading (deg)')
+    angleOfRepose = models.CharField(max_length=10, blank=False, null=True, verbose_name='Angle of Repose (deg)')
+    minInternalFrictionAngle = models.CharField(max_length=10, blank=False, null=True, verbose_name='Minimum Internal Friction Angle (deg)')
+    maxInternalFrictionAngle = models.CharField(max_length=10, blank=False, null=True, verbose_name='MAximum Internal Friction Angle (deg)')
+    minWallFrictionAngle = models.CharField(max_length=10, blank=False, null=True, verbose_name='Minimum Wall Friction Angle (deg)')
+    maxWallFrictionAngle = models.CharField(max_length=10, blank=False, null=True, verbose_name='Minimum Wall Friction Angle (deg)')
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
-# #------------------------------------------------------------------------------------------------------------------------#
-# # Bulk Material Data
-# #------------------------------------------------------------------------------------------------------------------------#
-# class BulkMaterialData(models.Model):
-#     code = models.CharField(max_length=40, blank=True, null=True, unique = True, verbose_name='Code') 
-#     material = models.CharField(max_length=40, blank=False, null=True, verbose_name='Material') 
-#     condition = models.CharField(max_length=40, blank=False, null=True, verbose_name='Condition') 
-#     minBD = models.CharField(max_length=10, blank=False, null=True, verbose_name='Minimum Bulk Density (kg/m^3)') 
-#     maxBD = models.CharField(max_length=10, blank=False, null=True, verbose_name='Maximum Bulk Density (kg/m^3)') 
-#     SG = models.CharField(max_length=10, blank=False, null=True, verbose_name='Specific Weight')
-#     maxBeltIncline = models.CharField(max_length=10, blank=False, null=True, verbose_name='Maximum Belt Incline (deg)')
-#     maxBeltLoadingAngle = models.CharField(max_length=10, blank=False, null=True, verbose_name='Maximum Belt Loading (deg)')
-#     angleOfRepose = models.CharField(max_length=10, blank=False, null=True, verbose_name='Angle of Repose (deg)')
-#     minInternalFrictionAngle = models.CharField(max_length=10, blank=False, null=True, verbose_name='Minimum Internal Friction Angle (deg)')
-#     maxInternalFrictionAngle = models.CharField(max_length=10, blank=False, null=True, verbose_name='MAximum Internal Friction Angle (deg)')
-#     minWallFrictionAngle = models.CharField(max_length=10, blank=False, null=True, verbose_name='Minimum Wall Friction Angle (deg)')
-#     maxWallFrictionAngle = models.CharField(max_length=10, blank=False, null=True, verbose_name='Minimum Wall Friction Angle (deg)')
+    def __str__(self):
+        return f"{self.code}"
 
-#     def __str__(self):
-#         return f"{self.code}"
-
-# #------------------------------------------------------------------------------------------------------------------------#
-# # Standard Belt Conveyor
-# #------------------------------------------------------------------------------------------------------------------------#
-# class ConveyorBelt(models.Model):
-#     designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
-#     project = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Project Number')
-#     beltWidth = models.CharField(choices = BELTWIDTH, blank=True, null=True, verbose_name = 'Belt Width')
-#     beltClass = models.ForeignKey(ConveyorBeltClass, blank=True, null=True, verbose_name = 'Belt Class')
-#     beltType = models.CharField(choices = BELTTYPES, blank=True, null=True, verbose_name = 'Belt Construction')
-#     beltTopCover = models.CharField(max_length=5, blank=True, null=True, verbose_name = 'Top Cover (mm)')
-#     beltBottomCover = models.CharField(max_length=5, blank=True, null=True, verbose_name = 'Bottom Cover (mm)')
-#     feedRate = models.CharField(max_length=8, blank=True, null=True, verbose_name = 'Feed Rate (t/h)')
-#     beltSpeed = models.CharField(max_length=8, blank=True, null=True, verbose_name = 'Belt Speed (m/s)')
-#     material = models.CharField(BulkMaterialData, blank=True, null=True, verbose_name = 'Head Pulley')
-#     horizontalDist = models.CharField(max_length=10, blank=True, null=True, verbose_name = 'Horizontal Distance (mm)')
-#     verticalList = models.CharField(max_length=10, blank=True, null=True, verbose_name = 'Vertical Lift (mm)')
-#     maxInclinedAngle = models.CharField(max_length=5, blank=True, null=True, verbose_name = 'Maximum Inclined Angle (deg)')
-#     maxLoadingAngle = models.CharField(max_length=5, blank=True, null=True, verbose_name = 'Maximum Belt Loading Angle (deg)')
-#     # Steel Construction Data
-#     mainStringer = models.ForeignKey(SAISCSteelSections, blank=True, null=True, verbose_name = 'Main Stringer')
-#     mainStringer_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number of Main Stringer')
-#     mainStringers_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Main Stringers (mm)')
-#     bottomStringer = models.ForeignKey(SAISCSteelSections, blank=True, null=True, verbose_name = 'Bottom Stringer')
-#     bottomStringer_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number of Bottom Stringers')
-#     bottomStringer_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Bottom Stringer (mm)')
-#     walkwayStringer = models.ForeignKey(SAISCSteelSections, blank=True, null=True, verbose_name = 'Walkway Stringer')
-#     walkwayStringer_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Walkway Stringers')
-#     walkwayStringer_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Walkway Stringer (mm)')
-#     verticalUpright = models.ForeignKey(SAISCSteelSections, blank=True, null=True, verbose_name = 'Vertical Upright')
-#     verticalUpright_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Vertical Uprights')
-#     verticalUpright_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Vertical Uprights (mm)')
-#     verticalDiagonal = models.ForeignKey(SAISCSteelSections, blank=True, null=True, verbose_name = 'Vertical Upright')
-#     verticalDiagonal_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Vertical Uprights')
-#     verticalDiagonal_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Vertical Uprights (mm)')
-#     topHorizontalTie = models.ForeignKey(SAISCSteelSections, blank=True, null=True, verbose_name = 'Top Horizontal Tie')
-#     topHorizontalTie_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Top Horizontal Ties')
-#     topHorizontalTie_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Top Horizontal Ties (mm)')
-#     bottomHorizontalTie = models.ForeignKey(SAISCSteelSections, blank=True, null=True, verbose_name = 'Bottom Horizontal Tie')
-#     bottomHorizontalTie_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Bottom Horizontal Tie')
-#     bottomHorizontalTie_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Bottom Horizontal Tie (mm)')
-#     topDiagonal = models.ForeignKey(SAISCSteelSections, blank=True, null=True, verbose_name = 'Top Horizontal Tie')
-#     topDiagonal_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Top Horizontal Ties')
-#     topDiagonal_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Top Horizontal Ties (mm)')
-#     bottomDiagonal = models.ForeignKey(SAISCSteelSections, blank=True, null=True, verbose_name = 'Bottom Horizontal Tie')
-#     bottomDiagonal_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Bottom Horizontal Tie')
-#     bottomDiagonal_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Bottom Horizontal Tie (mm)')
-#     # Pulley data
-#     headPulley = models.ForeignKey(ConveyorPulley, blank=True, null=True, verbose_name = 'Head Pulley') 
-#     snubPulley = models.ForeignKey(ConveyorPulley, blank=True, null=True, verbose_name = 'Snub Pulley') 
-#     bendPulley_1 = models.ForeignKey(ConveyorPulley, blank=True, null=True, verbose_name = 'Bend Pulley No.1')
-#     bendPulley_2 = models.ForeignKey(ConveyorPulley, blank=True, null=True, verbose_name = 'Bend Pulley No.2')
-#     bendPulley_3 = models.ForeignKey(ConveyorPulley, blank=True, null=True, verbose_name = 'Bend Pulley No.3')
-#     bendPulley_4 = models.ForeignKey(ConveyorPulley, blank=True, null=True, verbose_name = 'Bend Pulley No.4')
-#     take_upPulley = models.ForeignKey(ConveyorPulley, blank=True, null=True, verbose_name = 'Take Up Pulley')
-#     tailPulley = models.ForeignKey(ConveyorPulley, blank=True, null=True, verbose_name = 'Tail Pulley')
-#     # Idlers data
-#     transIdler = models.ForeignKey(ConveyorCarryIdler, blank=True, null=True, verbose_name = 'Transition Idler')
-#     transIdler_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Transition Idler Sets')
-#     carryIdler = models.ForeignKey(ConveyorCarryIdler, blank=True, null=True, verbose_name = 'Carry Idler')
-#     carryIdler_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Carry Idler Sets')
-#     impactIdler = models.ForeignKey(ConveyorCarryIdler, blank=True, null=True, verbose_name = 'Impact Idler')
-#     impactIdler_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Impact Idler Sets')
-#     returnIdler = models.ForeignKey(ConveyorCarryIdler, blank=True, null=True, verbose_name = 'Return Idler')
-#     returnIdler_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Returny Idler Sets')
-#     # Belt Scraper
-#     primaryScraper = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Model and Make')
-#     secondaryScraper = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Model and Make')
+#------------------------------------------------------------------------------------------------------------------------#
+# Standard Belt Conveyor
+#------------------------------------------------------------------------------------------------------------------------#
+class ConveyorBelt(models.Model):
+    designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
+    project = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Project Number')
+    beltWidth = models.CharField(max_length=40,choices = BELTWIDTH, blank=True, null=True, verbose_name = 'Belt Width')
+    beltClass = models.ForeignKey(ConveyorBeltClass,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Belt Class')
+    beltType = models.CharField(max_length=40,choices = BELTTYPES, blank=True, null=True, verbose_name = 'Belt Construction')
+    beltTopCover = models.CharField(max_length=5, blank=True, null=True, verbose_name = 'Top Cover (mm)')
+    beltBottomCover = models.CharField(max_length=5, blank=True, null=True, verbose_name = 'Bottom Cover (mm)')
+    feedRate = models.CharField(max_length=8, blank=True, null=True, verbose_name = 'Feed Rate (t/h)')
+    beltSpeed = models.CharField(max_length=8, blank=True, null=True, verbose_name = 'Belt Speed (m/s)')
+    material = models.ForeignKey(BulkMaterialData,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Feed Material')
+    horizontalDist = models.CharField(max_length=10, blank=True, null=True, verbose_name = 'Horizontal Distance (mm)')
+    verticalList = models.CharField(max_length=10, blank=True, null=True, verbose_name = 'Vertical Lift (mm)')
+    maxInclinedAngle = models.CharField(max_length=5, blank=True, null=True, verbose_name = 'Maximum Inclined Angle (deg)')
+    maxLoadingAngle = models.CharField(max_length=5, blank=True, null=True, verbose_name = 'Maximum Belt Loading Angle (deg)')
+    # Steel Construction Data
+    # mainStringer = models.ForeignKey(SAISCSteelSections, on_delete=models.DO_NOTHING,blank=True, null=True, verbose_name = 'Main Stringer')
+    # mainStringer_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number of Main Stringer')
+    # mainStringers_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Main Stringers (mm)')
+    # bottomStringer = models.ForeignKey(SAISCSteelSections,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Bottom Stringer')
+    # bottomStringer_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number of Bottom Stringers')
+    # bottomStringer_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Bottom Stringer (mm)')
+    # walkwayStringer = models.ForeignKey(SAISCSteelSections,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Walkway Stringer')
+    # walkwayStringer_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Walkway Stringers')
+    # walkwayStringer_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Walkway Stringer (mm)')
+    # verticalUpright = models.ForeignKey(SAISCSteelSections,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Vertical Upright')
+    # verticalUpright_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Vertical Uprights')
+    # verticalUpright_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Vertical Uprights (mm)')
+    # verticalDiagonal = models.ForeignKey(SAISCSteelSections,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Vertical Upright')
+    # verticalDiagonal_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Vertical Uprights')
+    # verticalDiagonal_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Vertical Uprights (mm)')
+    # topHorizontalTie = models.ForeignKey(SAISCSteelSections,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Top Horizontal Tie')
+    # topHorizontalTie_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Top Horizontal Ties')
+    # topHorizontalTie_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Top Horizontal Ties (mm)')
+    # bottomHorizontalTie = models.ForeignKey(SAISCSteelSections,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Bottom Horizontal Tie')
+    # bottomHorizontalTie_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Bottom Horizontal Tie')
+    # bottomHorizontalTie_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Bottom Horizontal Tie (mm)')
+    # topDiagonal = models.ForeignKey(SAISCSteelSections,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Top Horizontal Tie')
+    # topDiagonal_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Top Horizontal Ties')
+    # topDiagonal_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Top Horizontal Ties (mm)')
+    # bottomDiagonal = models.ForeignKey(SAISCSteelSections,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Bottom Horizontal Tie')
+    # bottomDiagonal_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Bottom Horizontal Tie')
+    # bottomDiagonal_len = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Length Bottom Horizontal Tie (mm)')
+     # Pulley data
+    # headPulley = models.ForeignKey(ConveyorPulley,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Head Pulley') 
+    # snubPulley = models.ForeignKey(ConveyorPulley,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Snub Pulley') 
+    # bendPulley_1 = models.ForeignKey(ConveyorPulley,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Bend Pulley No.1')
+    # bendPulley_2 = models.ForeignKey(ConveyorPulley,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Bend Pulley No.2')
+    # bendPulley_3 = models.ForeignKey(ConveyorPulley,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Bend Pulley No.3')
+    # bendPulley_4 = models.ForeignKey(ConveyorPulley,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Bend Pulley No.4')
+    # take_upPulley = models.ForeignKey(ConveyorPulley,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Take Up Pulley')
+    # tailPulley = models.ForeignKey(ConveyorPulley,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Tail Pulley')
+    # # Idlers data
+    # transIdler = models.ForeignKey(ConveyorCarryIdler,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Transition Idler')
+    # transIdler_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Transition Idler Sets')
+    # carryIdler = models.ForeignKey(ConveyorCarryIdler,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Carry Idler')
+    # carryIdler_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Carry Idler Sets')
+    # impactIdler = models.ForeignKey(ConveyorCarryIdler,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Impact Idler')
+    # impactIdler_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Impact Idler Sets')
+    # returnIdler = models.ForeignKey(ConveyorCarryIdler,on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name = 'Return Idler')
+    # returnIdler_qty = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Number Returny Idler Sets')
+    # # Belt Scraper
+    # primaryScraper = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Model and Make')
+    # secondaryScraper = models.CharField(max_length=15, blank=True, null=True, verbose_name = 'Model and Make')
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
 
-#     def __str__(self):
-#         return f"{self.designation}"
+    def __str__(self):
+        return f"{self.designation}"

@@ -1,0 +1,542 @@
+\documentclass{article}%
+\usepackage[T2A,T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{geometry}%
+\geometry{tmargin=20mm,bmargin=20mm,lmargin=20mm,rmargin=20mm}%
+\usepackage{newtxtext, newtxmath}%
+\usepackage{substitutefont}%
+\usepackage{lastpage}%
+\usepackage{ragged2e}%
+\usepackage{graphicx}%
+\usepackage{amsmath}%
+\usepackage{subcaption}%
+\usepackage{fancyhdr}%
+%
+\linespread{1.5}%
+\usepackage{newunicodechar}%
+\fancypagestyle{header}{%
+\renewcommand{\headrulewidth}{0.5pt}%
+\renewcommand{\footrulewidth}{1.0pt}%
+\fancyhead{%
+}%
+\fancyfoot{%
+}%
+\fancyhead[C]{%
+CALCULATION SHEET%
+}%
+\fancyfoot[L]{%
+H{-}MAX603{-}CAL{-}MM{-}18SKIP{-}001{-}SHT{-}001%
+}%
+\fancyfoot[R]{%
+Page \thepage\ of \pageref{LastPage}%
+}%
+}%
+%
+\begin{document}%
+\pagestyle{empty}%
+\normalsize%
+\pagestyle{header}%
+\begin{center}%
+\section*{}%
+\label{sec:}%
+\begin{minipage}{\textwidth}%
+\centering%
+\begin{Large}%
+\textbf{HOLT CONSULTING ENGINEERS (PTY) LTD}%
+\end{Large}%
+\vspace*{20pt}%
+\linebreak%
+\begin{large}%
+\textbf{TUMELA 18 TON SKIP DESIGN}%
+\end{large}%
+\vspace*{20pt}%
+\linebreak%
+\begin{large}%
+\textbf{H{-}MAC603}%
+\end{large}%
+\vspace*{20pt}%
+\linebreak%
+\begin{large}%
+\textbf{H{-}MAX603{-}CAL{-}MM{-}18SKIP{-}001{-}SHT{-}001}%
+\end{large}%
+\vspace*{80pt}%
+\end{minipage}
+
+%
+\end{center}%
+\begin{center}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{|l |l |}%
+\hline%
+\textbf{Engineer:}&Gerald Holt (Pr.Eng)\\%
+\cline{1%
+-%
+2}%
+\textbf{Registration:}&20020259\\%
+\cline{1%
+-%
+2}%
+\textbf{Email:}&gerald@holtconsulting.co.za\\%
+\cline{1%
+-%
+2}%
+\textbf{Phone:}&+27{-}791{-}2549\\%
+\cline{1%
+-%
+2}%
+\textbf{Adress:}&Unit G, Mini Park\\%
+\cline{1%
+-%
+2}%
+\textbf{}&16 Gerhardus Street, Strijdom Park\\%
+\cline{1%
+-%
+2}%
+\textbf{}&Randburg, South Africa\\%
+\cline{1%
+-%
+2}%
+\textbf{Website:}&www.holtconsulting.co.za\\%
+\cline{1%
+-%
+2}%
+\end{tabular}%
+\vspace*{150pt}%
+\centering%
+\end{minipage}%
+\end{center}%
+
+
+\begin{figure}[h!]%
+\includegraphics[width=240px]{HCE.jpg}%
+\centering%
+\end{figure}
+
+%
+\newpage%
+\begin{center}%
+\section*{REVISION HISTORY}%
+\label{sec:REVISIONHISTORY}%
+
+%
+\begin{minipage}{\textwidth}%
+\centering%
+\begin{tabular}{|c |c |c |c |c |c |}%
+\hline%
+\textbf{REV}&\textbf{DESCRIPTION}&\textbf{DATE}&\textbf{ISSUED BY}&\textbf{REVIEWED BY}&\textbf{APPROVED}\\%
+\hline%
+\end{tabular}%
+\end{minipage}%
+\end{center}%
+\newpage%
+\section{CUSTOMER DETAILS}%
+\label{sec:CUSTOMERDETAILS}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\centering%
+\begin{tabular}{|l |l |}%
+\hline%
+\textbf{Customer:}&Max Power Services (Pty) Ltd\\%
+\cline{1%
+-%
+2}%
+\textbf{Customer Name:}&Herman de Koker\\%
+\cline{1%
+-%
+2}%
+\textbf{Customer Email:}&harry@maxpower.co.za\\%
+\cline{1%
+-%
+2}%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\newpage%
+\section{CALCULATION INPUT DATA}%
+\label{sec:CALCULATIONINPUTDATA}%
+\subsection{Applicable Design Codes}%
+\label{subsec:ApplicableDesignCodes}%
+\begin{flushleft}%
+SANS 10208: 3 {-} 2017: Design of structures for the mining industry Part 3: Conveyances%
+\linebreak%
+SANS 10610: Buildling loading code%
+\linebreak%
+SANS 10162: Steel design%
+\linebreak%
+\end{flushleft}
+
+%
+\subsection{General Data}%
+\label{subsec:GeneralData}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{|l |l |c|}%
+\hline%
+\textbf{Design Method}&Limit States (Rope Break Conditions)&\\%
+\hline%
+\textbf{Material of Construction}&Main Body: EN10025 S355JR&\\%
+\hline%
+\textbf{Material of Construction}&Liners: VRN 500&\\%
+\hline%
+\textbf{Yield Stress}&355&$MPa$\\%
+\hline%
+\textbf{Skip Weight}&9878&$kg$\\%
+\hline%
+\textbf{Payload}&18000&$kg$\\%
+\hline%
+\textbf{Winding Speed}&15&$m/s$\\%
+\hline%
+\textbf{Winding Rope Diameter}&54&$mm$\\%
+\hline%
+\textbf{Winding Rope Unit Mass}&12.45&$kg/m$\\%
+\hline%
+\textbf{Rope Break Force}&2319&$kN$\\%
+\hline%
+\textbf{Winder Acceleration}&0.8&$m/s^2$\\%
+\hline%
+\textbf{Winder Trip Acceleration}&5&$m/s^2$\\%
+\hline%
+\textbf{Winder Travel Distance}&1023&$m$\\%
+\hline%
+\textbf{Number of Cycles per Month}&3000&\\%
+\hline%
+\textbf{Skip Internal Height}&5600&$mm$\\%
+\hline%
+\textbf{Skip Internal Width}&1557&$mm$\\%
+\hline%
+\textbf{Skip Internal Depth}&1400&$mm$\\%
+\hline%
+\textbf{Skip Overall Height}&10713&$mm$\\%
+\hline%
+\textbf{Skip Overall Width}&1856&$mm$\\%
+\hline%
+\textbf{Skip Overall Depth}&1743&$mm$\\%
+\hline%
+\textbf{Ore Bulk Density}&1950&$kg/m^3$\\%
+\hline%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\newpage%
+\subsection{Assumption Data}%
+\label{subsec:AssumptionData}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{|l |l |l|}%
+\hline%
+\textbf{Spacing between rails}&1800&$mm$\\%
+\hline%
+\textbf{Top Hat Guide Specification}&340 x 175mm&\\%
+\hline%
+\textbf{Top Hat Guide Material Specification}&EN10025 S355JR&\\%
+\hline%
+\textbf{Top Hat Guide Unit Mass}&85.95&$kg/m$\\%
+\hline%
+\textbf{Top Hat Guide Width}&175&$mm$\\%
+\hline%
+\textbf{Bunton Stiffness}&1608000&$N/m$\\%
+\hline%
+\textbf{Guide Stiffnes}&1600000&$N/m$\\%
+\hline%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\newpage%
+\subsection{Sketches and Drawings}%
+\label{subsec:SketchesandDrawings}%
+\subsubsection{General Arrangement}%
+\label{ssubsec:GeneralArrangement}%
+
+
+\begin{figure}[h!]%
+\includegraphics[width=380px]{Tumela 18 ton Skip.jpg}%
+\centering%
+\caption{18 ton Skip Drawing}%
+\centering%
+\end{figure}
+
+%
+\newpage%
+\subsubsection{Isometric Views}%
+\label{ssubsec:IsometricViews}%
+
+
+\begin{figure}[h!]%
+\begin{subfigure}[b]{0.45\linewidth}%
+\includegraphics[width=130px]{Tumela 18 ton Skip_iso_1.jpg}%
+\centering%
+\caption{18 ton Skip Isometric View 1}%
+\end{subfigure}%
+\begin{subfigure}[b]{0.45\linewidth}%
+\includegraphics[width=120px]{Tumela 18 ton Skip_iso_3.jpg}%
+\centering%
+\caption{18 ton Skip Isometric View 3}%
+\end{subfigure}%
+\end{figure}
+
+%
+\newpage
+
+%
+\section{CALCULATIONS}%
+\label{sec:CALCULATIONS}%
+\subsection{General Operating Loads {-} Skip Loads}%
+\label{subsec:GeneralOperatingLoads{-}SkipLoads}%
+\subsubsection{Permanent Loads}%
+\label{ssubsec:PermanentLoads}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Skip Bridle Sides&$m_1$&1167&$kg$\\%
+Skip Bridle Top Transom&$m_2$&1522&$kg$\\%
+Skip Bridle Bottom Transom&$m_3$&850&$kg$\\%
+Skip Unit&$m_4$&6336&$kg$\\%
+Permanent Load&$G_c = (m_1 + m_3 + m_4)g$&81943&$N$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\subsubsection{Vertical Imposed Loads due to Holding Devices {-} Holding Device Engagement Load (K)}%
+\label{ssubsec:VerticalImposedLoadsduetoHoldingDevices{-}HoldingDeviceEngagementLoad(K)}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Engagement Impact Factor&$\alpha_k$&1.5&\\%
+Personnel Load&$P$&0&$kg$\\%
+Equipment or Rolling Stock&$M$&0&$kg$\\%
+Material Static Load&$R$&18000&$kg$\\%
+Tail Rope Load&$T$&0&$kg$\\%
+Maximum Applicable Load&$C_y$&176580.0&$N$\\%
+Holding Device Engagement Load&$K = \alpha_k(G_c+C_y+T)$&387784.5&$N$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\subsubsection{Vertical Imposed Loads due to Holding Devices {-} Holding Device Security Load (Kc)}%
+\label{ssubsec:VerticalImposedLoadsduetoHoldingDevices{-}HoldingDeviceSecurityLoad(Kc)}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Engagement Impact Factor&$\alpha_s$&2&\\%
+Personnel Load&$P$&0&$kg$\\%
+Equipment or Rolling Stock&$M$&0&$kg$\\%
+Material Static Load&$R$&18000&$kg$\\%
+Tail Rope Load&$T$&0&$kg$\\%
+Maximum Applicable Load&$C_y$&176580.0&$N$\\%
+Holding Device Engagement Load&$K_c = \alpha_s(G_c+C_y+T)$&517046.0&$N$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\subsubsection{Laterial Imposed Loads (H) {-} Fixed Guide Systems in Vertical Shafts}%
+\label{ssubsec:LaterialImposedLoads(H){-}FixedGuideSystemsinVerticalShafts}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Engagement Impact Factor&$\alpha_s$&2&\\%
+Personnel Load&$P$&0&$kg$\\%
+Equipment or Rolling Stock&$M$&0&$kg$\\%
+Material Static Load&$R$&18000&$kg$\\%
+Tail Rope Load&$T$&0&$kg$\\%
+Maximum Applicable Load&$C_y$&176580.0&$N$\\%
+Holding Device Engagement Load&$K_c = \alpha_s(G_c+C_y+T)$&517046.0&$N$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}%
+
+
+\begin{figure}[h!]%
+\includegraphics[width=180px]{Force_diagram.jpg}%
+\centering%
+\caption{Properties Diagram}%
+\centering%
+\end{figure}
+
+%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Clearance between Roller and Slipper&$\Delta_c$&10&$mm$\\%
+Slipper Plate Impact Factor&$\alpha_n$&2&\\%
+Guide Roller Assembly Stiffness&$k_r$&500000&$N/m$\\%
+Bunton Stiffness&$k_b$&1608000&$N/m$\\%
+Guide Stiffnes&$k_g$&1600000&$N/m$\\%
+Moment of Inertia about X{-}axis&$I_x$&80510&$kg.m^2$\\%
+Moment of Inertia about Y{-}axis&$I_y$&6838&$kg.m^2$\\%
+Moment of Inertia about Z{-}axis&$I_z$&82050&$kg.m^2$\\%
+Distance from slipper to center of gravity&$h_x$&892&$mm$\\%
+Distance from slipper to center of gravity&$h_y$&4847&$mm$\\%
+Distance from slipper to center of gravity&$h_z$&28&$mm$\\%
+Guide Roller Lateral Load&$H_f$&5000000&$N$\\%
+Steelwork Stiffness Ratio&$r_k$&1.005&$ $\\%
+Weight of Skip System&$m_c$&8353&$kg$\\%
+Effective Mass About y {-} x Plane&$m_x = (m_c I_z) / (I_z + m_c (h_y)^2)$&2463.0&$kg$\\%
+Effective Mass About y {-} z Plane&$m_z = (m_c I_x I_y)/(I_x I_y +(m_c I_x (h_y)^2) + (m_c I_y (h_x)^2)$&280.0&$kg$\\%
+Non{-}Dimensional Laterial Stiffness&$K_x = (k_b L_b^2)/m_x V^2$&9&\\%
+Non{-}Dimensional Laterial Stiffness&$K_z = (k_b L_b^2)/m_z V^2$&83&\\%
+Plate Coefficient from graph&$P_b$&0.05&\\%
+Maximum Moving Misalighnment&$e$&0.01&$m$\\%
+Lateral Slipper Pad Load&$H_s$&7791&$N$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}%
+
+
+\begin{figure}[h!]%
+\includegraphics[width=360px]{plate_load_coef.jpg}%
+\centering%
+\caption{Slipper Plate Load Coefficient Pb}%
+\centering%
+\end{figure}
+
+%
+\subsubsection{Winder System Loads}%
+\label{ssubsec:WinderSystemLoads}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Dynamic Impact Factor&$\alpha_d$&2&\\%
+Winder Acceleration and Deceleration&$a_o$&0.8&$m/s^2$\\%
+Winder Trip Acceleration&$a_t$&0.8&$m/s^2$\\%
+Skip Self Weight&$G_c$&81943&$N$\\%
+Content Load&$C_y$&176580.0&$N$\\%
+Tail Rope Load&$T$&0&$N$\\%
+Acceleration Load&$A_o = (\alpha_d) a_o (G_c + C_y + T)/g$&42165&$N$\\%
+Acceleration Trip Out Load&$A_t = (\alpha_d) a_t (G_c + C_y + T)/g$&42165&$N$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\subsubsection{Emergency Loads}%
+\label{ssubsec:EmergencyLoads}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Emergency Load&$E_r$&2319000&$N$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\subsubsection{Vertical Friction Loads}%
+\label{ssubsec:VerticalFrictionLoads}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Lateral Slipper Pad Load&$H_s$&7791&$N$\\%
+Vertical Friction Load&$F_v = 0.5 H_s$&3895.5&$N$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\subsection{Skip Loads}%
+\label{subsec:SkipLoads}%
+\subsubsection{Bridle and Transom Loads during Filling (Rd)}%
+\label{ssubsec:BridleandTransomLoadsduringFilling(Rd)}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Bulk Density of Ore&$\rho_b$&1950&$kg/m^3$\\%
+Maximum Container Height&$z$&5600&$mm$\\%
+Rock Pressure&$p_o = \rho_b g z$&107125.2&$N/m^2$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\subsubsection{Gravity Rock Presssure}%
+\label{ssubsec:GravityRockPresssure}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Filling Impact Factor&$\alpha_p$&1.5&\\%
+Drop Height Estimate for Single Rock&$h_d$&25&$m$\\%
+Deformation of Skip Door&$d_i$&87.5&$mm$\\%
+Largest Rock Size Estimate&$m_r$&1375.0&$kg$\\%
+Skip Bottom Pressure&$p_1 = \alpha_p p_o$&160687.8&$N/m^2$\\%
+Skip Side Pressure&$p_2 = \alpha_p p_o$&160687.8&$N/m^2$\\%
+Impact Energy&$Z_i = 0.5 h_d g m_r$&168609.375&$N/m^2$\\%
+Impact Load&$R_i = Z_i/d_i$&1926.9642857142858&$N/m^2$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\subsubsection{Pressure during Filling or Travelling in Shaft}%
+\label{ssubsec:PressureduringFillingorTravellinginShaft}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Tipping Impact Factor&$\alpha_t$&2&\\%
+Tipping Rollers Load&$R_t = \alpha_t 0.25(R + G_c)$&129261.5&$N$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\subsubsection{Tipping Rollers Load}%
+\label{ssubsec:TippingRollersLoad}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Skip Bridle Sides&$m_1$&1167&$kg$\\%
+Skip Bridle Top Transom&$m_2$&1522&$kg$\\%
+Skip Bridle Bottom Transom&$m_3$&850&$kg$\\%
+Skip Unit&$m_4$&6336&$kg$\\%
+Permanent Load&$G_c = (m_1 + m_3 + m_4)g$&81943&$N$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\subsubsection{Skip Return{-}stop Loads}%
+\label{ssubsec:SkipReturn{-}stopLoads}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Skip Bridle Sides&$m_1$&1167&$kg$\\%
+Skip Bridle Top Transom&$m_2$&1522&$kg$\\%
+Skip Bridle Bottom Transom&$m_3$&850&$kg$\\%
+Skip Unit&$m_4$&6336&$kg$\\%
+Permanent Load&$G_c = (m_1 + m_3 + m_4)g$&81943&$N$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\newpage
+
+%
+\section{SUMMARY}%
+\label{sec:SUMMARY}%
+jjjjjjjjjj
+
+%
+\end{document}

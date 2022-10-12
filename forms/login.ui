@@ -296,8 +296,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../resources/assets/resources.qrc">
-       <normaloff>:/icons/icons/link.svg</normaloff>:/icons/icons/link.svg</iconset>
+      <iconset>
+       <normaloff>../resources/assets/link.svg</normaloff>../resources/assets/link.svg</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -355,8 +355,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../resources/assets/resources.qrc">
-       <normaloff>:/icons/icons/list.svg</normaloff>:/icons/icons/list.svg</iconset>
+      <iconset>
+       <normaloff>../resources/assets/list.svg</normaloff>../resources/assets/list.svg</iconset>
      </property>
      <property name="iconSize">
       <size>
