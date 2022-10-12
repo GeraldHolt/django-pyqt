@@ -1,15 +1,15 @@
 import os
 
 #=============================================================================================#
-LOGO = "C:\\_EEMS\\apps\\accounts\\logos\\HCE.jpg"
+LOGO = "C:\\_EEMS\\apps\\accounts\\logos\\MAC.jpg"
 DOC_TITLE = "TECHNICAL SCOPE OF WORK"
-DESIGN_COMPANY = "MAC MINING AND PARTNERS"
-ADDRESS_1 = "Unit G, Mini Park"
-ADDRESS_2 = "16 Gerhardus Street, Strijdom Park"
-ADDRESS_3 = "Randburg, South Africa"
-WEBSITE = "www.holtconsulting.co.za"
-PHONE = "+27-791-2549"
-COMPANY_EMAIL = "gerald@holtconsulting.co.za"
+DESIGN_COMPANY = "MAC MINING AND CONSTRUCTION PARTNERS LIMITED"
+ADDRESS_1 = "Plot 19A"
+ADDRESS_2 = "Okpoti Street"
+ADDRESS_3 = "Adenta, Accra, Ghana"
+WEBSITE = "www.macpartnersltd.com"
+PHONE = "+233-0254-1525"
+COMPANY_EMAIL = "gerald@macpartnersltd.com"
 ENGINEER = "Gerald Holt (Pr.Eng)"
 ECSA = "20020259"
 
@@ -23,29 +23,29 @@ EMAIL = "bright.dzah@cardinalresources.com.au"
 
 #=============================================================================================#
 DESIGN_CODES = {
-                'DESIGN_CODE_1' : "SANS 10208: Design of structure for the mining industry Part 3: Conveyances",
-                'DESIGN_CODE_2' : "SANS 10160: Buidling Loading Code",
-                'DESIGN_CODE_3' : "SANS 10162: Steel Design Code",
-				'DESIGN_CODE_4' : "SANS 10100-1: The Structural use of concrete Part 1 – Design",
-				'DESIGN_CODE_5' : "SANS 10100-2: The Structural use of concrete Part 2 – Materials and Execution of Work",
-				'DESIGN_CODE_6' : "SANS 10144: Detailing of steel reinforcement for concrete",
-				'DESIGN_CODE_7' : "SANS 10161: The design of foundations for buildings",
-				'DESIGN_CODE_8' : "SANS 110: Sealing components for the building industry, two components, polysulphide base",
-				'DESIGN_CODE_9' : "SANS 10164: The structural use of masonry Part 1",
-				'DESIGN_CODE_10' : "BS 2853: The design and testing of steel overhead one way beams",
-				'DESIGN_CODE_11' : "AWS D1.1: Structural Welding Code - Steel",
-				'DESIGN_CODE_23' : "SANS 10120-3: Corrosion protection systems for steelwork",
-				'DESIGN_CODE_12' : "EN 10025: Hot rolled products of structural steel",
-				'DESIGN_CODE_13' : "SANS 986: Pre-cast reinforced concrete culverts",
-				'DESIGN_CODE_14' : "SANS 1077: Sealing compound for the building and construction industry, two components, polyurethane base",
-				'DESIGN_CODE_15' : "BS 3148: Test for water for making concrete",
-				'DESIGN_CODE_16' : "BS 5075-1: Concrete admixtures",
-				'DESIGN_CODE_17' : "BS 5075-2: Specification for accelerating admixtures, retarding admixtures and water reducing admixtures",
-				'DESIGN_CODE_18' : "BS 5075-3: Specification for air-entraining admixtures",
-				'DESIGN_CODE_19' : "BS 5075-4: Specification for superplasticizing admixtures",
-				'DESIGN_CODE_20' : "BS 5838: Specification for dry packed cementitious mixes",
-				'DESIGN_CODE_21' : "BS 5838-1: Prepacked concrete mixes",
-				'DESIGN_CODE_22' : "BS 5838-2: Prepacked mortar mixes",
+                'DESIGN_CODE_1' : ["SANS 10208:","Design of structure for the mining industry Part 3: Conveyances"],
+                'DESIGN_CODE_2' : ["SANS 10160:", "Buidling Loading Code"],
+                'DESIGN_CODE_3' : ["SANS 10162:", "Steel Design Code"],
+				'DESIGN_CODE_4' : ["SANS 10100-1:", "The Structural use of concrete Part 1 – Design"],
+				'DESIGN_CODE_5' : ["SANS 10100-2:", "The Structural use of concrete Part 2 – Materials and Execution of Work"],
+				'DESIGN_CODE_6' : ["SANS 10144:", "Detailing of steel reinforcement for concrete"],
+				'DESIGN_CODE_7' : ["SANS 10161:", "The design of foundations for buildings"],
+				'DESIGN_CODE_8' : ["SANS 110:","Sealing components for the building industry, two components, polysulphide base"],
+				'DESIGN_CODE_9' : ["SANS 10164:", "The structural use of masonry Part 1"],
+				'DESIGN_CODE_10' : ["BS 2853:", "The design and testing of steel overhead one way beams"],
+				'DESIGN_CODE_11' : ["AWS D1.1:", "Structural Welding Code - Steel"],
+				'DESIGN_CODE_23' : ["SANS 10120-3:", "Corrosion protection systems for steelwork"],
+				'DESIGN_CODE_12' : ["EN 10025:","Hot rolled products of structural steel"],
+				'DESIGN_CODE_13' : ["SANS 986:", "Pre-cast reinforced concrete culverts"],
+				'DESIGN_CODE_14' : ["SANS 1077:", "Sealing compound for the building and construction industry, two components, polyurethane base"],
+				'DESIGN_CODE_15' : ["BS 3148:", "Test for water for making concrete"],
+				'DESIGN_CODE_16' : ["BS 5075-1:", "Concrete admixtures"],
+				'DESIGN_CODE_17' : ["BS 5075-2:", "Specification for accelerating admixtures, retarding admixtures and water reducing admixtures"],
+				'DESIGN_CODE_18' : ["BS 5075-3:", "Specification for air-entraining admixtures"],
+				'DESIGN_CODE_19' : ["BS 5075-4:", "Specification for superplasticizing admixtures"],
+				'DESIGN_CODE_20' : ["BS 5838:", "Specification for dry packed cementitious mixes"],
+				'DESIGN_CODE_21' : ["BS 5838-1:", "Prepacked concrete mixes"],
+				'DESIGN_CODE_22' : ["BS 5838-2:", "Prepacked mortar mixes"],
 
 
                }
@@ -73,6 +73,13 @@ SECTION_4_3 = "Booster Station"
 
 SECTION_5 = "PHASE 1: SCOPE OF WORK"
 SECTION_5_1 = "Battery Limits"
+TEXT7 = r"""This tender is for Phase 1 of the project. Phase 1 is the earthworks and civils works for the causeway and catchpit. It is important that these activities are completed before the end of January 2023 as this is the time when the river is the lowest. The low river level is crucial for the safe installation of the intake water pipe."""
+TEXT8 = r"""The battery limits for Phase 1 are as follows:"""
+BULLET10 = r"""All earthworks and filling from the booster station to the river abstraction area."""
+BULLET11 = r"""The excvation and installation of the steel sections for the catch pit."""
+BULLET12 = r"""The excvation and installation of the water intake pipe and the final cut through the river bank."""
+BULLET13 = r"""The installation of the hoist system at the river abstraction area."""
+
 SECTION_5_2 = "Work Description"
 SECTION_5_3 = "Work Description"
 SECTION_5_4 = "Bill of Quantities"
@@ -112,3 +119,4 @@ TEXT6 = r"""The following are the attributes of the booster station configuratio
 BULLET7 = r"""The station consists of two areas. On the western side of the causeway is the booster station and on the earstern side the contractor's laydown area."""
 BULLET8 = r"""The booster pump station will house the buffer tanks, booster pumps and substation."""
 BULLET9 = r"""The area will also be equipped with a building consisting of a security office, control room, store room, workshop and the substation."""
+

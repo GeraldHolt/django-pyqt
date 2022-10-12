@@ -166,10 +166,14 @@ def main():
         # General project data	
         with sec.create(Subsection(SECTION_3_1)) as subsec1:
             list_data = designCodes()
-            with subsec1.create(FlushLeft()):
-                for item in list_data:
-                    subsec1.append(item)
-                    subsec1.append(LineBreak())
+            with subsec1.create(FlushLeft()) as left:
+                with left.create(MiniPage(align='l')) as tab:
+                    with tab.create(Tabular('|l |l |')) as table:
+                        for v in list_data:
+                            table.add_hline()
+                            table.add_row((bold(v[0]), str(v[1])))
+                        table.add_hline()    
+            list_data =[]
         # General site conditions				
         with sec.create(Subsection(SECTION_3_2)) as subsec2:
             list_data = general_data()
@@ -297,29 +301,21 @@ def main():
 
         
     doc.append(NewPage())  
-    # SECTION 5: SCOPE OF WORK ======================================================================#
-    # with doc.create(Section(SECTION_5)) as sec:
-    #     with sec.create(Subsection(SECTION_5_1)) as subsec2:
-    #         with subsec2.create(FlushLeft()) as left:
-    #             with left.create(MiniPage(align='l')) as tab:
-    #                     pass
+    #SECTION 5: SCOPE OF WORK ======================================================================#
+    with doc.create(Section(SECTION_5)) as sec:
+        with sec.create(Subsection(SECTION_5_1)) as subsec2:
+            subsec2.append(NoEscape(TEXT1))
 
-    #     with sec.create(Subsection(SECTION_5_2)) as subsec3:
-    #         with subsec2.create(FlushLeft()) as left:
-    #             with left.create(MiniPage(align='l')) as tab:
-    #                     pass
+        with sec.create(Subsection(SECTION_5_2)) as subsec3:
+            subsec2.append(NoEscape(TEXT1))
 
-    #     with sec.create(Subsection(SECTION_5_3)) as subsec4:
-    #         with subsec3.create(FlushLeft()) as left:
-    #             with left.create(MiniPage(align='l')) as tab:
-    #                     pass
+        with sec.create(Subsection(SECTION_5_3)) as subsec4:
+            subsec2.append(NoEscape(TEXT1))
 
-    #     with sec.create(Subsection(SECTION_5_4)) as subsec5:
-    #         with subsec5.create(FlushLeft()) as left:
-    #             with left.create(MiniPage(align='l')) as tab:
-    #                     pass
+        with sec.create(Subsection(SECTION_5_4)) as subsec5:
+            subsec2.append(NoEscape(TEXT1))
         
-    #     sec.append(NewPage()) 
+        sec.append(NewPage()) 
        
     cwd = os.getcwd()
     print(cwd)
