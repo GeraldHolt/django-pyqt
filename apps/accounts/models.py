@@ -1,3 +1,15 @@
+from django.db import models
+from django.contrib.auth.models import User
+from django.forms import Textarea
+from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
+from django.contrib.auth import get_user_model
+from django.utils.translation import gettext_lazy as _
+from apps.accounts.list_of_countries import countries
+
+import uuid
+from uuid import UUID
+from uuid import uuid4
+
 import sys
 try:
     from django.db import models

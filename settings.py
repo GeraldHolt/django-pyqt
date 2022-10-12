@@ -13,7 +13,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'apps.accounts',
-	'apps.quotation',
+	'apps.quotations',
 	'apps.techdata',
 	'apps.calculations',
 ]

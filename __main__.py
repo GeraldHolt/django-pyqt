@@ -8,14 +8,14 @@ try:
 except Exception as e:
     print(e)
 
+from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
-from viewManagers.mainWindowManager import mainWindow
+from viewManagers.mainWindowManager import MainWindow
 import sys
-
 
 def main():
     app = QApplication(sys.argv)
-    window = mainWindow()
+    window = MainWindow()
     window.show()
 
     sys.exit(app.exec_())
