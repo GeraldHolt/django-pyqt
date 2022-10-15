@@ -1,5 +1,5 @@
 
-countries = [('AF', 'Afghanistan'), 
+COUNTRIES = [('AF', 'Afghanistan'), 
     ('AL', 'Albania'), 
     ('DZ', 'Algeria'), 
     ('AS', 'American Samoa'), 

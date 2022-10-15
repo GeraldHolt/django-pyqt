@@ -14,14 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_ControlPanel(object):
     def setupUi(self, ControlPanel):
         ControlPanel.setObjectName("ControlPanel")
-        ControlPanel.resize(1541, 851)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(ControlPanel.sizePolicy().hasHeightForWidth())
-        ControlPanel.setSizePolicy(sizePolicy)
+        ControlPanel.resize(1540, 851)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/icons/HCE-C.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/HCE-C.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         ControlPanel.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(ControlPanel)
         self.centralwidget.setStyleSheet("")
@@ -382,7 +377,7 @@ class Ui_ControlPanel(object):
         self.customers = QtWidgets.QWidget()
         self.customers.setObjectName("customers")
         self.lbCustomerPage = QtWidgets.QLabel(self.customers)
-        self.lbCustomerPage.setGeometry(QtCore.QRect(220, 30, 721, 20))
+        self.lbCustomerPage.setGeometry(QtCore.QRect(220, 30, 721, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -453,9 +448,9 @@ class Ui_ControlPanel(object):
         self.frame_8.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_8.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_8.setObjectName("frame_8")
-        self.btnEdit = QtWidgets.QPushButton(self.frame_8)
-        self.btnEdit.setGeometry(QtCore.QRect(10, 10, 75, 31))
-        self.btnEdit.setStyleSheet("    QPushButton {\n"
+        self.btnEditCustomer = QtWidgets.QPushButton(self.frame_8)
+        self.btnEditCustomer.setGeometry(QtCore.QRect(10, 10, 75, 31))
+        self.btnEditCustomer.setStyleSheet("    QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -468,10 +463,10 @@ class Ui_ControlPanel(object):
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
 "     }")
-        self.btnEdit.setObjectName("btnEdit")
-        self.btnDelete_2 = QtWidgets.QPushButton(self.frame_8)
-        self.btnDelete_2.setGeometry(QtCore.QRect(130, 10, 75, 31))
-        self.btnDelete_2.setStyleSheet("    QPushButton {\n"
+        self.btnEditCustomer.setObjectName("btnEditCustomer")
+        self.btnDeleteCustomer = QtWidgets.QPushButton(self.frame_8)
+        self.btnDeleteCustomer.setGeometry(QtCore.QRect(130, 10, 75, 31))
+        self.btnDeleteCustomer.setStyleSheet("    QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -483,7 +478,7 @@ class Ui_ControlPanel(object):
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
 "     }")
-        self.btnDelete_2.setObjectName("btnDelete_2")
+        self.btnDeleteCustomer.setObjectName("btnDeleteCustomer")
         self.tvCustomers = QtWidgets.QTableView(self.customerListContainer)
         self.tvCustomers.setGeometry(QtCore.QRect(10, 60, 571, 631))
         self.tvCustomers.setObjectName("tvCustomers")
@@ -497,9 +492,9 @@ class Ui_ControlPanel(object):
         self.frame_5.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_5.setObjectName("frame_5")
-        self.btnNew = QtWidgets.QPushButton(self.frame_5)
-        self.btnNew.setGeometry(QtCore.QRect(10, 10, 75, 31))
-        self.btnNew.setStyleSheet("   QPushButton {\n"
+        self.btnNewCustomer = QtWidgets.QPushButton(self.frame_5)
+        self.btnNewCustomer.setGeometry(QtCore.QRect(10, 10, 75, 31))
+        self.btnNewCustomer.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -512,10 +507,10 @@ class Ui_ControlPanel(object):
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
 "     }")
-        self.btnNew.setObjectName("btnNew")
-        self.btnClear = QtWidgets.QPushButton(self.frame_5)
-        self.btnClear.setGeometry(QtCore.QRect(130, 10, 75, 31))
-        self.btnClear.setStyleSheet("   QPushButton {\n"
+        self.btnNewCustomer.setObjectName("btnNewCustomer")
+        self.btnClearCustomerCells = QtWidgets.QPushButton(self.frame_5)
+        self.btnClearCustomerCells.setGeometry(QtCore.QRect(130, 10, 75, 31))
+        self.btnClearCustomerCells.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -528,7 +523,7 @@ class Ui_ControlPanel(object):
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
 "     }")
-        self.btnClear.setObjectName("btnClear")
+        self.btnClearCustomerCells.setObjectName("btnClearCustomerCells")
         self.leCompID = QtWidgets.QLineEdit(self.customerCRUD)
         self.leCompID.setGeometry(QtCore.QRect(10, 30, 101, 31))
         font = QtGui.QFont()
@@ -841,7 +836,7 @@ class Ui_ControlPanel(object):
         self.contacts = QtWidgets.QWidget()
         self.contacts.setObjectName("contacts")
         self.label_19 = QtWidgets.QLabel(self.contacts)
-        self.label_19.setGeometry(QtCore.QRect(370, 30, 421, 21))
+        self.label_19.setGeometry(QtCore.QRect(370, 30, 421, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1180,7 +1175,7 @@ class Ui_ControlPanel(object):
         self.quotations = QtWidgets.QWidget()
         self.quotations.setObjectName("quotations")
         self.label_16 = QtWidgets.QLabel(self.quotations)
-        self.label_16.setGeometry(QtCore.QRect(370, 30, 421, 21))
+        self.label_16.setGeometry(QtCore.QRect(370, 30, 421, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1194,10 +1189,423 @@ class Ui_ControlPanel(object):
         self.label_16.setAlignment(QtCore.Qt.AlignCenter)
         self.label_16.setObjectName("label_16")
         self.tabQuotation = QtWidgets.QTabWidget(self.quotations)
-        self.tabQuotation.setGeometry(QtCore.QRect(10, 80, 1241, 421))
+        self.tabQuotation.setGeometry(QtCore.QRect(10, 80, 1241, 331))
         self.tabQuotation.setObjectName("tabQuotation")
         self.register_quote = QtWidgets.QWidget()
         self.register_quote.setObjectName("register_quote")
+        self.lbFirstName_3 = QtWidgets.QLabel(self.register_quote)
+        self.lbFirstName_3.setGeometry(QtCore.QRect(0, 20, 141, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbFirstName_3.setFont(font)
+        self.lbFirstName_3.setObjectName("lbFirstName_3")
+        self.leNextQuote = QtWidgets.QLineEdit(self.register_quote)
+        self.leNextQuote.setGeometry(QtCore.QRect(0, 40, 131, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.leNextQuote.setFont(font)
+        self.leNextQuote.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leNextQuote.setObjectName("leNextQuote")
+        self.lbCompany_7 = QtWidgets.QLabel(self.register_quote)
+        self.lbCompany_7.setGeometry(QtCore.QRect(260, 20, 121, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompany_7.setFont(font)
+        self.lbCompany_7.setObjectName("lbCompany_7")
+        self.cbCompany_3 = QtWidgets.QComboBox(self.register_quote)
+        self.cbCompany_3.setGeometry(QtCore.QRect(260, 40, 221, 31))
+        self.cbCompany_3.setStyleSheet("QComboBox{\n"
+"    border-top-left-radius: 10px;\n"
+"    border-bottom-left-radius: 10px;\n"
+"    border-top-right-radius: 10px;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    background: white;\n"
+"    border: 1px solid gray;\n"
+"    box-shadow: transparent;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"   \n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 20px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 10px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 10px;\n"
+" }\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"     image:url(:/icons/icons/arrow-down.svg)\n"
+" }\n"
+"\n"
+" QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
+"     top: 1px;\n"
+"     left: 1px;\n"
+" }\n"
+"\n"
+"")
+        self.cbCompany_3.setObjectName("cbCompany_3")
+        self.btnClear_4 = QtWidgets.QPushButton(self.register_quote)
+        self.btnClear_4.setGeometry(QtCore.QRect(1150, 240, 75, 31))
+        self.btnClear_4.setStyleSheet("   QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #f6f7fa, stop: 1 rgb(145, 145, 145) );\n"
+"    \n"
+"    \n"
+"     }\n"
+"\n"
+" QPushButton:pressed {\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"     }")
+        self.btnClear_4.setObjectName("btnClear_4")
+        self.btnNewQuote = QtWidgets.QPushButton(self.register_quote)
+        self.btnNewQuote.setGeometry(QtCore.QRect(910, 240, 75, 31))
+        self.btnNewQuote.setStyleSheet("   QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #f6f7fa, stop: 1 rgb(43, 200, 7));\n"
+"    \n"
+"    \n"
+"     }\n"
+"\n"
+" QPushButton:pressed {\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"     }")
+        self.btnNewQuote.setObjectName("btnNewQuote")
+        self.cbContactName = QtWidgets.QComboBox(self.register_quote)
+        self.cbContactName.setGeometry(QtCore.QRect(500, 40, 221, 31))
+        self.cbContactName.setStyleSheet("QComboBox{\n"
+"    border-top-left-radius: 10px;\n"
+"    border-bottom-left-radius: 10px;\n"
+"    border-top-right-radius: 10px;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    background: white;\n"
+"    border: 1px solid gray;\n"
+"    box-shadow: transparent;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"   \n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 20px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 10px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 10px;\n"
+" }\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"     image:url(:/icons/icons/arrow-down.svg)\n"
+" }\n"
+"\n"
+" QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
+"     top: 1px;\n"
+"     left: 1px;\n"
+" }\n"
+"\n"
+"")
+        self.cbContactName.setObjectName("cbContactName")
+        self.lbCompany_8 = QtWidgets.QLabel(self.register_quote)
+        self.lbCompany_8.setGeometry(QtCore.QRect(500, 20, 121, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompany_8.setFont(font)
+        self.lbCompany_8.setObjectName("lbCompany_8")
+        self.cbDivision = QtWidgets.QComboBox(self.register_quote)
+        self.cbDivision.setGeometry(QtCore.QRect(150, 40, 91, 31))
+        self.cbDivision.setStyleSheet("QComboBox{\n"
+"    border-top-left-radius: 10px;\n"
+"    border-bottom-left-radius: 10px;\n"
+"    border-top-right-radius: 10px;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    background: white;\n"
+"    border: 1px solid gray;\n"
+"    box-shadow: transparent;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"   \n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 20px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 10px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 10px;\n"
+" }\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"     image:url(:/icons/icons/arrow-down.svg)\n"
+" }\n"
+"\n"
+" QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
+"     top: 1px;\n"
+"     left: 1px;\n"
+" }\n"
+"\n"
+"")
+        self.cbDivision.setObjectName("cbDivision")
+        self.lbCompany_9 = QtWidgets.QLabel(self.register_quote)
+        self.lbCompany_9.setGeometry(QtCore.QRect(150, 20, 91, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompany_9.setFont(font)
+        self.lbCompany_9.setObjectName("lbCompany_9")
+        self.cbQuoteStatus = QtWidgets.QComboBox(self.register_quote)
+        self.cbQuoteStatus.setGeometry(QtCore.QRect(740, 40, 141, 31))
+        self.cbQuoteStatus.setStyleSheet("QComboBox{\n"
+"    border-top-left-radius: 10px;\n"
+"    border-bottom-left-radius: 10px;\n"
+"    border-top-right-radius: 10px;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    background: white;\n"
+"    border: 1px solid gray;\n"
+"    box-shadow: transparent;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"   \n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 20px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 10px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 10px;\n"
+" }\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"     image:url(:/icons/icons/arrow-down.svg)\n"
+" }\n"
+"\n"
+" QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
+"     top: 1px;\n"
+"     left: 1px;\n"
+" }\n"
+"\n"
+"")
+        self.cbQuoteStatus.setObjectName("cbQuoteStatus")
+        self.lbCompany_10 = QtWidgets.QLabel(self.register_quote)
+        self.lbCompany_10.setGeometry(QtCore.QRect(740, 20, 91, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompany_10.setFont(font)
+        self.lbCompany_10.setObjectName("lbCompany_10")
+        self.lbCompany_11 = QtWidgets.QLabel(self.register_quote)
+        self.lbCompany_11.setGeometry(QtCore.QRect(900, 20, 121, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompany_11.setFont(font)
+        self.lbCompany_11.setObjectName("lbCompany_11")
+        self.cbCompiler = QtWidgets.QComboBox(self.register_quote)
+        self.cbCompiler.setGeometry(QtCore.QRect(900, 40, 221, 31))
+        self.cbCompiler.setStyleSheet("QComboBox{\n"
+"    border-top-left-radius: 10px;\n"
+"    border-bottom-left-radius: 10px;\n"
+"    border-top-right-radius: 10px;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    background: white;\n"
+"    border: 1px solid gray;\n"
+"    box-shadow: transparent;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"   \n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 20px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 10px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 10px;\n"
+" }\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"     image:url(:/icons/icons/arrow-down.svg)\n"
+" }\n"
+"\n"
+" QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
+"     top: 1px;\n"
+"     left: 1px;\n"
+" }\n"
+"\n"
+"")
+        self.cbCompiler.setObjectName("cbCompiler")
+        self.lbFirstName_4 = QtWidgets.QLabel(self.register_quote)
+        self.lbFirstName_4.setGeometry(QtCore.QRect(0, 90, 141, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbFirstName_4.setFont(font)
+        self.lbFirstName_4.setObjectName("lbFirstName_4")
+        self.leQuoteDescription = QtWidgets.QLineEdit(self.register_quote)
+        self.leQuoteDescription.setGeometry(QtCore.QRect(0, 110, 721, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.leQuoteDescription.setFont(font)
+        self.leQuoteDescription.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leQuoteDescription.setObjectName("leQuoteDescription")
+        self.lbCompany_12 = QtWidgets.QLabel(self.register_quote)
+        self.lbCompany_12.setGeometry(QtCore.QRect(740, 90, 121, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompany_12.setFont(font)
+        self.lbCompany_12.setObjectName("lbCompany_12")
+        self.cbValidity = QtWidgets.QComboBox(self.register_quote)
+        self.cbValidity.setGeometry(QtCore.QRect(740, 110, 311, 31))
+        self.cbValidity.setStyleSheet("QComboBox{\n"
+"    border-top-left-radius: 10px;\n"
+"    border-bottom-left-radius: 10px;\n"
+"    border-top-right-radius: 10px;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    background: white;\n"
+"    border: 1px solid gray;\n"
+"    box-shadow: transparent;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"   \n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 20px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 10px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 10px;\n"
+" }\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"     image:url(:/icons/icons/arrow-down.svg)\n"
+" }\n"
+"\n"
+" QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
+"     top: 1px;\n"
+"     left: 1px;\n"
+" }\n"
+"\n"
+"")
+        self.cbValidity.setObjectName("cbValidity")
+        self.lbFirstName_5 = QtWidgets.QLabel(self.register_quote)
+        self.lbFirstName_5.setGeometry(QtCore.QRect(0, 160, 141, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbFirstName_5.setFont(font)
+        self.lbFirstName_5.setObjectName("lbFirstName_5")
+        self.leQuoteDelivery_details = QtWidgets.QLineEdit(self.register_quote)
+        self.leQuoteDelivery_details.setGeometry(QtCore.QRect(0, 180, 721, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.leQuoteDelivery_details.setFont(font)
+        self.leQuoteDelivery_details.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leQuoteDelivery_details.setObjectName("leQuoteDelivery_details")
+        self.lbCompany_13 = QtWidgets.QLabel(self.register_quote)
+        self.lbCompany_13.setGeometry(QtCore.QRect(740, 160, 121, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompany_13.setFont(font)
+        self.lbCompany_13.setObjectName("lbCompany_13")
+        self.cbPaymentTerms = QtWidgets.QComboBox(self.register_quote)
+        self.cbPaymentTerms.setGeometry(QtCore.QRect(740, 180, 311, 31))
+        self.cbPaymentTerms.setStyleSheet("QComboBox{\n"
+"    border-top-left-radius: 10px;\n"
+"    border-bottom-left-radius: 10px;\n"
+"    border-top-right-radius: 10px;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    background: white;\n"
+"    border: 1px solid gray;\n"
+"    box-shadow: transparent;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"   \n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 20px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 10px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 10px;\n"
+" }\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"     image:url(:/icons/icons/arrow-down.svg)\n"
+" }\n"
+"\n"
+" QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
+"     top: 1px;\n"
+"     left: 1px;\n"
+" }\n"
+"\n"
+"")
+        self.cbPaymentTerms.setObjectName("cbPaymentTerms")
+        self.lbFirstName_6 = QtWidgets.QLabel(self.register_quote)
+        self.lbFirstName_6.setGeometry(QtCore.QRect(0, 230, 221, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbFirstName_6.setFont(font)
+        self.lbFirstName_6.setObjectName("lbFirstName_6")
+        self.leDelivery = QtWidgets.QLineEdit(self.register_quote)
+        self.leDelivery.setGeometry(QtCore.QRect(0, 250, 221, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.leDelivery.setFont(font)
+        self.leDelivery.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leDelivery.setObjectName("leDelivery")
+        self.btnNewQuote_2 = QtWidgets.QPushButton(self.register_quote)
+        self.btnNewQuote_2.setGeometry(QtCore.QRect(1030, 240, 75, 31))
+        self.btnNewQuote_2.setStyleSheet("   QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 170, 0));\n"
+"    \n"
+"    \n"
+"     }\n"
+"\n"
+" QPushButton:pressed {\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"     }")
+        self.btnNewQuote_2.setObjectName("btnNewQuote_2")
         self.tabQuotation.addTab(self.register_quote, "")
         self.scope_included = QtWidgets.QWidget()
         self.scope_included.setObjectName("scope_included")
@@ -1218,32 +1626,47 @@ class Ui_ControlPanel(object):
         self.tab_3.setObjectName("tab_3")
         self.tabQuotation.addTab(self.tab_3, "")
         self.tabWidget_2 = QtWidgets.QTabWidget(self.quotations)
-        self.tabWidget_2.setGeometry(QtCore.QRect(10, 540, 1241, 291))
+        self.tabWidget_2.setGeometry(QtCore.QRect(10, 430, 1241, 401))
         self.tabWidget_2.setObjectName("tabWidget_2")
         self.all_quotations = QtWidgets.QWidget()
         self.all_quotations.setObjectName("all_quotations")
+        self.tvQuotationsAll_3 = QtWidgets.QTableView(self.all_quotations)
+        self.tvQuotationsAll_3.setGeometry(QtCore.QRect(0, 10, 1231, 351))
+        self.tvQuotationsAll_3.setObjectName("tvQuotationsAll_3")
         self.tabWidget_2.addTab(self.all_quotations, "")
         self.open_quotations = QtWidgets.QWidget()
         self.open_quotations.setObjectName("open_quotations")
+        self.tvQuotationsOpen = QtWidgets.QTableView(self.open_quotations)
+        self.tvQuotationsOpen.setGeometry(QtCore.QRect(0, 10, 1231, 251))
+        self.tvQuotationsOpen.setObjectName("tvQuotationsOpen")
         self.tabWidget_2.addTab(self.open_quotations, "")
         self.accepted_quotations = QtWidgets.QWidget()
         self.accepted_quotations.setObjectName("accepted_quotations")
+        self.tvQuotationsAccepted = QtWidgets.QTableView(self.accepted_quotations)
+        self.tvQuotationsAccepted.setGeometry(QtCore.QRect(0, 10, 1231, 251))
+        self.tvQuotationsAccepted.setObjectName("tvQuotationsAccepted")
         self.tabWidget_2.addTab(self.accepted_quotations, "")
         self.cancelled_quotations = QtWidgets.QWidget()
         self.cancelled_quotations.setObjectName("cancelled_quotations")
+        self.tvQuotationsCancelled = QtWidgets.QTableView(self.cancelled_quotations)
+        self.tvQuotationsCancelled.setGeometry(QtCore.QRect(0, 10, 1231, 251))
+        self.tvQuotationsCancelled.setObjectName("tvQuotationsCancelled")
         self.tabWidget_2.addTab(self.cancelled_quotations, "")
         self.postponed_quotations = QtWidgets.QWidget()
         self.postponed_quotations.setObjectName("postponed_quotations")
+        self.tvQuotationsPostponed = QtWidgets.QTableView(self.postponed_quotations)
+        self.tvQuotationsPostponed.setGeometry(QtCore.QRect(0, 10, 1231, 251))
+        self.tvQuotationsPostponed.setObjectName("tvQuotationsPostponed")
         self.tabWidget_2.addTab(self.postponed_quotations, "")
         self.lbQuotationHistory = QtWidgets.QLabel(self.quotations)
-        self.lbQuotationHistory.setGeometry(QtCore.QRect(20, 520, 111, 16))
+        self.lbQuotationHistory.setGeometry(QtCore.QRect(20, 410, 151, 16))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
         self.lbQuotationHistory.setFont(font)
         self.lbQuotationHistory.setObjectName("lbQuotationHistory")
         self.lbQuotationHistory_2 = QtWidgets.QLabel(self.quotations)
-        self.lbQuotationHistory_2.setGeometry(QtCore.QRect(20, 60, 111, 16))
+        self.lbQuotationHistory_2.setGeometry(QtCore.QRect(20, 60, 191, 16))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -1253,7 +1676,7 @@ class Ui_ControlPanel(object):
         self.worksorders = QtWidgets.QWidget()
         self.worksorders.setObjectName("worksorders")
         self.label_17 = QtWidgets.QLabel(self.worksorders)
-        self.label_17.setGeometry(QtCore.QRect(370, 30, 421, 20))
+        self.label_17.setGeometry(QtCore.QRect(370, 30, 421, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1266,48 +1689,254 @@ class Ui_ControlPanel(object):
         self.label_17.setFont(font)
         self.label_17.setAlignment(QtCore.Qt.AlignCenter)
         self.label_17.setObjectName("label_17")
-        self.tabQuotation_2 = QtWidgets.QTabWidget(self.worksorders)
-        self.tabQuotation_2.setGeometry(QtCore.QRect(10, 80, 1241, 421))
-        self.tabQuotation_2.setObjectName("tabQuotation_2")
+        self.tabWorksOrders = QtWidgets.QTabWidget(self.worksorders)
+        self.tabWorksOrders.setGeometry(QtCore.QRect(10, 80, 1241, 491))
+        self.tabWorksOrders.setObjectName("tabWorksOrders")
         self.register_quote_2 = QtWidgets.QWidget()
         self.register_quote_2.setObjectName("register_quote_2")
-        self.tabQuotation_2.addTab(self.register_quote_2, "")
+        self.lbFirstName_7 = QtWidgets.QLabel(self.register_quote_2)
+        self.lbFirstName_7.setGeometry(QtCore.QRect(0, 80, 141, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbFirstName_7.setFont(font)
+        self.lbFirstName_7.setObjectName("lbFirstName_7")
+        self.lbFirstName_8 = QtWidgets.QLabel(self.register_quote_2)
+        self.lbFirstName_8.setGeometry(QtCore.QRect(0, 10, 141, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbFirstName_8.setFont(font)
+        self.lbFirstName_8.setObjectName("lbFirstName_8")
+        self.lbCompany_14 = QtWidgets.QLabel(self.register_quote_2)
+        self.lbCompany_14.setGeometry(QtCore.QRect(500, 10, 121, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompany_14.setFont(font)
+        self.lbCompany_14.setObjectName("lbCompany_14")
+        self.cbDivision_2 = QtWidgets.QComboBox(self.register_quote_2)
+        self.cbDivision_2.setGeometry(QtCore.QRect(150, 30, 91, 31))
+        self.cbDivision_2.setStyleSheet("QComboBox{\n"
+"    border-top-left-radius: 10px;\n"
+"    border-bottom-left-radius: 10px;\n"
+"    border-top-right-radius: 10px;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    background: white;\n"
+"    border: 1px solid gray;\n"
+"    box-shadow: transparent;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"   \n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 20px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 10px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 10px;\n"
+" }\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"     image:url(:/icons/icons/arrow-down.svg)\n"
+" }\n"
+"\n"
+" QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
+"     top: 1px;\n"
+"     left: 1px;\n"
+" }\n"
+"\n"
+"")
+        self.cbDivision_2.setObjectName("cbDivision_2")
+        self.cbCompany_4 = QtWidgets.QComboBox(self.register_quote_2)
+        self.cbCompany_4.setGeometry(QtCore.QRect(260, 30, 221, 31))
+        self.cbCompany_4.setStyleSheet("QComboBox{\n"
+"    border-top-left-radius: 10px;\n"
+"    border-bottom-left-radius: 10px;\n"
+"    border-top-right-radius: 10px;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    background: white;\n"
+"    border: 1px solid gray;\n"
+"    box-shadow: transparent;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"   \n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 20px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 10px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 10px;\n"
+" }\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"     image:url(:/icons/icons/arrow-down.svg)\n"
+" }\n"
+"\n"
+" QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
+"     top: 1px;\n"
+"     left: 1px;\n"
+" }\n"
+"\n"
+"")
+        self.cbCompany_4.setObjectName("cbCompany_4")
+        self.btnNewQuote_3 = QtWidgets.QPushButton(self.register_quote_2)
+        self.btnNewQuote_3.setGeometry(QtCore.QRect(1030, 160, 75, 31))
+        self.btnNewQuote_3.setStyleSheet("   QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 170, 0));\n"
+"    \n"
+"    \n"
+"     }\n"
+"\n"
+" QPushButton:pressed {\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"     }")
+        self.btnNewQuote_3.setObjectName("btnNewQuote_3")
+        self.leQuoteDescription_2 = QtWidgets.QLineEdit(self.register_quote_2)
+        self.leQuoteDescription_2.setGeometry(QtCore.QRect(0, 100, 721, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.leQuoteDescription_2.setFont(font)
+        self.leQuoteDescription_2.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leQuoteDescription_2.setObjectName("leQuoteDescription_2")
+        self.lbCompany_15 = QtWidgets.QLabel(self.register_quote_2)
+        self.lbCompany_15.setGeometry(QtCore.QRect(260, 10, 121, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompany_15.setFont(font)
+        self.lbCompany_15.setObjectName("lbCompany_15")
+        self.lbFirstName_9 = QtWidgets.QLabel(self.register_quote_2)
+        self.lbFirstName_9.setGeometry(QtCore.QRect(0, 150, 221, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbFirstName_9.setFont(font)
+        self.lbFirstName_9.setObjectName("lbFirstName_9")
+        self.leDelivery_2 = QtWidgets.QLineEdit(self.register_quote_2)
+        self.leDelivery_2.setGeometry(QtCore.QRect(0, 170, 221, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.leDelivery_2.setFont(font)
+        self.leDelivery_2.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leDelivery_2.setObjectName("leDelivery_2")
+        self.leProjectnumber = QtWidgets.QLineEdit(self.register_quote_2)
+        self.leProjectnumber.setGeometry(QtCore.QRect(0, 30, 131, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.leProjectnumber.setFont(font)
+        self.leProjectnumber.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leProjectnumber.setObjectName("leProjectnumber")
+        self.lbCompany_16 = QtWidgets.QLabel(self.register_quote_2)
+        self.lbCompany_16.setGeometry(QtCore.QRect(150, 10, 91, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompany_16.setFont(font)
+        self.lbCompany_16.setObjectName("lbCompany_16")
+        self.cbContactName_2 = QtWidgets.QComboBox(self.register_quote_2)
+        self.cbContactName_2.setGeometry(QtCore.QRect(500, 30, 221, 31))
+        self.cbContactName_2.setStyleSheet("QComboBox{\n"
+"    border-top-left-radius: 10px;\n"
+"    border-bottom-left-radius: 10px;\n"
+"    border-top-right-radius: 10px;\n"
+"    border-bottom-right-radius: 10px;\n"
+"    background: white;\n"
+"    border: 1px solid gray;\n"
+"    box-shadow: transparent;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"   \n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 20px;\n"
+"\n"
+"     border-left-width: 1px;\n"
+"     border-left-color: darkgray;\n"
+"     border-left-style: solid; /* just a single line */\n"
+"     border-top-right-radius: 10px; /* same radius as the QComboBox */\n"
+"     border-bottom-right-radius: 10px;\n"
+" }\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"     image:url(:/icons/icons/arrow-down.svg)\n"
+" }\n"
+"\n"
+" QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
+"     top: 1px;\n"
+"     left: 1px;\n"
+" }\n"
+"\n"
+"")
+        self.cbContactName_2.setObjectName("cbContactName_2")
+        self.btnNewQuote_4 = QtWidgets.QPushButton(self.register_quote_2)
+        self.btnNewQuote_4.setGeometry(QtCore.QRect(910, 160, 75, 31))
+        self.btnNewQuote_4.setStyleSheet("   QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #f6f7fa, stop: 1 rgb(43, 200, 7));\n"
+"    \n"
+"    \n"
+"     }\n"
+"\n"
+" QPushButton:pressed {\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"     }")
+        self.btnNewQuote_4.setObjectName("btnNewQuote_4")
+        self.tabWorksOrders.addTab(self.register_quote_2, "")
         self.scope_included_2 = QtWidgets.QWidget()
         self.scope_included_2.setObjectName("scope_included_2")
-        self.tabQuotation_2.addTab(self.scope_included_2, "")
+        self.tabWorksOrders.addTab(self.scope_included_2, "")
         self.scope_excluded_2 = QtWidgets.QWidget()
         self.scope_excluded_2.setObjectName("scope_excluded_2")
-        self.tabQuotation_2.addTab(self.scope_excluded_2, "")
+        self.tabWorksOrders.addTab(self.scope_excluded_2, "")
         self.design_estimate_2 = QtWidgets.QWidget()
         self.design_estimate_2.setObjectName("design_estimate_2")
-        self.tabQuotation_2.addTab(self.design_estimate_2, "")
+        self.tabWorksOrders.addTab(self.design_estimate_2, "")
         self.supply_estimate_2 = QtWidgets.QWidget()
         self.supply_estimate_2.setObjectName("supply_estimate_2")
-        self.tabQuotation_2.addTab(self.supply_estimate_2, "")
+        self.tabWorksOrders.addTab(self.supply_estimate_2, "")
         self.service_estimate_2 = QtWidgets.QWidget()
         self.service_estimate_2.setObjectName("service_estimate_2")
-        self.tabQuotation_2.addTab(self.service_estimate_2, "")
-        self.tab_4 = QtWidgets.QWidget()
-        self.tab_4.setObjectName("tab_4")
-        self.tabQuotation_2.addTab(self.tab_4, "")
+        self.tabWorksOrders.addTab(self.service_estimate_2, "")
         self.tabWidget_3 = QtWidgets.QTabWidget(self.worksorders)
-        self.tabWidget_3.setGeometry(QtCore.QRect(10, 540, 1241, 291))
+        self.tabWidget_3.setGeometry(QtCore.QRect(10, 600, 1241, 231))
         self.tabWidget_3.setObjectName("tabWidget_3")
-        self.all_quotations_2 = QtWidgets.QWidget()
-        self.all_quotations_2.setObjectName("all_quotations_2")
-        self.tabWidget_3.addTab(self.all_quotations_2, "")
-        self.open_quotations_2 = QtWidgets.QWidget()
-        self.open_quotations_2.setObjectName("open_quotations_2")
-        self.tabWidget_3.addTab(self.open_quotations_2, "")
-        self.accepted_quotations_2 = QtWidgets.QWidget()
-        self.accepted_quotations_2.setObjectName("accepted_quotations_2")
-        self.tabWidget_3.addTab(self.accepted_quotations_2, "")
-        self.cancelled_quotations_2 = QtWidgets.QWidget()
-        self.cancelled_quotations_2.setObjectName("cancelled_quotations_2")
-        self.tabWidget_3.addTab(self.cancelled_quotations_2, "")
-        self.postponed_quotations_2 = QtWidgets.QWidget()
-        self.postponed_quotations_2.setObjectName("postponed_quotations_2")
-        self.tabWidget_3.addTab(self.postponed_quotations_2, "")
+        self.all_worksorders = QtWidgets.QWidget()
+        self.all_worksorders.setObjectName("all_worksorders")
+        self.tabWidget_3.addTab(self.all_worksorders, "")
+        self.open_worksorders = QtWidgets.QWidget()
+        self.open_worksorders.setObjectName("open_worksorders")
+        self.tabWidget_3.addTab(self.open_worksorders, "")
+        self.accepted_worksorders = QtWidgets.QWidget()
+        self.accepted_worksorders.setObjectName("accepted_worksorders")
+        self.tabWidget_3.addTab(self.accepted_worksorders, "")
+        self.cancelled_worksorder = QtWidgets.QWidget()
+        self.cancelled_worksorder.setObjectName("cancelled_worksorder")
+        self.tabWidget_3.addTab(self.cancelled_worksorder, "")
+        self.postponed_worksorder = QtWidgets.QWidget()
+        self.postponed_worksorder.setObjectName("postponed_worksorder")
+        self.tabWidget_3.addTab(self.postponed_worksorder, "")
         self.lbQuotationHistory_3 = QtWidgets.QLabel(self.worksorders)
         self.lbQuotationHistory_3.setGeometry(QtCore.QRect(20, 60, 111, 16))
         font = QtGui.QFont()
@@ -1316,7 +1945,7 @@ class Ui_ControlPanel(object):
         self.lbQuotationHistory_3.setFont(font)
         self.lbQuotationHistory_3.setObjectName("lbQuotationHistory_3")
         self.lbQuotationHistory_4 = QtWidgets.QLabel(self.worksorders)
-        self.lbQuotationHistory_4.setGeometry(QtCore.QRect(20, 520, 111, 16))
+        self.lbQuotationHistory_4.setGeometry(QtCore.QRect(20, 580, 111, 16))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -1326,7 +1955,7 @@ class Ui_ControlPanel(object):
         self.resources = QtWidgets.QWidget()
         self.resources.setObjectName("resources")
         self.label_18 = QtWidgets.QLabel(self.resources)
-        self.label_18.setGeometry(QtCore.QRect(370, 30, 421, 20))
+        self.label_18.setGeometry(QtCore.QRect(370, 30, 421, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1691,7 +2320,7 @@ class Ui_ControlPanel(object):
         self.timesheets = QtWidgets.QWidget()
         self.timesheets.setObjectName("timesheets")
         self.label_20 = QtWidgets.QLabel(self.timesheets)
-        self.label_20.setGeometry(QtCore.QRect(380, 30, 421, 20))
+        self.label_20.setGeometry(QtCore.QRect(380, 30, 421, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1717,7 +2346,7 @@ class Ui_ControlPanel(object):
         self.invoices = QtWidgets.QWidget()
         self.invoices.setObjectName("invoices")
         self.label_21 = QtWidgets.QLabel(self.invoices)
-        self.label_21.setGeometry(QtCore.QRect(300, 30, 571, 20))
+        self.label_21.setGeometry(QtCore.QRect(200, 30, 741, 21))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1734,7 +2363,7 @@ class Ui_ControlPanel(object):
         self.documentControl = QtWidgets.QWidget()
         self.documentControl.setObjectName("documentControl")
         self.label_22 = QtWidgets.QLabel(self.documentControl)
-        self.label_22.setGeometry(QtCore.QRect(290, 30, 571, 21))
+        self.label_22.setGeometry(QtCore.QRect(290, 30, 571, 31))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -2594,6 +3223,90 @@ class Ui_ControlPanel(object):
         self.btnTenderSOW.setCheckable(False)
         self.btnTenderSOW.setFlat(False)
         self.btnTenderSOW.setObjectName("btnTenderSOW")
+        self.lbDashborad_32 = QtWidgets.QLabel(self.tab_5)
+        self.lbDashborad_32.setGeometry(QtCore.QRect(530, 560, 121, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbDashborad_32.setFont(font)
+        self.lbDashborad_32.setObjectName("lbDashborad_32")
+        self.btnCivilSpec_2 = QtWidgets.QPushButton(self.tab_5)
+        self.btnCivilSpec_2.setEnabled(True)
+        self.btnCivilSpec_2.setGeometry(QtCore.QRect(470, 547, 48, 41))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btnCivilSpec_2.sizePolicy().hasHeightForWidth())
+        self.btnCivilSpec_2.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setKerning(False)
+        font.setStyleStrategy(QtGui.QFont.PreferDefault)
+        self.btnCivilSpec_2.setFont(font)
+        self.btnCivilSpec_2.setToolTipDuration(0)
+        self.btnCivilSpec_2.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.btnCivilSpec_2.setAutoFillBackground(False)
+        self.btnCivilSpec_2.setInputMethodHints(QtCore.Qt.ImhNone)
+        self.btnCivilSpec_2.setText("")
+        self.btnCivilSpec_2.setIcon(icon15)
+        self.btnCivilSpec_2.setIconSize(QtCore.QSize(24, 24))
+        self.btnCivilSpec_2.setCheckable(False)
+        self.btnCivilSpec_2.setFlat(False)
+        self.btnCivilSpec_2.setObjectName("btnCivilSpec_2")
+        self.lbDashborad_33 = QtWidgets.QLabel(self.tab_5)
+        self.lbDashborad_33.setGeometry(QtCore.QRect(440, 522, 201, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbDashborad_33.setFont(font)
+        self.lbDashborad_33.setObjectName("lbDashborad_33")
+        self.btnDCivilsList_2 = QtWidgets.QPushButton(self.tab_5)
+        self.btnDCivilsList_2.setEnabled(True)
+        self.btnDCivilsList_2.setGeometry(QtCore.QRect(380, 509, 48, 41))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btnDCivilsList_2.sizePolicy().hasHeightForWidth())
+        self.btnDCivilsList_2.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setKerning(False)
+        font.setStyleStrategy(QtGui.QFont.PreferDefault)
+        self.btnDCivilsList_2.setFont(font)
+        self.btnDCivilsList_2.setToolTipDuration(0)
+        self.btnDCivilsList_2.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.btnDCivilsList_2.setAutoFillBackground(False)
+        self.btnDCivilsList_2.setInputMethodHints(QtCore.Qt.ImhNone)
+        self.btnDCivilsList_2.setText("")
+        self.btnDCivilsList_2.setIcon(icon15)
+        self.btnDCivilsList_2.setIconSize(QtCore.QSize(24, 24))
+        self.btnDCivilsList_2.setCheckable(False)
+        self.btnDCivilsList_2.setFlat(False)
+        self.btnDCivilsList_2.setObjectName("btnDCivilsList_2")
+        self.lbDashborad_34 = QtWidgets.QLabel(self.tab_5)
+        self.lbDashborad_34.setGeometry(QtCore.QRect(530, 603, 161, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbDashborad_34.setFont(font)
+        self.lbDashborad_34.setObjectName("lbDashborad_34")
+        self.btnCivilSpec_3 = QtWidgets.QPushButton(self.tab_5)
+        self.btnCivilSpec_3.setEnabled(True)
+        self.btnCivilSpec_3.setGeometry(QtCore.QRect(470, 590, 48, 41))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btnCivilSpec_3.sizePolicy().hasHeightForWidth())
+        self.btnCivilSpec_3.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setKerning(False)
+        font.setStyleStrategy(QtGui.QFont.PreferDefault)
+        self.btnCivilSpec_3.setFont(font)
+        self.btnCivilSpec_3.setToolTipDuration(0)
+        self.btnCivilSpec_3.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.btnCivilSpec_3.setAutoFillBackground(False)
+        self.btnCivilSpec_3.setInputMethodHints(QtCore.Qt.ImhNone)
+        self.btnCivilSpec_3.setText("")
+        self.btnCivilSpec_3.setIcon(icon15)
+        self.btnCivilSpec_3.setIconSize(QtCore.QSize(24, 24))
+        self.btnCivilSpec_3.setCheckable(False)
+        self.btnCivilSpec_3.setFlat(False)
+        self.btnCivilSpec_3.setObjectName("btnCivilSpec_3")
         self.tabDoccontrol.addTab(self.tab_5, "")
         self.tab_7 = QtWidgets.QWidget()
         self.tab_7.setObjectName("tab_7")
@@ -3710,7 +4423,7 @@ class Ui_ControlPanel(object):
         self.leDesignationFlange_2.setReadOnly(True)
         self.leDesignationFlange_2.setObjectName("leDesignationFlange_2")
         self.leUnitNB_2 = QtWidgets.QLineEdit(self.tab_12)
-        self.leUnitNB_2.setGeometry(QtCore.QRect(150, 60, 101, 31))
+        self.leUnitNB_2.setGeometry(QtCore.QRect(170, 60, 101, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.leUnitNB_2.setFont(font)
@@ -3721,7 +4434,7 @@ class Ui_ControlPanel(object):
         self.leUnitNB_2.setReadOnly(True)
         self.leUnitNB_2.setObjectName("leUnitNB_2")
         self.lbCompID_61 = QtWidgets.QLabel(self.tab_12)
-        self.lbCompID_61.setGeometry(QtCore.QRect(150, 10, 101, 20))
+        self.lbCompID_61.setGeometry(QtCore.QRect(170, 10, 101, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_61.setFont(font)
@@ -3774,6 +4487,86 @@ class Ui_ControlPanel(object):
         self.label_4.setPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/SANS1123_plate_Flange.jpg"))
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
+        self.lbCompID_62 = QtWidgets.QLabel(self.tab_12)
+        self.lbCompID_62.setGeometry(QtCore.QRect(170, 30, 111, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompID_62.setFont(font)
+        self.lbCompID_62.setObjectName("lbCompID_62")
+        self.leUnitNB_3 = QtWidgets.QLineEdit(self.tab_12)
+        self.leUnitNB_3.setGeometry(QtCore.QRect(300, 60, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.leUnitNB_3.setFont(font)
+        self.leUnitNB_3.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leUnitNB_3.setReadOnly(True)
+        self.leUnitNB_3.setObjectName("leUnitNB_3")
+        self.lbCompID_63 = QtWidgets.QLabel(self.tab_12)
+        self.lbCompID_63.setGeometry(QtCore.QRect(300, 10, 121, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompID_63.setFont(font)
+        self.lbCompID_63.setObjectName("lbCompID_63")
+        self.leUnitNB_4 = QtWidgets.QLineEdit(self.tab_12)
+        self.leUnitNB_4.setGeometry(QtCore.QRect(430, 60, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.leUnitNB_4.setFont(font)
+        self.leUnitNB_4.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leUnitNB_4.setReadOnly(True)
+        self.leUnitNB_4.setObjectName("leUnitNB_4")
+        self.lbCompID_64 = QtWidgets.QLabel(self.tab_12)
+        self.lbCompID_64.setGeometry(QtCore.QRect(430, 10, 101, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompID_64.setFont(font)
+        self.lbCompID_64.setObjectName("lbCompID_64")
+        self.lbCompID_65 = QtWidgets.QLabel(self.tab_12)
+        self.lbCompID_65.setGeometry(QtCore.QRect(430, 30, 111, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompID_65.setFont(font)
+        self.lbCompID_65.setObjectName("lbCompID_65")
+        self.leUnitNB_5 = QtWidgets.QLineEdit(self.tab_12)
+        self.leUnitNB_5.setGeometry(QtCore.QRect(560, 60, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.leUnitNB_5.setFont(font)
+        self.leUnitNB_5.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leUnitNB_5.setReadOnly(True)
+        self.leUnitNB_5.setObjectName("leUnitNB_5")
+        self.lbCompID_66 = QtWidgets.QLabel(self.tab_12)
+        self.lbCompID_66.setGeometry(QtCore.QRect(560, 10, 101, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompID_66.setFont(font)
+        self.lbCompID_66.setObjectName("lbCompID_66")
+        self.leUnitNB_6 = QtWidgets.QLineEdit(self.tab_12)
+        self.leUnitNB_6.setGeometry(QtCore.QRect(690, 60, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.leUnitNB_6.setFont(font)
+        self.leUnitNB_6.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leUnitNB_6.setReadOnly(True)
+        self.leUnitNB_6.setObjectName("leUnitNB_6")
+        self.lbCompID_67 = QtWidgets.QLabel(self.tab_12)
+        self.lbCompID_67.setGeometry(QtCore.QRect(690, 10, 101, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompID_67.setFont(font)
+        self.lbCompID_67.setObjectName("lbCompID_67")
         self.tabTechData.addTab(self.tab_12, "")
         self.stwMain.addWidget(self.techData)
         self.calculations = QtWidgets.QWidget()
@@ -3796,11 +4589,11 @@ class Ui_ControlPanel(object):
         ControlPanel.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(ControlPanel)
-        self.stwMain.setCurrentIndex(8)
-        self.tabQuotation.setCurrentIndex(6)
-        self.tabWidget_2.setCurrentIndex(4)
-        self.tabQuotation_2.setCurrentIndex(0)
-        self.tabWidget_3.setCurrentIndex(4)
+        self.stwMain.setCurrentIndex(1)
+        self.tabQuotation.setCurrentIndex(0)
+        self.tabWidget_2.setCurrentIndex(0)
+        self.tabWorksOrders.setCurrentIndex(0)
+        self.tabWidget_3.setCurrentIndex(0)
         self.tabWidget.setCurrentIndex(0)
         self.tabDoccontrol.setCurrentIndex(0)
         self.tabTechData.setCurrentIndex(4)
@@ -3843,10 +4636,10 @@ class Ui_ControlPanel(object):
         self.lbCustomerPage.setText(_translate("ControlPanel", "CUSTOMER MANAGEMENT SYSTEM"))
         self.lbCustomers.setText(_translate("ControlPanel", "CUSTOMERS"))
         self.searchBtn.setToolTip(_translate("ControlPanel", "Overview of Actions and Workload"))
-        self.btnEdit.setText(_translate("ControlPanel", "Edit"))
-        self.btnDelete_2.setText(_translate("ControlPanel", "Delete"))
-        self.btnNew.setText(_translate("ControlPanel", "Add"))
-        self.btnClear.setText(_translate("ControlPanel", "Clear"))
+        self.btnEditCustomer.setText(_translate("ControlPanel", "Edit"))
+        self.btnDeleteCustomer.setText(_translate("ControlPanel", "Delete"))
+        self.btnNewCustomer.setText(_translate("ControlPanel", "Add"))
+        self.btnClearCustomerCells.setText(_translate("ControlPanel", "Clear"))
         self.lbCompID.setText(_translate("ControlPanel", "Company ID"))
         self.lbCompanyName.setText(_translate("ControlPanel", "Company Name"))
         self.lbCompStatus.setText(_translate("ControlPanel", "Company Status"))
@@ -3879,6 +4672,20 @@ class Ui_ControlPanel(object):
         self.lbLastName.setText(_translate("ControlPanel", "Last Name"))
         self.lbCompany.setText(_translate("ControlPanel", "Company"))
         self.label_16.setText(_translate("ControlPanel", "QUOTATIONS AND TENDERS"))
+        self.lbFirstName_3.setText(_translate("ControlPanel", "Next Quote Number"))
+        self.lbCompany_7.setText(_translate("ControlPanel", "Company"))
+        self.btnClear_4.setText(_translate("ControlPanel", "Clear"))
+        self.btnNewQuote.setText(_translate("ControlPanel", "Add"))
+        self.lbCompany_8.setText(_translate("ControlPanel", "Contact Name"))
+        self.lbCompany_9.setText(_translate("ControlPanel", "Division"))
+        self.lbCompany_10.setText(_translate("ControlPanel", "Status"))
+        self.lbCompany_11.setText(_translate("ControlPanel", "Compiler"))
+        self.lbFirstName_4.setText(_translate("ControlPanel", "Quotation Tilte"))
+        self.lbCompany_12.setText(_translate("ControlPanel", "Validity"))
+        self.lbFirstName_5.setText(_translate("ControlPanel", "Delivery Details"))
+        self.lbCompany_13.setText(_translate("ControlPanel", "Payment Terms"))
+        self.lbFirstName_6.setText(_translate("ControlPanel", "Overal  Delivery Time (weeks)"))
+        self.btnNewQuote_2.setText(_translate("ControlPanel", "Upload"))
         self.tabQuotation.setTabText(self.tabQuotation.indexOf(self.register_quote), _translate("ControlPanel", "Register Quote"))
         self.tabQuotation.setTabText(self.tabQuotation.indexOf(self.scope_included), _translate("ControlPanel", "Scope Included"))
         self.tabQuotation.setTabText(self.tabQuotation.indexOf(self.scope_excluded), _translate("ControlPanel", "Scope Excluded"))
@@ -3894,18 +4701,25 @@ class Ui_ControlPanel(object):
         self.lbQuotationHistory.setText(_translate("ControlPanel", "Quotation History"))
         self.lbQuotationHistory_2.setText(_translate("ControlPanel", "Quotation Detail"))
         self.label_17.setText(_translate("ControlPanel", "WORKSORDERS"))
-        self.tabQuotation_2.setTabText(self.tabQuotation_2.indexOf(self.register_quote_2), _translate("ControlPanel", "Register Quote"))
-        self.tabQuotation_2.setTabText(self.tabQuotation_2.indexOf(self.scope_included_2), _translate("ControlPanel", "Scope Included"))
-        self.tabQuotation_2.setTabText(self.tabQuotation_2.indexOf(self.scope_excluded_2), _translate("ControlPanel", "Scope Excluded"))
-        self.tabQuotation_2.setTabText(self.tabQuotation_2.indexOf(self.design_estimate_2), _translate("ControlPanel", "Design Estimate"))
-        self.tabQuotation_2.setTabText(self.tabQuotation_2.indexOf(self.supply_estimate_2), _translate("ControlPanel", "Supply Estimate"))
-        self.tabQuotation_2.setTabText(self.tabQuotation_2.indexOf(self.service_estimate_2), _translate("ControlPanel", "Service Estimate"))
-        self.tabQuotation_2.setTabText(self.tabQuotation_2.indexOf(self.tab_4), _translate("ControlPanel", "Generate Quotation Document"))
-        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.all_quotations_2), _translate("ControlPanel", "All Quotations"))
-        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.open_quotations_2), _translate("ControlPanel", "Open Quotations"))
-        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.accepted_quotations_2), _translate("ControlPanel", "Accepted Quotations"))
-        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.cancelled_quotations_2), _translate("ControlPanel", "Cancelled Quotations"))
-        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.postponed_quotations_2), _translate("ControlPanel", "Postponed Quotations"))
+        self.lbFirstName_7.setText(_translate("ControlPanel", "Quotation Tilte"))
+        self.lbFirstName_8.setText(_translate("ControlPanel", "Project Number"))
+        self.lbCompany_14.setText(_translate("ControlPanel", "Contact Name"))
+        self.btnNewQuote_3.setText(_translate("ControlPanel", "Upload"))
+        self.lbCompany_15.setText(_translate("ControlPanel", "Company"))
+        self.lbFirstName_9.setText(_translate("ControlPanel", "Overal  Delivery Time (weeks)"))
+        self.lbCompany_16.setText(_translate("ControlPanel", "Division"))
+        self.btnNewQuote_4.setText(_translate("ControlPanel", "Add"))
+        self.tabWorksOrders.setTabText(self.tabWorksOrders.indexOf(self.register_quote_2), _translate("ControlPanel", "Worksorder"))
+        self.tabWorksOrders.setTabText(self.tabWorksOrders.indexOf(self.scope_included_2), _translate("ControlPanel", "Scope Included"))
+        self.tabWorksOrders.setTabText(self.tabWorksOrders.indexOf(self.scope_excluded_2), _translate("ControlPanel", "Scope Excluded"))
+        self.tabWorksOrders.setTabText(self.tabWorksOrders.indexOf(self.design_estimate_2), _translate("ControlPanel", "Design Activities"))
+        self.tabWorksOrders.setTabText(self.tabWorksOrders.indexOf(self.supply_estimate_2), _translate("ControlPanel", "Supply Activities"))
+        self.tabWorksOrders.setTabText(self.tabWorksOrders.indexOf(self.service_estimate_2), _translate("ControlPanel", "Support Activities"))
+        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.all_worksorders), _translate("ControlPanel", "All Worksorders"))
+        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.open_worksorders), _translate("ControlPanel", "Open Worksorders"))
+        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.accepted_worksorders), _translate("ControlPanel", "Completed Worksorders"))
+        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.cancelled_worksorder), _translate("ControlPanel", "Invoiced Worksorders"))
+        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.postponed_worksorder), _translate("ControlPanel", "Postponed Worksorder"))
         self.lbQuotationHistory_3.setText(_translate("ControlPanel", "Worksorder Detail"))
         self.lbQuotationHistory_4.setText(_translate("ControlPanel", "Worksorder Detail"))
         self.label_18.setText(_translate("ControlPanel", "RESOURCES"))
@@ -3988,6 +4802,12 @@ class Ui_ControlPanel(object):
         self.btnTenderQuotes.setToolTip(_translate("ControlPanel", "Overview of Actions and Workload"))
         self.lbDashborad_31.setText(_translate("ControlPanel", "Tender and Quotations"))
         self.btnTenderSOW.setToolTip(_translate("ControlPanel", "Overview of Actions and Workload"))
+        self.lbDashborad_32.setText(_translate("ControlPanel", "Specifications"))
+        self.btnCivilSpec_2.setToolTip(_translate("ControlPanel", "Overview of Actions and Workload"))
+        self.lbDashborad_33.setText(_translate("ControlPanel", "Project Management"))
+        self.btnDCivilsList_2.setToolTip(_translate("ControlPanel", "Overview of Actions and Workload"))
+        self.lbDashborad_34.setText(_translate("ControlPanel", "Minutes of Meetings"))
+        self.btnCivilSpec_3.setToolTip(_translate("ControlPanel", "Overview of Actions and Workload"))
         self.tabDoccontrol.setTabText(self.tabDoccontrol.indexOf(self.tab_5), _translate("ControlPanel", "General "))
         self.tabDoccontrol.setTabText(self.tabDoccontrol.indexOf(self.tab_7), _translate("ControlPanel", "Document Registers"))
         self.tabDoccontrol.setTabText(self.tabDoccontrol.indexOf(self.tab_8), _translate("ControlPanel", "Document History"))
@@ -4066,10 +4886,16 @@ class Ui_ControlPanel(object):
         self.tabTechData.setTabText(self.tabTechData.indexOf(self.tab_10), _translate("ControlPanel", "SANS 62 and SANS 719 Pipe Sizes"))
         self.tabTechData.setTabText(self.tabTechData.indexOf(self.tab_11), _translate("ControlPanel", "SANS 1313 Conveyor Idlers"))
         self.lbCompany_6.setText(_translate("ControlPanel", "Designation"))
-        self.lbCompID_61.setText(_translate("ControlPanel", "Nominal Bore"))
+        self.lbCompID_61.setText(_translate("ControlPanel", "Power Rating"))
         self.btnImportFlanges_2.setText(_translate("ControlPanel", "Import"))
         self.btnUpload_3.setText(_translate("ControlPanel", "Upload Detail"))
         self.lbQuotationHistory_7.setText(_translate("ControlPanel", "SANS 1123 Plate Flange Tables"))
+        self.lbCompID_62.setText(_translate("ControlPanel", "P (kW)"))
+        self.lbCompID_63.setText(_translate("ControlPanel", "Number of Poles"))
+        self.lbCompID_64.setText(_translate("ControlPanel", "Motor Speed"))
+        self.lbCompID_65.setText(_translate("ControlPanel", "N (rpm)"))
+        self.lbCompID_66.setText(_translate("ControlPanel", "Frame Size"))
+        self.lbCompID_67.setText(_translate("ControlPanel", "Mounting"))
         self.tabTechData.setTabText(self.tabTechData.indexOf(self.tab_12), _translate("ControlPanel", "IEC Electric Motors"))
         self.label_15.setText(_translate("ControlPanel", "CALCULATIONS"))
 from . import resources_rc

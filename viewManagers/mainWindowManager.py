@@ -1,5 +1,6 @@
 import os
 import csv
+from apps.accounts.list_of_countries import COUNTRIES
 from views.mainWindow import Ui_ControlPanel
 from views.login import Ui_LoginForm
 from views.signup import Ui_SignupForm
@@ -8,20 +9,24 @@ from views.worksorder_selector import Ui_SelectWorksorder
 import settings
 from PyQt5 import QtWidgets
 from PyQt5 import QtCore
+from PyQt5 import QtGui
 from PyQt5.QtCore import Qt, QAbstractTableModel
 from PyQt5.QtWidgets import *
 from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QApplication, QWidget, QDesktopWidget
 from PyQt5.QtSql import QSqlDatabase, QSqlQuery, QSqlQueryModel, QSqlRelationalTableModel
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from apps.accounts.models import *
+from apps.accounts.gen_look_up import *
 from apps.techdata.models import *
 
 class TableModel(QtCore.QAbstractTableModel):
-    def __init__(self, data):
+    def __init__(self, data, headers):
+        self.columns = headers
         super(TableModel, self).__init__()
         self._data = data
-
+        
     def data(self, index, role):
         if role == Qt.DisplayRole:
             # See below for the nested-list data structure.
@@ -38,6 +43,13 @@ class TableModel(QtCore.QAbstractTableModel):
         # the length (only works if all rows are an equal length)
         return len(self._data[0])
 
+    def headerData(self, section, orientation, role=QtCore.Qt.DisplayRole):
+        if orientation == Qt.Horizontal and role == Qt.DisplayRole:
+            # return f"Column {section + 1}"
+            return self.columns[section]
+        if orientation == Qt.Vertical and role == Qt.DisplayRole:
+            return f"{section + 1}"
+
 class WorkorderSelectorWindow(QDialog, Ui_SelectWorksorder):
     def __init__(self):
         super(WorkorderSelectorWindow, self).__init__()
@@ -50,13 +62,12 @@ class WelcomeWindow(QMainWindow, Ui_WelcomeForm):
     def __init__(self):
         super(WelcomeWindow, self).__init__()
         self.setupUi(self)
-    
+   
 
 class LoginWindow(QMainWindow, Ui_LoginForm):
     def __init__(self):
         super(LoginWindow, self).__init__()
         self.setupUi(self)
-              
 
 class SignupWindow(QMainWindow, Ui_SignupForm):
     def __init__(self):
@@ -67,7 +78,6 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
     def __init__(self):
         super(ControlPanel, self).__init__()
         self.setupUi(self)
-        
         self.btnDashboard.clicked.connect(self.goto_dashboard)
         self.btnCustomer.clicked.connect(self.goto_customers)  
         self.btnContacts.clicked.connect(self.goto_contacts)
@@ -83,78 +93,65 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
         self.btnCalculation.clicked.connect(self.goto_calculations) 
         self.btnUploadWO.clicked.connect(self.goto_select_workorder)
 
-    def create_db(self):
-        pass
-        # self.db = QSqlDatabase.addDatabase('QSQLITE')
-        # db_name = os.path.join(settings.BASE_DIR, 'db.sqlite3')
-        # self.db.setDatabaseName(db_name)
-
-        # if not self.db.open():
-        #     print("Qt failed to open database")
-        #     return False
-        # else :
-        #     print('Success')
-        #     return True
-        # hostname = settings.DATABASES['default']['HOST']
-        # username = settings.DATABASES['default']['NAME']
-        # database = settings.DATABASES['default']['ENGINE']
-        # password = settings.DATABASES['default']['PASSWORD']
-        # db = QSqlDatabase.addDatabase('QMYSQL')
-        # db.setHostName(hostname)
-        # db.setDatabaseName(database)
-        # db.setUserName(username)
-        # db.setPassword(password)
-        # ok = db.open()
-        # self.db = ok
-        # if ok:
-        #     print('Success')
-        # else:
-        #     print(self.db.lastError().text())
-
-        
-
     def goto_dashboard(self):
         self.stwMain.setCurrentWidget(self.dashboard)
-        
 
+    # Customers ============================================================================#   
     def goto_customers(self):
         self.stwMain.setCurrentWidget(self.customers)
         
         # Load Companies
         data = Company.objects.all().values_list('compID', 'companyName')
         if data:
-            self.tableModel = TableModel(data)
-            self.tableModel.setHeaderData(0, QtCore.Qt.Horizontal, "ID")
-            self.tableModel.setHeaderData(1, QtCore.Qt.Horizontal, "Company Name")
+            headers = ["ID", "Company Name"]
+            self.tableModel = TableModel(data, headers)
             self.tvCustomers.setModel(self.tableModel)
-
-            # header = self.tvCustomers.horizontalHeader()       
-            # header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
-            # header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
-
+            self.tvCustomers.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)    
             self.tvCustomers.show()   
         else:
             print("No data yet")
 
-        self.btnNew.clicked.connect(self.createNewCustomer)
-        
+        # Load Comboboxes
+        self.status = COMPANY_OPERATION_STATUS
+        self.country = COUNTRIES
+
+        company_status = []
+        countries_names = []
+        for ct in self.country:
+            countries_names.append(ct[1])
+        for st in self.status:
+            company_status.append(st[1])
+
+        self.cbCompanyStatus.addItems(company_status)
+        self.cbCountry.addItems(countries_names)
+
+        # Allocate Buttons
+        self.btnNewCustomer.clicked.connect(self.createNewCustomer)
+        # self.btnClearCustomerCells.clicked.connect(self.clearCustomerCells)
+        # self.btnEditCustomer.clicked.connect(self.editCustomer)
+        # self.btnDeleteCustomer.clicked.connect(self.deleteCustomer)
+
+    def createNewCustomer(self):
+        pass
+
+
+
+
+
+
+
+    # Contacts ============================================================================#   
     def goto_contacts(self):
         self.stwMain.setCurrentWidget(self.contacts)
 
          # Load Contacts
         data = Contact.objects.all().values_list('firstName', 'lastName', 'companyName', 'contactEmail')
         if data:
-            self.tableModel = TableModel(data)
-            self.tableModel.setHeaderData(0, QtCore.Qt.Horizontal, "First Name")
-            self.tableModel.setHeaderData(1, QtCore.Qt.Horizontal, "Last Name")
-            self.tableModel.setHeaderData(2, QtCore.Qt.Horizontal, "Company Name")
-            self.tableModel.setHeaderData(3, QtCore.Qt.Horizontal, "Contact Email")
+            headers = ["First Name", "Last Name", "Company Name","Contact Email" ]
+            self.tableModel = TableModel(data, headers)
             self.tvContacts.setModel(self.tableModel)
-
-            # header = self.tvContacts.horizontalHeader()       
-            # header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
-            # header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
-
+            self.header = self.tvContacts.horizontalHeader()
+            self.tvContacts.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)    
             self.tvContacts.show()    
         
         else:
@@ -167,9 +164,7 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
 
     def goto_select_workorder(self):
         work_order_select = WorkorderSelectorWindow()
-        
         work_order_select.exec_()
-        
         
     def goto_workorders(self):
         self.stwMain.setCurrentWidget(self.worksorders)
@@ -197,30 +192,12 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
 
         # Load Steel Tables
         data = SAISCSteelSections.objects.all().values_list('designation', 'unit_mass', 'A', 'h', 'b', 'd', 'tw', 'tf','Ix','Iy','rx','ry','J','Cw', 'Zplx', 'Zply')
-        print(data)
+        headers = ["Designation", "Unit Mass", "Area", "h", "b", "d", "tw", "tf", "Ix", "Iy", "rx", "ry", "J", "Cw", "Zplx", "Zply"]
         if data:
-            self.tableModel = TableModel(data)
-            self.tableModel.setHeaderData(0, QtCore.Qt.Horizontal, "Designation")
-            self.tableModel.setHeaderData(1, QtCore.Qt.Horizontal, "Unit Mass")
-            self.tableModel.setHeaderData(2, QtCore.Qt.Horizontal, "Area")
-            self.tableModel.setHeaderData(3, QtCore.Qt.Horizontal, "h")
-            self.tableModel.setHeaderData(4, QtCore.Qt.Horizontal, "b")
-            self.tableModel.setHeaderData(5, QtCore.Qt.Horizontal, "d")
-            self.tableModel.setHeaderData(6, QtCore.Qt.Horizontal, "tw")
-            self.tableModel.setHeaderData(7, QtCore.Qt.Horizontal, "tf")
-            self.tableModel.setHeaderData(8, QtCore.Qt.Horizontal, "Ix")
-            self.tableModel.setHeaderData(9, QtCore.Qt.Horizontal, "Iy")
-            self.tableModel.setHeaderData(10, QtCore.Qt.Horizontal, "rx")
-            self.tableModel.setHeaderData(11, QtCore.Qt.Horizontal, "ry")
-            self.tableModel.setHeaderData(12, QtCore.Qt.Horizontal, "J")
-            self.tableModel.setHeaderData(13, QtCore.Qt.Horizontal, "Cw")
-            self.tableModel.setHeaderData(14, QtCore.Qt.Horizontal, "Zplx")
-            self.tableModel.setHeaderData(15, QtCore.Qt.Horizontal, "Zply")
+            self.tableModel = TableModel(data, headers)
             self.tvSteelTable.setModel(self.tableModel)
-
-            # header = self.tvSteelTable.horizontalHeader()       
-            # header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
-            # header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
+            self.header = self.tvSteelTable.horizontalHeader()
+            self.tvSteelTable.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)    
 
             self.tvSteelTable.show()
         else:
@@ -247,30 +224,13 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
                                                         'boltHoleSize',
                                                         'PCD',
                                                      'flange_mass', )
-        print(data)
+
+        headers = ["Designation", "Nominal Bore", "Pressure Rating", "Type", "Pipe OD", "Flange OD", "Thickness", "Raised Face OD", "Raised Face Thk","Bolt Size", "No. of Bolts", "Bolt Hole Dia", "PCD", "Flange Mass"]
         if data: 
-            self.tableModel2 = TableModel(data)
-            self.tableModel2.setHeaderData(0, QtCore.Qt.Horizontal, "Designation")
-            self.tableModel2.setHeaderData(1, QtCore.Qt.Horizontal, "Nominal Bore")
-            self.tableModel2.setHeaderData(2, QtCore.Qt.Horizontal, "Pressure Rating")
-            self.tableModel2.setHeaderData(3, QtCore.Qt.Horizontal, "Type")
-            self.tableModel2.setHeaderData(4, QtCore.Qt.Horizontal, "Pipe OD")
-            self.tableModel2.setHeaderData(5, QtCore.Qt.Horizontal, "Flange OD")
-            self.tableModel2.setHeaderData(6, QtCore.Qt.Horizontal, "Thickness")
-            self.tableModel2.setHeaderData(7, QtCore.Qt.Horizontal, "Raised Face OD")
-            self.tableModel2.setHeaderData(8, QtCore.Qt.Horizontal, "Raised Face Thk")
-            self.tableModel2.setHeaderData(9, QtCore.Qt.Horizontal, "Bolt Size")
-            self.tableModel2.setHeaderData(10, QtCore.Qt.Horizontal, "No. of Bolts")
-            self.tableModel2.setHeaderData(11, QtCore.Qt.Horizontal, "Bolt Hole Dia")
-            self.tableModel2.setHeaderData(12, QtCore.Qt.Horizontal, "PCD")
-            self.tableModel2.setHeaderData(13, QtCore.Qt.Horizontal, "Flange Mass")
-        
+            self.tableModel2 = TableModel(data, headers)
             self.tvSANSFlangeTable.setModel(self.tableModel2)
-
-            # header = self.tvSteelTable.horizontalHeader()       
-            # header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeToContents)
-            # header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
-
+            self.header = self.tvSteelTable.horizontalHeader()
+            self.tvSteelTable.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)    
             self.tvSANSFlangeTable.show()
         
         else:
@@ -283,12 +243,10 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
     def goto_calculations(self):
         self.stwMain.setCurrentWidget(self.calculations)
 
-    def createNewCustomer(self):
-        pass
+    
 
     def createNewContact(self):
         pass
-
 
     def importSteelSections(self):
         fname = QFileDialog.getOpenFileName(self, "Import File", "", "(*.csv)")
@@ -299,7 +257,6 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
                 counter = 0
                 for row in data:
                     counter +=1
-                    print(counter)
                     try:
                         obj, created = SANSPlateFlanges.objects.update_or_create(                                                                                
                                                                 designation         = row[0],
@@ -355,10 +312,6 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
                 counter = 0
                 for row in data:
                     counter +=1
-                    print(counter)
-                    print(row[0])
-                    print(row[1])
-                    
                     obj, created = SANSPlateFlanges.objects.update_or_create(                                                                                
                                                             designation         = row[0],
                                                             nom_bore            = row[1],
@@ -382,7 +335,6 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
             self.goto_generalinfo
 
 
-
 class MainWindow(QtWidgets.QStackedWidget):
 
     def __init__(self):
@@ -400,35 +352,46 @@ class MainWindow(QtWidgets.QStackedWidget):
         self.addWidget(self.work_orders_selector)
 
         self.setFixedSize(980, 570)
+        self.center()
         
         self.welcome_screen.btnLogin.clicked.connect(self.goto_login)
         self.welcome_screen.btnRegister.clicked.connect(self.goto_signup)
+ 
         self.goto_welcome()
+
+    def center(self):
+        qr = self.frameGeometry()
+        cp = QDesktopWidget().availableGeometry().center()
+        qr.moveCenter(cp)
+        self.move(qr.topLeft())
 
     def goto_login(self):
         self.setFixedSize(410, 644)
+        self.center()
         self.setCurrentIndex(self.indexOf(self.login_screen))
         self.login_screen.btnLogin.clicked.connect(self.login)
         self.login_screen.btnForgotpass.clicked.connect(self.forgotPass)
         self.login_screen.btnRegister.clicked.connect(self.goto_signup)
-
+        
     def goto_welcome(self):
+        self.center() 
         self.setCurrentIndex(self.indexOf(self.welcome_screen))
 
     def goto_signup(self):
         self.setFixedSize(410, 644)
         self.signup_screen.lbInvalid.setHidden(True)
+        self.center()
         self.setCurrentIndex(self.indexOf(self.signup_screen))
         self.signup_screen.btnRegister.clicked.connect(self.signup)
-
+        
     def goto_control_panel(self): 
         self.setFixedSize(1260, 835)
         self.setCurrentIndex(self.indexOf(self.control_screen)) 
 
+
     def login(self):
         username = self.login_screen.leUserName.text()
         password = self.login_screen.lePassword.text()
-        print("------------------------------")
         
         if len(username) == 0 or len(password) == 0:
             self.login_screen.lbInvalid.setText("Please enter in all fields")

@@ -8,6 +8,7 @@ from pylatex import (
             Head, 
             Section,
             Itemize,
+            Enumerate,
             Tabular, 
             Center, 
             Subsection, 
@@ -142,6 +143,10 @@ def main():
                                 bold("APPROVED")
                                 ))
                 table.add_hline()
+                list_data = REVISIONS
+                for k, v in list_data.items():
+                            table.add_row(v[0], v[1], v[2], v[3], v[4], v[5])
+                            table.add_hline()    
 
     # doc.append(REVISION_TABLE)
     doc.append(NewPage())
@@ -283,7 +288,6 @@ def main():
                 itemize.add_item(BULLET4)
                 itemize.add_item(BULLET5)
                 itemize.add_item(BULLET6)
-                itemize.append(Command("ldots"))
 
         with sec.create(Subsection(SECTION_4_3)) as subsec4:
             subsec4.append(NoEscape(TEXT5))
@@ -294,27 +298,270 @@ def main():
                 itemize.add_item(BULLET7)
                 itemize.add_item(BULLET8)
                 itemize.add_item(BULLET9)
-                # you can append to existing items
-                itemize.append(Command("ldots"))
 
-        
-
-        
     doc.append(NewPage())  
     #SECTION 5: SCOPE OF WORK ======================================================================#
     with doc.create(Section(SECTION_5)) as sec:
         with sec.create(Subsection(SECTION_5_1)) as subsec2:
-            subsec2.append(NoEscape(TEXT1))
-
+            subsec2.append(NoEscape(TEXT7))
+            subsec2.append('\n')
+            subsec2.append('\n')
+            subsec2.append(NoEscape(TEXT8))
+            with subsec2.create(Itemize()) as itemize:
+                itemize.add_item(BULLET10)
+                itemize.add_item(BULLET11)
+                itemize.add_item(BULLET12)
+                
         with sec.create(Subsection(SECTION_5_2)) as subsec3:
-            subsec2.append(NoEscape(TEXT1))
-
-        with sec.create(Subsection(SECTION_5_3)) as subsec4:
-            subsec2.append(NoEscape(TEXT1))
-
-        with sec.create(Subsection(SECTION_5_4)) as subsec5:
-            subsec2.append(NoEscape(TEXT1))
+            with subsec3.create(Subsubsection(SECTION_5_2_1)) as subsubsec3:
+                with subsubsec3.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT1)
+                    enum.add_item(POINT2)
+                    enum.add_item(POINT3)
+                    enum.add_item(POINT4)
+                    enum.add_item(POINT5)
+                    enum.add_item(POINT6)
+                    enum.add_item(POINT7)
+                    enum.add_item(POINT8)
+                    enum.add_item(POINT9)
+                    enum.add_item(POINT10)
+                    enum.add_item(POINT11)
+                    enum.add_item(POINT12)
+                    enum.add_item(POINT13)
+                    enum.add_item(POINT14)
+                    enum.add_item(POINT15)
+                    enum.add_item(POINT16)
+                    enum.add_item(POINT17)
+                    enum.add_item(POINT18)
+                    enum.add_item(POINT19)
+                    enum.add_item(POINT20)
+                    enum.add_item(POINT21)
         
+            with subsec3.create(Subsubsection(SECTION_5_2_2)) as subsubsec4:
+                with subsubsec4.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT22)
+                    enum.add_item(POINT23)
+        with sec.create(Subsection(SECTION_5_3)) as subsec4:
+            with subsec4.create(Subsubsection(SECTION_5_3_1)) as subsubsec5:
+                with subsubsec5.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT24)
+            with subsec4.create(Subsubsection(SECTION_5_3_2)) as subsubsec6:
+                with subsubsec6.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT25)
+            with subsec4.create(Subsubsection(SECTION_5_3_2)) as subsubsec7:
+                with subsubsec7.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT26)
+            with subsec4.create(Subsubsection(SECTION_5_3_2)) as subsubsec8:
+                with subsubsec8.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT27)
+            with subsec4.create(Subsubsection(SECTION_5_3_2)) as subsubsec9:
+                with subsubsec8.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT28)
+        
+        with sec.create(Subsection(SECTION_5_4)) as subsec5:
+            with subsec5.create(Subsubsection(SECTION_5_4_1)) as subsubsec10:
+                with subsubsec10.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT29)
+                    enum.add_item(POINT30)
+
+            with subsec5.create(Subsubsection(SECTION_5_4_1)) as subsubsec11:
+                with subsubsec11.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT31)
+
+            with subsec5.create(Subsubsection(SECTION_5_4_1)) as subsubsec12:
+                with subsubsec12.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT32)
+
+        with sec.create(Subsection(SECTION_5_5)) as subsec6:
+            with subsec6.create(Subsubsection(SECTION_5_5_1)) as subsubsec13:
+                with subsubsec13.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT33)
+                
+            with subsec6.create(Subsubsection(SECTION_5_5_2)) as subsubsec14:
+                with subsubsec14.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT34)
+
+            with subsec6.create(Subsubsection(SECTION_5_5_3)) as subsubsec15:
+                with subsubsec15.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT35)
+
+            with subsec6.create(Subsubsection(SECTION_5_5_4)) as subsubsec16:
+                with subsubsec16.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT36)
+
+        with sec.create(Subsection(SECTION_5_6)) as subsec6:
+            with subsec6.create(Subsubsection(SECTION_5_6_1)) as subsubsec17:
+                with subsubsec17.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT37)
+
+            with subsec6.create(Subsubsection(SECTION_5_6_2)) as subsubsec18:
+                with subsubsec18.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT38)
+
+            with subsec6.create(Subsubsection(SECTION_5_6_3)) as subsubsec19:
+                with subsubsec19.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT39)
+
+            with subsec6.create(Subsubsection(SECTION_5_6_4)) as subsubsec19:
+                with subsubsec19.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT40)
+
+            with subsec6.create(Subsubsection(SECTION_5_6_5)) as subsubsec20:
+                with subsubsec20.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT40a)
+                    enum.add_item(POINT41)
+                    enum.add_item(POINT42)
+                    
+            with subsec6.create(Subsubsection(SECTION_5_6_6)) as subsubsec21:
+                with subsubsec21.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT43)
+                    enum.add_item(POINT44)
+                    enum.add_item(POINT45)
+                    enum.add_item(POINT46)
+                    enum.add_item(POINT47)
+                    enum.add_item(POINT48)
+                    enum.add_item(POINT49)
+
+            with subsec6.create(Subsubsection(SECTION_5_6_7)) as subsubsec22:
+                with subsubsec22.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT50)
+                    enum.add_item(POINT51)
+                    enum.add_item(POINT52)
+                    enum.add_item(POINT53)
+
+            with subsec6.create(Subsubsection(SECTION_5_6_8)) as subsubsec23:
+                with subsubsec23.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT54)
+                    enum.add_item(POINT55)
+                    enum.add_item(POINT56)
+                    enum.add_item(POINT57)
+                    enum.add_item(POINT58)
+                    enum.add_item(POINT59)
+                    enum.add_item(POINT60)
+                    enum.add_item(POINT61)
+                    enum.add_item(POINT62)
+
+            with subsec6.create(Subsubsection(SECTION_5_6_9)) as subsubsec24:
+                with subsubsec24.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT62a)
+                    enum.add_item(POINT63)
+                    enum.add_item(POINT64)
+
+            with subsec6.create(Subsubsection(SECTION_5_6_10)) as subsubsec25:
+                with subsubsec25.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT65)
+                    enum.add_item(POINT66)
+                    enum.add_item(POINT67)
+                    enum.add_item(POINT68)
+                    enum.add_item(POINT69)
+                    enum.add_item(POINT70)
+                    enum.add_item(POINT71)
+                    enum.add_item(POINT72)
+                    with enum.create(Itemize()) as itemize:
+                        itemize.add_item(BUL1)
+                        itemize.add_item(BUL2)
+                        itemize.add_item(BUL3)
+                        itemize.add_item(BUL4)
+                    enum.add_item(POINT73)
+
+        with sec.create(Subsection(SECTION_5_7)) as subsec7:
+            with subsec7.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT74)
+
+        with sec.create(Subsection(SECTION_5_8)) as subsec8:
+            with subsec8.create(Subsubsection(SECTION_5_8_1)) as subsubsec26:
+                with subsubsec26.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT75)
+                    enum.add_item(POINT76)
+
+            with subsec8.create(Subsubsection(SECTION_5_8_2)) as subsubsec27:
+                with subsubsec27.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT77)
+                    enum.add_item(POINT78)
+                    enum.add_item(POINT79)
+
+            with subsec8.create(Subsubsection(SECTION_5_8_3)) as subsubsec28:
+                with subsubsec28.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT80)
+                    with enum.create(Itemize()) as itemize:
+                        itemize.add_item(BUL5)
+                        itemize.add_item(BUL6)
+
+        with sec.create(Subsection(SECTION_5_9)) as subsec9:
+            with subsec9.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT81)
+                    enum.add_item(POINT82)
+                    enum.add_item(POINT83)
+
+        with sec.create(Subsection(SECTION_5_10)) as subsec10:
+            with subsec10.create(Enumerate(enumeration_symbol=r"\alph*)", options={'start': 1})) as enum:
+                    enum.add_item(POINT84)
+                    with enum.create(Itemize()) as itemize:
+                        itemize.add_item(BUL7)
+                        itemize.add_item(BUL8)
+                        itemize.add_item(BUL9)
+                    enum.add_item(POINT85)
+                    enum.add_item(POINT86)
+                    enum.add_item(POINT87)
+                    with enum.create(Itemize()) as itemize:
+                        itemize.add_item(BUL10)
+                        itemize.add_item(BUL11)
+                        itemize.add_item(BUL12)
+                        itemize.add_item(BUL13)
+                    enum.add_item(POINT88)
+                    with enum.create(Itemize()) as itemize:
+                        itemize.add_item(BUL14)
+                        itemize.add_item(BUL15)
+                        itemize.add_item(BUL16)
+                        itemize.add_item(BUL17)
+                        itemize.add_item(BUL18)
+
+    #SECTION 6: BILL OF QUANTITIES ======================================================================#
+    with doc.create(Section(SECTION_6)) as sec:
+        with sec.create(Subsection(SECTION_6_1)) as subsec2:
+            subsec2.append('Refer to the drawing register for the latest revision')
+            list_data = applicableDrawings()
+            with subsec2.create(FlushLeft()) as left:
+                with left.create(MiniPage(align='l')) as tab:
+                    with tab.create(Tabular('|l |l |')) as table:
+                        for k,v in list_data.items():
+                            table.add_hline()
+                            table.add_row((v[0]), bold(str(v[1])))
+                        table.add_hline()    
+            list_data =[]
+
+        with sec.create(Subsection(SECTION_6_2)) as subsec3:
+            subsec3.append("Refer to the detailed bill of quantities schedule.")
+
+    #SECTION 7: METHODOLOGY ======================================================================#
+    with doc.create(Section(SECTION_7)) as sec:
+        with sec.create(Subsection(SECTION_7_1)) as subsec2:
+            subsec2.append(NoEscape(TEXT7_1))
+            subsec2.append('\n')
+            subsec2.append('\n') 
+            subsec2.append(NoEscape(TEXT7_2))
+            subsec2.append('\n')
+            subsec2.append('\n') 
+            subsec2.append(NoEscape(TEXT7_3))   
+            subsec2.append('\n')
+            subsec2.append('\n') 
+            subsec2.append(NoEscape(TEXT7_4))   
+            subsec2.append('\n')
+            subsec2.append('\n') 
+            subsec2.append(NoEscape(TEXT7_5))   
+            subsec2.append('\n')
+            subsec2.append('\n') 
+            subsec2.append(NoEscape(TEXT7_6))  
+
+        with sec.create(Subsection(SECTION_7_2)) as subsec3:
+            subsec3.append(NoEscape(TEXT_7_6))
+            subsec3.append('\n')
+            subsec3.append('\n') 
+            subsec3.append(NoEscape(TEXT_7_7))
+            subsec3.append('\n')
+            subsec3.append('\n') 
+            subsec3.append(NoEscape(TEXT_7_8))
+
         sec.append(NewPage()) 
        
     cwd = os.getcwd()

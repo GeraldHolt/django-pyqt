@@ -9,7 +9,7 @@ import uuid
 from uuid import UUID
 from uuid import uuid4
 
-from apps.accounts.list_of_countries import countries
+from apps.accounts.list_of_countries import COUNTRIES
 from apps.accounts.models import *
 
 import sys
@@ -718,4 +718,9 @@ class SupportQuotation(models.Model):
 		self.subTotalValue = self.get_subtotal()
 		super(SupportQuotation, self).save(*args, **kwargs)
 
-		
+
+#-----------------------------------------------------------------------------------------------------------------------#
+# Temporay Workorders
+#-----------------------------------------------------------------------------------------------------------------------#
+class SupportQuotation(models.Model):
+	pass

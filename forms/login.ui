@@ -10,12 +10,15 @@
     <height>595</height>
    </rect>
   </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
+  </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>EEMS Login Form</string>
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../resources/icons/HCE-C.svg</normaloff>../resources/icons/HCE-C.svg</iconset>
+    <normaloff>../resources/assets/HCE-C.png</normaloff>../resources/assets/HCE-C.png</iconset>
   </property>
   <widget class="QFrame" name="logoFrame">
    <property name="geometry">
@@ -45,7 +48,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../resources/assets/HCE-logo.jpg</pixmap>
+     <pixmap>../resources/assets/HCE-logo.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>

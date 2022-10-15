@@ -40,6 +40,41 @@ def general_data():
 	}
 
 	return gen_data
+#===================================================================================================#
+def applicableDrawings():
+	app_dwg = {
+		'1': ['Catch Pit General Arrangement','H-MAC539-DRG-MM-CPSH-001-SHT-001'],
+		'2': ['Catch Pit Details','H-MAC539-DRG-MM-CPSH-001-SHT-002'],
+		'3': ['Catch Pit Details','H-MAC539-DRG-MM-CPSH-001-SHT-003'],
+		'4': ['Catch Pit Details','H-MAC539-DRG-MM-CPSH-001-SHT-004'],
+		'5': ['Crawl Beam System: River Station General Arrangement','H-MAC539-DRG-SS-CRAWL-001-SHT-001'],
+		'6': ['Crawl Beam System: River Station Details','Refer to the shop details'],
+		'7': ['Overland Pipeline','H-MAC539-DRG-CC-LONG-001-SHT-001'],
+		'8': ['Terrace Elevations','H-MAC539-DRG-CC-LONG-002-SHT-001'],
+		'9': ['Pump Chamber General Arrangement','H-MAC539-DRG-MM-SLAB-001-SHT-001'],
+		'10': ['Pump Chamber General Arrangement','H-MAC539-DRG-MM-SLAB-001-SHT-002'],
+		'11': ['Pump Chamber General Arrangement','H-MAC539-DRG-MM-SLAB-001-SHT-003'],
+		'12': ['Pump Chamber General Arrangement','H-MAC539-DRG-MM-SLAB-001-SHT-004'],
+		'13': ['Pump Chamber Rebar Details','H-MAC539-DRG-MM-SLAB-001-SHT-005'],
+		'14': ['Pump Chamber Rebar Details','H-MAC539-DRG-MM-SLAB-001-SHT-006'],
+		'15': ['Pump Chamber Rebar Details','H-MAC539-DRG-MM-SLAB-001-SHT-007'],
+		'16': ['Pump Chamber Rebar Details','H-MAC539-DRG-MM-SLAB-001-SHT-008'],
+		'17': ['Pump Chamber Bottom General Arrangement','H-MAC539-DRG-CC-CTBT-001-SHT-001'],
+		'18': ['Pump Chamber Bottom Details','H-MAC539-DRG-CC-CTBT-001-SHT-002'],
+		'19': ['Pump Chamber Bottom Details','H-MAC539-DRG-CC-CTBT-001-SHT-003'],
+		'20': ['Pump Chamber Bottom Details','H-MAC539-DRG-CC-CTBT-001-SHT-004'],
+		'21': ['Site Layout No. 1: Overall Site Layout','H-MAC539-DRG-OE-0331-001-SHT-001'],
+		'22': ['Site Layout No. 2: River Abstraction and Booster Station','H-MAC539-DRG-OE-0331-001-SHT-002'],
+		'23a': ['General Concrete Notes','H-MAC539-DRG-CC-NOTES-001-SHT-001'],
+		'23': ['General Structural Steel Notes','H-MAC539-DRG-SS-NOTES-001-SHT-001'],
+		'24': ['Typical Road Cross Section Detail','H-MAC539-DRG-CC-ROAD-001-SHT-001'],
+		'25': ['Typical Road Cross Section Detail','H-MAC539-DRG-CC-ROAD-001-SHT-002'],
+		'26': ['Culvert Details','H-MAC539-DRG-CC-CULV-001-SHT-001'],
+		'27': ['Culvert Details','H-MAC539-DRG-CC-CULV-001-SHT-002'],
+		'28': ['Culvert Details','H-MAC539-DRG-CC-CULV-001-SHT-003'],
+		'29': ['Bill of Quantities','H-MAC539-SCH-OE-0331-001-SHT-001'],
+	}
+	return app_dwg
 
 #===================================================================================================#
 def images():

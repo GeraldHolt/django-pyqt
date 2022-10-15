@@ -9,7 +9,7 @@ from django.contrib.auth import get_user_model
 from matplotlib.projections import projection_registry
 from pyparsing import condition_as_parse_action
 from apps.quotations.models import MaterialCategory
-from apps.accounts.list_of_countries import countries
+from apps.accounts.list_of_countries import COUNTRIES
 import uuid
 from uuid import UUID
 from uuid import uuid4

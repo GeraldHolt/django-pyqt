@@ -4,7 +4,7 @@ from django.forms import Textarea
 from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
-from apps.accounts.list_of_countries import countries
+from apps.accounts.list_of_countries import COUNTRIES
 
 import uuid
 from uuid import UUID
@@ -28,7 +28,6 @@ class Company(models.Model):
                                 ('Operational','Operational'),
                                 ('Closed','Closed'),
                                 ]
-    COUNTRIES = countries
 
     compID              = models.CharField(max_length=15, blank=False, null=True, unique = True, verbose_name='Company Code')
     companyName         = models.CharField(max_length=200, blank=False, null=True, verbose_name = 'Company Name')
@@ -149,7 +148,6 @@ METHOD = {
 # Division Data
 #------------------------------------------------------------------------------------------------------------------------#
 class Division(models.Model):
-    COUNTRIES = countries
     divisionCode    = models.CharField(
                                         max_length=20, 
                                         blank=False, 

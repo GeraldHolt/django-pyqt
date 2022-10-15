@@ -15,8 +15,9 @@ class Ui_LoginForm(object):
     def setupUi(self, LoginForm):
         LoginForm.setObjectName("LoginForm")
         LoginForm.resize(420, 595)
+        LoginForm.setFocusPolicy(QtCore.Qt.NoFocus)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/icons/HCE-C.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/HCE-C.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         LoginForm.setWindowIcon(icon)
         self.logoFrame = QtWidgets.QFrame(LoginForm)
         self.logoFrame.setGeometry(QtCore.QRect(10, 10, 401, 131))
@@ -26,7 +27,7 @@ class Ui_LoginForm(object):
         self.lbLogo = QtWidgets.QLabel(self.logoFrame)
         self.lbLogo.setGeometry(QtCore.QRect(40, 20, 301, 91))
         self.lbLogo.setText("")
-        self.lbLogo.setPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/HCE-logo.jpg"))
+        self.lbLogo.setPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/HCE-logo.png"))
         self.lbLogo.setScaledContents(True)
         self.lbLogo.setObjectName("lbLogo")
         self.loginFrame = QtWidgets.QFrame(LoginForm)
@@ -189,7 +190,7 @@ class Ui_LoginForm(object):
 
     def retranslateUi(self, LoginForm):
         _translate = QtCore.QCoreApplication.translate
-        LoginForm.setWindowTitle(_translate("LoginForm", "Form"))
+        LoginForm.setWindowTitle(_translate("LoginForm", "EEMS Login Form"))
         self.label.setText(_translate("LoginForm", "Log in to continue to HCE EEMS System"))
         self.lbUserName.setText(_translate("LoginForm", "Username"))
         self.lbPassword.setText(_translate("LoginForm", "Password"))

@@ -6,22 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1541</width>
+    <width>1540</width>
     <height>851</height>
    </rect>
-  </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Business Management</string>
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../resources/icons/HCE-C.svg</normaloff>../resources/icons/HCE-C.svg</iconset>
+    <normaloff>../resources/assets/HCE-C.png</normaloff>../resources/assets/HCE-C.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -888,7 +882,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>8</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="dashboard">
      <widget class="QLabel" name="label_14">
@@ -1038,7 +1032,7 @@
         <x>220</x>
         <y>30</y>
         <width>721</width>
-        <height>20</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -1200,7 +1194,7 @@
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
-       <widget class="QPushButton" name="btnEdit">
+       <widget class="QPushButton" name="btnEditCustomer">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -1228,7 +1222,7 @@
          <string>Edit</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="btnDelete_2">
+       <widget class="QPushButton" name="btnDeleteCustomer">
         <property name="geometry">
          <rect>
           <x>130</x>
@@ -1297,7 +1291,7 @@
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
-       <widget class="QPushButton" name="btnNew">
+       <widget class="QPushButton" name="btnNewCustomer">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -1325,7 +1319,7 @@
          <string>Add</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="btnClear">
+       <widget class="QPushButton" name="btnClearCustomerCells">
         <property name="geometry">
          <rect>
           <x>130</x>
@@ -2051,7 +2045,7 @@ QComboBox::down-arrow {
         <x>370</x>
         <y>30</y>
         <width>421</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -2756,7 +2750,7 @@ QDateEdit::up-arrow {
         <x>370</x>
         <y>30</y>
         <width>421</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -2785,16 +2779,704 @@ QDateEdit::up-arrow {
         <x>10</x>
         <y>80</y>
         <width>1241</width>
-        <height>421</height>
+        <height>331</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>6</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="register_quote">
        <attribute name="title">
         <string>Register Quote</string>
        </attribute>
+       <widget class="QLabel" name="lbFirstName_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Next Quote Number</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="leNextQuote">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>40</y>
+          <width>131</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+ border: 1px solid gray;
+ border-radius: 10px;
+}</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompany_7">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>20</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Company</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cbCompany_3">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>40</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: white;
+    border: 1px solid gray;
+    box-shadow: transparent;
+	padding: 1px 18px 1px 3px;
+   
+}
+
+QComboBox::drop-down {
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 10px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 10px;
+ }
+
+QComboBox::down-arrow {
+     image:url(:/icons/icons/arrow-down.svg)
+ }
+
+ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+     top: 1px;
+     left: 1px;
+ }
+
+</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnClear_4">
+        <property name="geometry">
+         <rect>
+          <x>1150</x>
+          <y>240</y>
+          <width>75</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">   QPushButton {
+         border: 1px solid gray;
+         border-radius: 10px;
+		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                           stop: 0 #f6f7fa, stop: 1 rgb(145, 145, 145) );
+	
+	
+     }
+
+ QPushButton:pressed {
+         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                           stop: 0 #dadbde, stop: 1 #f6f7fa);
+     }</string>
+        </property>
+        <property name="text">
+         <string>Clear</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnNewQuote">
+        <property name="geometry">
+         <rect>
+          <x>910</x>
+          <y>240</y>
+          <width>75</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">   QPushButton {
+         border: 1px solid gray;
+         border-radius: 10px;
+		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                           stop: 0 #f6f7fa, stop: 1 rgb(43, 200, 7));
+	
+	
+     }
+
+ QPushButton:pressed {
+         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                           stop: 0 #dadbde, stop: 1 #f6f7fa);
+     }</string>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cbContactName">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>40</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: white;
+    border: 1px solid gray;
+    box-shadow: transparent;
+	padding: 1px 18px 1px 3px;
+   
+}
+
+QComboBox::drop-down {
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 10px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 10px;
+ }
+
+QComboBox::down-arrow {
+     image:url(:/icons/icons/arrow-down.svg)
+ }
+
+ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+     top: 1px;
+     left: 1px;
+ }
+
+</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompany_8">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>20</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Contact Name</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cbDivision">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>40</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: white;
+    border: 1px solid gray;
+    box-shadow: transparent;
+	padding: 1px 18px 1px 3px;
+   
+}
+
+QComboBox::drop-down {
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 10px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 10px;
+ }
+
+QComboBox::down-arrow {
+     image:url(:/icons/icons/arrow-down.svg)
+ }
+
+ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+     top: 1px;
+     left: 1px;
+ }
+
+</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompany_9">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>20</y>
+          <width>91</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Division</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cbQuoteStatus">
+        <property name="geometry">
+         <rect>
+          <x>740</x>
+          <y>40</y>
+          <width>141</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: white;
+    border: 1px solid gray;
+    box-shadow: transparent;
+	padding: 1px 18px 1px 3px;
+   
+}
+
+QComboBox::drop-down {
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 10px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 10px;
+ }
+
+QComboBox::down-arrow {
+     image:url(:/icons/icons/arrow-down.svg)
+ }
+
+ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+     top: 1px;
+     left: 1px;
+ }
+
+</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompany_10">
+        <property name="geometry">
+         <rect>
+          <x>740</x>
+          <y>20</y>
+          <width>91</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Status</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompany_11">
+        <property name="geometry">
+         <rect>
+          <x>900</x>
+          <y>20</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Compiler</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cbCompiler">
+        <property name="geometry">
+         <rect>
+          <x>900</x>
+          <y>40</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: white;
+    border: 1px solid gray;
+    box-shadow: transparent;
+	padding: 1px 18px 1px 3px;
+   
+}
+
+QComboBox::drop-down {
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 10px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 10px;
+ }
+
+QComboBox::down-arrow {
+     image:url(:/icons/icons/arrow-down.svg)
+ }
+
+ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+     top: 1px;
+     left: 1px;
+ }
+
+</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbFirstName_4">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>90</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Quotation Tilte</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="leQuoteDescription">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>110</y>
+          <width>721</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+ border: 1px solid gray;
+ border-radius: 10px;
+}</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompany_12">
+        <property name="geometry">
+         <rect>
+          <x>740</x>
+          <y>90</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Validity</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cbValidity">
+        <property name="geometry">
+         <rect>
+          <x>740</x>
+          <y>110</y>
+          <width>311</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: white;
+    border: 1px solid gray;
+    box-shadow: transparent;
+	padding: 1px 18px 1px 3px;
+   
+}
+
+QComboBox::drop-down {
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 10px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 10px;
+ }
+
+QComboBox::down-arrow {
+     image:url(:/icons/icons/arrow-down.svg)
+ }
+
+ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+     top: 1px;
+     left: 1px;
+ }
+
+</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbFirstName_5">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>160</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Delivery Details</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="leQuoteDelivery_details">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>180</y>
+          <width>721</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+ border: 1px solid gray;
+ border-radius: 10px;
+}</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompany_13">
+        <property name="geometry">
+         <rect>
+          <x>740</x>
+          <y>160</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Payment Terms</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cbPaymentTerms">
+        <property name="geometry">
+         <rect>
+          <x>740</x>
+          <y>180</y>
+          <width>311</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: white;
+    border: 1px solid gray;
+    box-shadow: transparent;
+	padding: 1px 18px 1px 3px;
+   
+}
+
+QComboBox::drop-down {
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 10px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 10px;
+ }
+
+QComboBox::down-arrow {
+     image:url(:/icons/icons/arrow-down.svg)
+ }
+
+ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+     top: 1px;
+     left: 1px;
+ }
+
+</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbFirstName_6">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>230</y>
+          <width>221</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Overal  Delivery Time (weeks)</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="leDelivery">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>250</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+ border: 1px solid gray;
+ border-radius: 10px;
+}</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnNewQuote_2">
+        <property name="geometry">
+         <rect>
+          <x>1030</x>
+          <y>240</y>
+          <width>75</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">   QPushButton {
+         border: 1px solid gray;
+         border-radius: 10px;
+		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 170, 0));
+	
+	
+     }
+
+ QPushButton:pressed {
+         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                           stop: 0 #dadbde, stop: 1 #f6f7fa);
+     }</string>
+        </property>
+        <property name="text">
+         <string>Upload</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="scope_included">
        <attribute name="title">
@@ -2831,46 +3513,96 @@ QDateEdit::up-arrow {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>540</y>
+        <y>430</y>
         <width>1241</width>
-        <height>291</height>
+        <height>401</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="all_quotations">
        <attribute name="title">
         <string>All Quotations</string>
        </attribute>
+       <widget class="QTableView" name="tvQuotationsAll_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>1231</width>
+          <height>351</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="open_quotations">
        <attribute name="title">
         <string>Open Quotations</string>
        </attribute>
+       <widget class="QTableView" name="tvQuotationsOpen">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>1231</width>
+          <height>251</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="accepted_quotations">
        <attribute name="title">
         <string>Accepted Quotations</string>
        </attribute>
+       <widget class="QTableView" name="tvQuotationsAccepted">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>1231</width>
+          <height>251</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="cancelled_quotations">
        <attribute name="title">
         <string>Cancelled Quotations</string>
        </attribute>
+       <widget class="QTableView" name="tvQuotationsCancelled">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>1231</width>
+          <height>251</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="postponed_quotations">
        <attribute name="title">
         <string>Postponed Quotations</string>
        </attribute>
+       <widget class="QTableView" name="tvQuotationsPostponed">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>1231</width>
+          <height>251</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
      </widget>
      <widget class="QLabel" name="lbQuotationHistory">
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>520</y>
-        <width>111</width>
+        <y>410</y>
+        <width>151</width>
         <height>16</height>
        </rect>
       </property>
@@ -2889,7 +3621,7 @@ QDateEdit::up-arrow {
        <rect>
         <x>20</x>
         <y>60</y>
-        <width>111</width>
+        <width>191</width>
         <height>16</height>
        </rect>
       </property>
@@ -2911,7 +3643,7 @@ QDateEdit::up-arrow {
         <x>370</x>
         <y>30</y>
         <width>421</width>
-        <height>20</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -2934,13 +3666,13 @@ QDateEdit::up-arrow {
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QTabWidget" name="tabQuotation_2">
+     <widget class="QTabWidget" name="tabWorksOrders">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>80</y>
         <width>1241</width>
-        <height>421</height>
+        <height>491</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -2948,8 +3680,373 @@ QDateEdit::up-arrow {
       </property>
       <widget class="QWidget" name="register_quote_2">
        <attribute name="title">
-        <string>Register Quote</string>
+        <string>Worksorder</string>
        </attribute>
+       <widget class="QLabel" name="lbFirstName_7">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>80</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Quotation Tilte</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbFirstName_8">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>141</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Project Number</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompany_14">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>10</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Contact Name</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cbDivision_2">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>30</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: white;
+    border: 1px solid gray;
+    box-shadow: transparent;
+	padding: 1px 18px 1px 3px;
+   
+}
+
+QComboBox::drop-down {
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 10px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 10px;
+ }
+
+QComboBox::down-arrow {
+     image:url(:/icons/icons/arrow-down.svg)
+ }
+
+ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+     top: 1px;
+     left: 1px;
+ }
+
+</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cbCompany_4">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>30</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: white;
+    border: 1px solid gray;
+    box-shadow: transparent;
+	padding: 1px 18px 1px 3px;
+   
+}
+
+QComboBox::drop-down {
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 10px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 10px;
+ }
+
+QComboBox::down-arrow {
+     image:url(:/icons/icons/arrow-down.svg)
+ }
+
+ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+     top: 1px;
+     left: 1px;
+ }
+
+</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnNewQuote_3">
+        <property name="geometry">
+         <rect>
+          <x>1030</x>
+          <y>160</y>
+          <width>75</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">   QPushButton {
+         border: 1px solid gray;
+         border-radius: 10px;
+		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 170, 0));
+	
+	
+     }
+
+ QPushButton:pressed {
+         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                           stop: 0 #dadbde, stop: 1 #f6f7fa);
+     }</string>
+        </property>
+        <property name="text">
+         <string>Upload</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="leQuoteDescription_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>100</y>
+          <width>721</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+ border: 1px solid gray;
+ border-radius: 10px;
+}</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompany_15">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>10</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Company</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbFirstName_9">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>150</y>
+          <width>221</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Overal  Delivery Time (weeks)</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="leDelivery_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>170</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+ border: 1px solid gray;
+ border-radius: 10px;
+}</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="leProjectnumber">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>30</y>
+          <width>131</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+ border: 1px solid gray;
+ border-radius: 10px;
+}</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompany_16">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>10</y>
+          <width>91</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Division</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cbContactName_2">
+        <property name="geometry">
+         <rect>
+          <x>500</x>
+          <y>30</y>
+          <width>221</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: white;
+    border: 1px solid gray;
+    box-shadow: transparent;
+	padding: 1px 18px 1px 3px;
+   
+}
+
+QComboBox::drop-down {
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 20px;
+
+     border-left-width: 1px;
+     border-left-color: darkgray;
+     border-left-style: solid; /* just a single line */
+     border-top-right-radius: 10px; /* same radius as the QComboBox */
+     border-bottom-right-radius: 10px;
+ }
+
+QComboBox::down-arrow {
+     image:url(:/icons/icons/arrow-down.svg)
+ }
+
+ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+     top: 1px;
+     left: 1px;
+ }
+
+</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnNewQuote_4">
+        <property name="geometry">
+         <rect>
+          <x>910</x>
+          <y>160</y>
+          <width>75</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">   QPushButton {
+         border: 1px solid gray;
+         border-radius: 10px;
+		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                           stop: 0 #f6f7fa, stop: 1 rgb(43, 200, 7));
+	
+	
+     }
+
+ QPushButton:pressed {
+         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                           stop: 0 #dadbde, stop: 1 #f6f7fa);
+     }</string>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="scope_included_2">
        <attribute name="title">
@@ -2963,22 +4060,17 @@ QDateEdit::up-arrow {
       </widget>
       <widget class="QWidget" name="design_estimate_2">
        <attribute name="title">
-        <string>Design Estimate</string>
+        <string>Design Activities</string>
        </attribute>
       </widget>
       <widget class="QWidget" name="supply_estimate_2">
        <attribute name="title">
-        <string>Supply Estimate</string>
+        <string>Supply Activities</string>
        </attribute>
       </widget>
       <widget class="QWidget" name="service_estimate_2">
        <attribute name="title">
-        <string>Service Estimate</string>
-       </attribute>
-      </widget>
-      <widget class="QWidget" name="tab_4">
-       <attribute name="title">
-        <string>Generate Quotation Document</string>
+        <string>Support Activities</string>
        </attribute>
       </widget>
      </widget>
@@ -2986,37 +4078,37 @@ QDateEdit::up-arrow {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>540</y>
+        <y>600</y>
         <width>1241</width>
-        <height>291</height>
+        <height>231</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>0</number>
       </property>
-      <widget class="QWidget" name="all_quotations_2">
+      <widget class="QWidget" name="all_worksorders">
        <attribute name="title">
-        <string>All Quotations</string>
+        <string>All Worksorders</string>
        </attribute>
       </widget>
-      <widget class="QWidget" name="open_quotations_2">
+      <widget class="QWidget" name="open_worksorders">
        <attribute name="title">
-        <string>Open Quotations</string>
+        <string>Open Worksorders</string>
        </attribute>
       </widget>
-      <widget class="QWidget" name="accepted_quotations_2">
+      <widget class="QWidget" name="accepted_worksorders">
        <attribute name="title">
-        <string>Accepted Quotations</string>
+        <string>Completed Worksorders</string>
        </attribute>
       </widget>
-      <widget class="QWidget" name="cancelled_quotations_2">
+      <widget class="QWidget" name="cancelled_worksorder">
        <attribute name="title">
-        <string>Cancelled Quotations</string>
+        <string>Invoiced Worksorders</string>
        </attribute>
       </widget>
-      <widget class="QWidget" name="postponed_quotations_2">
+      <widget class="QWidget" name="postponed_worksorder">
        <attribute name="title">
-        <string>Postponed Quotations</string>
+        <string>Postponed Worksorder</string>
        </attribute>
       </widget>
      </widget>
@@ -3043,7 +4135,7 @@ QDateEdit::up-arrow {
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>520</y>
+        <y>580</y>
         <width>111</width>
         <height>16</height>
        </rect>
@@ -3066,7 +4158,7 @@ QDateEdit::up-arrow {
         <x>370</x>
         <y>30</y>
         <width>421</width>
-        <height>20</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -3793,7 +4885,7 @@ QComboBox::down-arrow {
         <x>380</x>
         <y>30</y>
         <width>421</width>
-        <height>20</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -3844,10 +4936,10 @@ QComboBox::down-arrow {
      <widget class="QLabel" name="label_21">
       <property name="geometry">
        <rect>
-        <x>300</x>
+        <x>200</x>
         <y>30</y>
-        <width>571</width>
-        <height>20</height>
+        <width>741</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -3878,7 +4970,7 @@ QComboBox::down-arrow {
         <x>290</x>
         <y>30</y>
         <width>571</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -6176,6 +7268,237 @@ QComboBox::down-arrow {
          <rect>
           <x>830</x>
           <y>550</y>
+          <width>48</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>false</kerning>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Overview of Actions and Workload</string>
+        </property>
+        <property name="toolTipDuration">
+         <number>0</number>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbDashborad_32">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>560</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Specifications</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnCivilSpec_2">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>470</x>
+          <y>547</y>
+          <width>48</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>false</kerning>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Overview of Actions and Workload</string>
+        </property>
+        <property name="toolTipDuration">
+         <number>0</number>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbDashborad_33">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>522</y>
+          <width>201</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Project Management</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnDCivilsList_2">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>509</y>
+          <width>48</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>false</kerning>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Overview of Actions and Workload</string>
+        </property>
+        <property name="toolTipDuration">
+         <number>0</number>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbDashborad_34">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>603</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Minutes of Meetings</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnCivilSpec_3">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>470</x>
+          <y>590</y>
           <width>48</width>
           <height>41</height>
          </rect>
@@ -8933,7 +10256,7 @@ QComboBox::down-arrow {
        <widget class="QLineEdit" name="leUnitNB_2">
         <property name="geometry">
          <rect>
-          <x>150</x>
+          <x>170</x>
           <y>60</y>
           <width>101</width>
           <height>31</height>
@@ -8957,7 +10280,7 @@ QComboBox::down-arrow {
        <widget class="QLabel" name="lbCompID_61">
         <property name="geometry">
          <rect>
-          <x>150</x>
+          <x>170</x>
           <y>10</y>
           <width>101</width>
           <height>20</height>
@@ -8969,7 +10292,7 @@ QComboBox::down-arrow {
          </font>
         </property>
         <property name="text">
-         <string>Nominal Bore</string>
+         <string>Power Rating</string>
         </property>
        </widget>
        <widget class="QPushButton" name="btnImportFlanges_2">
@@ -9074,6 +10397,210 @@ QComboBox::down-arrow {
         </property>
         <property name="scaledContents">
          <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompID_62">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>30</y>
+          <width>111</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>P (kW)</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="leUnitNB_3">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>60</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+ border: 1px solid gray;
+ border-radius: 10px;
+}</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompID_63">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>10</y>
+          <width>121</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Number of Poles</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="leUnitNB_4">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>60</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+ border: 1px solid gray;
+ border-radius: 10px;
+}</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompID_64">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>10</y>
+          <width>101</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Motor Speed</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompID_65">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>30</y>
+          <width>111</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>N (rpm)</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="leUnitNB_5">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>60</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+ border: 1px solid gray;
+ border-radius: 10px;
+}</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompID_66">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>10</y>
+          <width>101</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Frame Size</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="leUnitNB_6">
+        <property name="geometry">
+         <rect>
+          <x>690</x>
+          <y>60</y>
+          <width>101</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+ border: 1px solid gray;
+ border-radius: 10px;
+}</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbCompID_67">
+        <property name="geometry">
+         <rect>
+          <x>690</x>
+          <y>10</y>
+          <width>101</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Mounting</string>
         </property>
        </widget>
       </widget>
