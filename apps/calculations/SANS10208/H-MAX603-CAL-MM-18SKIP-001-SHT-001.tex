@@ -126,6 +126,8 @@ Page \thepage\ of \pageref{LastPage}%
 \hline%
 \textbf{REV}&\textbf{DESCRIPTION}&\textbf{DATE}&\textbf{ISSUED BY}&\textbf{REVIEWED BY}&\textbf{APPROVED}\\%
 \hline%
+A&ISSUED FOR REVIEW&2022{-}10{-}15&G.G. HOLT&H.F. HOLT&\\%
+\hline%
 \end{tabular}%
 \end{minipage}%
 \end{center}%
@@ -195,6 +197,8 @@ SANS 10162: Steel design%
 \textbf{Winding Rope Unit Mass}&12.45&$kg/m$\\%
 \hline%
 \textbf{Rope Break Force}&2319&$kN$\\%
+\hline%
+\textbf{Ultimate Tensile Strength}&1900&$MPa$\\%
 \hline%
 \textbf{Winder Acceleration}&0.8&$m/s^2$\\%
 \hline%
@@ -289,8 +293,33 @@ SANS 10162: Steel design%
 %
 \section{CALCULATIONS}%
 \label{sec:CALCULATIONS}%
-\subsection{General Operating Loads {-} Skip Loads}%
-\label{subsec:GeneralOperatingLoads{-}SkipLoads}%
+\subsection{Skip Loads}%
+\label{subsec:SkipLoads}%
+\subsubsection{Basic Skip Parameters}%
+\label{ssubsec:BasicSkipParameters}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Payload&$R$&18000&$kg$\\%
+Payload&$R_l$&176580.0&$N$\\%
+Winding Speed&$V_w$&15&$m/s$\\%
+Winder Acceleration&$a_w$&0.8&$m/s^2$\\%
+Winder Trip Acceleration&$a_t$&5&$m/s^2$\\%
+Winding Rope Diameter&$Rope_d$&54&$m/s^2$\\%
+Rope Break Force&$RBF$&2319&$kN$\\%
+Ultimate Tensile Strength&$UTS$&1900&$MPa$\\%
+{[}'Ore Bulk Density', 1950, 'kg/m\^{}3'{]}&$\rho_b$&1950&$kg/m^3$\\%
+Skip Internal Width&$b$&1557&$mm$\\%
+Skip Internal Depth&$w$&1557&$mm$\\%
+Skip Volume Required&$Vol = R / \rho_b$&9.2&$m^3$\\%
+Ore Height in Skip&$h = Vol/(b w)$&4.2&$m$\\%
+Rope Strentch Under Payload&$\Delta L$&765.8&$mm$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
 \subsubsection{Permanent Loads}%
 \label{ssubsec:PermanentLoads}%
 \begin{flushleft}%
@@ -304,60 +333,6 @@ Skip Unit&$m_4$&6336&$kg$\\%
 Permanent Load&$G_c = (m_1 + m_3 + m_4)g$&81943&$N$\\%
 \end{tabular}%
 \end{minipage}%
-\end{flushleft}
-
-%
-\subsubsection{Vertical Imposed Loads due to Holding Devices {-} Holding Device Engagement Load (K)}%
-\label{ssubsec:VerticalImposedLoadsduetoHoldingDevices{-}HoldingDeviceEngagementLoad(K)}%
-\begin{flushleft}%
-\begin{minipage}{\textwidth}%
-\flushleft%
-\begin{tabular}{l l l l}%
-Engagement Impact Factor&$\alpha_k$&1.5&\\%
-Personnel Load&$P$&0&$kg$\\%
-Equipment or Rolling Stock&$M$&0&$kg$\\%
-Material Static Load&$R$&18000&$kg$\\%
-Tail Rope Load&$T$&0&$kg$\\%
-Maximum Applicable Load&$C_y$&176580.0&$N$\\%
-Holding Device Engagement Load&$K = \alpha_k(G_c+C_y+T)$&387784.5&$N$\\%
-\end{tabular}%
-\end{minipage}%
-\end{flushleft}
-
-%
-\subsubsection{Vertical Imposed Loads due to Holding Devices {-} Holding Device Security Load (Kc)}%
-\label{ssubsec:VerticalImposedLoadsduetoHoldingDevices{-}HoldingDeviceSecurityLoad(Kc)}%
-\begin{flushleft}%
-\begin{minipage}{\textwidth}%
-\flushleft%
-\begin{tabular}{l l l l}%
-Engagement Impact Factor&$\alpha_s$&2&\\%
-Personnel Load&$P$&0&$kg$\\%
-Equipment or Rolling Stock&$M$&0&$kg$\\%
-Material Static Load&$R$&18000&$kg$\\%
-Tail Rope Load&$T$&0&$kg$\\%
-Maximum Applicable Load&$C_y$&176580.0&$N$\\%
-Holding Device Engagement Load&$K_c = \alpha_s(G_c+C_y+T)$&517046.0&$N$\\%
-\end{tabular}%
-\end{minipage}%
-\end{flushleft}
-
-%
-\subsubsection{Laterial Imposed Loads (H) {-} Fixed Guide Systems in Vertical Shafts}%
-\label{ssubsec:LaterialImposedLoads(H){-}FixedGuideSystemsinVerticalShafts}%
-\begin{flushleft}%
-\begin{minipage}{\textwidth}%
-\flushleft%
-\begin{tabular}{l l l l}%
-Engagement Impact Factor&$\alpha_s$&2&\\%
-Personnel Load&$P$&0&$kg$\\%
-Equipment or Rolling Stock&$M$&0&$kg$\\%
-Material Static Load&$R$&18000&$kg$\\%
-Tail Rope Load&$T$&0&$kg$\\%
-Maximum Applicable Load&$C_y$&176580.0&$N$\\%
-Holding Device Engagement Load&$K_c = \alpha_s(G_c+C_y+T)$&517046.0&$N$\\%
-\end{tabular}%
-\end{minipage}%
 \end{flushleft}%
 
 
@@ -369,6 +344,8 @@ Holding Device Engagement Load&$K_c = \alpha_s(G_c+C_y+T)$&517046.0&$N$\\%
 \end{figure}
 
 %
+\subsubsection{Laterial Imposed Loads (H) {-} Fixed Guide Systems in Vertical Shafts}%
+\label{ssubsec:LaterialImposedLoads(H){-}FixedGuideSystemsinVerticalShafts}%
 \begin{flushleft}%
 \begin{minipage}{\textwidth}%
 \flushleft%
@@ -451,81 +428,53 @@ Vertical Friction Load&$F_v = 0.5 H_s$&3895.5&$N$\\%
 \end{flushleft}
 
 %
-\subsection{Skip Loads}%
-\label{subsec:SkipLoads}%
-\subsubsection{Bridle and Transom Loads during Filling (Rd)}%
-\label{ssubsec:BridleandTransomLoadsduringFilling(Rd)}%
+\subsubsection{Rock Loads}%
+\label{ssubsec:RockLoads}%
 \begin{flushleft}%
 \begin{minipage}{\textwidth}%
 \flushleft%
 \begin{tabular}{l l l l}%
-Bulk Density of Ore&$\rho_b$&1950&$kg/m^3$\\%
-Maximum Container Height&$z$&5600&$mm$\\%
-Rock Pressure&$p_o = \rho_b g z$&107125.2&$N/m^2$\\%
+Filling Impact Factor in Stationary Position&$\alpha_v$&1.5&\\%
+Load on Tipping Rollers Impact Factor&$\alpha_t$&2&\\%
+Static Load&$R$&176580.0&$N$\\%
+Bridle Transom Load While Filling&$R_d = (\alpha_v)(R) $&27000.0&$N$\\%
+Rock Pressure&$p_o = \rho_b g h$&80.3439&$N/m^2$\\%
+Pressure on the Door&$p_1 = 1 p_o$&80.3&$N/m^2$\\%
+Pressure on the Back of Skip&$p_2 = 0.5 p_o$&40.2&$N/m^2$\\%
+Pressure on the Lower Portion Skip Back&$p_3 = 0.5 p_o$&120.5&$N/m^2$\\%
+Pressure on the Front and Sides of Skip&$p_4 = 0.2 p_o$&16.1&$N/m^2$\\%
 \end{tabular}%
 \end{minipage}%
 \end{flushleft}
 
 %
-\subsubsection{Gravity Rock Presssure}%
-\label{ssubsec:GravityRockPresssure}%
-\begin{flushleft}%
-\begin{minipage}{\textwidth}%
-\flushleft%
-\begin{tabular}{l l l l}%
-Filling Impact Factor&$\alpha_p$&1.5&\\%
-Drop Height Estimate for Single Rock&$h_d$&25&$m$\\%
-Deformation of Skip Door&$d_i$&87.5&$mm$\\%
-Largest Rock Size Estimate&$m_r$&1375.0&$kg$\\%
-Skip Bottom Pressure&$p_1 = \alpha_p p_o$&160687.8&$N/m^2$\\%
-Skip Side Pressure&$p_2 = \alpha_p p_o$&160687.8&$N/m^2$\\%
-Impact Energy&$Z_i = 0.5 h_d g m_r$&168609.375&$N/m^2$\\%
-Impact Load&$R_i = Z_i/d_i$&1926.9642857142858&$N/m^2$\\%
-\end{tabular}%
-\end{minipage}%
-\end{flushleft}
+\subsection{Skip Element Design}%
+\label{subsec:SkipElementDesign}%
+\subsubsection{Top Transom}%
+\label{ssubsec:TopTransom}%
+
+
+\begin{figure}[h!]%
+\includegraphics[width=360px]{Top_Transom.jpg}%
+\centering%
+\caption{Top Transom Configuration}%
+\centering%
+\end{figure}
 
 %
-\subsubsection{Pressure during Filling or Travelling in Shaft}%
-\label{ssubsec:PressureduringFillingorTravellinginShaft}%
 \begin{flushleft}%
 \begin{minipage}{\textwidth}%
 \flushleft%
 \begin{tabular}{l l l l}%
-Tipping Impact Factor&$\alpha_t$&2&\\%
-Tipping Rollers Load&$R_t = \alpha_t 0.25(R + G_c)$&129261.5&$N$\\%
-\end{tabular}%
-\end{minipage}%
-\end{flushleft}
-
-%
-\subsubsection{Tipping Rollers Load}%
-\label{ssubsec:TippingRollersLoad}%
-\begin{flushleft}%
-\begin{minipage}{\textwidth}%
-\flushleft%
-\begin{tabular}{l l l l}%
-Skip Bridle Sides&$m_1$&1167&$kg$\\%
-Skip Bridle Top Transom&$m_2$&1522&$kg$\\%
-Skip Bridle Bottom Transom&$m_3$&850&$kg$\\%
-Skip Unit&$m_4$&6336&$kg$\\%
-Permanent Load&$G_c = (m_1 + m_3 + m_4)g$&81943&$N$\\%
-\end{tabular}%
-\end{minipage}%
-\end{flushleft}
-
-%
-\subsubsection{Skip Return{-}stop Loads}%
-\label{ssubsec:SkipReturn{-}stopLoads}%
-\begin{flushleft}%
-\begin{minipage}{\textwidth}%
-\flushleft%
-\begin{tabular}{l l l l}%
-Skip Bridle Sides&$m_1$&1167&$kg$\\%
-Skip Bridle Top Transom&$m_2$&1522&$kg$\\%
-Skip Bridle Bottom Transom&$m_3$&850&$kg$\\%
-Skip Unit&$m_4$&6336&$kg$\\%
-Permanent Load&$G_c = (m_1 + m_3 + m_4)g$&81943&$N$\\%
+Channel Width&$b$&109&$mm$\\%
+Channel Height&$h$&533&$mm$\\%
+Channel Web Thickness&$t_w$&10.2&$mm$\\%
+Channel Flange Thickness&$t_f$&15.6&$mm$\\%
+Channel Cross Sectional Area&$A=2bt_f + h_w*t_w$&8638&$mm^2$\\%
+Centroid Distance&$x_c=(1/A)(0.5h_wt_w^2 + t_fb^2)$&25.0&$mm$\\%
+Second Moment of Area about x{-}x&$I_x=(bh^3)/12 - (b_fh_w^3)/12)$&335071491.0&$mm^4$\\%
+Second Moment of Area about y{-}y&$I_y=(h_wt_w^3)/3+2(t_fb^3)/3 - Ax_c)$&13434359.0&$mm^4$\\%
+Plastic Section Modulus&$Z_p=(bh^2)/4 - (b_fh_w^2)/4)$&1521885.0&$mm^4$\\%
 \end{tabular}%
 \end{minipage}%
 \end{flushleft}

@@ -16,7 +16,7 @@ class Ui_ControlPanel(object):
         ControlPanel.setObjectName("ControlPanel")
         ControlPanel.resize(1540, 851)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/HCE-C.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\resources\\assets\\HCE-C.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         ControlPanel.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(ControlPanel)
         self.centralwidget.setStyleSheet("")
@@ -449,7 +449,7 @@ class Ui_ControlPanel(object):
         self.frame_8.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_8.setObjectName("frame_8")
         self.btnEditCustomer = QtWidgets.QPushButton(self.frame_8)
-        self.btnEditCustomer.setGeometry(QtCore.QRect(10, 10, 75, 31))
+        self.btnEditCustomer.setGeometry(QtCore.QRect(10, 10, 91, 31))
         self.btnEditCustomer.setStyleSheet("    QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
@@ -465,7 +465,7 @@ class Ui_ControlPanel(object):
 "     }")
         self.btnEditCustomer.setObjectName("btnEditCustomer")
         self.btnDeleteCustomer = QtWidgets.QPushButton(self.frame_8)
-        self.btnDeleteCustomer.setGeometry(QtCore.QRect(130, 10, 75, 31))
+        self.btnDeleteCustomer.setGeometry(QtCore.QRect(130, 10, 91, 31))
         self.btnDeleteCustomer.setStyleSheet("    QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
@@ -493,7 +493,7 @@ class Ui_ControlPanel(object):
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_5.setObjectName("frame_5")
         self.btnNewCustomer = QtWidgets.QPushButton(self.frame_5)
-        self.btnNewCustomer.setGeometry(QtCore.QRect(10, 10, 75, 31))
+        self.btnNewCustomer.setGeometry(QtCore.QRect(10, 10, 91, 31))
         self.btnNewCustomer.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
@@ -509,7 +509,7 @@ class Ui_ControlPanel(object):
 "     }")
         self.btnNewCustomer.setObjectName("btnNewCustomer")
         self.btnClearCustomerCells = QtWidgets.QPushButton(self.frame_5)
-        self.btnClearCustomerCells.setGeometry(QtCore.QRect(130, 10, 75, 31))
+        self.btnClearCustomerCells.setGeometry(QtCore.QRect(130, 10, 91, 31))
         self.btnClearCustomerCells.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
@@ -527,7 +527,7 @@ class Ui_ControlPanel(object):
         self.leCompID = QtWidgets.QLineEdit(self.customerCRUD)
         self.leCompID.setGeometry(QtCore.QRect(10, 30, 101, 31))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setPointSize(9)
         self.leCompID.setFont(font)
         self.leCompID.setStyleSheet("QLineEdit {\n"
 " border: 1px solid gray;\n"
@@ -549,7 +549,7 @@ class Ui_ControlPanel(object):
         self.leCompanyName = QtWidgets.QLineEdit(self.customerCRUD)
         self.leCompanyName.setGeometry(QtCore.QRect(130, 30, 451, 31))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setPointSize(9)
         self.leCompanyName.setFont(font)
         self.leCompanyName.setStyleSheet("QLineEdit {\n"
 " border: 1px solid gray;\n"
@@ -563,7 +563,10 @@ class Ui_ControlPanel(object):
         self.lbCompStatus.setFont(font)
         self.lbCompStatus.setObjectName("lbCompStatus")
         self.cbCompanyStatus = QtWidgets.QComboBox(self.customerCRUD)
-        self.cbCompanyStatus.setGeometry(QtCore.QRect(10, 90, 101, 31))
+        self.cbCompanyStatus.setGeometry(QtCore.QRect(10, 90, 201, 31))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.cbCompanyStatus.setFont(font)
         self.cbCompanyStatus.setStyleSheet("QComboBox{\n"
 "    border-top-left-radius: 10px;\n"
 "    border-bottom-left-radius: 10px;\n"
@@ -589,7 +592,7 @@ class Ui_ControlPanel(object):
 " }\n"
 "\n"
 "QComboBox::down-arrow {\n"
-"     image:url(:/icons/icons/arrow-down.svg)\n"
+"    image: url(:/icons/icons/arrow-down.svg);\n"
 " }\n"
 "\n"
 " QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
@@ -605,19 +608,19 @@ class Ui_ControlPanel(object):
         self.frame_9.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_9.setObjectName("frame_9")
         self.cboxCustomer = QtWidgets.QCheckBox(self.frame_9)
-        self.cboxCustomer.setGeometry(QtCore.QRect(20, 0, 111, 17))
+        self.cboxCustomer.setGeometry(QtCore.QRect(190, 0, 111, 17))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.cboxCustomer.setFont(font)
         self.cboxCustomer.setObjectName("cboxCustomer")
         self.cboxSupplier = QtWidgets.QCheckBox(self.frame_9)
-        self.cboxSupplier.setGeometry(QtCore.QRect(150, 0, 111, 17))
+        self.cboxSupplier.setGeometry(QtCore.QRect(320, 0, 111, 17))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.cboxSupplier.setFont(font)
         self.cboxSupplier.setObjectName("cboxSupplier")
         self.lbRegistrationNumber = QtWidgets.QLabel(self.customerCRUD)
-        self.lbRegistrationNumber.setGeometry(QtCore.QRect(10, 130, 121, 20))
+        self.lbRegistrationNumber.setGeometry(QtCore.QRect(10, 130, 241, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbRegistrationNumber.setFont(font)
@@ -625,7 +628,7 @@ class Ui_ControlPanel(object):
         self.leRegistrationNumber = QtWidgets.QLineEdit(self.customerCRUD)
         self.leRegistrationNumber.setGeometry(QtCore.QRect(10, 150, 271, 31))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setPointSize(9)
         self.leRegistrationNumber.setFont(font)
         self.leRegistrationNumber.setStyleSheet("QLineEdit {\n"
 " border: 1px solid gray;\n"
@@ -642,7 +645,7 @@ class Ui_ControlPanel(object):
         self.leVATNumber = QtWidgets.QLineEdit(self.customerCRUD)
         self.leVATNumber.setGeometry(QtCore.QRect(310, 150, 271, 31))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setPointSize(9)
         self.leVATNumber.setFont(font)
         self.leVATNumber.setStyleSheet("QLineEdit {\n"
 " border: 1px solid gray;\n"
@@ -659,7 +662,7 @@ class Ui_ControlPanel(object):
         self.leWebsite = QtWidgets.QLineEdit(self.customerCRUD)
         self.leWebsite.setGeometry(QtCore.QRect(10, 210, 271, 31))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setPointSize(9)
         self.leWebsite.setFont(font)
         self.leWebsite.setStyleSheet("QLineEdit {\n"
 " border: 1px solid gray;\n"
@@ -670,7 +673,7 @@ class Ui_ControlPanel(object):
         self.leAddress1 = QtWidgets.QLineEdit(self.customerCRUD)
         self.leAddress1.setGeometry(QtCore.QRect(10, 270, 571, 31))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setPointSize(9)
         self.leAddress1.setFont(font)
         self.leAddress1.setStyleSheet("QLineEdit {\n"
 " border: 1px solid gray;\n"
@@ -687,7 +690,7 @@ class Ui_ControlPanel(object):
         self.leAddress2 = QtWidgets.QLineEdit(self.customerCRUD)
         self.leAddress2.setGeometry(QtCore.QRect(10, 330, 571, 31))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setPointSize(9)
         self.leAddress2.setFont(font)
         self.leAddress2.setStyleSheet("QLineEdit {\n"
 " border: 1px solid gray;\n"
@@ -704,7 +707,7 @@ class Ui_ControlPanel(object):
         self.leCity = QtWidgets.QLineEdit(self.customerCRUD)
         self.leCity.setGeometry(QtCore.QRect(10, 390, 271, 31))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setPointSize(9)
         self.leCity.setFont(font)
         self.leCity.setStyleSheet("QLineEdit {\n"
 " border: 1px solid gray;\n"
@@ -721,7 +724,7 @@ class Ui_ControlPanel(object):
         self.lePostalCode = QtWidgets.QLineEdit(self.customerCRUD)
         self.lePostalCode.setGeometry(QtCore.QRect(310, 390, 271, 31))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setPointSize(9)
         self.lePostalCode.setFont(font)
         self.lePostalCode.setStyleSheet("QLineEdit {\n"
 " border: 1px solid gray;\n"
@@ -738,7 +741,7 @@ class Ui_ControlPanel(object):
         self.leProvince = QtWidgets.QLineEdit(self.customerCRUD)
         self.leProvince.setGeometry(QtCore.QRect(10, 450, 271, 31))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setPointSize(9)
         self.leProvince.setFont(font)
         self.leProvince.setStyleSheet("QLineEdit {\n"
 " border: 1px solid gray;\n"
@@ -760,6 +763,10 @@ class Ui_ControlPanel(object):
         self.lbCountry.setObjectName("lbCountry")
         self.cbCountry = QtWidgets.QComboBox(self.customerCRUD)
         self.cbCountry.setGeometry(QtCore.QRect(310, 450, 271, 31))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.cbCountry.setFont(font)
+        self.cbCountry.setContextMenuPolicy(QtCore.Qt.PreventContextMenu)
         self.cbCountry.setStyleSheet("QComboBox{\n"
 "    border-top-left-radius: 10px;\n"
 "    border-bottom-left-radius: 10px;\n"
@@ -785,7 +792,7 @@ class Ui_ControlPanel(object):
 " }\n"
 "\n"
 "QComboBox::down-arrow {\n"
-"     image:url(:/icons/icons/arrow-down.svg)\n"
+"     image: url(:/icons/icons/arrow-down.svg);\n"
 " }\n"
 "\n"
 " QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
@@ -804,7 +811,7 @@ class Ui_ControlPanel(object):
         self.leBusinessPhone = QtWidgets.QLineEdit(self.customerCRUD)
         self.leBusinessPhone.setGeometry(QtCore.QRect(10, 510, 271, 31))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setPointSize(9)
         self.leBusinessPhone.setFont(font)
         self.leBusinessPhone.setStyleSheet("QLineEdit {\n"
 " border: 1px solid gray;\n"
@@ -821,7 +828,7 @@ class Ui_ControlPanel(object):
         self.leCompanyEmail = QtWidgets.QLineEdit(self.customerCRUD)
         self.leCompanyEmail.setGeometry(QtCore.QRect(310, 510, 271, 31))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setPointSize(9)
         self.leCompanyEmail.setFont(font)
         self.leCompanyEmail.setStyleSheet("QLineEdit {\n"
 " border: 1px solid gray;\n"
@@ -829,9 +836,6 @@ class Ui_ControlPanel(object):
 "}")
         self.leCompanyEmail.setText("")
         self.leCompanyEmail.setObjectName("leCompanyEmail")
-        self.gVLogo = QtWidgets.QGraphicsView(self.customerCRUD)
-        self.gVLogo.setGeometry(QtCore.QRect(320, 570, 251, 131))
-        self.gVLogo.setObjectName("gVLogo")
         self.stwMain.addWidget(self.customers)
         self.contacts = QtWidgets.QWidget()
         self.contacts.setObjectName("contacts")
@@ -1114,7 +1118,8 @@ class Ui_ControlPanel(object):
 " }\n"
 "\n"
 "QComboBox::down-arrow {\n"
-"     image:url(:/icons/icons/arrow-down.svg)\n"
+"      \n"
+"    image: url(:/icons/icons/arrow-down.svg);\n"
 " }\n"
 "\n"
 " QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
@@ -4638,7 +4643,7 @@ class Ui_ControlPanel(object):
         self.searchBtn.setToolTip(_translate("ControlPanel", "Overview of Actions and Workload"))
         self.btnEditCustomer.setText(_translate("ControlPanel", "Edit"))
         self.btnDeleteCustomer.setText(_translate("ControlPanel", "Delete"))
-        self.btnNewCustomer.setText(_translate("ControlPanel", "Add"))
+        self.btnNewCustomer.setText(_translate("ControlPanel", "Add / Update"))
         self.btnClearCustomerCells.setText(_translate("ControlPanel", "Clear"))
         self.lbCompID.setText(_translate("ControlPanel", "Company ID"))
         self.lbCompanyName.setText(_translate("ControlPanel", "Company Name"))

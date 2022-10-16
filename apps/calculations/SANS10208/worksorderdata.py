@@ -22,6 +22,10 @@ CUSTOMER = "Herman de Koker"
 EMAIL = "harry@maxpower.co.za"
 
 #=============================================================================================#
+REVISIONS = {
+	'1': ['A', 'ISSUED FOR REVIEW', '2022-10-15', 'G.G. HOLT', 'H.F. HOLT', ''],
+}
+#=============================================================================================#
 DESIGN_CODE_1 = "SANS 10208: Design of structure for the mining industry Part 3: Conveyances"
 DESIGN_CODE_2 = "SANS 10160: Buidling Loading Code"
 DESIGN_CODE_3 = "SANS 10162: Steel Design Code"
@@ -34,6 +38,8 @@ SKETCH_4 = ["Tumela 18 ton Skip_iso_3.jpg", "120px", "18 ton Skip Isometric View
 SKETCH_5 = ["Tumela 18 ton Skip_iso_4.jpg", "120px", "18 ton Skip Isometric View 4"]
 SKETCH_6 = ["Force_diagram.jpg", "50px", "Properties Diagram"]
 SKETCH_7 = ["plate_load_coef.jpg", "50px", "Slipper Plate Load Coefficient Pb"]
+SKETCH_8 = ["Skip_Discharge.jpg", "50px", "Skip Tipping Configuration"]
+SKETCH_9 = ["Top_Transom.jpg", "50px", "Top Transom Configuration"]
 
 
 #SKETCH_2 = "Shaft_Plan.jpg"
@@ -49,28 +55,26 @@ SECTION_3_3 = "Assumption Data"
 SECTION_3_4 = "Sketches and Drawings"
 
 SECTION_4 = "CALCULATIONS"
-SECTION_4_1 = "General Operating Loads - Skip Loads"
-SECTION_4_1_1 = "Permanent Loads"
-SECTION_4_1_2 = "Vertical Imposed Loads due to Holding Devices - Holding Device Engagement Load (K)"
-SECTION_4_1_3 = "Vertical Imposed Loads due to Holding Devices - Holding Device Security Load (Kc)"
+SECTION_4_1 = "Skip Loads"
+SECTION_4_1_1 = "Basic Skip Parameters"
+SECTION_4_1_2 = "Permanent Loads"
+# SECTION_4_1_2 = "Vertical Imposed Loads due to Holding Devices - Holding Device Engagement Load (K)"
+# SECTION_4_1_3 = "Vertical Imposed Loads due to Holding Devices - Holding Device Security Load (Kc)"
 SECTION_4_1_4 = "Laterial Imposed Loads (H) - Fixed Guide Systems in Vertical Shafts"
-SECTION_4_1_5 = "Winder System Loads"
-SECTION_4_1_6 = "Emergency Loads"
-SECTION_4_1_7 = "Tail Rope Loads"
+SECTION_4_1_6 = "Winder System Loads"
+SECTION_4_1_7 = "Emergency Loads"
+# SECTION_4_1_7 = "Tail Rope Loads"
 SECTION_4_1_8 = "Vertical Friction Loads"
-SECTION_4_1_10 = "Roof Loads"
-SECTION_4_1_11 = "Standing Personnel Loads (Vertical)"
-SECTION_4_1_12 = "Standing Personnel Loads (Horizontal)"
+# SECTION_4_1_10 = "Roof Loads"
+# SECTION_4_1_11 = "Standing Personnel Loads (Vertical)"
+# SECTION_4_1_12 = "Standing Personnel Loads (Horizontal)"
+SECTION_4_1_13 = "Rock Loads"
 
-SECTION_4_2 = "Skip Loads"
-SECTION_4_2_1 = "Bridle and Transom Loads during Filling (Rd)"
-SECTION_4_2_2 = "Gravity Rock Presssure"
-SECTION_4_2_3 = "Pressure during Filling or Travelling in Shaft"
-SECTION_4_2_4 = "Tipping Rollers Load"
-SECTION_4_2_5 = "Skip Return-stop Loads"
+SECTION_4_3 = "Skip Element Design"
+SECTION_4_3_1 = "Top Transom"
+TEXT_4_3_1a = r"""Design for Emergency Load"""
+TEXT_4_3_1b = r"""Load Condition No. 2: Maximum Self Weight in combination with Imposed Skip Load"""
 
-
-SECTION_4_3 = "Loads Combinations"
 
 SECTION_4_4 = "Bridle Element Design"
 SECTION_4_4_1 = "Top Transom"

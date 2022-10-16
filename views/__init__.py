@@ -8,3 +8,5 @@ from . import welcome
 
 from . import worksorder_selector
 
+from . import pop_up_message
+

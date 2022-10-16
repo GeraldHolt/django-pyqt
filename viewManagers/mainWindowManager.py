@@ -6,6 +6,7 @@ from views.login import Ui_LoginForm
 from views.signup import Ui_SignupForm
 from views.welcome import Ui_WelcomeForm
 from views.worksorder_selector import Ui_SelectWorksorder
+from views.pop_up_message import Ui_PopUpMessage
 import settings
 from PyQt5 import QtWidgets
 from PyQt5 import QtCore
@@ -20,6 +21,7 @@ from django.contrib.auth import authenticate
 from apps.accounts.models import *
 from apps.accounts.gen_look_up import *
 from apps.techdata.models import *
+from distutils.util import strtobool
 
 class TableModel(QtCore.QAbstractTableModel):
     def __init__(self, data, headers):
@@ -57,6 +59,17 @@ class WorkorderSelectorWindow(QDialog, Ui_SelectWorksorder):
         self.cbWorksorders.addItem('Tset1')
         self.btnConfirm.clicked.connect
 
+class PopUpMessageWindow(QDialog, Ui_PopUpMessage):
+    def __init__(self):
+        super(PopUpMessageWindow, self).__init__()
+        self.setupUi(self)
+        self.btnConfirm.clicked.connect(self.closeIt)
+    
+    def message(self, text):
+        self.lbPopUpMessage.setText(text)
+
+    def closeIt(self):
+        self.close()
 
 class WelcomeWindow(QMainWindow, Ui_WelcomeForm):
     def __init__(self):
@@ -77,6 +90,8 @@ class SignupWindow(QMainWindow, Ui_SignupForm):
 class ControlPanel(QMainWindow, Ui_ControlPanel):
     def __init__(self):
         super(ControlPanel, self).__init__()
+        self.setWindowTitle('Engineering Execucution Management System')
+        # self.setWindowIcon(QIcon('web.png'))
         self.setupUi(self)
         self.btnDashboard.clicked.connect(self.goto_dashboard)
         self.btnCustomer.clicked.connect(self.goto_customers)  
@@ -92,6 +107,7 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
         self.btnGeneralInfo.clicked.connect(self.goto_generalinfo) 
         self.btnCalculation.clicked.connect(self.goto_calculations) 
         self.btnUploadWO.clicked.connect(self.goto_select_workorder)
+        
 
     def goto_dashboard(self):
         self.stwMain.setCurrentWidget(self.dashboard)
@@ -124,20 +140,91 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
 
         self.cbCompanyStatus.addItems(company_status)
         self.cbCountry.addItems(countries_names)
+        self.cbCountry.setCurrentIndex(countries_names.index('South Africa'))
 
         # Allocate Buttons
-        self.btnNewCustomer.clicked.connect(self.createNewCustomer)
+        self.btnNewCustomer.clicked.connect(self.createNewUpdateCustomer)
         # self.btnClearCustomerCells.clicked.connect(self.clearCustomerCells)
-        # self.btnEditCustomer.clicked.connect(self.editCustomer)
+        self.btnEditCustomer.clicked.connect(self.editCustomer)
         # self.btnDeleteCustomer.clicked.connect(self.deleteCustomer)
 
-    def createNewCustomer(self):
-        pass
+    def createNewUpdateCustomer(self):
 
+        compID  =  self.leCompID.text()
+        companyName = self.leCompanyName.text()
+        company_status = self.cbCompanyStatus.currentText()
+        company_reg_no = self.leRegistrationNumber.text()
+        VAT_no = self.leVATNumber.text()
+        companyWeb =  self.leWebsite.text()
+        address1 = self.leAddress1.text()
+        address2 = self.leAddress2.text()
+        city = self.leCity.text()
+        postalCode = self.lePostalCode.text()
+        province = self.leProvince.text()
+        country = self.cbCountry.currentText()
+        businessPhone = self.leBusinessPhone.text()
+        companyEmail = self.leCompanyEmail.text()
+        customer = self.cboxCustomer.isChecked()
+        supplier = self.cboxSupplier.isChecked()
 
+        Company.objects.update_or_create(
+                                            compID  =  compID,
+                                            companyName = companyName,                         
+                                            company_status = company_status,
+                                            company_reg_no = company_reg_no,
+                                            VAT_no = VAT_no,
+                                            companyWeb = companyWeb,
+                                            address1 = address1,
+                                            address2 = address2,
+                                            city = city,
+                                            postalCode = postalCode,
+                                            province = province,
+                                            country = country,
+                                            businessPhone = businessPhone,
+                                            companyEmail = companyEmail,
+                                            customer = customer,
+                                            supplier = supplier
+        )
+        self.leCompID.setReadOnly(False)
 
+    def editCustomer(self):
+        try:
+            index = self.tvCustomers.selectionModel().selectedIndexes()[0]
+            row_index = {index.row() for index in self.tvCustomers.selectionModel().selectedIndexes()}
+            if len(row_index) == None or len(row_index)>1:
+                message = 'Select only a single line'
+                pop_up = PopUpMessageWindow()
+                pop_up.message(message)
+                pop_up.exec_()
+            else:
+                
+                column = 0
+                row = list(row_index)[0]
+                index = self.tvCustomers.model().index(row, column)  
+                company = Company.objects.get(compID = str(index.data()))
+                self.leCompID.setText(company.compID)
+                self.leCompanyName.setText(company.companyName)
+                self.cbCompanyStatus.setCurrentText(company.company_status)
+                self.leRegistrationNumber.setText(company.company_reg_no)
+                self.leVATNumber.setText(company.VAT_no)
+                self.leWebsite.setText(company.companyWeb)
+                self.leAddress1.setText(company.address1)
+                self.leAddress2.setText(company.address2)
+                self.leCity.setText(company.city)
+                self.lePostalCode.setText(company.postalCode)
+                self.leProvince.setText(company.province)
+                self.cbCountry.setCurrentText(company.country)
+                self.leBusinessPhone.setText(company.businessPhone)
+                self.leCompanyEmail.setText(company.companyEmail)
+                self.cboxCustomer.setChecked(bool(strtobool(company.customer)))
+                self.cboxSupplier.setChecked(bool(strtobool(company.supplier)))
+                self.leCompID.setReadOnly(True)
 
-
+        except:
+            message = 'Select only a single line'
+            pop_up = PopUpMessageWindow()
+            pop_up.message(message)
+            pop_up.exec_()
 
 
     # Contacts ============================================================================#   
@@ -344,12 +431,14 @@ class MainWindow(QtWidgets.QStackedWidget):
         self.signup_screen = SignupWindow()
         self.control_screen = ControlPanel()
         self.work_orders_selector = WorkorderSelectorWindow()
+        self.pop_up_message = PopUpMessageWindow()
 
         self.addWidget(self.welcome_screen)
         self.addWidget(self.login_screen)
         self.addWidget(self.signup_screen)
         self.addWidget(self.control_screen)
         self.addWidget(self.work_orders_selector)
+        self.addWidget(self.pop_up_message)
 
         self.setFixedSize(980, 570)
         self.center()

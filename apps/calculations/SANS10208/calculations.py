@@ -4,379 +4,462 @@ import sympy as sp
 from sympy import *
 import pandas as pd
 from pint import UnitRegistry
+import math
 ureg = UnitRegistry()
 
 #===================================================================================================#
 def designCodes():
-	code1 = 'SANS 10208: 3 - 2017: Design of structures for the mining industry Part 3: Conveyances'
-	code2 = 'SANS 10610: Buildling loading code'
-	code3 = 'SANS 10162: Steel design'
+    code1 = 'SANS 10208: 3 - 2017: Design of structures for the mining industry Part 3: Conveyances'
+    code2 = 'SANS 10610: Buildling loading code'
+    code3 = 'SANS 10162: Steel design'
 
-	list_codes = [
-		code1,
-		code2,
-		code3,
-	]
+    list_codes = [
+        code1,
+        code2,
+        code3,
+    ]
 
-	return list_codes
+    return list_codes
 
 #===================================================================================================#
 def general_data():
-	gen_data = {
-		'DM':           ['Design Method','Limit States (Rope Break Conditions)', ''],
-		'MOC_B':        ['Material of Construction','Main Body: EN10025 S355JR', ''],
-		'MOC_L':        ['Material of Construction','Liners: VRN 500', ''],
-		'fy':           ['Yield Stress',355, 'MPa'],
-		'W_skip':       ['Skip Weight',9878, 'kg'],
-		'W_pay':        ['Payload',18000, 'kg'],
-		'V_winder':     ['Winding Speed',15, 'm/s'],
-		'D_rope':       ['Winding Rope Diameter',54, 'mm'],
-		'M_rope_unit':  ['Winding Rope Unit Mass',12.45, 'kg/m'],
-		'RBF':          ['Rope Break Force',2319, 'kN'],
-		'a_winder':     ['Winder Acceleration',0.8 ,'m/s^2'],
-		'a_trip':       ['Winder Trip Acceleration',5, 'm/s^2'],
-		'S_travel':     ['Winder Travel Distance',1023, 'm'],
-		'Cycles':       ['Number of Cycles per Month', 3000, ''],
-		'SIH':          ['Skip Internal Height',5600 , 'mm'],
-		'SIW':          ['Skip Internal Width',1557 , 'mm'],
-		'SID':          ['Skip Internal Depth',1400, 'mm'],
-		'OH':           ['Skip Overall Height',10713 , 'mm'],
-		'OW':           ['Skip Overall Width',1856, 'mm'],
-		'OD':           ['Skip Overall Depth',1743 , 'mm'],
-		'BD':           ['Ore Bulk Density',1950, 'kg/m^3' ]
+    gen_data = {
+        'DM':           ['Design Method','Limit States (Rope Break Conditions)', ''],
+        'MOC_B':        ['Material of Construction','Main Body: EN10025 S355JR', ''],
+        'MOC_L':        ['Material of Construction','Liners: VRN 500', ''],
+        'fy':           ['Yield Stress',355, 'MPa'],
+        'W_skip':       ['Skip Weight',9878, 'kg'],
+        'W_pay':        ['Payload',18000, 'kg'],
+        'V_winder':     ['Winding Speed',15, 'm/s'],
+        'D_rope':       ['Winding Rope Diameter',54, 'mm'],
+        'M_rope_unit':  ['Winding Rope Unit Mass',12.45, 'kg/m'],
+        'RBF':          ['Rope Break Force',2319, 'kN'],
+        'UTS':          ['Ultimate Tensile Strength',1900, 'MPa'],
+        'a_winder':     ['Winder Acceleration',0.8 ,'m/s^2'],
+        'a_trip':       ['Winder Trip Acceleration',5, 'm/s^2'],
+        'S_travel':     ['Winder Travel Distance',1023, 'm'],
+        'Cycles':       ['Number of Cycles per Month', 3000, ''],
+        'SIH':          ['Skip Internal Height',5600 , 'mm'],
+        'SIW':          ['Skip Internal Width',1557 , 'mm'],
+        'SID':          ['Skip Internal Depth',1400, 'mm'],
+        'OH':           ['Skip Overall Height',10713 , 'mm'],
+        'OW':           ['Skip Overall Width',1856, 'mm'],
+        'OD':           ['Skip Overall Depth',1743 , 'mm'],
+        'BD':           ['Ore Bulk Density',1950, 'kg/m^3' ]
 
-	}
+    }
 
-	return gen_data
+    return gen_data
 
 #===================================================================================================#
 def images():
-	images = [
-		['Shaft Plan','Shaft_Plan.jpg', ''],
-		['Skip Drawing','Tumela 18 ton Skip.jpg', ''],
-	]
+    images = [
+        ['Shaft Plan','Shaft_Plan.jpg', ''],
+        ['Skip Drawing','Tumela 18 ton Skip.jpg', ''],
+    ]
 
-	return images
+    return images
 
 #===================================================================================================#
 def specific_data():
-	spec_data = {
-		'S_rails':      ['Spacing between rails',1800, 'mm'],
-		'Spec_rail':    ['Top Hat Guide Specification','340 x 175mm', ''],
-		'MOC_R':        ['Top Hat Guide Material Specification','EN10025 S355JR', ''],
-		'M_rail_unit':  ['Top Hat Guide Unit Mass',85.95, 'kg/m'],
-		'B_rail_width': ['Top Hat Guide Width', 175, 'mm'],
-		'k_bunt':       ['Bunton Stiffness',1608000, 'N/m'],
-		'k_rail':       ['Guide Stiffnes', 1600000, 'N/m'],
-	}
+    spec_data = {
+        'S_rails':      ['Spacing between rails',1800, 'mm'],
+        'Spec_rail':    ['Top Hat Guide Specification','340 x 175mm', ''],
+        'MOC_R':        ['Top Hat Guide Material Specification','EN10025 S355JR', ''],
+        'M_rail_unit':  ['Top Hat Guide Unit Mass',85.95, 'kg/m'],
+        'B_rail_width': ['Top Hat Guide Width', 175, 'mm'],
+        'k_bunt':       ['Bunton Stiffness',1608000, 'N/m'],
+        'k_rail':       ['Guide Stiffnes', 1600000, 'N/m'],
+    }
 
-	return spec_data
+    return spec_data
 
 #===================================================================================================#
 def permanent_loads():
-	gen_data = general_data()
+    gen_data = general_data()
 
-	W_pay = gen_data['W_pay'][1]
-	g = 9.81
+    W_pay = gen_data['W_pay'][1]
+    g = 9.81
 
-	data = {
-		'm_1':                          ['Skip Bridle Sides',1167, 'kg'],
-		'm_2':                          ['Skip Bridle Top Transom',1522  ,'kg'],
-		'm_3':                          ['Skip Bridle Bottom Transom',850,'kg'],
-		'm_4':                          ['Skip Unit',6336,'kg'],
-	}
+    data = {
+        'm_1':                          ['Skip Bridle Sides',1167, 'kg'],
+        'm_2':                          ['Skip Bridle Top Transom',1522  ,'kg'],
+        'm_3':                          ['Skip Bridle Bottom Transom',850,'kg'],
+        'm_4':                          ['Skip Unit',6336,'kg'],
+    }
 
-	m_1 = (data['m_1'][1])
-	m_3 = (data['m_3'][1])
-	m_4 = (data['m_4'][1])
+    m_1 = (data['m_1'][1])
+    m_3 = (data['m_3'][1])
+    m_4 = (data['m_4'][1])
 
-	data["G_c = (m_1 + m_3 + m_4)g"] = ['Permanent Load', round((m_1+m_3+m_4)*g), "N"]
+    data["G_c = (m_1 + m_3 + m_4)g"] = ['Permanent Load', round((m_1+m_3+m_4)*g), "N"]
 
-	return data
+    return data
 
 #===================================================================================================#
 def holding_engage_loads():
-	gen_data = general_data()
-	perm_data = permanent_loads()
+    gen_data = general_data()
+    perm_data = permanent_loads()
 
 
-	W_pay = gen_data['W_pay'][1]
-	G_c = perm_data["G_c = (m_1 + m_3 + m_4)g"][1]
+    W_pay = gen_data['W_pay'][1]
+    G_c = perm_data["G_c = (m_1 + m_3 + m_4)g"][1]
    
-	g = 9.81
+    g = 9.81
 
-	data = {
-		'\\alpha_k':                    ['Engagement Impact Factor',1.5,''],
-		'P':                            ['Personnel Load', 0, 'kg'],
-		'M':                            ['Equipment or Rolling Stock', 0, 'kg'],                   
-		'R':                            ['Material Static Load', W_pay, 'kg'],
-		'T':                            ['Tail Rope Load', 0, 'kg']                       
-	}
+    data = {
+        '\\alpha_k':                    ['Engagement Impact Factor',1.5,''],
+        'P':                            ['Personnel Load', 0, 'kg'],
+        'M':                            ['Equipment or Rolling Stock', 0, 'kg'],                   
+        'R':                            ['Material Static Load', W_pay, 'kg'],
+        'T':                            ['Tail Rope Load', 0, 'kg']                       
+    }
 
-	P = data['P'][1]
-	M = data['M'][1]
-	R = data['R'][1]
-	T = data['T'][1]
-	alpha_k = data['\\alpha_k'][1]
+    P = data['P'][1]
+    M = data['M'][1]
+    R = data['R'][1]
+    T = data['T'][1]
+    alpha_k = data['\\alpha_k'][1]
 
-	data['C_y'] = ['Maximum Applicable Load', max(P, M, R)*g, 'N' ] 
+    data['C_y'] = ['Maximum Applicable Load', max(P, M, R)*g, 'N' ] 
 
-	C_y = data['C_y'][1]
+    C_y = data['C_y'][1]
 
-	data['K = \\alpha_k(G_c+C_y+T)'] = ['Holding Device Engagement Load', (C_y + T+ G_c)*alpha_k, 'N']
+    data['K = \\alpha_k(G_c+C_y+T)'] = ['Holding Device Engagement Load', (C_y + T+ G_c)*alpha_k, 'N']
 
-	return data
+    return data
 
 #===================================================================================================#
 def holding_security_loads():
-	gen_data = general_data()
-	perm_data = permanent_loads()
+    gen_data = general_data()
+    perm_data = permanent_loads()
 
 
-	W_pay = gen_data['W_pay'][1]
-	G_c = perm_data["G_c = (m_1 + m_3 + m_4)g"][1]
+    W_pay = gen_data['W_pay'][1]
+    G_c = perm_data["G_c = (m_1 + m_3 + m_4)g"][1]
 
    
-	g = 9.81
+    g = 9.81
 
-	data = {
-		'\\alpha_s':                        ['Engagement Impact Factor',2,''],
-		'P':                                ['Personnel Load', 0, 'kg'],
-		'M':                                ['Equipment or Rolling Stock', 0, 'kg'],                   
-		'R':                                ['Material Static Load', W_pay, 'kg'],
-		'T':                                ['Tail Rope Load', 0, 'kg']                       
-	}
-	P = data['P'][1]
-	M = data['M'][1]
-	R = data['R'][1]
-	T = data['T'][1]
-	alpha_s = data['\\alpha_s'][1]
+    data = {
+        '\\alpha_s':                        ['Engagement Impact Factor',2,''],
+        'P':                                ['Personnel Load', 0, 'kg'],
+        'M':                                ['Equipment or Rolling Stock', 0, 'kg'],                   
+        'R':                                ['Material Static Load', W_pay, 'kg'],
+        'T':                                ['Tail Rope Load', 0, 'kg']                       
+    }
+    P = data['P'][1]
+    M = data['M'][1]
+    R = data['R'][1]
+    T = data['T'][1]
+    alpha_s = data['\\alpha_s'][1]
 
-	data['C_y'] = ['Maximum Applicable Load', max(P, M, R)*g, 'N' ] 
+    data['C_y'] = ['Maximum Applicable Load', max(P, M, R)*g, 'N' ] 
 
-	C_y = data['C_y'][1]
+    C_y = data['C_y'][1]
 
-	data['K_c = \\alpha_s(G_c+C_y+T)'] = ['Holding Device Engagement Load', (C_y+T+G_c)*alpha_s, 'N']
+    data['K_c = \\alpha_s(G_c+C_y+T)'] = ['Holding Device Engagement Load', (C_y+T+G_c)*alpha_s, 'N']
 
-	return data
+    return data
 
 #===================================================================================================#
 def lateral_imposed():
-	gen_data = general_data()
-	perm_data = permanent_loads()
-	spec = specific_data()
+    gen_data = general_data()
+    perm_data = permanent_loads()
+    spec = specific_data()
 
 
-	m_1 = perm_data['m_1'][1]
-	m_3 = perm_data['m_3'][1]
-	m_4 = perm_data['m_4'][1]
+    m_1 = perm_data['m_1'][1]
+    m_3 = perm_data['m_3'][1]
+    m_4 = perm_data['m_4'][1]
 
-	W_pay = gen_data['W_pay'][1]
-	G_c = perm_data["G_c = (m_1 + m_3 + m_4)g"][1]
+    W_pay = gen_data['W_pay'][1]
+    G_c = perm_data["G_c = (m_1 + m_3 + m_4)g"][1]
 
-	L_b = spec['S_rails'][1]/1000
-	V = gen_data['V_winder'][1]
-	k_b = spec['k_bunt'][1]
-	k_g = spec['k_rail'][1]
-
-
-	g = 9.81
-
-	data = {
-		'\\Delta_c':                        ['Clearance between Roller and Slipper',10 ,'mm'],
-		'\\alpha_n':                        ['Slipper Plate Impact Factor',2,''],
-		'k_r':                              ['Guide Roller Assembly Stiffness', 500000, 'N/m'],
-		'k_b':                              ['Bunton Stiffness',k_b, 'N/m'],
-		'k_g':                              ['Guide Stiffnes', k_g, 'N/m'],
-		'I_x':                              ['Moment of Inertia about X-axis',80510 , 'kg.m^2'],
-		'I_y':                              ['Moment of Inertia about Y-axis',6838, 'kg.m^2'],
-		'I_z':                              ['Moment of Inertia about Z-axis',82050, 'kg.m^2'],
-		'h_x':                              ['Distance from slipper to center of gravity',892, 'mm'],
-		'h_y':                              ['Distance from slipper to center of gravity',4847, 'mm'], 
-		'h_z':                              ['Distance from slipper to center of gravity',28 , 'mm'],                  
-	}
-
-	Delta_c = data['\\Delta_c'][1]
-	alpha_n = data['\\alpha_n'][1]
-	I_xx = data['I_x'][1]
-	I_yy = data['I_y'][1]
-	I_zz = data['I_z'][1]
-	h_y = data['h_y'][1]
-	h_x = data['h_x'][1]
-	k_r = data['k_r'][1]
-
-	data['H_f'] = ['Guide Roller Lateral Load',k_r*Delta_c , 'N' ] 
-	data['r_k'] = ['Steelwork Stiffness Ratio', k_b/k_g, ' ']
-	data['m_c'] = ['Weight of Skip System', (m_1 + m_3 + m_4), 'kg']
-
-	m_c = data['m_c'][1]
-	
-	m_eyx = (m_c*I_zz)/(I_zz + m_c*(h_y/1000)**2)
-	m_eyz = (m_c*I_xx*I_yy)/(I_xx*I_yy + m_c*I_xx*(h_y/1000)**2 + m_c*I_yy*(h_x/1000)**2)
+    L_b = spec['S_rails'][1]/1000
+    V = gen_data['V_winder'][1]
+    k_b = spec['k_bunt'][1]
+    k_g = spec['k_rail'][1]
 
 
+    g = 9.81
 
-	data['m_x = (m_c I_z) / (I_z + m_c (h_y)^2)'] = ['Effective Mass About y - x Plane', round(m_eyx,0), 'kg' ]
-	data['m_z = (m_c I_x I_y)/(I_x I_y +(m_c I_x (h_y)^2) + (m_c I_y (h_x)^2)'] = ['Effective Mass About y - z Plane', round(m_eyz,0), 'kg' ]
-	data['K_x = (k_b L_b^2)/m_x V^2'] = ['Non-Dimensional Laterial Stiffness', round(k_b*((L_b)**2)/(m_eyx*V**2)), ""]
-	data['K_z = (k_b L_b^2)/m_z V^2'] = ['Non-Dimensional Laterial Stiffness', round(k_b*((L_b)**2)/(m_eyz*V**2)), ""]
-	data['P_b'] = ['Plate Coefficient from graph',0.05 , '' ]
-	data['e'] = ['Maximum Moving Misalighnment',0.01 , 'm' ] 
+    data = {
+        '\\Delta_c':                        ['Clearance between Roller and Slipper',10 ,'mm'],
+        '\\alpha_n':                        ['Slipper Plate Impact Factor',2,''],
+        'k_r':                              ['Guide Roller Assembly Stiffness', 500000, 'N/m'],
+        'k_b':                              ['Bunton Stiffness',k_b, 'N/m'],
+        'k_g':                              ['Guide Stiffnes', k_g, 'N/m'],
+        'I_x':                              ['Moment of Inertia about X-axis',80510 , 'kg.m^2'],
+        'I_y':                              ['Moment of Inertia about Y-axis',6838, 'kg.m^2'],
+        'I_z':                              ['Moment of Inertia about Z-axis',82050, 'kg.m^2'],
+        'h_x':                              ['Distance from slipper to center of gravity',892, 'mm'],
+        'h_y':                              ['Distance from slipper to center of gravity',4847, 'mm'], 
+        'h_z':                              ['Distance from slipper to center of gravity',28 , 'mm'],                  
+    }
 
-	P_b = data['P_b'][1]
-	e = data['e'][1]
+    Delta_c = data['\\Delta_c'][1]
+    alpha_n = data['\\alpha_n'][1]
+    I_xx = data['I_x'][1]
+    I_yy = data['I_y'][1]
+    I_zz = data['I_z'][1]
+    h_y = data['h_y'][1]
+    h_x = data['h_x'][1]
+    k_r = data['k_r'][1]
 
-	H_s = round((alpha_n*P_b*((400*m_eyz*e*V**2)/((L_b)**2))))
+    data['H_f'] = ['Guide Roller Lateral Load',k_r*Delta_c , 'N' ] 
+    data['r_k'] = ['Steelwork Stiffness Ratio', k_b/k_g, ' ']
+    data['m_c'] = ['Weight of Skip System', (m_1 + m_3 + m_4), 'kg']
 
-	data['H_s'] = ['Lateral Slipper Pad Load',H_s , 'N' ] 
+    m_c = data['m_c'][1]
+    
+    m_eyx = (m_c*I_zz)/(I_zz + m_c*(h_y/1000)**2)
+    m_eyz = (m_c*I_xx*I_yy)/(I_xx*I_yy + m_c*I_xx*(h_y/1000)**2 + m_c*I_yy*(h_x/1000)**2)
 
-	print(H_s)
 
-	return data
+
+    data['m_x = (m_c I_z) / (I_z + m_c (h_y)^2)'] = ['Effective Mass About y - x Plane', round(m_eyx,0), 'kg' ]
+    data['m_z = (m_c I_x I_y)/(I_x I_y +(m_c I_x (h_y)^2) + (m_c I_y (h_x)^2)'] = ['Effective Mass About y - z Plane', round(m_eyz,0), 'kg' ]
+    data['K_x = (k_b L_b^2)/m_x V^2'] = ['Non-Dimensional Laterial Stiffness', round(k_b*((L_b)**2)/(m_eyx*V**2)), ""]
+    data['K_z = (k_b L_b^2)/m_z V^2'] = ['Non-Dimensional Laterial Stiffness', round(k_b*((L_b)**2)/(m_eyz*V**2)), ""]
+    data['P_b'] = ['Plate Coefficient from graph',0.05 , '' ]
+    data['e'] = ['Maximum Moving Misalighnment',0.01 , 'm' ] 
+
+    P_b = data['P_b'][1]
+    e = data['e'][1]
+
+    H_s = round((alpha_n*P_b*((400*m_eyz*e*V**2)/((L_b)**2))))
+
+    data['H_s'] = ['Lateral Slipper Pad Load',H_s , 'N' ] 
+
+    print(H_s)
+
+    return data
 
 #===================================================================================================#
 def winder_acceleration_loads():
-	gen_data = general_data()
-	perm_data = permanent_loads()
-	spec = specific_data()
-	hol_eng = holding_security_loads()
+    gen_data = general_data()
+    perm_data = permanent_loads()
+    spec = specific_data()
+    hol_eng = holding_security_loads()
 
 
-	a_o = gen_data['a_winder'][1]
-	a_t = gen_data['a_trip'][1]
-	G_c = perm_data['G_c = (m_1 + m_3 + m_4)g'][1]
-	C_y = hol_eng['C_y'][1]
-	g = 9.81
+    a_o = gen_data['a_winder'][1]
+    a_t = gen_data['a_trip'][1]
+    G_c = perm_data['G_c = (m_1 + m_3 + m_4)g'][1]
+    C_y = hol_eng['C_y'][1]
+    g = 9.81
 
 
-	data = {
-		'\\alpha_d':                        ['Dynamic Impact Factor',2,''],
-		'a_o':                              ['Winder Acceleration and Deceleration', a_o, 'm/s^2'],
-		'a_t':                              ['Winder Trip Acceleration', a_o, 'm/s^2'],
-		'G_c':                              ['Skip Self Weight', G_c, 'N'],
-		'C_y':                              ['Content Load', C_y, 'N'],
-		'T':                                ['Tail Rope Load', 0, 'N'],
-	}
+    data = {
+        '\\alpha_d':                        ['Dynamic Impact Factor',2,''],
+        'a_o':                              ['Winder Acceleration and Deceleration', a_o, 'm/s^2'],
+        'a_t':                              ['Winder Trip Acceleration', a_o, 'm/s^2'],
+        'G_c':                              ['Skip Self Weight', G_c, 'N'],
+        'C_y':                              ['Content Load', C_y, 'N'],
+        'T':                                ['Tail Rope Load', 0, 'N'],
+    }
 
-	alpha_d = data['\\alpha_d'][1]
-	a_o = data['a_o'][1]
-	T = data['T'][1]
-	A_o = round(alpha_d*a_o*(G_c+C_y+T)/g)
-	A_t = round(alpha_d*a_t*(G_c+C_y+T)/g)
+    alpha_d = data['\\alpha_d'][1]
+    a_o = data['a_o'][1]
+    T = data['T'][1]
+    A_o = round(alpha_d*a_o*(G_c+C_y+T)/g)
+    A_t = round(alpha_d*a_t*(G_c+C_y+T)/g)
 
-	data['A_o = (\\alpha_d) a_o (G_c + C_y + T)/g'] = ['Acceleration Load', A_o,'N' ]
-	data['A_t = (\\alpha_d) a_t (G_c + C_y + T)/g'] = ['Acceleration Trip Out Load', A_o,'N' ]
+    data['A_o = (\\alpha_d) a_o (G_c + C_y + T)/g'] = ['Acceleration Load', A_o,'N' ]
+    data['A_t = (\\alpha_d) a_t (G_c + C_y + T)/g'] = ['Acceleration Trip Out Load', A_o,'N' ]
 
-	return data
+    return data
 
 #===================================================================================================#
 def emergency_loads():
-	gen_data = general_data()
-	E_r = gen_data['RBF'][1]
+    gen_data = general_data()
+    E_r = gen_data['RBF'][1]
 
-	data = {
-		'E_r':                          ['Emergency Load', E_r*1000, 'N'],
-	}
+    data = {
+        'E_r':                          ['Emergency Load', E_r*1000, 'N'],
+    }
 
-	return data
+    return data
 
 #===================================================================================================#
 def vertical_friction_loads():
-	lateral = lateral_imposed()
-	H_s = lateral['H_s'][1]
+    lateral = lateral_imposed()
+    H_s = lateral['H_s'][1]
 
-	data = {
-		'H_s':                          [lateral['H_s'][0], H_s, 'N'],
-		'F_v = 0.5 H_s':                ['Vertical Friction Load', 0.5*H_s, 'N']
-	}
+    data = {
+        'H_s':                          [lateral['H_s'][0], H_s, 'N'],
+        'F_v = 0.5 H_s':                ['Vertical Friction Load', 0.5*H_s, 'N']
+    }
 
-	return data
-
-#===================================================================================================#
-def skip_filling_loads():
-	gen_data = general_data()
-	R = gen_data['W_pay'][1]
-
-	data = {
-		'\\alpha_v':                        ['Filling Impact Factor in Stationary Position',1.5,''],
-		
-	}
-	
-	alpha_v = data['\\alpha_v'][1]
-	R_d = alpha_v*R
-	data['R_d = \\alpha_v R'] = ['Vertical Friction Load', R_d, 'N']
-
-	return data
+    return data
 
 #===================================================================================================#
-def rock_gravity_pressures():
-	gen_data = general_data()
-	R = gen_data['W_pay'][1]
-	SIH = gen_data['SIH'][1]
-	BD = gen_data['BD'][1]
-	g = 9.81
-	p_o = BD*g*SIH/1000
+def general_skip_loads():
+    gen_data = general_data()
+    perm_data = permanent_loads()
+    spec = specific_data()
+    hol_eng = holding_security_loads()
 
-	data = {
-		'\\rho_b':                          ['Bulk Density of Ore',BD,'kg/m^3'],
-		'z':                                ['Maximum Container Height', SIH, 'mm'],
-		'p_o = \\rho_b g z':                ['Rock Pressure', p_o, 'N/m^2']
-		
-	}
-	return data
+    g = 9.81
+    E_rope = 103000   #N/mm^2
+    G_c = perm_data['G_c = (m_1 + m_3 + m_4)g'][1]
+    R = gen_data['W_pay'][1]
+    BD = gen_data['BD'][1]
+    SIW = gen_data['SIW'][1]
+    SID = gen_data['SID'][1]
+    D_rope = gen_data['D_rope'][1]
+    V_winder = gen_data['V_winder'][1]
+    L_rope = gen_data['S_travel'][1]
+    a_o = gen_data['a_winder'][1]
+    a_t = gen_data['a_trip'][1]
+    RBF = gen_data['RBF'][1]
+    UTS = gen_data['UTS'][1]
+    Vol_req = round(R/BD,1)
+    Ore_ht = round(Vol_req/((SIW/1000)*(SID/1000)),1)
+    R_area = math.pi*0.25*(D_rope**2)
+    print(R_area)
+    r_stretch = round(R*g*L_rope*1000/(E_rope*R_area),1)
+    print(r_stretch)
+    
+    data = {
+        'R':                      [gen_data['W_pay'][0], R, 'kg'],
+        'R_l':                    [gen_data['W_pay'][0], R*g, 'N'],
+        'V_w':                    [gen_data['V_winder'][0], V_winder, 'm/s'],
+        'a_w':                    [gen_data['a_winder'][0], a_o, 'm/s^2'],
+        'a_t':                    [gen_data['a_trip'][0], a_t, 'm/s^2'],
+        'Rope_d':                 [gen_data['D_rope'][0], D_rope, 'm/s^2'],
+        'RBF':                    [gen_data['RBF'][0], RBF, 'kN'],
+        'UTS':                    [gen_data['UTS'][0], UTS, 'MPa'],
+        '\\rho_b':                [gen_data['BD'],BD,'kg/m^3'],
+        'b':                      [gen_data['SIW'][0], SIW, 'mm'],
+        'w':                      [gen_data['SID'][0], SIW, 'mm'],
+        'Vol = R / \\rho_b':      ['Skip Volume Required',Vol_req, 'm^3' ],
+        'h = Vol/(b w)':          ['Ore Height in Skip', Ore_ht, 'm' ],
+        '\\Delta L':              ['Rope Strentch Under Payload',r_stretch, 'mm' ]  
+    }
 
-#===================================================================================================#
-def filling_travel_pressures():
-	gen_data = general_data()
-	press1 = rock_gravity_pressures()
+    return data
 
-	p_o = press1['p_o = \\rho_b g z'][1] 
-
-	data = {
-		'\\alpha_p':                  ['Filling Impact Factor',1.5,''],
-		'h_d':                        ['Drop Height Estimate for Single Rock',25,'m'],
-		'd_i':                        ['Deformation of Skip Door',0.05*1750,'mm'],
-		'm_r':                        ['Largest Rock Size Estimate',0.5*2750,'kg'],
-	}
-
-	d_i = data['d_i'][1]
-	m_r = data['m_r'][1]
-	h_d = data['h_d'][1]
-	alpha_p = data['\\alpha_p'][1]
-	g = 9.81
-	p_1 = p_o*alpha_p
-	p_2 = p_o*alpha_p
-	Z_i = 0.5*h_d*g*m_r
-	R_i = Z_i/d_i
-	
-
-	data['p_1 = \\alpha_p p_o'] = ['Skip Bottom Pressure', p_1, 'N/m^2']
-	data['p_2 = \\alpha_p p_o'] = ['Skip Side Pressure', p_2, 'N/m^2']
-	# data['p_3 = \\alpha_p p_o'] = ['Skip Side or Bottom Pressure during Emptying', 0.3*p_3, 'N/m^2']
-	data['Z_i = 0.5 h_d g m_r'] = ['Impact Energy', Z_i, 'N/m^2']
-	data['R_i = Z_i/d_i'] = ['Impact Load', R_i, 'N/m^2']
-
-	return data
 
 #===================================================================================================#
-def tipping_roller_loads():
-	gen_data = general_data()
-	perm_data = permanent_loads()
-	spec = specific_data()
-	hol_eng = holding_security_loads()
+def rock_loads():
+    gen_data = general_data()
+    gen_skip = general_skip_loads()
+    perm_data = permanent_loads()
+    R = gen_data['W_pay'][1]
+    Ore_ht = gen_skip['h = Vol/(b w)'][1]
+    BD = gen_data['BD'][1]
+    g = 9.81
+    p_o = BD*g*Ore_ht/1000
+    p_1 = round(1 * p_o,1)
+    p_2 = round(0.5 * p_o, 1)
+    p_3 = round(1.5 * p_o, 1)
+    p_4 = round(0.2 * p_o, 1)
+    G_c = perm_data['G_c = (m_1 + m_3 + m_4)g'][1]
 
-	G_c = perm_data['G_c = (m_1 + m_3 + m_4)g'][1]
-	R = gen_data['W_pay'][1]
-	g = 9.81
+    alpha_v = 1.5
+    alpha_t = 2
+    R_d = alpha_v*R
+    R_t = alpha_t*0.25*(R+G_c)
 
-	data = {
-		'\\alpha_t':                        ['Tipping Impact Factor',2,''],
-		
-	}
+   
 
-	alpha_t = data['\\alpha_t'][1]
-	R_t = alpha_t*0.25*(R*g+G_c)
+    data = {
+        '\\alpha_v':                        ['Filling Impact Factor in Stationary Position',alpha_v,''],
+        '\\alpha_t':                        ['Load on Tipping Rollers Impact Factor',alpha_t,''],
+        'R':                                ['Static Load', R*g, 'N'],
+        'R_d = (\\alpha_v)(R) ':            ['Bridle Transom Load While Filling', R_d, 'N'],
+        'p_o = \\rho_b g h':                ['Rock Pressure', p_o, 'N/m^2'],
+        'p_1 = 1 p_o':                      ['Pressure on the Door', p_1, 'N/m^2'],
+        'p_2 = 0.5 p_o':                    ['Pressure on the Back of Skip', p_2, 'N/m^2'],
+        'p_3 = 0.5 p_o':                    ['Pressure on the Lower Portion Skip Back', p_3, 'N/m^2'],
+        'p_4 = 0.2 p_o':                    ['Pressure on the Front and Sides of Skip', p_4, 'N/m^2'],
+    }
+    return data
 
-	data['R_t = \\alpha_t 0.25(R + G_c)'] = ['Tipping Rollers Load',R_t, 'N']
 
-	return data
+#===================================================================================================#
+def plastic_section_modulus_channel(b,h,t_w, t_f):
+    h_w = h - 2*t_f
+    b_f = b - t_w
+
+
+    A = 2*b*t_f + h_w*t_w
+    x_c = (1/A)*(0.5*h_w*t_w**2 + t_f*b**2)
+    I_x = (b*h**3)/12 - (b_f*h_w**3)/12
+    I_y = (h_w*t_w**3)/3+2*(t_f*b**3)/3 - A*x_c
+    Z_p = (b*h**2)/4 - (b_f*h_w**2)/4
+
+    expr_A = 'A=2bt_f + h_w*t_w'
+    expr_x_c = 'x_c=(1/A)(0.5h_wt_w^2 + t_fb^2)'
+    expr_I_x = 'I_x=(bh^3)/12 - (b_fh_w^3)/12)'
+    expr_I_y = 'I_y=(h_wt_w^3)/3+2(t_fb^3)/3 - Ax_c)'
+    expr_Z_p = 'Z_p=(bh^2)/4 - (b_fh_w^2)/4)'
+
+    results = {
+                'b':b,
+                'h':h,
+                't_w': t_w,
+                't_f': t_f,
+                'A': round(A,0),
+                'x_c': round(x_c,0),
+                'I_x': round(I_x,0),
+                'I_y': round(I_y,0),
+                'Z_p': round(Z_p,0),
+                'expr_A': expr_A,
+                'expr_x_c': expr_x_c,
+                'expr_I_x': expr_I_x,
+                'expr_I_y': expr_I_y,
+                'expr_Z_p': expr_Z_p
+    }
+    print("jjjjjjjjjjjjjjjjjjjjjjjjjjjjjj")
+    print(expr_x_c)
+    return results
+
+
+
+
+
+#===================================================================================================#
+def top_transom():
+    gen_data = general_data()
+    gen_skip = general_skip_loads()
+    perm_data = permanent_loads()
+
+    RBF = gen_data['RBF'][1]
+    L = 1700 # Length of transom
+    SPEC_1 = "2 / 533 x 110 CHANNEL (MODIEFIED 533 X 210 X 93 UB)"
+    SPEC_2 = "2 / "
+    E = 200 # Modulus of Elastisity GPa
+    G = 70 # Shear Modulus GPa
+    f_y = 355 #Yield Stress MPa
+    t_w = 10.2 # Web Thickness mm
+    t_f = 15.6 # Flange Thickness mm
+    h = 533 # Beam Height mm
+    b = 109 # Beam Width mm
+    
+
+    prop = plastic_section_modulus_channel(b,h,t_w, t_f)
+    Z_p = prop['Z_p']
+    M_p = Z_p*f_y
+    M_pall = 0.67*M_p
+
+    
+
+
+    data = {
+                'b':                ['Channel Width', b, 'mm'],
+                'h':                ['Channel Height', h, 'mm'],
+                't_w':              ['Channel Web Thickness', t_w, 'mm'],
+                't_f':              ['Channel Flange Thickness', t_f, 'mm'],
+                'f_y':              ['Yield Stress', f_y, 'MPa'],
+                prop['expr_A']:     ['Channel Cross Sectional Area', prop['A'], 'mm^2'],
+                prop['expr_x_c']:   ['Centroid Distance', prop['x_c'], 'mm'],
+                prop['expr_I_x']:   ['Second Moment of Area about x-x', prop['I_x'], 'mm^4'],
+                prop['expr_I_y']:   ['Second Moment of Area about y-y', prop['I_y'], 'mm^4'],
+                prop['expr_Z_p']:   ['Plastic Section Modulus', prop['Z_p'], 'mm^3'],
+            
+    }
+
+    return data
