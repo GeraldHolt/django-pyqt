@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../resources/assets/HCE-C.png</normaloff>../resources/assets/HCE-C.png</iconset>
+    <normaloff>../../Users/Gerald Holt/.designer/resources/assets/HCE-C.png</normaloff>../../Users/Gerald Holt/.designer/resources/assets/HCE-C.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -140,7 +140,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../resources/assets/smile.svg</normaloff>../resources/assets/smile.svg</iconset>
+           <normaloff>../../Users/Gerald Holt/.designer/resources/assets/smile.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/smile.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -193,7 +193,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../resources/assets/home.svg</normaloff>../resources/assets/home.svg</iconset>
+           <normaloff>../../Users/Gerald Holt/.designer/resources/assets/home.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/home.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -228,7 +228,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../resources/assets/database.svg</normaloff>../resources/assets/database.svg</iconset>
+           <normaloff>../../Users/Gerald Holt/.designer/resources/assets/database.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/database.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -257,7 +257,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../resources/assets/file-plus.svg</normaloff>../resources/assets/file-plus.svg</iconset>
+           <normaloff>../../Users/Gerald Holt/.designer/resources/assets/file-plus.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/file-plus.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -338,7 +338,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../resources/assets/tool.svg</normaloff>../resources/assets/tool.svg</iconset>
+           <normaloff>../../Users/Gerald Holt/.designer/resources/assets/tool.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/tool.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -367,7 +367,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../resources/assets/file-text.svg</normaloff>../resources/assets/file-text.svg</iconset>
+           <normaloff>../../Users/Gerald Holt/.designer/resources/assets/file-text.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/file-text.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -448,7 +448,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../resources/assets/check-square.svg</normaloff>../resources/assets/check-square.svg</iconset>
+           <normaloff>../../Users/Gerald Holt/.designer/resources/assets/check-square.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/check-square.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -477,7 +477,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../resources/assets/activity.svg</normaloff>../resources/assets/activity.svg</iconset>
+           <normaloff>../../Users/Gerald Holt/.designer/resources/assets/activity.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/activity.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -540,7 +540,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../resources/assets/layers.svg</normaloff>../resources/assets/layers.svg</iconset>
+           <normaloff>../../Users/Gerald Holt/.designer/resources/assets/layers.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/layers.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -657,7 +657,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../resources/assets/layout.svg</normaloff>../resources/assets/layout.svg</iconset>
+           <normaloff>../../Users/Gerald Holt/.designer/resources/assets/layout.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/layout.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -686,7 +686,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../resources/assets/file-text.svg</normaloff>../resources/assets/file-text.svg</iconset>
+           <normaloff>../../Users/Gerald Holt/.designer/resources/assets/file-text.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/file-text.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -715,7 +715,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../resources/assets/compass.svg</normaloff>../resources/assets/compass.svg</iconset>
+           <normaloff>../../Users/Gerald Holt/.designer/resources/assets/compass.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/compass.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -744,7 +744,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../resources/assets/users.svg</normaloff>../resources/assets/users.svg</iconset>
+           <normaloff>../../Users/Gerald Holt/.designer/resources/assets/users.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/users.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -767,7 +767,7 @@
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../resources/assets/HCE-C.png</pixmap>
+         <pixmap>../../Users/Gerald Holt/.designer/resources/assets/HCE-C.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -853,7 +853,7 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/upload-cloud.svg</normaloff>../resources/assets/upload-cloud.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/upload-cloud.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/upload-cloud.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -2210,7 +2210,7 @@ QComboBox::down-arrow {
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
-       <widget class="QPushButton" name="btnEdit_2">
+       <widget class="QPushButton" name="btnEditContact">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -2238,7 +2238,7 @@ QComboBox::down-arrow {
          <string>Edit</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="btnDelete">
+       <widget class="QPushButton" name="btnDeleteContact">
         <property name="geometry">
          <rect>
           <x>130</x>
@@ -2307,12 +2307,12 @@ QComboBox::down-arrow {
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
-       <widget class="QPushButton" name="btnNew_2">
+       <widget class="QPushButton" name="btnNewContact">
         <property name="geometry">
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>75</width>
+          <width>101</width>
           <height>31</height>
          </rect>
         </property>
@@ -2332,15 +2332,15 @@ QComboBox::down-arrow {
      }</string>
         </property>
         <property name="text">
-         <string>Add</string>
+         <string>Add / Update</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="btnClear_2">
+       <widget class="QPushButton" name="btnClearContactCells">
         <property name="geometry">
          <rect>
-          <x>140</x>
+          <x>114</x>
           <y>10</y>
-          <width>75</width>
+          <width>101</width>
           <height>31</height>
          </rect>
         </property>
@@ -5075,7 +5075,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -5134,7 +5134,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -5211,7 +5211,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -5288,7 +5288,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -5365,7 +5365,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -5442,7 +5442,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -5519,7 +5519,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -5614,7 +5614,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -5673,7 +5673,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -5750,7 +5750,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -5827,7 +5827,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -5922,7 +5922,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -5981,7 +5981,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -6094,7 +6094,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -6153,7 +6153,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -6230,7 +6230,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -6307,7 +6307,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -6366,7 +6366,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -6461,7 +6461,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -6520,7 +6520,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -6597,7 +6597,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -6692,7 +6692,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -6769,7 +6769,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -6882,7 +6882,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -6941,7 +6941,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -7018,7 +7018,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -7095,7 +7095,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -7154,7 +7154,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -7231,7 +7231,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -7308,7 +7308,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -7385,7 +7385,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -7462,7 +7462,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -7539,7 +7539,7 @@ QComboBox::down-arrow {
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../resources/assets/corner-down-right.svg</normaloff>../resources/assets/corner-down-right.svg</iconset>
+          <normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</normaloff>../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -9838,7 +9838,7 @@ QComboBox::down-arrow {
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../resources/assets/SANS1123_plate_Flange.jpg</pixmap>
+         <pixmap>../../Users/Gerald Holt/.designer/resources/assets/SANS1123_plate_Flange.jpg</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -10397,7 +10397,7 @@ QComboBox::down-arrow {
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../resources/assets/SANS1123_plate_Flange.jpg</pixmap>
+         <pixmap>../../Users/Gerald Holt/.designer/resources/assets/SANS1123_plate_Flange.jpg</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>

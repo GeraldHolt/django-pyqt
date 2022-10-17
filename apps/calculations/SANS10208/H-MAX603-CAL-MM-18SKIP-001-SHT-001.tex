@@ -462,19 +462,79 @@ Pressure on the Front and Sides of Skip&$p_4 = 0.2 p_o$&16.1&$N/m^2$\\%
 \end{figure}
 
 %
+\newpage%
+\textbf{Material Data}%
+\newline%
+%
+2 / 533 x 110 CHANNEL (MODIFIED 533 X 210 X 93 UB) WITH TOP AND BOTTOM 20 X 100 PLATE%
+\newline%
+%
+\newline%
+%
+4 / 20 X 100 PLATES (TOP AND BOTTOM)%
+\newline%
+%
+\newline%
+%
+2 / 150 x 150 ANGLE END CONNECTIONS%
+\newline%
+%
 \begin{flushleft}%
 \begin{minipage}{\textwidth}%
 \flushleft%
 \begin{tabular}{l l l l}%
+Length of Transom&$L$&1700&$mm$\\%
 Channel Width&$b$&109&$mm$\\%
 Channel Height&$h$&533&$mm$\\%
 Channel Web Thickness&$t_w$&10.2&$mm$\\%
 Channel Flange Thickness&$t_f$&15.6&$mm$\\%
-Channel Cross Sectional Area&$A=2bt_f + h_w*t_w$&8638&$mm^2$\\%
-Centroid Distance&$x_c=(1/A)(0.5h_wt_w^2 + t_fb^2)$&25.0&$mm$\\%
-Second Moment of Area about x{-}x&$I_x=(bh^3)/12 - (b_fh_w^3)/12)$&335071491.0&$mm^4$\\%
-Second Moment of Area about y{-}y&$I_y=(h_wt_w^3)/3+2(t_fb^3)/3 - Ax_c)$&13434359.0&$mm^4$\\%
-Plastic Section Modulus&$Z_p=(bh^2)/4 - (b_fh_w^2)/4)$&1521885.0&$mm^4$\\%
+Top and Bottom Plate Width&$w$&110&$mm$\\%
+Top and Bottom Plate Thickness&$t_p$&20&$mm$\\%
+Yield Stress&$f_y$&355&$MPa$\\%
+Channel Cross Sectional Area&$A=2bt_f + h_w*t_w$&8519.0&$mm^2$\\%
+Channel Centroid Distance&$x_c=(0.5h_wt_w^2 + t_fb^2)/A$&25.0&$mm$\\%
+Channel Second Moment of Area about x{-}x&$I_x=bh^3/12 - b_fh_w^3/12$&335071491.0&$mm^4$\\%
+Channel Second Moment of Area about y{-}y&$I_y=h_wt_w^3/3+2t_fb^3/3 - Ax_c^2)$&8397644.0&$mm^4$\\%
+Double Channel Polar Moment&$J = I_x + I_y$&340973234.0&$mm^4$\\%
+Channel Warping Constant&$C_w = (1/144)(t_f^3b^3)+(1/36)(h - t_f/2)^3)t_w^3$&4304577645.0&$mm^6$\\%
+Channel Plastic Section Modulus&$Z_p=bh^2/4 - b_fh_w^2/4$&1521885.0&$mm^3$\\%
+Double Plate Cross Sectional Area&$A = 2(wt_p)$&4400&$mm^2$\\%
+Double Plate Second Moment of Area about x{-}x&$I_x = w/12(H^3-h^3)$&336536567.0&$mm^4$\\%
+Double Channel Second Moment of Area about y{-}y&$I_y = t_pw^3/6$&4436667.0&$mm^4$\\%
+Double Plate Plastic Section Modulus&$Z_p = 2(wt_p(h-t_p/2)$&2301200.0&$mm^3$\\%
+Plastic Moment&$M_p = Z_pf_y$&1357.2&$kNm$\\%
+Adjusted Plastic Moment&$0.67M_p$&909.3&$kNm$\\%
+Critical Elastic Moment&$M_c = ((\pi^4E^2C_wI_y)/L^4 + (\pi^2EI_yGJ)/L^2)^0.5$&20494.3&$kNm$\\%
+Factored Moment Resistance&$M_r = 1.15 \phi M_p(1-(0.28M_p/M_c))$&1378.7&$kNm$\\%
+Factored Shear Resistance&$Vr = 0.55 \phi A f_y$&2270.0&$kNm$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}%
+\textbf{Design for Emergency Loads}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Rope Break Force&$RBF$&2319&$kN$\\%
+Number of Beams&$No.$&2&\\%
+Combined Shear Resistance&$M_r$&4540.0&$kN$\\%
+Ultimate Bending Moment&$M_u = RBF L/4$&986.0&$kN$\\%
+Ultimate Shear Force&$M_u = RBF/2$&1160.0&$kN$\\%
+Interaction Check&$M_u/M_r + V_u/V_r < 1$&0.61&$Pass$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}%
+\textbf{Design for Operation Loads}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Operation Force&$LC = 1.2G_c + 1.6R$&127.0&$kN$\\%
+Number of Beams&$No.$&2&\\%
+Combined Shear Resistance&$M_r$&4540.0&$kN$\\%
+Ultimate Bending Moment&$M_u = RBF L/4$&54.0&$kN$\\%
+Ultimate Shear Force&$M_u = RBF/2$&64.0&$kN$\\%
+Interaction Check&$M_u/M_r + V_u/V_r < 1$&0.03&$Pass$\\%
 \end{tabular}%
 \end{minipage}%
 \end{flushleft}

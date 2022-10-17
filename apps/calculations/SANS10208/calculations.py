@@ -380,7 +380,47 @@ def rock_loads():
 
 
 #===================================================================================================#
-def plastic_section_modulus_channel(b,h,t_w, t_f):
+def properties_double_plate(h,w,t_p):
+    
+    H = h + 2*t_p
+    A = round(2*(w*t_p),0)
+    I_x = round((w/12)*(H**3-h**3),0)
+    I_y = round((t_p*w**3)/6,0)
+    Z_e = round((w/6*H)*(H**3-h**3),0)
+    Z_p = round(2*(w*t_p*(h-t_p/2)),0)
+    J = I_x+I_y
+    expr_H = 'H = h + 2t_p'
+    expr_A = 'A = 2(wt_p)'
+    expr_I_x = 'I_x = w/12(H^3-h^3)'
+    expr_I_y = 'I_y = t_pw^3/6'
+    expr_Ze = 'Z_e = w/6H(H^3-h^3)'
+    expr_Zp = 'Z_p = 2(wt_p(h-t_p/2)'
+    expr_J = 'J = I_x + I_y'
+
+    results = {
+                'A': A,
+                'H': H,
+                'I_x': I_x,
+                'I_y': I_y,
+                'J': J,
+                'Z_e': Z_e,
+                'Z_p': Z_p,
+                'expr_H': expr_H,
+                'expr_A': expr_A,
+                'expr_I_x': expr_I_x,
+                'expr_I_y': expr_I_y,
+                'expr_J': expr_J,
+                'expr_Z_e': expr_Ze,
+                'expr_Z_p': expr_Zp
+    }
+    return results
+
+
+
+
+
+#===================================================================================================#
+def properties_channel(b,h,t_w, t_f):
     h_w = h - 2*t_f
     b_f = b - t_w
 
@@ -388,14 +428,18 @@ def plastic_section_modulus_channel(b,h,t_w, t_f):
     A = 2*b*t_f + h_w*t_w
     x_c = (1/A)*(0.5*h_w*t_w**2 + t_f*b**2)
     I_x = (b*h**3)/12 - (b_f*h_w**3)/12
-    I_y = (h_w*t_w**3)/3+2*(t_f*b**3)/3 - A*x_c
+    I_y = (h_w*t_w**3)/3+2*(t_f*b**3)/3 - A*x_c**2
     Z_p = (b*h**2)/4 - (b_f*h_w**2)/4
+    J = I_x+I_y
+    C_w = (1/144)*(t_f**3)*(b**3)+(1/36)*((h - t_f/2)**3)*(t_w**3)
 
     expr_A = 'A=2bt_f + h_w*t_w'
-    expr_x_c = 'x_c=(1/A)(0.5h_wt_w^2 + t_fb^2)'
-    expr_I_x = 'I_x=(bh^3)/12 - (b_fh_w^3)/12)'
-    expr_I_y = 'I_y=(h_wt_w^3)/3+2(t_fb^3)/3 - Ax_c)'
-    expr_Z_p = 'Z_p=(bh^2)/4 - (b_fh_w^2)/4)'
+    expr_x_c = 'x_c=(0.5h_wt_w^2 + t_fb^2)/A'
+    expr_I_x = 'I_x=bh^3/12 - b_fh_w^3/12'
+    expr_I_y = 'I_y=h_wt_w^3/3+2t_fb^3/3 - Ax_c^2)'
+    expr_Z_p = 'Z_p=bh^2/4 - b_fh_w^2/4'
+    expr_J = 'J = I_x + I_y'
+    expr_C_w = 'C_w = (1/144)(t_f^3b^3)+(1/36)(h - t_f/2)^3)t_w^3'
 
     results = {
                 'b':b,
@@ -406,20 +450,18 @@ def plastic_section_modulus_channel(b,h,t_w, t_f):
                 'x_c': round(x_c,0),
                 'I_x': round(I_x,0),
                 'I_y': round(I_y,0),
+                'J': round(J,0),
+                'C_w': round(C_w,0),
                 'Z_p': round(Z_p,0),
                 'expr_A': expr_A,
                 'expr_x_c': expr_x_c,
                 'expr_I_x': expr_I_x,
                 'expr_I_y': expr_I_y,
-                'expr_Z_p': expr_Z_p
+                'expr_Z_p': expr_Z_p,
+                'expr_J': expr_J,
+                'expr_C_w': expr_C_w,
     }
-    print("jjjjjjjjjjjjjjjjjjjjjjjjjjjjjj")
-    print(expr_x_c)
     return results
-
-
-
-
 
 #===================================================================================================#
 def top_transom():
@@ -429,37 +471,156 @@ def top_transom():
 
     RBF = gen_data['RBF'][1]
     L = 1700 # Length of transom
-    SPEC_1 = "2 / 533 x 110 CHANNEL (MODIEFIED 533 X 210 X 93 UB)"
-    SPEC_2 = "2 / "
-    E = 200 # Modulus of Elastisity GPa
-    G = 70 # Shear Modulus GPa
+    E = 200000 # Modulus of Elastisity MPa
+    G = 70000 # Shear Modulus MPa
     f_y = 355 #Yield Stress MPa
     t_w = 10.2 # Web Thickness mm
     t_f = 15.6 # Flange Thickness mm
     h = 533 # Beam Height mm
     b = 109 # Beam Width mm
+    w = 110 # Plate Width mm
+    t_p = 20 # Plate Thickness
     
-
-    prop = plastic_section_modulus_channel(b,h,t_w, t_f)
+    plate = properties_double_plate(h,w,t_p)
+    prop = properties_channel(b,h,t_w, t_f)
     Z_p = prop['Z_p']
-    M_p = Z_p*f_y
-    M_pall = 0.67*M_p
+    I_x = prop['I_x']
+    I_y = prop['I_y']
+    A= prop['A']
+    J = prop['J']
+    C_w = prop['C_w']
 
-    
+    Z_p_p = plate['Z_p']
+    I_x_p = plate['I_x']
+    I_y_p = plate['I_y']
+    A_p= plate['A']
+    J_p = plate['J']
+
+    I_x = I_x + I_x_p
+    I_y = I_y + I_y_p
+    Z_p = Z_p + Z_p_p
+    J = J + J_p
+    A = A + A_p
+
+    M_p = round(Z_p*f_y/1000**2,1)
+    M_pall = round(0.67*M_p,1)
+    pi = math.pi
+    M_cr = math.sqrt(((pi**4)*(E**2)*C_w*I_y)/L**4 + ((pi**2)*E*I_y*G*J)/L**2)
+    M_c = round((M_cr/1000**2),1)
+    if M_c > M_pall:
+        M_r = round(1.15*0.9*M_p*(1-(0.28*M_p/M_c)),1)
+        expr_M_r = 'M_r = 1.15 \\phi M_p(1-(0.28M_p/M_c))'
+    else:
+        M_r = round(0.9*M_p,1)
+        expr_M_r = 'M_r = \\phi M_p'
+    V_r = round(0.55*0.9*A*f_y/1000,0)
+
+    expr_V_r = 'Vr = 0.55 \\phi A f_y'
+    expr_Mp = 'M_p = Z_pf_y'
+    expr_Mp067 = '0.67M_p'
+    expr_Mc = 'M_c = ((\\pi^4E^2C_wI_y)/L^4 + (\\pi^2EI_yGJ)/L^2)^0.5'
 
 
-    data = {
+
+    data = {    
+                'L':                ['Length of Transom', L, 'mm'],
                 'b':                ['Channel Width', b, 'mm'],
                 'h':                ['Channel Height', h, 'mm'],
                 't_w':              ['Channel Web Thickness', t_w, 'mm'],
                 't_f':              ['Channel Flange Thickness', t_f, 'mm'],
+                'w':                ['Top and Bottom Plate Width',w, 'mm'],
+                't_p':              ['Top and Bottom Plate Thickness', t_p, 'mm'],
                 'f_y':              ['Yield Stress', f_y, 'MPa'],
                 prop['expr_A']:     ['Channel Cross Sectional Area', prop['A'], 'mm^2'],
-                prop['expr_x_c']:   ['Centroid Distance', prop['x_c'], 'mm'],
-                prop['expr_I_x']:   ['Second Moment of Area about x-x', prop['I_x'], 'mm^4'],
-                prop['expr_I_y']:   ['Second Moment of Area about y-y', prop['I_y'], 'mm^4'],
-                prop['expr_Z_p']:   ['Plastic Section Modulus', prop['Z_p'], 'mm^3'],
-            
+                prop['expr_x_c']:   ['Channel Centroid Distance', prop['x_c'], 'mm'],
+                prop['expr_I_x']:   ['Channel Second Moment of Area about x-x', prop['I_x'], 'mm^4'],
+                prop['expr_I_y']:   ['Channel Second Moment of Area about y-y', prop['I_y'], 'mm^4'],
+                prop['expr_J']:     ['Channel Polar Moment', prop['J'], 'mm^4'],
+                prop['expr_C_w']:   ['Channel Warping Constant', prop['C_w'], 'mm^6'],
+                prop['expr_Z_p']:   ['Channel Plastic Section Modulus', prop['Z_p'], 'mm^3'],
+                
+                plate['expr_A']:     ['Double Plate Cross Sectional Area', plate['A'], 'mm^2'],
+                plate['expr_I_x']:   ['Double Plate Second Moment of Area about x-x', plate['I_x'], 'mm^4'],
+                plate['expr_I_y']:   ['Double Channel Second Moment of Area about y-y', plate['I_y'], 'mm^4'],
+                plate['expr_J']:     ['Double Channel Polar Moment', plate['J'], 'mm^4'],
+                plate['expr_Z_p']:   ['Double Plate Plastic Section Modulus', plate['Z_p'], 'mm^3'],
+                
+                expr_Mp:            ['Plastic Moment',M_p,'kNm' ],
+                expr_Mp067:         ['Adjusted Plastic Moment',M_pall,'kNm' ],
+                expr_Mc:            ['Critical Elastic Moment', M_c, 'kNm'],
+                expr_M_r:           ['Factored Moment Resistance', M_r, 'kNm'],
+                expr_V_r:           ['Factored Shear Resistance', V_r, 'kNm']
+    }
+
+    return data, M_r, V_r
+
+#===================================================================================================#
+def emergencyloads():
+    topt, M_r, V_r = top_transom()
+    gen_data = general_data()
+
+    RBF = gen_data['RBF'][1]
+    L = topt['L'][1]
+    N_beams = 2
+
+    M_u = round(RBF*L/4000,0)
+    V_u = round(RBF/2,0)
+    IC =  round(M_u/(N_beams*M_r) + V_u/(N_beams*V_r),2)
+    if IC < 1:
+        text = "Pass"
+    else:
+        text = "Fail"
+
+    expr_M_u = 'M_u = RBF L/4'
+    expr_V_u = 'M_u = RBF/2'
+    expr_IC = "M_u/M_r + V_u/V_r < 1"
+
+    data = {
+        'RBF':            ['Rope Break Force', RBF, 'kN'],
+        'No.':            ['Number of Beams', N_beams, ''],
+        'M_r':            ['Combined Bending Resistance', N_beams*M_r, 'kN'],
+        'M_r':            ['Combined Shear Resistance', N_beams*V_r, 'kN'],
+        expr_M_u:         ['Ultimate Bending Moment', M_u, 'kN'],
+        expr_V_u:         ['Ultimate Shear Force', V_u, 'kN'],
+        expr_IC:          ['Interaction Check', IC, text]              
+    }
+
+    return data
+
+#===================================================================================================#
+def operationalloads():
+    topt, M_r, V_r = top_transom()
+    gen_data = general_data()
+    gen_skip = general_skip_loads()
+    perm_data = permanent_loads()
+    R = gen_data['W_pay'][1]
+    g = 9.81
+    G_c = perm_data['G_c = (m_1 + m_3 + m_4)g'][1]
+
+    LC = round((1.2*G_c + 1.6*R)/1000,0) # kN
+    L = topt['L'][1]
+    N_beams = 2
+
+    M_u = round(LC*L/4000,0)
+    V_u = round(LC/2,0)
+    IC =  round(M_u/(N_beams*M_r) + V_u/(N_beams*V_r),2)
+    if IC < 1:
+        text = "Pass"
+    else:
+        text = "Fail"
+
+    expr_M_u = 'M_u = RBF L/4'
+    expr_V_u = 'M_u = RBF/2'
+    expr_IC = "M_u/M_r + V_u/V_r < 1"
+
+    data = {
+        'LC = 1.2G_c + 1.6R':   ['Operation Force', LC, 'kN'],
+        'No.':                  ['Number of Beams', N_beams, ''],
+        'M_r':                  ['Combined Bending Resistance', N_beams*M_r, 'kN'],
+        'M_r':                  ['Combined Shear Resistance', N_beams*V_r, 'kN'],
+        expr_M_u:               ['Ultimate Bending Moment', M_u, 'kN'],
+        expr_V_u:               ['Ultimate Shear Force', V_u, 'kN'],
+        expr_IC:                ['Interaction Check', IC, text]              
     }
 
     return data

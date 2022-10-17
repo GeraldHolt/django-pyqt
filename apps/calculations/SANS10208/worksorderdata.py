@@ -72,6 +72,10 @@ SECTION_4_1_13 = "Rock Loads"
 
 SECTION_4_3 = "Skip Element Design"
 SECTION_4_3_1 = "Top Transom"
+
+SPEC_1 = "2 / 533 x 110 CHANNEL (MODIFIED 533 X 210 X 93 UB) WITH TOP AND BOTTOM 20 X 100 PLATE"
+SPEC_2 = "4 / 20 X 100 PLATES (TOP AND BOTTOM)"
+SPEC_3 = "2 / 150 x 150 ANGLE END CONNECTIONS"
 TEXT_4_3_1a = r"""Design for Emergency Load"""
 TEXT_4_3_1b = r"""Load Condition No. 2: Maximum Self Weight in combination with Imposed Skip Load"""
 

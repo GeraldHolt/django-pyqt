@@ -16,7 +16,7 @@ class Ui_ControlPanel(object):
         ControlPanel.setObjectName("ControlPanel")
         ControlPanel.resize(1540, 851)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\resources\\assets\\HCE-C.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/HCE-C.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         ControlPanel.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(ControlPanel)
         self.centralwidget.setStyleSheet("")
@@ -63,7 +63,7 @@ class Ui_ControlPanel(object):
         self.btnContacts.setToolTipDuration(0)
         self.btnContacts.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/smile.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/smile.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnContacts.setIcon(icon1)
         self.btnContacts.setIconSize(QtCore.QSize(24, 24))
         self.btnContacts.setObjectName("btnContacts")
@@ -85,7 +85,7 @@ class Ui_ControlPanel(object):
         self.btnDashboard.setInputMethodHints(QtCore.Qt.ImhNone)
         self.btnDashboard.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/home.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/home.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnDashboard.setIcon(icon2)
         self.btnDashboard.setIconSize(QtCore.QSize(24, 24))
         self.btnDashboard.setCheckable(False)
@@ -96,7 +96,7 @@ class Ui_ControlPanel(object):
         self.btnCustomer.setToolTipDuration(0)
         self.btnCustomer.setText("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/database.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/database.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnCustomer.setIcon(icon3)
         self.btnCustomer.setIconSize(QtCore.QSize(24, 24))
         self.btnCustomer.setObjectName("btnCustomer")
@@ -105,7 +105,7 @@ class Ui_ControlPanel(object):
         self.btnQuotation.setToolTipDuration(0)
         self.btnQuotation.setText("")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/file-plus.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/file-plus.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnQuotation.setIcon(icon4)
         self.btnQuotation.setIconSize(QtCore.QSize(24, 24))
         self.btnQuotation.setObjectName("btnQuotation")
@@ -131,7 +131,7 @@ class Ui_ControlPanel(object):
         self.btnGeneralInfo.setToolTipDuration(0)
         self.btnGeneralInfo.setText("")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/tool.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/tool.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnGeneralInfo.setIcon(icon5)
         self.btnGeneralInfo.setIconSize(QtCore.QSize(24, 24))
         self.btnGeneralInfo.setObjectName("btnGeneralInfo")
@@ -140,7 +140,7 @@ class Ui_ControlPanel(object):
         self.btnCalculation.setToolTipDuration(0)
         self.btnCalculation.setText("")
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/file-text.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon6.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/file-text.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnCalculation.setIcon(icon6)
         self.btnCalculation.setIconSize(QtCore.QSize(24, 24))
         self.btnCalculation.setObjectName("btnCalculation")
@@ -166,7 +166,7 @@ class Ui_ControlPanel(object):
         self.btnProcurement.setToolTipDuration(0)
         self.btnProcurement.setText("")
         icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/check-square.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon7.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/check-square.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnProcurement.setIcon(icon7)
         self.btnProcurement.setIconSize(QtCore.QSize(24, 24))
         self.btnProcurement.setObjectName("btnProcurement")
@@ -175,7 +175,7 @@ class Ui_ControlPanel(object):
         self.btnAnalysis.setToolTipDuration(0)
         self.btnAnalysis.setText("")
         icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/activity.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon8.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/activity.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnAnalysis.setIcon(icon8)
         self.btnAnalysis.setIconSize(QtCore.QSize(24, 24))
         self.btnAnalysis.setObjectName("btnAnalysis")
@@ -195,7 +195,7 @@ class Ui_ControlPanel(object):
         self.btnDocControl.setToolTipDuration(0)
         self.btnDocControl.setText("")
         icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/layers.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon9.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/layers.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnDocControl.setIcon(icon9)
         self.btnDocControl.setIconSize(QtCore.QSize(24, 24))
         self.btnDocControl.setObjectName("btnDocControl")
@@ -233,7 +233,7 @@ class Ui_ControlPanel(object):
         self.btnInvoices.setToolTipDuration(0)
         self.btnInvoices.setText("")
         icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/layout.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon10.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/layout.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnInvoices.setIcon(icon10)
         self.btnInvoices.setIconSize(QtCore.QSize(24, 24))
         self.btnInvoices.setObjectName("btnInvoices")
@@ -249,7 +249,7 @@ class Ui_ControlPanel(object):
         self.btnTimesheets.setToolTipDuration(0)
         self.btnTimesheets.setText("")
         icon11 = QtGui.QIcon()
-        icon11.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/compass.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon11.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/compass.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnTimesheets.setIcon(icon11)
         self.btnTimesheets.setIconSize(QtCore.QSize(24, 24))
         self.btnTimesheets.setObjectName("btnTimesheets")
@@ -258,14 +258,14 @@ class Ui_ControlPanel(object):
         self.btnResources.setToolTipDuration(0)
         self.btnResources.setText("")
         icon12 = QtGui.QIcon()
-        icon12.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/users.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon12.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/users.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnResources.setIcon(icon12)
         self.btnResources.setIconSize(QtCore.QSize(24, 24))
         self.btnResources.setObjectName("btnResources")
         self.label = QtWidgets.QLabel(self.leftMenuSubContainer)
         self.label.setGeometry(QtCore.QRect(10, 10, 51, 51))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/HCE-C.png"))
+        self.label.setPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/HCE-C.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.leftMenuSubContainer)
@@ -299,7 +299,7 @@ class Ui_ControlPanel(object):
         self.btnUploadWO.setInputMethodHints(QtCore.Qt.ImhNone)
         self.btnUploadWO.setText("")
         icon13 = QtGui.QIcon()
-        icon13.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/upload-cloud.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon13.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/upload-cloud.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnUploadWO.setIcon(icon13)
         self.btnUploadWO.setIconSize(QtCore.QSize(24, 24))
         self.btnUploadWO.setCheckable(False)
@@ -909,9 +909,9 @@ class Ui_ControlPanel(object):
         self.frame_10.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_10.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_10.setObjectName("frame_10")
-        self.btnEdit_2 = QtWidgets.QPushButton(self.frame_10)
-        self.btnEdit_2.setGeometry(QtCore.QRect(10, 10, 75, 31))
-        self.btnEdit_2.setStyleSheet("    QPushButton {\n"
+        self.btnEditContact = QtWidgets.QPushButton(self.frame_10)
+        self.btnEditContact.setGeometry(QtCore.QRect(10, 10, 75, 31))
+        self.btnEditContact.setStyleSheet("    QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -924,10 +924,10 @@ class Ui_ControlPanel(object):
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
 "     }")
-        self.btnEdit_2.setObjectName("btnEdit_2")
-        self.btnDelete = QtWidgets.QPushButton(self.frame_10)
-        self.btnDelete.setGeometry(QtCore.QRect(130, 10, 75, 31))
-        self.btnDelete.setStyleSheet("    QPushButton {\n"
+        self.btnEditContact.setObjectName("btnEditContact")
+        self.btnDeleteContact = QtWidgets.QPushButton(self.frame_10)
+        self.btnDeleteContact.setGeometry(QtCore.QRect(130, 10, 75, 31))
+        self.btnDeleteContact.setStyleSheet("    QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -939,7 +939,7 @@ class Ui_ControlPanel(object):
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
 "     }")
-        self.btnDelete.setObjectName("btnDelete")
+        self.btnDeleteContact.setObjectName("btnDeleteContact")
         self.tvContacts = QtWidgets.QTableView(self.contactListContainer)
         self.tvContacts.setGeometry(QtCore.QRect(10, 60, 971, 631))
         self.tvContacts.setObjectName("tvContacts")
@@ -953,9 +953,9 @@ class Ui_ControlPanel(object):
         self.frame_11.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_11.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_11.setObjectName("frame_11")
-        self.btnNew_2 = QtWidgets.QPushButton(self.frame_11)
-        self.btnNew_2.setGeometry(QtCore.QRect(10, 10, 75, 31))
-        self.btnNew_2.setStyleSheet("   QPushButton {\n"
+        self.btnNewContact = QtWidgets.QPushButton(self.frame_11)
+        self.btnNewContact.setGeometry(QtCore.QRect(10, 10, 101, 31))
+        self.btnNewContact.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -968,10 +968,10 @@ class Ui_ControlPanel(object):
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
 "     }")
-        self.btnNew_2.setObjectName("btnNew_2")
-        self.btnClear_2 = QtWidgets.QPushButton(self.frame_11)
-        self.btnClear_2.setGeometry(QtCore.QRect(140, 10, 75, 31))
-        self.btnClear_2.setStyleSheet("   QPushButton {\n"
+        self.btnNewContact.setObjectName("btnNewContact")
+        self.btnClearContactCells = QtWidgets.QPushButton(self.frame_11)
+        self.btnClearContactCells.setGeometry(QtCore.QRect(114, 10, 101, 31))
+        self.btnClearContactCells.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -984,7 +984,7 @@ class Ui_ControlPanel(object):
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
 "     }")
-        self.btnClear_2.setObjectName("btnClear_2")
+        self.btnClearContactCells.setObjectName("btnClearContactCells")
         self.lbFirstName = QtWidgets.QLabel(self.customerCRUD_2)
         self.lbFirstName.setGeometry(QtCore.QRect(10, 10, 121, 20))
         font = QtGui.QFont()
@@ -2410,7 +2410,7 @@ class Ui_ControlPanel(object):
         self.btnDesignBasis.setInputMethodHints(QtCore.Qt.ImhNone)
         self.btnDesignBasis.setText("")
         icon15 = QtGui.QIcon()
-        icon15.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/corner-down-right.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon15.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/corner-down-right.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnDesignBasis.setIcon(icon15)
         self.btnDesignBasis.setIconSize(QtCore.QSize(24, 24))
         self.btnDesignBasis.setCheckable(False)
@@ -4249,7 +4249,7 @@ class Ui_ControlPanel(object):
         self.label_3 = QtWidgets.QLabel(self.tab_6)
         self.label_3.setGeometry(QtCore.QRect(20, 110, 341, 141))
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/SANS1123_plate_Flange.jpg"))
+        self.label_3.setPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/SANS1123_plate_Flange.jpg"))
         self.label_3.setScaledContents(True)
         self.label_3.setObjectName("label_3")
         self.leFBOLT = QtWidgets.QLineEdit(self.tab_6)
@@ -4489,7 +4489,7 @@ class Ui_ControlPanel(object):
         self.label_4 = QtWidgets.QLabel(self.tab_12)
         self.label_4.setGeometry(QtCore.QRect(10, 110, 341, 141))
         self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/SANS1123_plate_Flange.jpg"))
+        self.label_4.setPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../../Users/Gerald Holt/.designer/resources/assets/SANS1123_plate_Flange.jpg"))
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
         self.lbCompID_62 = QtWidgets.QLabel(self.tab_12)
@@ -4594,7 +4594,7 @@ class Ui_ControlPanel(object):
         ControlPanel.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(ControlPanel)
-        self.stwMain.setCurrentIndex(1)
+        self.stwMain.setCurrentIndex(2)
         self.tabQuotation.setCurrentIndex(0)
         self.tabWidget_2.setCurrentIndex(0)
         self.tabWorksOrders.setCurrentIndex(0)
@@ -4664,10 +4664,10 @@ class Ui_ControlPanel(object):
         self.label_19.setText(_translate("ControlPanel", "CONTACT DETAILS"))
         self.lbContacts_2.setText(_translate("ControlPanel", "CONTACTS"))
         self.searchBtn_2.setToolTip(_translate("ControlPanel", "Overview of Actions and Workload"))
-        self.btnEdit_2.setText(_translate("ControlPanel", "Edit"))
-        self.btnDelete.setText(_translate("ControlPanel", "Delete"))
-        self.btnNew_2.setText(_translate("ControlPanel", "Add"))
-        self.btnClear_2.setText(_translate("ControlPanel", "Clear"))
+        self.btnEditContact.setText(_translate("ControlPanel", "Edit"))
+        self.btnDeleteContact.setText(_translate("ControlPanel", "Delete"))
+        self.btnNewContact.setText(_translate("ControlPanel", "Add / Update"))
+        self.btnClearContactCells.setText(_translate("ControlPanel", "Clear"))
         self.lbFirstName.setText(_translate("ControlPanel", "First Name"))
         self.lbEmail.setText(_translate("ControlPanel", "Email"))
         self.lbPosition.setText(_translate("ControlPanel", "Position"))

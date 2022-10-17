@@ -144,9 +144,25 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
 
         # Allocate Buttons
         self.btnNewCustomer.clicked.connect(self.createNewUpdateCustomer)
-        # self.btnClearCustomerCells.clicked.connect(self.clearCustomerCells)
+        self.btnClearCustomerCells.clicked.connect(self.clearCustomerCells)
         self.btnEditCustomer.clicked.connect(self.editCustomer)
         # self.btnDeleteCustomer.clicked.connect(self.deleteCustomer)
+
+    def clearCustomerCells(self):
+        self.leCompID.clear()
+        self.leCompanyName.clear()
+        self.cbCompanyStatus.clear()
+        self.leRegistrationNumber.clear()
+        self.leVATNumber.clear()
+        self.leWebsite.clear()
+        self.leAddress1.clear()
+        self.leAddress2.clear()
+        self.leCity.clear()
+        self.lePostalCode.clear()
+        self.leProvince.clear()
+        self.cbCountry.clear()
+        self.leBusinessPhone.clear()
+        self.leCompanyEmail.clear()
 
     def createNewUpdateCustomer(self):
 
@@ -167,84 +183,244 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
         customer = self.cboxCustomer.isChecked()
         supplier = self.cboxSupplier.isChecked()
 
-        Company.objects.update_or_create(
-                                            compID  =  compID,
-                                            companyName = companyName,                         
-                                            company_status = company_status,
-                                            company_reg_no = company_reg_no,
-                                            VAT_no = VAT_no,
-                                            companyWeb = companyWeb,
-                                            address1 = address1,
-                                            address2 = address2,
-                                            city = city,
-                                            postalCode = postalCode,
-                                            province = province,
-                                            country = country,
-                                            businessPhone = businessPhone,
-                                            companyEmail = companyEmail,
-                                            customer = customer,
-                                            supplier = supplier
-        )
-        self.leCompID.setReadOnly(False)
-
-    def editCustomer(self):
         try:
-            index = self.tvCustomers.selectionModel().selectedIndexes()[0]
-            row_index = {index.row() for index in self.tvCustomers.selectionModel().selectedIndexes()}
-            if len(row_index) == None or len(row_index)>1:
-                message = 'Select only a single line'
+            if compID:
+                company = Company.objects.filter(compID  =  compID)
+            
+                if company:
+                    company.update(
+                                    companyName = companyName,                         
+                                    company_status = company_status,
+                                    company_reg_no = company_reg_no,
+                                    VAT_no = VAT_no,
+                                    companyWeb = companyWeb,
+                                    address1 = address1,
+                                    address2 = address2,
+                                    city = city,
+                                    postalCode = postalCode,
+                                    province = province,
+                                    country = country,
+                                    businessPhone = businessPhone,
+                                    companyEmail = companyEmail,
+                                    customer = customer,
+                                    supplier = supplier
+                    )
+                    self.clearCustomerCells()
+                    self.leCompID.setReadOnly(False)
+                    message = 'Customer Data Updated'
+                    pop_up = PopUpMessageWindow()
+                    pop_up.message(message)
+                    pop_up.exec_()
+
+                else:
+                    company.create(
+                                    companyName = companyName,                         
+                                    company_status = company_status,
+                                    company_reg_no = company_reg_no,
+                                    VAT_no = VAT_no,
+                                    companyWeb = companyWeb,
+                                    address1 = address1,
+                                    address2 = address2,
+                                    city = city,
+                                    postalCode = postalCode,
+                                    province = province,
+                                    country = country,
+                                    businessPhone = businessPhone,
+                                    companyEmail = companyEmail,
+                                    customer = customer,
+                                    supplier = supplier
+                    )
+                    self.leCompID.setReadOnly(False)
+                    self.clearCustomerCells()
+                    self.leCompID.setReadOnly(False)
+                    message = 'New Customer Added'
+                    pop_up = PopUpMessageWindow()
+                    pop_up.message(message)
+                    pop_up.exec_()
+            else:
+                message = 'Cannot Upload Empty Cells'
                 pop_up = PopUpMessageWindow()
                 pop_up.message(message)
                 pop_up.exec_()
-            else:
-                
-                column = 0
-                row = list(row_index)[0]
-                index = self.tvCustomers.model().index(row, column)  
-                company = Company.objects.get(compID = str(index.data()))
-                self.leCompID.setText(company.compID)
-                self.leCompanyName.setText(company.companyName)
-                self.cbCompanyStatus.setCurrentText(company.company_status)
-                self.leRegistrationNumber.setText(company.company_reg_no)
-                self.leVATNumber.setText(company.VAT_no)
-                self.leWebsite.setText(company.companyWeb)
-                self.leAddress1.setText(company.address1)
-                self.leAddress2.setText(company.address2)
-                self.leCity.setText(company.city)
-                self.lePostalCode.setText(company.postalCode)
-                self.leProvince.setText(company.province)
-                self.cbCountry.setCurrentText(company.country)
-                self.leBusinessPhone.setText(company.businessPhone)
-                self.leCompanyEmail.setText(company.companyEmail)
-                self.cboxCustomer.setChecked(bool(strtobool(company.customer)))
-                self.cboxSupplier.setChecked(bool(strtobool(company.supplier)))
-                self.leCompID.setReadOnly(True)
 
-        except:
-            message = 'Select only a single line'
+        except Exception as e:
+            print(e)
+            message = 'Something went wrong!!!'
             pop_up = PopUpMessageWindow()
             pop_up.message(message)
             pop_up.exec_()
 
+    def editCustomer(self):
+        index = self.tvCustomers.selectionModel().selectedIndexes()[0]
+        row_index = {index.row() for index in self.tvCustomers.selectionModel().selectedIndexes()}
+        if len(row_index)>1:
+            message = 'Select only a single line'
+            pop_up = PopUpMessageWindow()
+            pop_up.message(message)
+            pop_up.exec_()
+        else:
+            
+            column = 0
+            row = list(row_index)[0]
+            index = self.tvCustomers.model().index(row, column)  
+            company = Company.objects.get(compID = str(index.data()))
+            self.leCompID.setText(company.compID)
+            self.leCompanyName.setText(company.companyName)
+            self.cbCompanyStatus.setCurrentText(company.company_status)
+            self.leRegistrationNumber.setText(company.company_reg_no)
+            self.leVATNumber.setText(company.VAT_no)
+            self.leWebsite.setText(company.companyWeb)
+            self.leAddress1.setText(company.address1)
+            self.leAddress2.setText(company.address2)
+            self.leCity.setText(company.city)
+            self.lePostalCode.setText(company.postalCode)
+            self.leProvince.setText(company.province)
+            self.cbCountry.setCurrentText(company.country)
+            self.leBusinessPhone.setText(company.businessPhone)
+            self.leCompanyEmail.setText(company.companyEmail)
+            # self.cboxCustomer.setChecked(bool(strtobool(company.customer)))
+            # self.cboxSupplier.setChecked(bool(strtobool(company.supplier)))
+            self.leCompID.setReadOnly(True)
+
+    
 
     # Contacts ============================================================================#   
     def goto_contacts(self):
         self.stwMain.setCurrentWidget(self.contacts)
 
          # Load Contacts
-        data = Contact.objects.all().values_list('firstName', 'lastName', 'companyName', 'contactEmail')
+        data = Contact.objects.all().values_list('firstName', 'lastName', 'companyName', 'contactEmail', 'id')
         if data:
-            headers = ["First Name", "Last Name", "Company Name","Contact Email" ]
+            headers = ["First Name", "Last Name", "Company Name","Contact Email", "ID"]
             self.tableModel = TableModel(data, headers)
             self.tvContacts.setModel(self.tableModel)
-            self.header = self.tvContacts.horizontalHeader()
             self.tvContacts.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)    
             self.tvContacts.show()    
         
         else:
             print("No data yet")       
 
-        self.btnNew_2.clicked.connect(self.createNewContact)
+        # Load Comboboxes
+        self.companies = Company.objects.all()
+        company_names = []
+        for cn in self.companies:
+            company_names.append(cn.companyName)
+
+        self.cbCompany.addItems(company_names)
+
+        # Allocate Buttons
+        self.btnNewContact.clicked.connect(self.createNewUpdateContact)
+        self.btnClearContactCells.clicked.connect(self.clearContactCells)
+        self.btnEditContact.clicked.connect(self.editContact)
+        # self.btnDeleteContact.clicked.connect(self.deleteContact)
+
+    def clearContactCells(self):
+        self.leFirstName.clear()
+        self.leLastName.clear()
+        self.cbCompany.clear()
+        self.leEmail.clear()
+        self.lePosition.clear()
+        self.leBusPhone.clear()
+        self.leMobile.clear()
+        self.deDOB.clear()
+
+    def createNewUpdateContact(self):
+        id = self.leContactId.text()
+        firstName  =  self.leFirstName.text()
+        lastName = self.leLastName.text()
+        companyName = self.cbCompany.currentText()
+        contactEmail = self.leEmail.text()
+        jobTitle = self.lePosition.text()
+        contactBusPhone =  self.leBusPhone.text()
+        contactMobile = self.leMobile.text()
+        date_of_birth = self.deDOB.text()
+
+        try:
+            if firstName:
+                contact = Contact.objects.filter(id  =  id)
+            
+                if contact:
+                    contact.update(
+                                    firstName = firstName,                         
+                                    lastName = lastName,
+                                    companyName = companyName,
+                                    contactEmail = contactEmail,
+                                    jobTitle = jobTitle,
+                                    contactBusPhone = contactBusPhone,
+                                    contactMobile = contactMobile,
+                                    date_of_birth = date_of_birth,
+                    )
+                    self.clearContactCells()
+                    self.leFirstName.setReadOnly(False)
+                    message = 'Contact Details Updated'
+                    pop_up = PopUpMessageWindow()
+                    pop_up.message(message)
+                    pop_up.exec_()
+
+                else:
+                    contact.create(
+                                    firstName = firstName,                         
+                                    lastName = lastName,
+                                    companyName = companyName,
+                                    contactEmail = contactEmail,
+                                    jobTitle = jobTitle,
+                                    contactBusPhone = contactBusPhone,
+                                    contactMobile = contactMobile,
+                                    date_of_birth = date_of_birth,
+                    )
+                    self.clearContactCells()
+                    self.leFirstName.setReadOnly(False)
+                    message = 'New Contact Added'
+                    pop_up = PopUpMessageWindow()
+                    pop_up.message(message)
+                    pop_up.exec_()
+
+            else:
+                message = 'Cannot Upload Empty Cells'
+                pop_up = PopUpMessageWindow()
+                pop_up.message(message)
+                pop_up.exec_()
+
+        except Exception as e:
+            print(e)
+            message = 'Something went wrong!!!'
+            pop_up = PopUpMessageWindow()
+            pop_up.message(message)
+            pop_up.exec_()
+
+    # def editContact(self):
+    #     index = self.tvContacts.selectionModel().selectedIndexes()[0]
+    #     row_index = {index.row() for index in self.ttvContacts.selectionModel().selectedIndexes()}
+    #     if len(row_index)>1:
+    #         message = 'Select only a single line'
+    #         pop_up = PopUpMessageWindow()
+    #         pop_up.message(message)
+    #         pop_up.exec_()
+    #     else:
+            
+    #         column = 0
+    #         row = list(row_index)[0]
+    #         index = self.tvContacts.model().index(row, column)  
+    #         contact = Contact.objects.get(compID = str(index.data()))
+    #         self.leCompID.setText(company.compID)
+    #         self.leCompanyName.setText(company.companyName)
+    #         self.cbCompanyStatus.setCurrentText(company.company_status)
+    #         self.leRegistrationNumber.setText(company.company_reg_no)
+    #         self.leVATNumber.setText(company.VAT_no)
+    #         self.leWebsite.setText(company.companyWeb)
+    #         self.leAddress1.setText(company.address1)
+    #         self.leAddress2.setText(company.address2)
+    #         self.leCity.setText(company.city)
+    #         self.lePostalCode.setText(company.postalCode)
+    #         self.leProvince.setText(company.province)
+    #         self.cbCountry.setCurrentText(company.country)
+    #         self.leBusinessPhone.setText(company.businessPhone)
+    #         self.leCompanyEmail.setText(company.companyEmail)
+    #         # self.cboxCustomer.setChecked(bool(strtobool(company.customer)))
+    #         # self.cboxSupplier.setChecked(bool(strtobool(company.supplier)))
+    #         self.leCompID.setReadOnly(True)
+
+
     
     def goto_quotations(self):
         self.stwMain.setCurrentWidget(self.quotations)

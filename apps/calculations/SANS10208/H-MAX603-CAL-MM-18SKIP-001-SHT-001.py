@@ -384,7 +384,7 @@ def main():
                                 else:
                                     unit = ""
                                 table.add_row(descrip, symbol, value, unit)    
-
+                
         with sec.create(Subsection(SECTION_4_3)) as subsec4:
             with subsec4.create(Subsubsection(SECTION_4_3_1)) as subsubsec7:
                 with subsubsec7.create(Figure(position='h!')) as fig:
@@ -395,9 +395,52 @@ def main():
                     fig.append(Command('centering'))
                     fig.add_caption(SKETCH_9[2])
                     fig.append(Command('centering'))
-            
+
+                subsubsec7.append(NewPage())
+
+                subsubsec7.append(bold("Material Data"))
+                subsubsec7.append('\n')
+                subsubsec7.append(SPEC_1)
+                subsubsec7.append('\n')
+                subsubsec7.append('\n')
+                subsubsec7.append(SPEC_2)
+                subsubsec7.append('\n')
+                subsubsec7.append('\n')
+                subsubsec7.append(SPEC_3)
+                subsubsec7.append('\n')
                 with subsubsec7.create(FlushLeft()) as left:
-                        d = top_transom()
+                        d, e, f = top_transom()
+                        with left.create(MiniPage(align='l')) as tab:
+                            with tab.create(Tabular('l l l l')) as table:
+                                for k,v in d.items():
+                                    descrip = v[0]
+                                    symbol = (Math(inline = True, data = [k], escape = False))
+                                    value = v[1]
+                                    if v[2] != "":
+                                        unit = (Math(inline = True, data = [v[2]], escape = False))
+                                    else:
+                                        unit = ""
+                                    table.add_row(descrip, symbol, value, unit)  
+
+                subsubsec7.append(bold("Design for Emergency Loads"))
+                with subsubsec7.create(FlushLeft()) as left:
+                        d = emergencyloads()
+                        with left.create(MiniPage(align='l')) as tab:
+                            with tab.create(Tabular('l l l l')) as table:
+                                for k,v in d.items():
+                                    descrip = v[0]
+                                    symbol = (Math(inline = True, data = [k], escape = False))
+                                    value = v[1]
+                                    if v[2] != "":
+                                        unit = (Math(inline = True, data = [v[2]], escape = False))
+                                    else:
+                                        unit = ""
+                                    table.add_row(descrip, symbol, value, unit)  
+                
+            
+                subsubsec7.append(bold("Design for Operation Loads"))
+                with subsubsec7.create(FlushLeft()) as left:
+                        d = operationalloads()
                         with left.create(MiniPage(align='l')) as tab:
                             with tab.create(Tabular('l l l l')) as table:
                                 for k,v in d.items():
