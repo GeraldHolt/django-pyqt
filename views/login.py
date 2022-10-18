@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\_EEMS\forms\login.ui'
+# Form implementation generated from reading ui file 'C:\HCEC Dropbox\HCE-Server\_EEMS\forms\login.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -17,7 +17,7 @@ class Ui_LoginForm(object):
         LoginForm.resize(420, 595)
         LoginForm.setFocusPolicy(QtCore.Qt.NoFocus)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/HCE-C.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../resources/assets/HCE-C.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         LoginForm.setWindowIcon(icon)
         self.logoFrame = QtWidgets.QFrame(LoginForm)
         self.logoFrame.setGeometry(QtCore.QRect(10, 10, 401, 131))
@@ -27,7 +27,7 @@ class Ui_LoginForm(object):
         self.lbLogo = QtWidgets.QLabel(self.logoFrame)
         self.lbLogo.setGeometry(QtCore.QRect(40, 20, 301, 91))
         self.lbLogo.setText("")
-        self.lbLogo.setPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/HCE-logo.png"))
+        self.lbLogo.setPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../resources/assets/HCE-logo.png"))
         self.lbLogo.setScaledContents(True)
         self.lbLogo.setObjectName("lbLogo")
         self.loginFrame = QtWidgets.QFrame(LoginForm)
@@ -129,7 +129,7 @@ class Ui_LoginForm(object):
         self.btnForgotpass.setInputMethodHints(QtCore.Qt.ImhNone)
         self.btnForgotpass.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/link.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../resources/assets/link.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnForgotpass.setIcon(icon1)
         self.btnForgotpass.setIconSize(QtCore.QSize(24, 24))
         self.btnForgotpass.setCheckable(False)
@@ -153,7 +153,7 @@ class Ui_LoginForm(object):
         self.btnRegister.setInputMethodHints(QtCore.Qt.ImhNone)
         self.btnRegister.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/list.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../resources/assets/list.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnRegister.setIcon(icon2)
         self.btnRegister.setIconSize(QtCore.QSize(24, 24))
         self.btnRegister.setCheckable(False)

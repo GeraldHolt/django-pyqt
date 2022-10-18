@@ -22,6 +22,7 @@ from apps.accounts.models import *
 from apps.accounts.gen_look_up import *
 from apps.techdata.models import *
 from distutils.util import strtobool
+import datetime
 
 class TableModel(QtCore.QAbstractTableModel):
     def __init__(self, data, headers):
@@ -90,8 +91,6 @@ class SignupWindow(QMainWindow, Ui_SignupForm):
 class ControlPanel(QMainWindow, Ui_ControlPanel):
     def __init__(self):
         super(ControlPanel, self).__init__()
-        self.setWindowTitle('Engineering Execucution Management System')
-        # self.setWindowIcon(QIcon('web.png'))
         self.setupUi(self)
         self.btnDashboard.clicked.connect(self.goto_dashboard)
         self.btnCustomer.clicked.connect(self.goto_customers)  
@@ -289,10 +288,22 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
         self.stwMain.setCurrentWidget(self.contacts)
 
          # Load Contacts
-        data = Contact.objects.all().values_list('firstName', 'lastName', 'companyName', 'contactEmail', 'id')
+        data = Contact.objects.all().values_list('contID','firstName', 'lastName', 'companyName', 'contactEmail')
+        companies = list(Company.objects.all().values_list('id', 'companyName'))
+        temp_data = []
+        for group in data:
+            temp=[]
+            for item in group:
+                temp.append(item)
+            temp_data.append(temp)
+        
+        for item in temp_data:  
+            for comp in companies:
+                if item[3] == comp[0]:
+                    item[3]=(comp[1])
         if data:
-            headers = ["First Name", "Last Name", "Company Name","Contact Email", "ID"]
-            self.tableModel = TableModel(data, headers)
+            headers = ["Contact ID","First Name", "Last Name", "Company Name","Contact Email"]
+            self.tableModel = TableModel(temp_data, headers)
             self.tvContacts.setModel(self.tableModel)
             self.tvContacts.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)    
             self.tvContacts.show()    
@@ -315,6 +326,7 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
         # self.btnDeleteContact.clicked.connect(self.deleteContact)
 
     def clearContactCells(self):
+        self.leContactID.clear()
         self.leFirstName.clear()
         self.leLastName.clear()
         self.cbCompany.clear()
@@ -325,7 +337,7 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
         self.deDOB.clear()
 
     def createNewUpdateContact(self):
-        id = self.leContactId.text()
+        contID = self.leContactID.text()
         firstName  =  self.leFirstName.text()
         lastName = self.leLastName.text()
         companyName = self.cbCompany.currentText()
@@ -337,13 +349,14 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
 
         try:
             if firstName:
-                contact = Contact.objects.filter(id  =  id)
-            
+                contact = Contact.objects.filter(contID  =  contID)
+                company = Company.objects.get(companyName = companyName)
                 if contact:
                     contact.update(
+                                    contID = contID,
                                     firstName = firstName,                         
                                     lastName = lastName,
-                                    companyName = companyName,
+                                    companyName = company.id,
                                     contactEmail = contactEmail,
                                     jobTitle = jobTitle,
                                     contactBusPhone = contactBusPhone,
@@ -351,7 +364,7 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
                                     date_of_birth = date_of_birth,
                     )
                     self.clearContactCells()
-                    self.leFirstName.setReadOnly(False)
+                    self.leContactID.setReadOnly(False)
                     message = 'Contact Details Updated'
                     pop_up = PopUpMessageWindow()
                     pop_up.message(message)
@@ -359,9 +372,10 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
 
                 else:
                     contact.create(
+                                    contID = contID,
                                     firstName = firstName,                         
                                     lastName = lastName,
-                                    companyName = companyName,
+                                    companyName = company.id,
                                     contactEmail = contactEmail,
                                     jobTitle = jobTitle,
                                     contactBusPhone = contactBusPhone,
@@ -369,7 +383,7 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
                                     date_of_birth = date_of_birth,
                     )
                     self.clearContactCells()
-                    self.leFirstName.setReadOnly(False)
+                    self.leContactID.setReadOnly(False)
                     message = 'New Contact Added'
                     pop_up = PopUpMessageWindow()
                     pop_up.message(message)
@@ -388,37 +402,38 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
             pop_up.message(message)
             pop_up.exec_()
 
-    # def editContact(self):
-    #     index = self.tvContacts.selectionModel().selectedIndexes()[0]
-    #     row_index = {index.row() for index in self.ttvContacts.selectionModel().selectedIndexes()}
-    #     if len(row_index)>1:
-    #         message = 'Select only a single line'
-    #         pop_up = PopUpMessageWindow()
-    #         pop_up.message(message)
-    #         pop_up.exec_()
-    #     else:
+    def editContact(self):
+        index = self.tvContacts.selectionModel().selectedIndexes()[0]
+        row_index = {index.row() for index in self.tvContacts.selectionModel().selectedIndexes()}
+        if len(row_index)>1:
+            message = 'Select only a single line'
+            pop_up = PopUpMessageWindow()
+            pop_up.message(message)
+            pop_up.exec_()
+        else:
             
-    #         column = 0
-    #         row = list(row_index)[0]
-    #         index = self.tvContacts.model().index(row, column)  
-    #         contact = Contact.objects.get(compID = str(index.data()))
-    #         self.leCompID.setText(company.compID)
-    #         self.leCompanyName.setText(company.companyName)
-    #         self.cbCompanyStatus.setCurrentText(company.company_status)
-    #         self.leRegistrationNumber.setText(company.company_reg_no)
-    #         self.leVATNumber.setText(company.VAT_no)
-    #         self.leWebsite.setText(company.companyWeb)
-    #         self.leAddress1.setText(company.address1)
-    #         self.leAddress2.setText(company.address2)
-    #         self.leCity.setText(company.city)
-    #         self.lePostalCode.setText(company.postalCode)
-    #         self.leProvince.setText(company.province)
-    #         self.cbCountry.setCurrentText(company.country)
-    #         self.leBusinessPhone.setText(company.businessPhone)
-    #         self.leCompanyEmail.setText(company.companyEmail)
-    #         # self.cboxCustomer.setChecked(bool(strtobool(company.customer)))
-    #         # self.cboxSupplier.setChecked(bool(strtobool(company.supplier)))
-    #         self.leCompID.setReadOnly(True)
+            column = 0
+            row = list(row_index)[0]
+            index = self.tvContacts.model().index(row, column)  
+            contact = Contact.objects.get(contID = str(index.data()))
+            company = Company.objects.get(companyName = contact.companyName)
+            comp = company.companyName
+            self.leContactID.setText(contact.contID)
+            self.leFirstName.setText(contact.firstName)
+            self.leLastName.setText(contact.lastName)
+            self.cbCompany.setCurrentText(comp)
+            self.leEmail.setText(contact.contactEmail)
+            self.lePosition.setText(contact.jobTitle)
+            self.leBusPhone.setText(contact.contactBusPhone)
+            self.leMobile.setText(contact.contactMobile)
+            # self.deDOB.setDate(DOB)
+            self.leContactID.setReadOnly(True)
+
+            self.companies = Company.objects.all()
+            company_names = []
+            for cn in self.companies:
+                company_names.append(cn.companyName)
+                self.cbCompany.addItems(company_names)
 
 
     

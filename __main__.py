@@ -7,8 +7,7 @@ try:
 
 except Exception as e:
     print(e)
-
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, Qt
 from PyQt5.QtWidgets import *
 from PyQt5 import QtGui
 from viewManagers.mainWindowManager import MainWindow
@@ -18,6 +17,7 @@ import sys
 
 def main():
     app = QApplication(sys.argv)
+    # app.setAttribute(Qt.AA_UseHighDpiPixmaps)
     window = MainWindow()
     window.show()
 

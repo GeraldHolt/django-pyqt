@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\_EEMS\forms\welcome.ui'
+# Form implementation generated from reading ui file 'C:\HCEC Dropbox\HCE-Server\_EEMS\forms\welcome.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -16,7 +16,7 @@ class Ui_WelcomeForm(object):
         WelcomeForm.setObjectName("WelcomeForm")
         WelcomeForm.resize(997, 595)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/icons/HCE-C.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../resources/icons/HCE-C.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         WelcomeForm.setWindowIcon(icon)
         self.logoFrame = QtWidgets.QFrame(WelcomeForm)
         self.logoFrame.setGeometry(QtCore.QRect(10, 10, 981, 571))
@@ -26,7 +26,7 @@ class Ui_WelcomeForm(object):
         self.label = QtWidgets.QLabel(self.logoFrame)
         self.label.setGeometry(QtCore.QRect(350, 60, 271, 281))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/HCE-C.png"))
+        self.label.setPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../resources/assets/HCE-C.png"))
         self.label.setObjectName("label")
         self.btnLogin = QtWidgets.QPushButton(self.logoFrame)
         self.btnLogin.setGeometry(QtCore.QRect(230, 440, 521, 31))

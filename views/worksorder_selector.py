@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\_EEMS\forms\worksorder_selector.ui'
+# Form implementation generated from reading ui file 'C:\HCEC Dropbox\HCE-Server\_EEMS\forms\worksorder_selector.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #

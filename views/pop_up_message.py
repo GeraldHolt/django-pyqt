@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\_EEMS\forms\pop_up_message.ui'
+# Form implementation generated from reading ui file 'C:\HCEC Dropbox\HCE-Server\_EEMS\forms\pop_up_message.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #

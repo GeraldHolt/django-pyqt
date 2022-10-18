@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\_EEMS\forms\signup.ui'
+# Form implementation generated from reading ui file 'C:\HCEC Dropbox\HCE-Server\_EEMS\forms\signup.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -16,7 +16,7 @@ class Ui_SignupForm(object):
         SignupForm.setObjectName("SignupForm")
         SignupForm.resize(420, 595)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/icons/HCE-C.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../resources/icons/HCE-C.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         SignupForm.setWindowIcon(icon)
         self.logoFrame = QtWidgets.QFrame(SignupForm)
         self.logoFrame.setGeometry(QtCore.QRect(10, 10, 401, 131))
@@ -31,7 +31,7 @@ class Ui_SignupForm(object):
         self.lbLogo_2 = QtWidgets.QLabel(self.logoFrame)
         self.lbLogo_2.setGeometry(QtCore.QRect(50, 20, 301, 91))
         self.lbLogo_2.setText("")
-        self.lbLogo_2.setPixmap(QtGui.QPixmap("C:\\_EEMS\\forms\\../resources/assets/HCE-logo.jpg"))
+        self.lbLogo_2.setPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../resources/assets/HCE-logo.jpg"))
         self.lbLogo_2.setScaledContents(True)
         self.lbLogo_2.setObjectName("lbLogo_2")
         self.registerFrame = QtWidgets.QFrame(SignupForm)

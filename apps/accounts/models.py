@@ -70,6 +70,8 @@ post_save.connect(company_created_handler, sender = Company)
 #------------------------------------------------------------------------------------------------------------------------#
 
 class Contact(models.Model):
+    contID          = models.CharField(max_length=15, blank=False, null=True, unique = True, verbose_name='Contact ID')
+
     lastName        = models.CharField(
                                         max_length=200, 
                                         blank=False, 
@@ -112,8 +114,8 @@ class Contact(models.Model):
                                         null=True, 
                                         verbose_name = 'Mobile Phone'
                                         )
-    date_of_birth   = models.DateField(
-                                        blank=True, 
+    date_of_birth   = models.CharField(
+                                        max_length=100,
                                         null=True, 
                                         verbose_name='Date of Birth'
                                         )

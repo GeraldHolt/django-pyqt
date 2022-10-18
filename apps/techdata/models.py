@@ -296,3 +296,47 @@ class ConveyorBelt(models.Model):
 
     def __str__(self):
         return f"{self.designation}"
+
+
+#------------------------------------------------------------------------------------------------------------------------#
+# Standard Premium Efficiency Motors Data
+#------------------------------------------------------------------------------------------------------------------------#
+class IECElectricalMotors(models.Model):
+    designation = models.CharField(max_length=40, blank=False, null=False, unique = True, verbose_name='Designation')
+    motorPower = models.CharField(max_length=5, blank=True, null=True, verbose_name='Motor Power')
+    motorSpeed = models.CharField(max_length=5, blank=True, null=True, verbose_name='Motor Speed')
+    poles = models.CharField(max_length=2, blank=True, null=True, verbose_name='Number of Poles')
+    frame = models.CharField(max_length=8, blank=True, null=True, verbose_name='Frame Size')
+    shaft = models.CharField(max_length=8, blank=True, null=True, verbose_name='Shaft Size')
+    keywaywidth = models.CharField(max_length=8, blank=True, null=True, verbose_name='Key Way Width')
+    keywayheight = models.CharField(max_length=8, blank=True, null=True, verbose_name='Key Way Depth')
+    shaftkeydepth = models.CharField(max_length=8, blank=True, null=True, verbose_name='Key Way Depth')
+    weight = models.CharField(max_length=8, blank=True, null=True, verbose_name='Frame Size')
+    shaft_height = models.CharField(max_length=8, blank=True, null=True, verbose_name='Vertical Distance to Shaft')
+    full_load_torque = models.CharField(max_length=8, blank=True, null=True, verbose_name='Full Load Torque')
+    lock_rotor_torque = models.CharField(max_length=8, blank=True, null=True, verbose_name='Lock Rotor Torque')
+    break_torque = models.CharField(max_length=8, blank=True, null=True, verbose_name='Lock Rotor Torque')
+    mounting = models.CharField(max_length=8, blank=True, null=True, verbose_name='Mounting')
+
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+
+    def __str__(self):
+        return f"{self.designation}"
+
+#------------------------------------------------------------------------------------------------------------------------#
+# Standard Keyways
+#------------------------------------------------------------------------------------------------------------------------#
+class StandardKeyways(models.Model):
+    designation = models.CharField(max_length=40, blank=False, null=False, unique = True, verbose_name='Designation')
+    from_dia = models.CharField(max_length=40, blank=True, null=True, verbose_name='From')
+    to_dia = models.CharField(max_length=40, blank=True, null=True, verbose_name='To')
+    keywidth = models.CharField(max_length=40, blank=True, null=True, verbose_name='Key Width')
+    keyheight = models.CharField(max_length=40, blank=True, null=True, verbose_name='Key Height')
+    maxkeylength = models.CharField(max_length=40, blank=True, null=True, verbose_name='Maximum Key Length')
+    shaftkeydepth = models.CharField(max_length=40, blank=True, null=True, verbose_name='Shaft Key Depth')
+    hubkeydepth = models.CharField(max_length=40, blank=True, null=True, verbose_name='Hub Key Depth')  
+
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+
+    def __str__(self):
+        return f"{self.designation}"
