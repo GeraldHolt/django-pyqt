@@ -1,11 +1,14 @@
 import os
+import sys
 import csv
 from apps.accounts.list_of_countries import COUNTRIES
+from forms.ui_massbalance import Ui_MassBalance
 from views.mainWindow import Ui_ControlPanel
 from views.login import Ui_LoginForm
 from views.signup import Ui_SignupForm
 from views.welcome import Ui_WelcomeForm
 from views.worksorder_selector import Ui_SelectWorksorder
+from views.massbalance import Ui_MassBalance
 from views.pop_up_message import Ui_PopUpMessage
 import settings
 from PyQt5 import QtWidgets
@@ -23,6 +26,8 @@ from apps.accounts.gen_look_up import *
 from apps.techdata.models import *
 from distutils.util import strtobool
 import datetime
+import comtypes.client
+
 
 class TableModel(QtCore.QAbstractTableModel):
     def __init__(self, data, headers):
@@ -59,6 +64,12 @@ class WorkorderSelectorWindow(QDialog, Ui_SelectWorksorder):
         self.setupUi(self)
         self.cbWorksorders.addItem('Tset1')
         self.btnConfirm.clicked.connect
+
+class MassBalanceWindow(QDialog, Ui_MassBalance):
+    def __init__(self):
+        super(MassBalanceWindow, self).__init__()
+        self.setupUi(self)
+        
 
 class PopUpMessageWindow(QDialog, Ui_PopUpMessage):
     def __init__(self):
@@ -106,12 +117,12 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
         self.btnGeneralInfo.clicked.connect(self.goto_generalinfo) 
         self.btnCalculation.clicked.connect(self.goto_calculations) 
         self.btnUploadWO.clicked.connect(self.goto_select_workorder)
-        
+        self.btnMassBalance.clicked.connect(self.goto_massbalance)
 
     def goto_dashboard(self):
         self.stwMain.setCurrentWidget(self.dashboard)
 
-    # Customers ============================================================================#   
+# Customers ============================================================================#   
     def goto_customers(self):
         self.stwMain.setCurrentWidget(self.customers)
         
@@ -283,7 +294,7 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
 
     
 
-    # Contacts ============================================================================#   
+# Contacts ============================================================================#   
     def goto_contacts(self):
         self.stwMain.setCurrentWidget(self.contacts)
 
@@ -465,10 +476,11 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
     def goto_analysis(self):
         self.stwMain.setCurrentWidget(self.analysis)
 
+# General Information =====================================================================#
     def goto_generalinfo(self):
         self.stwMain.setCurrentWidget(self.techData)
 
-        # Load Steel Tables
+    # Load Steel Tables
         data = SAISCSteelSections.objects.all().values_list('designation', 'unit_mass', 'A', 'h', 'b', 'd', 'tw', 'tf','Ix','Iy','rx','ry','J','Cw', 'Zplx', 'Zply')
         headers = ["Designation", "Unit Mass", "Area", "h", "b", "d", "tw", "tf", "Ix", "Iy", "rx", "ry", "J", "Cw", "Zplx", "Zply"]
         if data:
@@ -482,11 +494,10 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
             print("No data yet")   
            
         
-        self.btnImportSteel.clicked.connect(self.importSteelSections)
+        self.btnUploadSteelData.clicked.connect(self.uploadSteelSections)
 
 
-        # Load SANS 1123 Pipe Flanges
-        
+    # Load SANS 1123 Pipe Flanges
         data = SANSPlateFlanges.objects.all().values_list(
                                                         'designation',
                                                         'nom_bore',
@@ -515,17 +526,118 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
             print("No data yet")  
 
         self.btnImportFlanges.clicked.connect(self.importSANSPlateFlanges)
+        
+    # Load IED Motor Flanges
+        data = IECElectricalMotors.objects.all().values_list(
+                                                        'designation',
+                                                        'motorPower',
+                                                        'motorSpeed',
+                                                        'poles', 
+                                                        'frame',
+                                                        'shaft', 
+                                                        'keywaywidth',
+                                                        'keywayheight', 
+                                                        'shaftkeydepth', 
+                                                        'shaft_height', 
+                                                        'full_load_torque',
+                                                        'lock_rotor_torque',
+                                                        'break_torque',
+                                                        'mounting', )
 
+        headers = ["Designation", "Motor Power", "Motor Speed", "Poles", "Frame", "Shaft", "Key Width", "Key Height", "Shaft Key Depth","Weight", "Shaft Height", "Full Torque", "Lock Torque", "Break Torque", "Mounting"]
+        if data: 
+            self.tableModel3 = TableModel(data, headers)
+            self.tvIECMotors.setModel(self.tableModel3)
+            self.header = self.tvSteelTable.horizontalHeader()
+            self.tvSteelTable.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)    
+            self.tvIECMotors.show()
+        
+        else:
+            print("No data yet")  
 
+        self.btnImportFlanges.clicked.connect(self.importIECMotorDetails)
 
+    # Load ConveyorSolePlatesBearings
+        data = SolePLatePlummerBlock.objects.all().values_list('designation', 'bearShaftDia','plumBlock','bearing','adapterSleeve','lockRing','seal','dimA','dimC','dimD', 'dimE','dimF', 'dimF1','dimG','dimH','dimJ','dimK','dimL','dimM', 'dimN', 'dimS', 'dimT', 'dimU')
+        headers = ["Designation", "Shaft Dia.", "Plummer", "Bearing", "Adapter", "Lock Ring", "Seals", "A", "C", "D", "E", "F", "F1", "G", "H", "J", "K", "L", "M", "N", "S", "T", "U"]
+        if data:
+            self.tableModel4 = TableModel(data, headers)
+            self.tvConSolePlatBearings.setModel(self.tableModel4)
+            self.header = self.tvConSolePlatBearings.horizontalHeader()
+            self.tvConSolePlatBearings.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)    
+            self.tvConSolePlatBearings.show()
+        else:
+            print("No data yet")   
+           
+        
+        # self.btnUploadSole.clicked.connect(self.uploadSolePlatedate)
+        # self.btnPrintSole.clicked.connect(self.uploadSolePlatedate)
+
+    def uploadSteelSections(self):
+        index = self.tvSteelTable.selectionModel().selectedIndexes()[0]
+        row_index = {index.row() for index in self.tvSteelTable.selectionModel().selectedIndexes()}
+        if len(row_index)>1:
+            message = 'Select only a single line'
+            pop_up = PopUpMessageWindow()
+            pop_up.message(message)
+            pop_up.exec_()
+        else:
+            
+            column = 0
+            row = list(row_index)[0]
+            index = self.tvSteelTable.model().index(row, column)  
+            steel = SAISCSteelSections.objects.get(designation = str(index.data()))
+            self.leProfile.setText(steel.profile)
+            self.leDesignation.setText(steel.designation)
+            self.leUnitMass.setText(steel.unit_mass)
+            self.leHeight.setText(steel.h)
+            self.leWidth.setText(steel.b)
+            self.leLipHeight.setText(steel.c)
+            self.leDiameter.setText(steel.d)
+            self.leWebThickness.setText(steel.tw)
+            self.leFlangeThickness.setText(steel.tf)
+            self.leWebradius.setText(steel.r1)
+            self.leFlangeRadius.setText(steel.r2)
+            self.leTaperDistance.setText(steel.b1)
+            self.leTaperAngle.setText(steel.Beta)
+            self.leArea.setText(steel.A)
+            self.leIxx.setText(steel.Ix)
+            self.leZxx.setText(steel.Zx)
+            self.lerxx.setText(steel.rx)
+            self.leIyy.setText(steel.Iy)
+            self.leZyy.setText(steel.Zy)
+            self.leryy.setText(steel.ry)
+            self.leJ.setText(steel.J)
+            self.leCw.setText(steel.Cw)
+            self.leZplx.setText(steel.Zplx)
+            self.leZply.setText(steel.Zply)
+            self.leIuu.setText(steel.Iu)
+            self.leZuu.setText(steel.Zu)
+            self.leruu.setText(steel.ru)
+            self.leIvv.setText(steel.Iv)
+            self.leZvv.setText(steel.Zv)
+            self.lervv.setText(steel.rv)
+            self.leIuu.setText(steel.Iu)
+            self.leZuu.setText(steel.Zu)
+            self.leh_tf.setText(steel.h_tf)
+            self.lehw.setText(steel.hw)
+            self.lealpha.setText(steel.alpha)
+            self.leac.setText(steel.ac)
+            self.leax.setText(steel.ax)
+            self.leay.setText(steel.ay)
+            
+    def goto_massbalance(self):
+        massbalance = MassBalanceWindow()
+        massbalance.exec_()
+
+# Calculations and Tools =====================================================================#
     def goto_calculations(self):
         self.stwMain.setCurrentWidget(self.calculations)
+        self.btnUploadFiles.clicked.connect(self.uploadFilestoConverttoPDF)
 
-    
 
-    def createNewContact(self):
-        pass
 
+# Import Steel Sections =============================================================#
     def importSteelSections(self):
         fname = QFileDialog.getOpenFileName(self, "Import File", "", "(*.csv)")
         if fname:
@@ -580,7 +692,7 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
             self.goto_generalinfo
         else:
             self.goto_generalinfo
-
+# Import Steel Flanges =============================================================#
     def importSANSPlateFlanges(self):
         fname = QFileDialog.getOpenFileName(self, "Import File", "", "(*.csv)")
         if fname:
@@ -611,7 +723,58 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
             self.goto_generalinfo
         else:
             self.goto_generalinfo
+# Import IEC Motors =============================================================#
+    def importIECMotorDetails(self):
+        fname = QFileDialog.getOpenFileName(self, "Import File", "", "(*.csv)")
+        if fname:
+            with open(fname[0]) as file:
+                data = csv.reader(file, delimiter=",")
+                next(data)
+                counter = 0
+                for row in data:
+                    counter +=1
+                    try:
+                        obj, created = IECElectricalMotors.objects.update_or_create(                                                                                
+                                                                designation      = row[0],
+                                                                motorPower       = row[1],
+                                                                motorSpeed       = row[2],
+                                                                poles            = row[3],
+                                                                frame            = row[4],
+                                                                shaft            = row[5],
+                                                                keywaywidth      = row[6],
+                                                                keywayheight     = row[7],
+                                                                shaftkeydept     = row[8],
+                                                                weight           = row[9],
+                                                                shaft_height     = row[10],
+                                                                full_load_torque = row[11],
+                                                                lock_rotor_torque= row[12],
+                                                                break_torque     = row[13],
+                                                                mounting         = row[14],
+                                                                                    )
+                    except Exception as e:
+                        print(e)	
+            file.close()
+            self.goto_generalinfo
+        else:
+            self.goto_generalinfo
 
+# Upload  =============================================================#
+    def uploadFilestoConverttoPDF(self):
+        filenames, _ = QFileDialog.getOpenFileNames(
+                    None,
+                    "QFileDialog.getOpenFileNames()",
+                    "",
+                    "Word Files(*.docx);;Excel Files (*.xlsx)",
+                )
+        if filenames:
+            for filename in filenames:
+                item = QtGui.QStandardItem(filename)
+                self.lvBulkFilesLoad.appendRow(item)
+
+
+# =========================================================================================#
+# Main Window  Block ======================================================================#
+# =========================================================================================#
 
 class MainWindow(QtWidgets.QStackedWidget):
 
@@ -623,6 +786,7 @@ class MainWindow(QtWidgets.QStackedWidget):
         self.control_screen = ControlPanel()
         self.work_orders_selector = WorkorderSelectorWindow()
         self.pop_up_message = PopUpMessageWindow()
+        self.massbalance = MassBalanceWindow()
 
         self.addWidget(self.welcome_screen)
         self.addWidget(self.login_screen)
@@ -665,7 +829,7 @@ class MainWindow(QtWidgets.QStackedWidget):
         self.signup_screen.btnRegister.clicked.connect(self.signup)
         
     def goto_control_panel(self): 
-        self.setFixedSize(1260, 835)
+        # self.setFixedSize(1540, 963)
         self.setCurrentIndex(self.indexOf(self.control_screen)) 
 
 

@@ -17,10 +17,10 @@ from apps.techdata.lookuptables import *
 
 import sys
 try:
-	from django.db import models
+    from django.db import models
 except Exception:
-	print("There was an error loading django modules. Make sure you have django installed")
-	sys.exit()
+    print("There was an error loading django modules. Make sure you have django installed")
+    sys.exit()
 from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 
@@ -30,47 +30,47 @@ from django.dispatch import receiver
 #------------------------------------------------------------------------------------------------------------------------#
 class SAISCSteelSections(models.Model):
 
-	designation = models.CharField(max_length=25, blank=False, null=True, unique = True, verbose_name='Designation')
-	profile = models.CharField(max_length=30, blank=False, null=True, verbose_name = 'Profile Type')
-	unit_mass = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Unit Mass (kg/m)')
-	h = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Height (mm)')
-	b = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Width (mm)')
-	c = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Lip Height (mm)')
-	d = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Diameter (mm)')
-	tw = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Wed / Wall Thickness (mm)')
-	tf = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Flange Thickness (mm)')
-	r1 = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Web Radius (mm)')
-	r2 = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Flange Radius (mm)')
-	b1 = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Taper Centre (mm)')
-	Beta = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Taper Flange Angle (deg)')
-	A = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Cross sectional Area (mm2)')
-	Ix = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Second Moment of Area about x-x (mm4)')
-	Zx = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Sectional Modulus about x-x (mm3)')
-	rx = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Radius of Gyration about x-x (mm)')
-	Iy = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Second Moment of Area about y-y (mm4)')
-	Zy = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Sectional Modulus about y-y (mm3)')
-	ry = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Radius of Gyration about y-y (mm)')
-	Iu = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Second Moment of Area about u-u (mm4)')
-	Zu = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Sectional Modulus about u-u (mm3)')
-	ru = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Radius of Gyration about u-u (mm)')
-	Iv = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Second Moment of Area about v-v (mm4)')
-	Zv = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Sectional Modulus about v-v (mm3)')
-	rv = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Radius of Gyration about v-v (mm)')
-	J = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Polar Moment (mm4)')
-	Cw = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Warping Constant (mm6)')
-	Zplx = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Plastic Sectional Modulus about x-x (mm3)')
-	Zply = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Plastic Sectional Modulus about y-y (mm3)')
-	h_tf = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Height to Flange Thickness Ratio')
-	hw = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Internal Height (mm)')
-	ac = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Shear Centre (mm)')
-	ax = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Shear Centre (mm)')
-	ay = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Shear Centre (mm)')
-	alpha = models.CharField(max_length=30, blank=True, null = True, verbose_name = '(deg)')
-	id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    designation = models.CharField(max_length=25, blank=False, null=True, unique = True, verbose_name='Designation')
+    profile = models.CharField(max_length=30, blank=False, null=True, verbose_name = 'Profile Type')
+    unit_mass = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Unit Mass (kg/m)')
+    h = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Height (mm)')
+    b = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Width (mm)')
+    c = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Lip Height (mm)')
+    d = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Diameter (mm)')
+    tw = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Wed / Wall Thickness (mm)')
+    tf = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Flange Thickness (mm)')
+    r1 = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Web Radius (mm)')
+    r2 = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Flange Radius (mm)')
+    b1 = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Taper Centre (mm)')
+    Beta = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Taper Flange Angle (deg)')
+    A = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Cross sectional Area (mm2)')
+    Ix = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Second Moment of Area about x-x (mm4)')
+    Zx = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Sectional Modulus about x-x (mm3)')
+    rx = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Radius of Gyration about x-x (mm)')
+    Iy = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Second Moment of Area about y-y (mm4)')
+    Zy = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Sectional Modulus about y-y (mm3)')
+    ry = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Radius of Gyration about y-y (mm)')
+    Iu = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Second Moment of Area about u-u (mm4)')
+    Zu = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Sectional Modulus about u-u (mm3)')
+    ru = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Radius of Gyration about u-u (mm)')
+    Iv = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Second Moment of Area about v-v (mm4)')
+    Zv = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Sectional Modulus about v-v (mm3)')
+    rv = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Radius of Gyration about v-v (mm)')
+    J = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Polar Moment (mm4)')
+    Cw = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Warping Constant (mm6)')
+    Zplx = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Plastic Sectional Modulus about x-x (mm3)')
+    Zply = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Plastic Sectional Modulus about y-y (mm3)')
+    h_tf = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Height to Flange Thickness Ratio')
+    hw = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Internal Height (mm)')
+    ac = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Shear Centre (mm)')
+    ax = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Shear Centre (mm)')
+    ay = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Shear Centre (mm)')
+    alpha = models.CharField(max_length=30, blank=True, null = True, verbose_name = '(deg)')
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
 
-	def __str__(self):
-		return f"{self.designation}"
+    def __str__(self):
+        return f"{self.designation}"
 
 
 #------------------------------------------------------------------------------------------------------------------------#
@@ -78,31 +78,53 @@ class SAISCSteelSections(models.Model):
 #------------------------------------------------------------------------------------------------------------------------#
 class SANSPlateFlanges(models.Model):
 
-	designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
-	nom_bore = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Nominal Bore Diameter')
-	flange_mass = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Flange Mass (kg)')
-	pressureRating = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Flange Pressure Rating (kPa)')
-	flange_type = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Flange Type Configuration')
-	pipeOutsideDia = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Pipe Outside Diameter (mm)')
-	flangeOutsideDia = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Flange Outside Diameter (mm)')
-	flangeThickness = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Flange Thickness (mm)')
-	raisedFaceDia = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Raised Face Diameter (mm)')
-	raisedFaceThick = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Raised Face Thickness (mm)')
-	boltSize = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Bolt Size')
-	NOB = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Number of Bolts')
-	boltHoleSize = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Bolt Hole Diameter (mm)')
-	PCD = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Bolt Holes Centres (mm)')
-	id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
+    nom_bore = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Nominal Bore Diameter')
+    flange_mass = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Flange Mass (kg)')
+    pressureRating = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Flange Pressure Rating (kPa)')
+    flange_type = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Flange Type Configuration')
+    pipeOutsideDia = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Pipe Outside Diameter (mm)')
+    flangeOutsideDia = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Flange Outside Diameter (mm)')
+    flangeThickness = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Flange Thickness (mm)')
+    raisedFaceDia = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Raised Face Diameter (mm)')
+    raisedFaceThick = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Raised Face Thickness (mm)')
+    boltSize = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Bolt Size')
+    NOB = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Number of Bolts')
+    boltHoleSize = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Bolt Hole Diameter (mm)')
+    PCD = models.CharField(max_length=30, blank=True, null = True, verbose_name = 'Bolt Holes Centres (mm)')
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
-	def __str__(self):
-		return f"{self.designation}"
+    def __str__(self):
+        return f"{self.designation}"
 
 #------------------------------------------------------------------------------------------------------------------------#
 # Recommended Sole Plate and Plummerblock
 #------------------------------------------------------------------------------------------------------------------------#
 class SolePLatePlummerBlock(models.Model):
     designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
-    bearingshaftDia = models.CharField(max_length=40,choices = PREFERREDJOURNALSIZES, blank=True, null=True, verbose_name = 'Bearing SHaft Diameter (mm)') 
+    bearShaftDia = models.CharField(max_length=40,choices = PREFERREDJOURNALSIZES, blank=True, null=True, verbose_name = 'Bearing SHaft Diameter (mm)') 
+    plumBlock = models.CharField(max_length=40, blank=True, null=True, verbose_name = 'Plummer Block')
+    bearing = models.CharField(max_length=40, blank=True, null=True, verbose_name = 'Bearing')
+    adapterSleeve = models.CharField(max_length=40, blank=True, null=True, verbose_name = 'Adapter Sleeve')
+    lockRing = models.CharField(max_length=40, blank=True, null=True, verbose_name = 'Lock Ring')
+    seal = models.CharField(max_length=40, blank=True, null=True, verbose_name = 'seal')
+    dimA = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension A')
+    dimC = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension C')
+    dimD = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension D')
+    dimE = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension E')
+    dimF = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension F')
+    dimF1 = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension F1')
+    dimG = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension G')
+    dimH = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension H')
+    dimJ = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension J')
+    dimK = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension K')
+    dimL = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension L')
+    dimM = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension M')
+    dimN = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension N')
+    dimS = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension S')
+    dimT = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension T')
+    dimU = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension U')
+    
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
@@ -115,7 +137,7 @@ class SolePLatePlummerBlock(models.Model):
 class ConveyorBeltClass(models.Model):
     designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
-	
+    
     def __str__(self):
         return f"{self.designation}"
 
@@ -143,7 +165,7 @@ class CarryIdler(models.Model):
     def __str__(self):
         return f"{self.designation}"
 
-		
+        
 class ReturnIdler(models.Model):
     designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
     series = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Series')

@@ -18,7 +18,7 @@ class Ui_ControlPanel(object):
     def setupUi(self, ControlPanel):
         if not ControlPanel.objectName():
             ControlPanel.setObjectName(u"ControlPanel")
-        ControlPanel.resize(1540, 851)
+        ControlPanel.resize(1540, 868)
         icon = QIcon()
         icon.addFile(u"../../../../Users/Gerald Holt/.designer/resources/assets/HCE-C.png", QSize(), QIcon.Normal, QIcon.Off)
         ControlPanel.setWindowIcon(icon)
@@ -2015,7 +2015,7 @@ class Ui_ControlPanel(object):
         self.timesheets.setObjectName(u"timesheets")
         self.label_20 = QLabel(self.timesheets)
         self.label_20.setObjectName(u"label_20")
-        self.label_20.setGeometry(QRect(380, 30, 421, 31))
+        self.label_20.setGeometry(QRect(370, 30, 421, 31))
         sizePolicy2.setHeightForWidth(self.label_20.sizePolicy().hasHeightForWidth())
         self.label_20.setSizePolicy(sizePolicy2)
         self.label_20.setFont(font2)
@@ -2075,21 +2075,21 @@ class Ui_ControlPanel(object):
         self.btnDesignBasis.setIconSize(QSize(24, 24))
         self.btnDesignBasis.setCheckable(False)
         self.btnDesignBasis.setFlat(False)
-        self.btnProcessDescrip = QPushButton(self.tab_5)
-        self.btnProcessDescrip.setObjectName(u"btnProcessDescrip")
-        self.btnProcessDescrip.setEnabled(True)
-        self.btnProcessDescrip.setGeometry(QRect(120, 109, 48, 41))
-        sizePolicy.setHeightForWidth(self.btnProcessDescrip.sizePolicy().hasHeightForWidth())
-        self.btnProcessDescrip.setSizePolicy(sizePolicy)
-        self.btnProcessDescrip.setFont(font1)
-        self.btnProcessDescrip.setToolTipDuration(0)
-        self.btnProcessDescrip.setLayoutDirection(Qt.LeftToRight)
-        self.btnProcessDescrip.setAutoFillBackground(False)
-        self.btnProcessDescrip.setInputMethodHints(Qt.ImhNone)
-        self.btnProcessDescrip.setIcon(icon16)
-        self.btnProcessDescrip.setIconSize(QSize(24, 24))
-        self.btnProcessDescrip.setCheckable(False)
-        self.btnProcessDescrip.setFlat(False)
+        self.btnMassBalance = QPushButton(self.tab_5)
+        self.btnMassBalance.setObjectName(u"btnMassBalance")
+        self.btnMassBalance.setEnabled(True)
+        self.btnMassBalance.setGeometry(QRect(120, 109, 48, 41))
+        sizePolicy.setHeightForWidth(self.btnMassBalance.sizePolicy().hasHeightForWidth())
+        self.btnMassBalance.setSizePolicy(sizePolicy)
+        self.btnMassBalance.setFont(font1)
+        self.btnMassBalance.setToolTipDuration(0)
+        self.btnMassBalance.setLayoutDirection(Qt.LeftToRight)
+        self.btnMassBalance.setAutoFillBackground(False)
+        self.btnMassBalance.setInputMethodHints(Qt.ImhNone)
+        self.btnMassBalance.setIcon(icon16)
+        self.btnMassBalance.setIconSize(QSize(24, 24))
+        self.btnMassBalance.setCheckable(False)
+        self.btnMassBalance.setFlat(False)
         self.lbDashborad_3 = QLabel(self.tab_5)
         self.lbDashborad_3.setObjectName(u"lbDashborad_3")
         self.lbDashborad_3.setGeometry(QRect(180, 120, 151, 20))
@@ -3403,7 +3403,7 @@ class Ui_ControlPanel(object):
         self.label_3 = QLabel(self.tab_6)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(20, 110, 341, 141))
-        self.label_3.setPixmap(QPixmap(u"../../../../Users/Gerald Holt/.designer/resources/assets/SANS1123_plate_Flange.jpg"))
+        self.label_3.setPixmap(QPixmap(u"../apps/techdata/SANS1123_plate_Flange.jpg"))
         self.label_3.setScaledContents(True)
         self.leFBOLT = QLineEdit(self.tab_6)
         self.leFBOLT.setObjectName(u"leFBOLT")
@@ -3535,32 +3535,32 @@ class Ui_ControlPanel(object):
         self.lbCompany_6.setObjectName(u"lbCompany_6")
         self.lbCompany_6.setGeometry(QRect(10, 10, 121, 20))
         self.lbCompany_6.setFont(font)
-        self.leDesignationFlange_2 = QLineEdit(self.tab_12)
-        self.leDesignationFlange_2.setObjectName(u"leDesignationFlange_2")
-        self.leDesignationFlange_2.setGeometry(QRect(10, 60, 131, 31))
-        self.leDesignationFlange_2.setFont(font4)
-        self.leDesignationFlange_2.setStyleSheet(u"QLineEdit {\n"
+        self.leDesignationMotor = QLineEdit(self.tab_12)
+        self.leDesignationMotor.setObjectName(u"leDesignationMotor")
+        self.leDesignationMotor.setGeometry(QRect(10, 60, 131, 31))
+        self.leDesignationMotor.setFont(font4)
+        self.leDesignationMotor.setStyleSheet(u"QLineEdit {\n"
 " border: 1px solid gray;\n"
 " border-radius: 10px;\n"
 "}")
-        self.leDesignationFlange_2.setReadOnly(True)
-        self.leUnitNB_2 = QLineEdit(self.tab_12)
-        self.leUnitNB_2.setObjectName(u"leUnitNB_2")
-        self.leUnitNB_2.setGeometry(QRect(170, 60, 101, 31))
-        self.leUnitNB_2.setFont(font4)
-        self.leUnitNB_2.setStyleSheet(u"QLineEdit {\n"
+        self.leDesignationMotor.setReadOnly(True)
+        self.leMotorPower = QLineEdit(self.tab_12)
+        self.leMotorPower.setObjectName(u"leMotorPower")
+        self.leMotorPower.setGeometry(QRect(170, 60, 101, 31))
+        self.leMotorPower.setFont(font4)
+        self.leMotorPower.setStyleSheet(u"QLineEdit {\n"
 " border: 1px solid gray;\n"
 " border-radius: 10px;\n"
 "}")
-        self.leUnitNB_2.setReadOnly(True)
+        self.leMotorPower.setReadOnly(True)
         self.lbCompID_61 = QLabel(self.tab_12)
         self.lbCompID_61.setObjectName(u"lbCompID_61")
         self.lbCompID_61.setGeometry(QRect(170, 10, 101, 20))
         self.lbCompID_61.setFont(font)
-        self.btnImportFlanges_2 = QPushButton(self.tab_12)
-        self.btnImportFlanges_2.setObjectName(u"btnImportFlanges_2")
-        self.btnImportFlanges_2.setGeometry(QRect(1150, 220, 75, 31))
-        self.btnImportFlanges_2.setStyleSheet(u"   QPushButton {\n"
+        self.btnImportMotor = QPushButton(self.tab_12)
+        self.btnImportMotor.setObjectName(u"btnImportMotor")
+        self.btnImportMotor.setGeometry(QRect(1150, 220, 75, 31))
+        self.btnImportMotor.setStyleSheet(u"   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
 "		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -3573,13 +3573,13 @@ class Ui_ControlPanel(object):
 "         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
 "     }")
-        self.tvSANSFlangeTable_2 = QTableView(self.tab_12)
-        self.tvSANSFlangeTable_2.setObjectName(u"tvSANSFlangeTable_2")
-        self.tvSANSFlangeTable_2.setGeometry(QRect(10, 280, 1221, 461))
-        self.btnUpload_3 = QPushButton(self.tab_12)
-        self.btnUpload_3.setObjectName(u"btnUpload_3")
-        self.btnUpload_3.setGeometry(QRect(1060, 220, 75, 31))
-        self.btnUpload_3.setStyleSheet(u"    QPushButton {\n"
+        self.tvIECMotors = QTableView(self.tab_12)
+        self.tvIECMotors.setObjectName(u"tvIECMotors")
+        self.tvIECMotors.setGeometry(QRect(10, 280, 1221, 461))
+        self.btnUploadMotor = QPushButton(self.tab_12)
+        self.btnUploadMotor.setObjectName(u"btnUploadMotor")
+        self.btnUploadMotor.setGeometry(QRect(1034, 220, 101, 31))
+        self.btnUploadMotor.setStyleSheet(u"    QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
 "		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
@@ -3605,28 +3605,28 @@ class Ui_ControlPanel(object):
         self.lbCompID_62.setObjectName(u"lbCompID_62")
         self.lbCompID_62.setGeometry(QRect(170, 30, 111, 20))
         self.lbCompID_62.setFont(font)
-        self.leUnitNB_3 = QLineEdit(self.tab_12)
-        self.leUnitNB_3.setObjectName(u"leUnitNB_3")
-        self.leUnitNB_3.setGeometry(QRect(300, 60, 101, 31))
-        self.leUnitNB_3.setFont(font4)
-        self.leUnitNB_3.setStyleSheet(u"QLineEdit {\n"
+        self.lePoles = QLineEdit(self.tab_12)
+        self.lePoles.setObjectName(u"lePoles")
+        self.lePoles.setGeometry(QRect(300, 60, 101, 31))
+        self.lePoles.setFont(font4)
+        self.lePoles.setStyleSheet(u"QLineEdit {\n"
 " border: 1px solid gray;\n"
 " border-radius: 10px;\n"
 "}")
-        self.leUnitNB_3.setReadOnly(True)
+        self.lePoles.setReadOnly(True)
         self.lbCompID_63 = QLabel(self.tab_12)
         self.lbCompID_63.setObjectName(u"lbCompID_63")
         self.lbCompID_63.setGeometry(QRect(300, 10, 121, 20))
         self.lbCompID_63.setFont(font)
-        self.leUnitNB_4 = QLineEdit(self.tab_12)
-        self.leUnitNB_4.setObjectName(u"leUnitNB_4")
-        self.leUnitNB_4.setGeometry(QRect(430, 60, 101, 31))
-        self.leUnitNB_4.setFont(font4)
-        self.leUnitNB_4.setStyleSheet(u"QLineEdit {\n"
+        self.leMotorSpeed = QLineEdit(self.tab_12)
+        self.leMotorSpeed.setObjectName(u"leMotorSpeed")
+        self.leMotorSpeed.setGeometry(QRect(430, 60, 101, 31))
+        self.leMotorSpeed.setFont(font4)
+        self.leMotorSpeed.setStyleSheet(u"QLineEdit {\n"
 " border: 1px solid gray;\n"
 " border-radius: 10px;\n"
 "}")
-        self.leUnitNB_4.setReadOnly(True)
+        self.leMotorSpeed.setReadOnly(True)
         self.lbCompID_64 = QLabel(self.tab_12)
         self.lbCompID_64.setObjectName(u"lbCompID_64")
         self.lbCompID_64.setGeometry(QRect(430, 10, 101, 20))
@@ -3635,49 +3635,816 @@ class Ui_ControlPanel(object):
         self.lbCompID_65.setObjectName(u"lbCompID_65")
         self.lbCompID_65.setGeometry(QRect(430, 30, 111, 20))
         self.lbCompID_65.setFont(font)
-        self.leUnitNB_5 = QLineEdit(self.tab_12)
-        self.leUnitNB_5.setObjectName(u"leUnitNB_5")
-        self.leUnitNB_5.setGeometry(QRect(560, 60, 101, 31))
-        self.leUnitNB_5.setFont(font4)
-        self.leUnitNB_5.setStyleSheet(u"QLineEdit {\n"
+        self.leFrame = QLineEdit(self.tab_12)
+        self.leFrame.setObjectName(u"leFrame")
+        self.leFrame.setGeometry(QRect(560, 60, 101, 31))
+        self.leFrame.setFont(font4)
+        self.leFrame.setStyleSheet(u"QLineEdit {\n"
 " border: 1px solid gray;\n"
 " border-radius: 10px;\n"
 "}")
-        self.leUnitNB_5.setReadOnly(True)
+        self.leFrame.setReadOnly(True)
         self.lbCompID_66 = QLabel(self.tab_12)
         self.lbCompID_66.setObjectName(u"lbCompID_66")
         self.lbCompID_66.setGeometry(QRect(560, 10, 101, 20))
         self.lbCompID_66.setFont(font)
-        self.leUnitNB_6 = QLineEdit(self.tab_12)
-        self.leUnitNB_6.setObjectName(u"leUnitNB_6")
-        self.leUnitNB_6.setGeometry(QRect(690, 60, 101, 31))
-        self.leUnitNB_6.setFont(font4)
-        self.leUnitNB_6.setStyleSheet(u"QLineEdit {\n"
+        self.leMounting = QLineEdit(self.tab_12)
+        self.leMounting.setObjectName(u"leMounting")
+        self.leMounting.setGeometry(QRect(690, 60, 101, 31))
+        self.leMounting.setFont(font4)
+        self.leMounting.setStyleSheet(u"QLineEdit {\n"
 " border: 1px solid gray;\n"
 " border-radius: 10px;\n"
 "}")
-        self.leUnitNB_6.setReadOnly(True)
+        self.leMounting.setReadOnly(True)
         self.lbCompID_67 = QLabel(self.tab_12)
         self.lbCompID_67.setObjectName(u"lbCompID_67")
         self.lbCompID_67.setGeometry(QRect(690, 10, 101, 20))
         self.lbCompID_67.setFont(font)
+        self.lbCompID_68 = QLabel(self.tab_12)
+        self.lbCompID_68.setObjectName(u"lbCompID_68")
+        self.lbCompID_68.setGeometry(QRect(820, 30, 111, 20))
+        self.lbCompID_68.setFont(font)
+        self.leMotorShaft = QLineEdit(self.tab_12)
+        self.leMotorShaft.setObjectName(u"leMotorShaft")
+        self.leMotorShaft.setGeometry(QRect(820, 60, 101, 31))
+        self.leMotorShaft.setFont(font4)
+        self.leMotorShaft.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leMotorShaft.setReadOnly(True)
+        self.lbCompID_69 = QLabel(self.tab_12)
+        self.lbCompID_69.setObjectName(u"lbCompID_69")
+        self.lbCompID_69.setGeometry(QRect(820, 10, 101, 20))
+        self.lbCompID_69.setFont(font)
+        self.lbCompID_72 = QLabel(self.tab_12)
+        self.lbCompID_72.setObjectName(u"lbCompID_72")
+        self.lbCompID_72.setGeometry(QRect(1060, 10, 101, 20))
+        self.lbCompID_72.setFont(font)
+        self.leKeyWidth = QLineEdit(self.tab_12)
+        self.leKeyWidth.setObjectName(u"leKeyWidth")
+        self.leKeyWidth.setGeometry(QRect(1060, 60, 101, 31))
+        self.leKeyWidth.setFont(font4)
+        self.leKeyWidth.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leKeyWidth.setReadOnly(True)
+        self.lbCompID_73 = QLabel(self.tab_12)
+        self.lbCompID_73.setObjectName(u"lbCompID_73")
+        self.lbCompID_73.setGeometry(QRect(1060, 30, 111, 20))
+        self.lbCompID_73.setFont(font)
+        self.lbCompID_74 = QLabel(self.tab_12)
+        self.lbCompID_74.setObjectName(u"lbCompID_74")
+        self.lbCompID_74.setGeometry(QRect(1060, 100, 101, 20))
+        self.lbCompID_74.setFont(font)
+        self.lekeyHeight = QLineEdit(self.tab_12)
+        self.lekeyHeight.setObjectName(u"lekeyHeight")
+        self.lekeyHeight.setGeometry(QRect(1060, 150, 101, 31))
+        self.lekeyHeight.setFont(font4)
+        self.lekeyHeight.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.lekeyHeight.setReadOnly(True)
+        self.lbCompID_75 = QLabel(self.tab_12)
+        self.lbCompID_75.setObjectName(u"lbCompID_75")
+        self.lbCompID_75.setGeometry(QRect(1060, 120, 111, 20))
+        self.lbCompID_75.setFont(font)
+        self.lbCompID_76 = QLabel(self.tab_12)
+        self.lbCompID_76.setObjectName(u"lbCompID_76")
+        self.lbCompID_76.setGeometry(QRect(940, 10, 101, 20))
+        self.lbCompID_76.setFont(font)
+        self.leShaftKeyDepth = QLineEdit(self.tab_12)
+        self.leShaftKeyDepth.setObjectName(u"leShaftKeyDepth")
+        self.leShaftKeyDepth.setGeometry(QRect(940, 60, 101, 31))
+        self.leShaftKeyDepth.setFont(font4)
+        self.leShaftKeyDepth.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leShaftKeyDepth.setReadOnly(True)
+        self.lbCompID_77 = QLabel(self.tab_12)
+        self.lbCompID_77.setObjectName(u"lbCompID_77")
+        self.lbCompID_77.setGeometry(QRect(940, 30, 111, 20))
+        self.lbCompID_77.setFont(font)
+        self.lbCompID_78 = QLabel(self.tab_12)
+        self.lbCompID_78.setObjectName(u"lbCompID_78")
+        self.lbCompID_78.setGeometry(QRect(170, 100, 101, 20))
+        self.lbCompID_78.setFont(font)
+        self.leMotorWeight = QLineEdit(self.tab_12)
+        self.leMotorWeight.setObjectName(u"leMotorWeight")
+        self.leMotorWeight.setGeometry(QRect(170, 150, 101, 31))
+        self.leMotorWeight.setFont(font4)
+        self.leMotorWeight.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leMotorWeight.setReadOnly(True)
+        self.lbCompID_79 = QLabel(self.tab_12)
+        self.lbCompID_79.setObjectName(u"lbCompID_79")
+        self.lbCompID_79.setGeometry(QRect(170, 120, 111, 20))
+        self.lbCompID_79.setFont(font)
+        self.lbCompID_80 = QLabel(self.tab_12)
+        self.lbCompID_80.setObjectName(u"lbCompID_80")
+        self.lbCompID_80.setGeometry(QRect(300, 100, 101, 20))
+        self.lbCompID_80.setFont(font)
+        self.leShaftHeight = QLineEdit(self.tab_12)
+        self.leShaftHeight.setObjectName(u"leShaftHeight")
+        self.leShaftHeight.setGeometry(QRect(300, 150, 101, 31))
+        self.leShaftHeight.setFont(font4)
+        self.leShaftHeight.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leShaftHeight.setReadOnly(True)
+        self.lbCompID_81 = QLabel(self.tab_12)
+        self.lbCompID_81.setObjectName(u"lbCompID_81")
+        self.lbCompID_81.setGeometry(QRect(300, 120, 111, 20))
+        self.lbCompID_81.setFont(font)
+        self.lbCompID_82 = QLabel(self.tab_12)
+        self.lbCompID_82.setObjectName(u"lbCompID_82")
+        self.lbCompID_82.setGeometry(QRect(430, 100, 101, 20))
+        self.lbCompID_82.setFont(font)
+        self.leFullTorqe = QLineEdit(self.tab_12)
+        self.leFullTorqe.setObjectName(u"leFullTorqe")
+        self.leFullTorqe.setGeometry(QRect(430, 150, 101, 31))
+        self.leFullTorqe.setFont(font4)
+        self.leFullTorqe.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leFullTorqe.setReadOnly(True)
+        self.lbCompID_83 = QLabel(self.tab_12)
+        self.lbCompID_83.setObjectName(u"lbCompID_83")
+        self.lbCompID_83.setGeometry(QRect(430, 120, 111, 20))
+        self.lbCompID_83.setFont(font)
+        self.lbCompID_84 = QLabel(self.tab_12)
+        self.lbCompID_84.setObjectName(u"lbCompID_84")
+        self.lbCompID_84.setGeometry(QRect(560, 120, 111, 20))
+        self.lbCompID_84.setFont(font)
+        self.leLockTorque = QLineEdit(self.tab_12)
+        self.leLockTorque.setObjectName(u"leLockTorque")
+        self.leLockTorque.setGeometry(QRect(560, 150, 101, 31))
+        self.leLockTorque.setFont(font4)
+        self.leLockTorque.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leLockTorque.setReadOnly(True)
+        self.lbCompID_85 = QLabel(self.tab_12)
+        self.lbCompID_85.setObjectName(u"lbCompID_85")
+        self.lbCompID_85.setGeometry(QRect(560, 100, 131, 20))
+        self.lbCompID_85.setFont(font)
+        self.lbCompID_86 = QLabel(self.tab_12)
+        self.lbCompID_86.setObjectName(u"lbCompID_86")
+        self.lbCompID_86.setGeometry(QRect(690, 120, 111, 20))
+        self.lbCompID_86.setFont(font)
+        self.leBreaktorque = QLineEdit(self.tab_12)
+        self.leBreaktorque.setObjectName(u"leBreaktorque")
+        self.leBreaktorque.setGeometry(QRect(690, 150, 101, 31))
+        self.leBreaktorque.setFont(font4)
+        self.leBreaktorque.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leBreaktorque.setReadOnly(True)
+        self.lbCompID_87 = QLabel(self.tab_12)
+        self.lbCompID_87.setObjectName(u"lbCompID_87")
+        self.lbCompID_87.setGeometry(QRect(690, 100, 101, 20))
+        self.lbCompID_87.setFont(font)
         self.tabTechData.addTab(self.tab_12, "")
         self.stwMain.addWidget(self.techData)
         self.calculations = QWidget()
         self.calculations.setObjectName(u"calculations")
         self.label_15 = QLabel(self.calculations)
         self.label_15.setObjectName(u"label_15")
-        self.label_15.setGeometry(QRect(410, 20, 421, 31))
+        self.label_15.setGeometry(QRect(370, 30, 421, 31))
         sizePolicy2.setHeightForWidth(self.label_15.sizePolicy().hasHeightForWidth())
         self.label_15.setSizePolicy(sizePolicy2)
         self.label_15.setFont(font2)
         self.label_15.setAlignment(Qt.AlignCenter)
+        self.tabCalcTools = QTabWidget(self.calculations)
+        self.tabCalcTools.setObjectName(u"tabCalcTools")
+        self.tabCalcTools.setGeometry(QRect(10, 60, 1251, 771))
+        self.tabSteelSections_2 = QWidget()
+        self.tabSteelSections_2.setObjectName(u"tabSteelSections_2")
+        self.lbQuotationHistory_8 = QLabel(self.tabSteelSections_2)
+        self.lbQuotationHistory_8.setObjectName(u"lbQuotationHistory_8")
+        self.lbQuotationHistory_8.setGeometry(QRect(20, 30, 181, 16))
+        self.lbQuotationHistory_8.setFont(font5)
+        self.btnConvertPDF = QPushButton(self.tabSteelSections_2)
+        self.btnConvertPDF.setObjectName(u"btnConvertPDF")
+        self.btnConvertPDF.setGeometry(QRect(1070, 120, 151, 31))
+        self.btnConvertPDF.setStyleSheet(u"    QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #f6f7fa, stop: 1 );\n"
+"	background-color: rgb(0, 255, 0);\n"
+"	\n"
+"	\n"
+"     }\n"
+"\n"
+" QPushButton:pressed {\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"     }")
+        self.lvBulkFilesLoad = QListView(self.tabSteelSections_2)
+        self.lvBulkFilesLoad.setObjectName(u"lvBulkFilesLoad")
+        self.lvBulkFilesLoad.setGeometry(QRect(20, 60, 451, 671))
+        self.lvBulkFilesCreated = QListView(self.tabSteelSections_2)
+        self.lvBulkFilesCreated.setObjectName(u"lvBulkFilesCreated")
+        self.lvBulkFilesCreated.setGeometry(QRect(555, 60, 451, 671))
+        self.lbQuotationHistory_11 = QLabel(self.tabSteelSections_2)
+        self.lbQuotationHistory_11.setObjectName(u"lbQuotationHistory_11")
+        self.lbQuotationHistory_11.setGeometry(QRect(340, 30, 181, 16))
+        self.lbQuotationHistory_11.setFont(font5)
+        self.btnUploadFiles = QPushButton(self.tabSteelSections_2)
+        self.btnUploadFiles.setObjectName(u"btnUploadFiles")
+        self.btnUploadFiles.setGeometry(QRect(1070, 80, 151, 31))
+        self.btnUploadFiles.setStyleSheet(u"    QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 255, 0));\n"
+"	\n"
+"	\n"
+"     }\n"
+"\n"
+" QPushButton:pressed {\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"     }")
+        self.tabCalcTools.addTab(self.tabSteelSections_2, "")
+        self.tab_13 = QWidget()
+        self.tab_13.setObjectName(u"tab_13")
+        self.lbQuotationHistory_9 = QLabel(self.tab_13)
+        self.lbQuotationHistory_9.setObjectName(u"lbQuotationHistory_9")
+        self.lbQuotationHistory_9.setGeometry(QRect(20, 260, 181, 16))
+        self.lbQuotationHistory_9.setFont(font5)
+        self.tvSANSFlangeTable_2 = QTableView(self.tab_13)
+        self.tvSANSFlangeTable_2.setObjectName(u"tvSANSFlangeTable_2")
+        self.tvSANSFlangeTable_2.setGeometry(QRect(10, 280, 1221, 461))
+        self.leDesignationFlange_2 = QLineEdit(self.tab_13)
+        self.leDesignationFlange_2.setObjectName(u"leDesignationFlange_2")
+        self.leDesignationFlange_2.setGeometry(QRect(10, 60, 131, 31))
+        self.leDesignationFlange_2.setFont(font4)
+        self.leDesignationFlange_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leDesignationFlange_2.setReadOnly(True)
+        self.lbCompany_19 = QLabel(self.tab_13)
+        self.lbCompany_19.setObjectName(u"lbCompany_19")
+        self.lbCompany_19.setGeometry(QRect(10, 10, 121, 20))
+        self.lbCompany_19.setFont(font)
+        self.leUnitNB_2 = QLineEdit(self.tab_13)
+        self.leUnitNB_2.setObjectName(u"leUnitNB_2")
+        self.leUnitNB_2.setGeometry(QRect(150, 60, 101, 31))
+        self.leUnitNB_2.setFont(font4)
+        self.leUnitNB_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leUnitNB_2.setReadOnly(True)
+        self.lbCompID_122 = QLabel(self.tab_13)
+        self.lbCompID_122.setObjectName(u"lbCompID_122")
+        self.lbCompID_122.setGeometry(QRect(150, 10, 101, 20))
+        self.lbCompID_122.setFont(font)
+        self.leUnitPR_2 = QLineEdit(self.tab_13)
+        self.leUnitPR_2.setObjectName(u"leUnitPR_2")
+        self.leUnitPR_2.setGeometry(QRect(260, 60, 101, 31))
+        self.leUnitPR_2.setFont(font4)
+        self.leUnitPR_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leUnitPR_2.setReadOnly(True)
+        self.lbCompID_123 = QLabel(self.tab_13)
+        self.lbCompID_123.setObjectName(u"lbCompID_123")
+        self.lbCompID_123.setGeometry(QRect(260, 10, 101, 20))
+        self.lbCompID_123.setFont(font)
+        self.leUnitType_2 = QLineEdit(self.tab_13)
+        self.leUnitType_2.setObjectName(u"leUnitType_2")
+        self.leUnitType_2.setGeometry(QRect(370, 60, 101, 31))
+        self.leUnitType_2.setFont(font4)
+        self.leUnitType_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leUnitType_2.setReadOnly(True)
+        self.lbCompID_124 = QLabel(self.tab_13)
+        self.lbCompID_124.setObjectName(u"lbCompID_124")
+        self.lbCompID_124.setGeometry(QRect(370, 10, 101, 20))
+        self.lbCompID_124.setFont(font)
+        self.lePOD_2 = QLineEdit(self.tab_13)
+        self.lePOD_2.setObjectName(u"lePOD_2")
+        self.lePOD_2.setGeometry(QRect(540, 60, 101, 31))
+        self.lePOD_2.setFont(font4)
+        self.lePOD_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.lePOD_2.setReadOnly(True)
+        self.lbCompID_125 = QLabel(self.tab_13)
+        self.lbCompID_125.setObjectName(u"lbCompID_125")
+        self.lbCompID_125.setGeometry(QRect(540, 10, 111, 20))
+        self.lbCompID_125.setFont(font)
+        self.leFOD_2 = QLineEdit(self.tab_13)
+        self.leFOD_2.setObjectName(u"leFOD_2")
+        self.leFOD_2.setGeometry(QRect(650, 60, 101, 31))
+        self.leFOD_2.setFont(font4)
+        self.leFOD_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leFOD_2.setReadOnly(True)
+        self.lbCompID_126 = QLabel(self.tab_13)
+        self.lbCompID_126.setObjectName(u"lbCompID_126")
+        self.lbCompID_126.setGeometry(QRect(650, 10, 111, 20))
+        self.lbCompID_126.setFont(font)
+        self.lbCompID_127 = QLabel(self.tab_13)
+        self.lbCompID_127.setObjectName(u"lbCompID_127")
+        self.lbCompID_127.setGeometry(QRect(540, 30, 111, 20))
+        self.lbCompID_127.setFont(font)
+        self.lbCompID_128 = QLabel(self.tab_13)
+        self.lbCompID_128.setObjectName(u"lbCompID_128")
+        self.lbCompID_128.setGeometry(QRect(650, 30, 101, 20))
+        self.lbCompID_128.setFont(font)
+        self.lbCompID_129 = QLabel(self.tab_13)
+        self.lbCompID_129.setObjectName(u"lbCompID_129")
+        self.lbCompID_129.setGeometry(QRect(760, 30, 61, 20))
+        self.lbCompID_129.setFont(font)
+        self.leFTK_2 = QLineEdit(self.tab_13)
+        self.leFTK_2.setObjectName(u"leFTK_2")
+        self.leFTK_2.setGeometry(QRect(760, 60, 101, 31))
+        self.leFTK_2.setFont(font4)
+        self.leFTK_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leFTK_2.setReadOnly(True)
+        self.lbCompID_130 = QLabel(self.tab_13)
+        self.lbCompID_130.setObjectName(u"lbCompID_130")
+        self.lbCompID_130.setGeometry(QRect(760, 10, 111, 20))
+        self.lbCompID_130.setFont(font)
+        self.lbCompID_131 = QLabel(self.tab_13)
+        self.lbCompID_131.setObjectName(u"lbCompID_131")
+        self.lbCompID_131.setGeometry(QRect(930, 30, 101, 20))
+        self.lbCompID_131.setFont(font)
+        self.leRFD_2 = QLineEdit(self.tab_13)
+        self.leRFD_2.setObjectName(u"leRFD_2")
+        self.leRFD_2.setGeometry(QRect(930, 60, 101, 31))
+        self.leRFD_2.setFont(font4)
+        self.leRFD_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leRFD_2.setReadOnly(True)
+        self.lbCompID_132 = QLabel(self.tab_13)
+        self.lbCompID_132.setObjectName(u"lbCompID_132")
+        self.lbCompID_132.setGeometry(QRect(930, 10, 111, 20))
+        self.lbCompID_132.setFont(font)
+        self.lbCompID_133 = QLabel(self.tab_13)
+        self.lbCompID_133.setObjectName(u"lbCompID_133")
+        self.lbCompID_133.setGeometry(QRect(1040, 30, 101, 20))
+        self.lbCompID_133.setFont(font)
+        self.leRFT_2 = QLineEdit(self.tab_13)
+        self.leRFT_2.setObjectName(u"leRFT_2")
+        self.leRFT_2.setGeometry(QRect(1040, 60, 101, 31))
+        self.leRFT_2.setFont(font4)
+        self.leRFT_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leRFT_2.setReadOnly(True)
+        self.lbCompID_134 = QLabel(self.tab_13)
+        self.lbCompID_134.setObjectName(u"lbCompID_134")
+        self.lbCompID_134.setGeometry(QRect(1040, 10, 111, 20))
+        self.lbCompID_134.setFont(font)
+        self.label_5 = QLabel(self.tab_13)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setGeometry(QRect(20, 110, 341, 141))
+        self.label_5.setPixmap(QPixmap(u"../apps/techdata/SANS1123_plate_Flange.jpg"))
+        self.label_5.setScaledContents(True)
+        self.leFBOLT_2 = QLineEdit(self.tab_13)
+        self.leFBOLT_2.setObjectName(u"leFBOLT_2")
+        self.leFBOLT_2.setGeometry(QRect(540, 170, 101, 31))
+        self.leFBOLT_2.setFont(font4)
+        self.leFBOLT_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leFBOLT_2.setReadOnly(True)
+        self.lbCompID_135 = QLabel(self.tab_13)
+        self.lbCompID_135.setObjectName(u"lbCompID_135")
+        self.lbCompID_135.setGeometry(QRect(540, 120, 111, 20))
+        self.lbCompID_135.setFont(font)
+        self.lbCompID_136 = QLabel(self.tab_13)
+        self.lbCompID_136.setObjectName(u"lbCompID_136")
+        self.lbCompID_136.setGeometry(QRect(540, 140, 101, 20))
+        self.lbCompID_136.setFont(font)
+        self.leNOB_2 = QLineEdit(self.tab_13)
+        self.leNOB_2.setObjectName(u"leNOB_2")
+        self.leNOB_2.setGeometry(QRect(650, 170, 101, 31))
+        self.leNOB_2.setFont(font4)
+        self.leNOB_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leNOB_2.setReadOnly(True)
+        self.lbCompID_137 = QLabel(self.tab_13)
+        self.lbCompID_137.setObjectName(u"lbCompID_137")
+        self.lbCompID_137.setGeometry(QRect(650, 120, 111, 20))
+        self.lbCompID_137.setFont(font)
+        self.lbCompID_138 = QLabel(self.tab_13)
+        self.lbCompID_138.setObjectName(u"lbCompID_138")
+        self.lbCompID_138.setGeometry(QRect(650, 140, 101, 20))
+        self.lbCompID_138.setFont(font)
+        self.leBOS_2 = QLineEdit(self.tab_13)
+        self.leBOS_2.setObjectName(u"leBOS_2")
+        self.leBOS_2.setGeometry(QRect(760, 170, 101, 31))
+        self.leBOS_2.setFont(font4)
+        self.leBOS_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leBOS_2.setReadOnly(True)
+        self.lbCompID_139 = QLabel(self.tab_13)
+        self.lbCompID_139.setObjectName(u"lbCompID_139")
+        self.lbCompID_139.setGeometry(QRect(760, 120, 111, 20))
+        self.lbCompID_139.setFont(font)
+        self.lbCompID_140 = QLabel(self.tab_13)
+        self.lbCompID_140.setObjectName(u"lbCompID_140")
+        self.lbCompID_140.setGeometry(QRect(760, 140, 101, 20))
+        self.lbCompID_140.setFont(font)
+        self.lePCD_2 = QLineEdit(self.tab_13)
+        self.lePCD_2.setObjectName(u"lePCD_2")
+        self.lePCD_2.setGeometry(QRect(870, 170, 101, 31))
+        self.lePCD_2.setFont(font4)
+        self.lePCD_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.lePCD_2.setReadOnly(True)
+        self.lbCompID_141 = QLabel(self.tab_13)
+        self.lbCompID_141.setObjectName(u"lbCompID_141")
+        self.lbCompID_141.setGeometry(QRect(870, 120, 111, 20))
+        self.lbCompID_141.setFont(font)
+        self.lbCompID_142 = QLabel(self.tab_13)
+        self.lbCompID_142.setObjectName(u"lbCompID_142")
+        self.lbCompID_142.setGeometry(QRect(870, 140, 101, 20))
+        self.lbCompID_142.setFont(font)
+        self.btnImportFlanges_2 = QPushButton(self.tab_13)
+        self.btnImportFlanges_2.setObjectName(u"btnImportFlanges_2")
+        self.btnImportFlanges_2.setGeometry(QRect(1150, 220, 75, 31))
+        self.btnImportFlanges_2.setStyleSheet(u"   QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #f6f7fa, stop: 1 rgb(43, 200, 7));\n"
+"	\n"
+"	\n"
+"     }\n"
+"\n"
+" QPushButton:pressed {\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"     }")
+        self.btnUpload_4 = QPushButton(self.tab_13)
+        self.btnUpload_4.setObjectName(u"btnUpload_4")
+        self.btnUpload_4.setGeometry(QRect(1060, 220, 75, 31))
+        self.btnUpload_4.setStyleSheet(u"    QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 255, 0));\n"
+"	\n"
+"	\n"
+"     }\n"
+"\n"
+" QPushButton:pressed {\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"     }")
+        self.lbCompID_143 = QLabel(self.tab_13)
+        self.lbCompID_143.setObjectName(u"lbCompID_143")
+        self.lbCompID_143.setGeometry(QRect(1030, 140, 101, 20))
+        self.lbCompID_143.setFont(font)
+        self.lbCompID_144 = QLabel(self.tab_13)
+        self.lbCompID_144.setObjectName(u"lbCompID_144")
+        self.lbCompID_144.setGeometry(QRect(1030, 120, 111, 20))
+        self.lbCompID_144.setFont(font)
+        self.leFlangeMass_2 = QLineEdit(self.tab_13)
+        self.leFlangeMass_2.setObjectName(u"leFlangeMass_2")
+        self.leFlangeMass_2.setGeometry(QRect(1030, 170, 101, 31))
+        self.leFlangeMass_2.setFont(font4)
+        self.leFlangeMass_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leFlangeMass_2.setReadOnly(True)
+        self.tabCalcTools.addTab(self.tab_13, "")
+        self.tab_14 = QWidget()
+        self.tab_14.setObjectName(u"tab_14")
+        self.tabCalcTools.addTab(self.tab_14, "")
+        self.tab_15 = QWidget()
+        self.tab_15.setObjectName(u"tab_15")
+        self.tabCalcTools.addTab(self.tab_15, "")
+        self.tab_16 = QWidget()
+        self.tab_16.setObjectName(u"tab_16")
+        self.lbCompany_20 = QLabel(self.tab_16)
+        self.lbCompany_20.setObjectName(u"lbCompany_20")
+        self.lbCompany_20.setGeometry(QRect(10, 10, 121, 20))
+        self.lbCompany_20.setFont(font)
+        self.leDesignationMotor_2 = QLineEdit(self.tab_16)
+        self.leDesignationMotor_2.setObjectName(u"leDesignationMotor_2")
+        self.leDesignationMotor_2.setGeometry(QRect(10, 60, 131, 31))
+        self.leDesignationMotor_2.setFont(font4)
+        self.leDesignationMotor_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leDesignationMotor_2.setReadOnly(True)
+        self.leMotorPower_2 = QLineEdit(self.tab_16)
+        self.leMotorPower_2.setObjectName(u"leMotorPower_2")
+        self.leMotorPower_2.setGeometry(QRect(170, 60, 101, 31))
+        self.leMotorPower_2.setFont(font4)
+        self.leMotorPower_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leMotorPower_2.setReadOnly(True)
+        self.lbCompID_145 = QLabel(self.tab_16)
+        self.lbCompID_145.setObjectName(u"lbCompID_145")
+        self.lbCompID_145.setGeometry(QRect(170, 10, 101, 20))
+        self.lbCompID_145.setFont(font)
+        self.btnImportMotor_2 = QPushButton(self.tab_16)
+        self.btnImportMotor_2.setObjectName(u"btnImportMotor_2")
+        self.btnImportMotor_2.setGeometry(QRect(1150, 220, 75, 31))
+        self.btnImportMotor_2.setStyleSheet(u"   QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #f6f7fa, stop: 1 rgb(43, 200, 7));\n"
+"	\n"
+"	\n"
+"     }\n"
+"\n"
+" QPushButton:pressed {\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"     }")
+        self.tvIECMotors_2 = QTableView(self.tab_16)
+        self.tvIECMotors_2.setObjectName(u"tvIECMotors_2")
+        self.tvIECMotors_2.setGeometry(QRect(10, 280, 1221, 461))
+        self.btnUploadMotor_2 = QPushButton(self.tab_16)
+        self.btnUploadMotor_2.setObjectName(u"btnUploadMotor_2")
+        self.btnUploadMotor_2.setGeometry(QRect(1034, 220, 101, 31))
+        self.btnUploadMotor_2.setStyleSheet(u"    QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 255, 0));\n"
+"	\n"
+"	\n"
+"     }\n"
+"\n"
+" QPushButton:pressed {\n"
+"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
+"     }")
+        self.lbQuotationHistory_10 = QLabel(self.tab_16)
+        self.lbQuotationHistory_10.setObjectName(u"lbQuotationHistory_10")
+        self.lbQuotationHistory_10.setGeometry(QRect(10, 260, 181, 16))
+        self.lbQuotationHistory_10.setFont(font5)
+        self.label_6 = QLabel(self.tab_16)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setGeometry(QRect(10, 110, 341, 141))
+        self.label_6.setPixmap(QPixmap(u"../../../../Users/Gerald Holt/.designer/resources/assets/SANS1123_plate_Flange.jpg"))
+        self.label_6.setScaledContents(True)
+        self.lbCompID_146 = QLabel(self.tab_16)
+        self.lbCompID_146.setObjectName(u"lbCompID_146")
+        self.lbCompID_146.setGeometry(QRect(170, 30, 111, 20))
+        self.lbCompID_146.setFont(font)
+        self.lePoles_2 = QLineEdit(self.tab_16)
+        self.lePoles_2.setObjectName(u"lePoles_2")
+        self.lePoles_2.setGeometry(QRect(300, 60, 101, 31))
+        self.lePoles_2.setFont(font4)
+        self.lePoles_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.lePoles_2.setReadOnly(True)
+        self.lbCompID_147 = QLabel(self.tab_16)
+        self.lbCompID_147.setObjectName(u"lbCompID_147")
+        self.lbCompID_147.setGeometry(QRect(300, 10, 121, 20))
+        self.lbCompID_147.setFont(font)
+        self.leMotorSpeed_2 = QLineEdit(self.tab_16)
+        self.leMotorSpeed_2.setObjectName(u"leMotorSpeed_2")
+        self.leMotorSpeed_2.setGeometry(QRect(430, 60, 101, 31))
+        self.leMotorSpeed_2.setFont(font4)
+        self.leMotorSpeed_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leMotorSpeed_2.setReadOnly(True)
+        self.lbCompID_148 = QLabel(self.tab_16)
+        self.lbCompID_148.setObjectName(u"lbCompID_148")
+        self.lbCompID_148.setGeometry(QRect(430, 10, 101, 20))
+        self.lbCompID_148.setFont(font)
+        self.lbCompID_149 = QLabel(self.tab_16)
+        self.lbCompID_149.setObjectName(u"lbCompID_149")
+        self.lbCompID_149.setGeometry(QRect(430, 30, 111, 20))
+        self.lbCompID_149.setFont(font)
+        self.leFrame_2 = QLineEdit(self.tab_16)
+        self.leFrame_2.setObjectName(u"leFrame_2")
+        self.leFrame_2.setGeometry(QRect(560, 60, 101, 31))
+        self.leFrame_2.setFont(font4)
+        self.leFrame_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leFrame_2.setReadOnly(True)
+        self.lbCompID_150 = QLabel(self.tab_16)
+        self.lbCompID_150.setObjectName(u"lbCompID_150")
+        self.lbCompID_150.setGeometry(QRect(560, 10, 101, 20))
+        self.lbCompID_150.setFont(font)
+        self.leMounting_2 = QLineEdit(self.tab_16)
+        self.leMounting_2.setObjectName(u"leMounting_2")
+        self.leMounting_2.setGeometry(QRect(690, 60, 101, 31))
+        self.leMounting_2.setFont(font4)
+        self.leMounting_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leMounting_2.setReadOnly(True)
+        self.lbCompID_151 = QLabel(self.tab_16)
+        self.lbCompID_151.setObjectName(u"lbCompID_151")
+        self.lbCompID_151.setGeometry(QRect(690, 10, 101, 20))
+        self.lbCompID_151.setFont(font)
+        self.lbCompID_152 = QLabel(self.tab_16)
+        self.lbCompID_152.setObjectName(u"lbCompID_152")
+        self.lbCompID_152.setGeometry(QRect(820, 30, 111, 20))
+        self.lbCompID_152.setFont(font)
+        self.leMotorShaft_2 = QLineEdit(self.tab_16)
+        self.leMotorShaft_2.setObjectName(u"leMotorShaft_2")
+        self.leMotorShaft_2.setGeometry(QRect(820, 60, 101, 31))
+        self.leMotorShaft_2.setFont(font4)
+        self.leMotorShaft_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leMotorShaft_2.setReadOnly(True)
+        self.lbCompID_153 = QLabel(self.tab_16)
+        self.lbCompID_153.setObjectName(u"lbCompID_153")
+        self.lbCompID_153.setGeometry(QRect(820, 10, 101, 20))
+        self.lbCompID_153.setFont(font)
+        self.lbCompID_154 = QLabel(self.tab_16)
+        self.lbCompID_154.setObjectName(u"lbCompID_154")
+        self.lbCompID_154.setGeometry(QRect(1060, 10, 101, 20))
+        self.lbCompID_154.setFont(font)
+        self.leKeyWidth_2 = QLineEdit(self.tab_16)
+        self.leKeyWidth_2.setObjectName(u"leKeyWidth_2")
+        self.leKeyWidth_2.setGeometry(QRect(1060, 60, 101, 31))
+        self.leKeyWidth_2.setFont(font4)
+        self.leKeyWidth_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leKeyWidth_2.setReadOnly(True)
+        self.lbCompID_155 = QLabel(self.tab_16)
+        self.lbCompID_155.setObjectName(u"lbCompID_155")
+        self.lbCompID_155.setGeometry(QRect(1060, 30, 111, 20))
+        self.lbCompID_155.setFont(font)
+        self.lbCompID_156 = QLabel(self.tab_16)
+        self.lbCompID_156.setObjectName(u"lbCompID_156")
+        self.lbCompID_156.setGeometry(QRect(1060, 100, 101, 20))
+        self.lbCompID_156.setFont(font)
+        self.lekeyHeight_2 = QLineEdit(self.tab_16)
+        self.lekeyHeight_2.setObjectName(u"lekeyHeight_2")
+        self.lekeyHeight_2.setGeometry(QRect(1060, 150, 101, 31))
+        self.lekeyHeight_2.setFont(font4)
+        self.lekeyHeight_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.lekeyHeight_2.setReadOnly(True)
+        self.lbCompID_157 = QLabel(self.tab_16)
+        self.lbCompID_157.setObjectName(u"lbCompID_157")
+        self.lbCompID_157.setGeometry(QRect(1060, 120, 111, 20))
+        self.lbCompID_157.setFont(font)
+        self.lbCompID_158 = QLabel(self.tab_16)
+        self.lbCompID_158.setObjectName(u"lbCompID_158")
+        self.lbCompID_158.setGeometry(QRect(940, 10, 101, 20))
+        self.lbCompID_158.setFont(font)
+        self.leShaftKeyDepth_2 = QLineEdit(self.tab_16)
+        self.leShaftKeyDepth_2.setObjectName(u"leShaftKeyDepth_2")
+        self.leShaftKeyDepth_2.setGeometry(QRect(940, 60, 101, 31))
+        self.leShaftKeyDepth_2.setFont(font4)
+        self.leShaftKeyDepth_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leShaftKeyDepth_2.setReadOnly(True)
+        self.lbCompID_159 = QLabel(self.tab_16)
+        self.lbCompID_159.setObjectName(u"lbCompID_159")
+        self.lbCompID_159.setGeometry(QRect(940, 30, 111, 20))
+        self.lbCompID_159.setFont(font)
+        self.lbCompID_160 = QLabel(self.tab_16)
+        self.lbCompID_160.setObjectName(u"lbCompID_160")
+        self.lbCompID_160.setGeometry(QRect(170, 100, 101, 20))
+        self.lbCompID_160.setFont(font)
+        self.leMotorWeight_2 = QLineEdit(self.tab_16)
+        self.leMotorWeight_2.setObjectName(u"leMotorWeight_2")
+        self.leMotorWeight_2.setGeometry(QRect(170, 150, 101, 31))
+        self.leMotorWeight_2.setFont(font4)
+        self.leMotorWeight_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leMotorWeight_2.setReadOnly(True)
+        self.lbCompID_161 = QLabel(self.tab_16)
+        self.lbCompID_161.setObjectName(u"lbCompID_161")
+        self.lbCompID_161.setGeometry(QRect(170, 120, 111, 20))
+        self.lbCompID_161.setFont(font)
+        self.lbCompID_162 = QLabel(self.tab_16)
+        self.lbCompID_162.setObjectName(u"lbCompID_162")
+        self.lbCompID_162.setGeometry(QRect(300, 100, 101, 20))
+        self.lbCompID_162.setFont(font)
+        self.leShaftHeight_2 = QLineEdit(self.tab_16)
+        self.leShaftHeight_2.setObjectName(u"leShaftHeight_2")
+        self.leShaftHeight_2.setGeometry(QRect(300, 150, 101, 31))
+        self.leShaftHeight_2.setFont(font4)
+        self.leShaftHeight_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leShaftHeight_2.setReadOnly(True)
+        self.lbCompID_163 = QLabel(self.tab_16)
+        self.lbCompID_163.setObjectName(u"lbCompID_163")
+        self.lbCompID_163.setGeometry(QRect(300, 120, 111, 20))
+        self.lbCompID_163.setFont(font)
+        self.lbCompID_164 = QLabel(self.tab_16)
+        self.lbCompID_164.setObjectName(u"lbCompID_164")
+        self.lbCompID_164.setGeometry(QRect(430, 100, 101, 20))
+        self.lbCompID_164.setFont(font)
+        self.leFullTorqe_2 = QLineEdit(self.tab_16)
+        self.leFullTorqe_2.setObjectName(u"leFullTorqe_2")
+        self.leFullTorqe_2.setGeometry(QRect(430, 150, 101, 31))
+        self.leFullTorqe_2.setFont(font4)
+        self.leFullTorqe_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leFullTorqe_2.setReadOnly(True)
+        self.lbCompID_165 = QLabel(self.tab_16)
+        self.lbCompID_165.setObjectName(u"lbCompID_165")
+        self.lbCompID_165.setGeometry(QRect(430, 120, 111, 20))
+        self.lbCompID_165.setFont(font)
+        self.lbCompID_166 = QLabel(self.tab_16)
+        self.lbCompID_166.setObjectName(u"lbCompID_166")
+        self.lbCompID_166.setGeometry(QRect(560, 120, 111, 20))
+        self.lbCompID_166.setFont(font)
+        self.leLockTorque_2 = QLineEdit(self.tab_16)
+        self.leLockTorque_2.setObjectName(u"leLockTorque_2")
+        self.leLockTorque_2.setGeometry(QRect(560, 150, 101, 31))
+        self.leLockTorque_2.setFont(font4)
+        self.leLockTorque_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leLockTorque_2.setReadOnly(True)
+        self.lbCompID_167 = QLabel(self.tab_16)
+        self.lbCompID_167.setObjectName(u"lbCompID_167")
+        self.lbCompID_167.setGeometry(QRect(560, 100, 131, 20))
+        self.lbCompID_167.setFont(font)
+        self.lbCompID_168 = QLabel(self.tab_16)
+        self.lbCompID_168.setObjectName(u"lbCompID_168")
+        self.lbCompID_168.setGeometry(QRect(690, 120, 111, 20))
+        self.lbCompID_168.setFont(font)
+        self.leBreaktorque_2 = QLineEdit(self.tab_16)
+        self.leBreaktorque_2.setObjectName(u"leBreaktorque_2")
+        self.leBreaktorque_2.setGeometry(QRect(690, 150, 101, 31))
+        self.leBreaktorque_2.setFont(font4)
+        self.leBreaktorque_2.setStyleSheet(u"QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leBreaktorque_2.setReadOnly(True)
+        self.lbCompID_169 = QLabel(self.tab_16)
+        self.lbCompID_169.setObjectName(u"lbCompID_169")
+        self.lbCompID_169.setGeometry(QRect(690, 100, 101, 20))
+        self.lbCompID_169.setFont(font)
+        self.tabCalcTools.addTab(self.tab_16, "")
         self.stwMain.addWidget(self.calculations)
         ControlPanel.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(ControlPanel)
 
-        self.stwMain.setCurrentIndex(2)
+        self.stwMain.setCurrentIndex(0)
         self.tabQuotation.setCurrentIndex(0)
         self.tabWidget_2.setCurrentIndex(0)
         self.tabWorksOrders.setCurrentIndex(0)
@@ -3685,6 +4452,7 @@ class Ui_ControlPanel(object):
         self.tabWidget.setCurrentIndex(0)
         self.tabDoccontrol.setCurrentIndex(0)
         self.tabTechData.setCurrentIndex(4)
+        self.tabCalcTools.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(ControlPanel)
@@ -3713,7 +4481,7 @@ class Ui_ControlPanel(object):
 #endif // QT_CONFIG(tooltip)
         self.btnQuotation.setText("")
         self.lbGeneralInfo.setText(QCoreApplication.translate("ControlPanel", u"General Technical Data", None))
-        self.lbCalculations.setText(QCoreApplication.translate("ControlPanel", u"Calculations", None))
+        self.lbCalculations.setText(QCoreApplication.translate("ControlPanel", u"Calculations and Tools", None))
 #if QT_CONFIG(tooltip)
         self.btnGeneralInfo.setToolTip(QCoreApplication.translate("ControlPanel", u"General Information Database", None))
 #endif // QT_CONFIG(tooltip)
@@ -3909,10 +4677,10 @@ class Ui_ControlPanel(object):
 #endif // QT_CONFIG(tooltip)
         self.btnDesignBasis.setText("")
 #if QT_CONFIG(tooltip)
-        self.btnProcessDescrip.setToolTip(QCoreApplication.translate("ControlPanel", u"Overview of Actions and Workload", None))
+        self.btnMassBalance.setToolTip(QCoreApplication.translate("ControlPanel", u"Overview of Actions and Workload", None))
 #endif // QT_CONFIG(tooltip)
-        self.btnProcessDescrip.setText("")
-        self.lbDashborad_3.setText(QCoreApplication.translate("ControlPanel", u"Process Description", None))
+        self.btnMassBalance.setText("")
+        self.lbDashborad_3.setText(QCoreApplication.translate("ControlPanel", u"Mass Balance", None))
 #if QT_CONFIG(tooltip)
         self.btnSiteConditions.setToolTip(QCoreApplication.translate("ControlPanel", u"Overview of Actions and Workload", None))
 #endif // QT_CONFIG(tooltip)
@@ -4152,9 +4920,9 @@ class Ui_ControlPanel(object):
         self.tabTechData.setTabText(self.tabTechData.indexOf(self.tab_11), QCoreApplication.translate("ControlPanel", u"SANS 1313 Conveyor Idlers", None))
         self.lbCompany_6.setText(QCoreApplication.translate("ControlPanel", u"Designation", None))
         self.lbCompID_61.setText(QCoreApplication.translate("ControlPanel", u"Power Rating", None))
-        self.btnImportFlanges_2.setText(QCoreApplication.translate("ControlPanel", u"Import", None))
-        self.btnUpload_3.setText(QCoreApplication.translate("ControlPanel", u"Upload Detail", None))
-        self.lbQuotationHistory_7.setText(QCoreApplication.translate("ControlPanel", u"SANS 1123 Plate Flange Tables", None))
+        self.btnImportMotor.setText(QCoreApplication.translate("ControlPanel", u"Import", None))
+        self.btnUploadMotor.setText(QCoreApplication.translate("ControlPanel", u"Upload Detail", None))
+        self.lbQuotationHistory_7.setText(QCoreApplication.translate("ControlPanel", u"IEC Motor Sizes", None))
         self.label_4.setText("")
         self.lbCompID_62.setText(QCoreApplication.translate("ControlPanel", u"P (kW)", None))
         self.lbCompID_63.setText(QCoreApplication.translate("ControlPanel", u"Number of Poles", None))
@@ -4162,7 +4930,92 @@ class Ui_ControlPanel(object):
         self.lbCompID_65.setText(QCoreApplication.translate("ControlPanel", u"N (rpm)", None))
         self.lbCompID_66.setText(QCoreApplication.translate("ControlPanel", u"Frame Size", None))
         self.lbCompID_67.setText(QCoreApplication.translate("ControlPanel", u"Mounting", None))
+        self.lbCompID_68.setText(QCoreApplication.translate("ControlPanel", u"(mm)", None))
+        self.lbCompID_69.setText(QCoreApplication.translate("ControlPanel", u"Shaft Size", None))
+        self.lbCompID_72.setText(QCoreApplication.translate("ControlPanel", u"Key Width", None))
+        self.lbCompID_73.setText(QCoreApplication.translate("ControlPanel", u"(mm)", None))
+        self.lbCompID_74.setText(QCoreApplication.translate("ControlPanel", u"Key Height", None))
+        self.lbCompID_75.setText(QCoreApplication.translate("ControlPanel", u"(mm)", None))
+        self.lbCompID_76.setText(QCoreApplication.translate("ControlPanel", u"Shaft Key Depth", None))
+        self.lbCompID_77.setText(QCoreApplication.translate("ControlPanel", u"(mm)", None))
+        self.lbCompID_78.setText(QCoreApplication.translate("ControlPanel", u"Motor Weight", None))
+        self.lbCompID_79.setText(QCoreApplication.translate("ControlPanel", u"(kg)", None))
+        self.lbCompID_80.setText(QCoreApplication.translate("ControlPanel", u"Shaft Height", None))
+        self.lbCompID_81.setText(QCoreApplication.translate("ControlPanel", u"(mm)", None))
+        self.lbCompID_82.setText(QCoreApplication.translate("ControlPanel", u"Full Load Torque", None))
+        self.lbCompID_83.setText(QCoreApplication.translate("ControlPanel", u"(Nm)", None))
+        self.lbCompID_84.setText(QCoreApplication.translate("ControlPanel", u"(Nm)", None))
+        self.lbCompID_85.setText(QCoreApplication.translate("ControlPanel", u"Lock Rotor Torque", None))
+        self.lbCompID_86.setText(QCoreApplication.translate("ControlPanel", u"(Nm)", None))
+        self.lbCompID_87.setText(QCoreApplication.translate("ControlPanel", u"Break Torque", None))
         self.tabTechData.setTabText(self.tabTechData.indexOf(self.tab_12), QCoreApplication.translate("ControlPanel", u"IEC Electric Motors", None))
-        self.label_15.setText(QCoreApplication.translate("ControlPanel", u"CALCULATIONS", None))
+        self.label_15.setText(QCoreApplication.translate("ControlPanel", u"CALCULATIONS AND TOOLS", None))
+        self.lbQuotationHistory_8.setText(QCoreApplication.translate("ControlPanel", u"Files to be converted", None))
+        self.btnConvertPDF.setText(QCoreApplication.translate("ControlPanel", u"Convert", None))
+        self.lbQuotationHistory_11.setText(QCoreApplication.translate("ControlPanel", u"Files converted", None))
+        self.btnUploadFiles.setText(QCoreApplication.translate("ControlPanel", u"Load Files", None))
+        self.tabCalcTools.setTabText(self.tabCalcTools.indexOf(self.tabSteelSections_2), QCoreApplication.translate("ControlPanel", u"Covert to PDF", None))
+        self.lbQuotationHistory_9.setText(QCoreApplication.translate("ControlPanel", u"SANS 1123 Plate Flange Tables", None))
+        self.lbCompany_19.setText(QCoreApplication.translate("ControlPanel", u"Designation", None))
+        self.lbCompID_122.setText(QCoreApplication.translate("ControlPanel", u"Nominal Bore", None))
+        self.lbCompID_123.setText(QCoreApplication.translate("ControlPanel", u"Pressure Rating", None))
+        self.lbCompID_124.setText(QCoreApplication.translate("ControlPanel", u"Type", None))
+        self.lbCompID_125.setText(QCoreApplication.translate("ControlPanel", u"Pipe Outside Dia.", None))
+        self.lbCompID_126.setText(QCoreApplication.translate("ControlPanel", u"Flange Outside Dia.", None))
+        self.lbCompID_127.setText(QCoreApplication.translate("ControlPanel", u"d1 (mm)", None))
+        self.lbCompID_128.setText(QCoreApplication.translate("ControlPanel", u"D (mm)", None))
+        self.lbCompID_129.setText(QCoreApplication.translate("ControlPanel", u"b1 (mm)", None))
+        self.lbCompID_130.setText(QCoreApplication.translate("ControlPanel", u"Flange Thickness", None))
+        self.lbCompID_131.setText(QCoreApplication.translate("ControlPanel", u"d3 (mm)", None))
+        self.lbCompID_132.setText(QCoreApplication.translate("ControlPanel", u"Raised Face Dia.", None))
+        self.lbCompID_133.setText(QCoreApplication.translate("ControlPanel", u"f (mm)", None))
+        self.lbCompID_134.setText(QCoreApplication.translate("ControlPanel", u"Rasied Face Thick.", None))
+        self.label_5.setText("")
+        self.lbCompID_135.setText(QCoreApplication.translate("ControlPanel", u"Bolt Size", None))
+        self.lbCompID_136.setText("")
+        self.lbCompID_137.setText(QCoreApplication.translate("ControlPanel", u"Number of Bolts", None))
+        self.lbCompID_138.setText("")
+        self.lbCompID_139.setText(QCoreApplication.translate("ControlPanel", u"Bolt Holes Size", None))
+        self.lbCompID_140.setText(QCoreApplication.translate("ControlPanel", u"d1 (mm)", None))
+        self.lbCompID_141.setText(QCoreApplication.translate("ControlPanel", u"Bolt Holes Centres", None))
+        self.lbCompID_142.setText(QCoreApplication.translate("ControlPanel", u"PCD (mm)", None))
+        self.btnImportFlanges_2.setText(QCoreApplication.translate("ControlPanel", u"Import", None))
+        self.btnUpload_4.setText(QCoreApplication.translate("ControlPanel", u"Upload Detail", None))
+        self.lbCompID_143.setText(QCoreApplication.translate("ControlPanel", u"m (kg)", None))
+        self.lbCompID_144.setText(QCoreApplication.translate("ControlPanel", u"Flange Mass", None))
+        self.tabCalcTools.setTabText(self.tabCalcTools.indexOf(self.tab_13), "")
+        self.tabCalcTools.setTabText(self.tabCalcTools.indexOf(self.tab_14), QCoreApplication.translate("ControlPanel", u"SANS 62 and SANS 719 Pipe Sizes", None))
+        self.tabCalcTools.setTabText(self.tabCalcTools.indexOf(self.tab_15), QCoreApplication.translate("ControlPanel", u"SANS 1313 Conveyor Idlers", None))
+        self.lbCompany_20.setText(QCoreApplication.translate("ControlPanel", u"Designation", None))
+        self.lbCompID_145.setText(QCoreApplication.translate("ControlPanel", u"Power Rating", None))
+        self.btnImportMotor_2.setText(QCoreApplication.translate("ControlPanel", u"Import", None))
+        self.btnUploadMotor_2.setText(QCoreApplication.translate("ControlPanel", u"Upload Detail", None))
+        self.lbQuotationHistory_10.setText(QCoreApplication.translate("ControlPanel", u"IEC Motor Sizes", None))
+        self.label_6.setText("")
+        self.lbCompID_146.setText(QCoreApplication.translate("ControlPanel", u"P (kW)", None))
+        self.lbCompID_147.setText(QCoreApplication.translate("ControlPanel", u"Number of Poles", None))
+        self.lbCompID_148.setText(QCoreApplication.translate("ControlPanel", u"Motor Speed", None))
+        self.lbCompID_149.setText(QCoreApplication.translate("ControlPanel", u"N (rpm)", None))
+        self.lbCompID_150.setText(QCoreApplication.translate("ControlPanel", u"Frame Size", None))
+        self.lbCompID_151.setText(QCoreApplication.translate("ControlPanel", u"Mounting", None))
+        self.lbCompID_152.setText(QCoreApplication.translate("ControlPanel", u"(mm)", None))
+        self.lbCompID_153.setText(QCoreApplication.translate("ControlPanel", u"Shaft Size", None))
+        self.lbCompID_154.setText(QCoreApplication.translate("ControlPanel", u"Key Width", None))
+        self.lbCompID_155.setText(QCoreApplication.translate("ControlPanel", u"(mm)", None))
+        self.lbCompID_156.setText(QCoreApplication.translate("ControlPanel", u"Key Height", None))
+        self.lbCompID_157.setText(QCoreApplication.translate("ControlPanel", u"(mm)", None))
+        self.lbCompID_158.setText(QCoreApplication.translate("ControlPanel", u"Shaft Key Depth", None))
+        self.lbCompID_159.setText(QCoreApplication.translate("ControlPanel", u"(mm)", None))
+        self.lbCompID_160.setText(QCoreApplication.translate("ControlPanel", u"Motor Weight", None))
+        self.lbCompID_161.setText(QCoreApplication.translate("ControlPanel", u"(kg)", None))
+        self.lbCompID_162.setText(QCoreApplication.translate("ControlPanel", u"Shaft Height", None))
+        self.lbCompID_163.setText(QCoreApplication.translate("ControlPanel", u"(mm)", None))
+        self.lbCompID_164.setText(QCoreApplication.translate("ControlPanel", u"Full Load Torque", None))
+        self.lbCompID_165.setText(QCoreApplication.translate("ControlPanel", u"(Nm)", None))
+        self.lbCompID_166.setText(QCoreApplication.translate("ControlPanel", u"(Nm)", None))
+        self.lbCompID_167.setText(QCoreApplication.translate("ControlPanel", u"Lock Rotor Torque", None))
+        self.lbCompID_168.setText(QCoreApplication.translate("ControlPanel", u"(Nm)", None))
+        self.lbCompID_169.setText(QCoreApplication.translate("ControlPanel", u"Break Torque", None))
+        self.tabCalcTools.setTabText(self.tabCalcTools.indexOf(self.tab_16), QCoreApplication.translate("ControlPanel", u"IEC Electric Motors", None))
     # retranslateUi
 

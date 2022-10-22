@@ -67,6 +67,11 @@ typing = "==3.7.4"
 tzdata = "==2022.4"
 urllib3 = "==1.25.11"
 webencodings = "==0.5.1"
+docx2pdf = "*"
+pdf2docx = "*"
+setuptools = "*"
+aspose-words = "*"
+comtypes = "*"
 
 [dev-packages]
 

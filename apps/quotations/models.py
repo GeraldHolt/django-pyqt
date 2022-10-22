@@ -266,9 +266,9 @@ class Quotation(models.Model):
 		('UPFRONT', 'Payment upfront'),
 		('DEP1', 'Deposit with progress payments'),
 		('DEP2', 'Deposit with final payments'),
-	]
+	]	
 
-	quoteNumber     = models.CharField(max_length=15, blank=True, null=True, unique=True, verbose_name = 'Quote Number')
+	project    		= models.CharField(max_length=15, blank=True, null=True, unique=True, verbose_name = 'Quote Number')
 	companyName     = models.ForeignKey(Company, null = True, on_delete=models.SET_NULL, verbose_name = 'Company')
 	clientName      = models.ForeignKey(Contact, null = True, on_delete=models.SET_NULL, verbose_name = 'Contact')
 	description     = models.CharField(max_length=300, blank=True, null=True, verbose_name = "Quote Title")
