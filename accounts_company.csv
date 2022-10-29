@@ -1,0 +1,53 @@
+id,compID,companyName,date_created,date_latest_quote,date_latest_order,company_status,customer,supplier,company_reg_no,VAT_no,companyWeb,address1,address2,city,postalCode,province,country,businessPhone,companyEmail
+064e504fdaac4927a6bafe614a440b09,OLM,OLM Engineering,2022/02/21,NULL,NULL,Operational,1,0,NULL,NULL,NULL,Unit A6,"Bumba Road, Zone 3 Coega",Port Elizabeth,6100,Eastern Cape,ZA,27411100423,NULL
+079f18541a6a4a25839622d4af4c2813,SLFC,Solid Liquid Filtration Consultants (Pty) Ltd,2022/01/21,NULL,NULL,Operational,1,0,NULL,NULL,https://www.slfc.co.za,1 Kruger Rd,"Strijdom Park, Randburg",Johannesburg,2169,Gauteng,ZA,117942549,info@slfc.co.za
+10fbf2b4b7b7415686ae3abe15d88ce2,MUL,Multotec Process Equipment (Pty) Ltd,2022/03/11,NULL,NULL,Operational,1,0,NULL,NULL,https://www.multotec.com,110 Plane Rd,Spartan,Kempton Park,NULL,Gauteng,ZA,+27 11 923 6298,NULL
+153784b7967748398fdc618a001feb00,MAC,Mac Partners Mining & Construction,2022/01/21,NULL,NULL,Operational,1,0,NULL,NULL,https://macpartnersltd.com,Tantra Street,Ghana,Accra,NULL,Greater Accra,GH,2.33303E+11,NULL
+15699a9a4a034d8486fe848cb6e7394d,SRL,Sierra Rutile Limited,2022/02/21,NULL,NULL,Operational,1,0,NULL,NULL,https://www.sierra-rutile.com,NULL,NULL,NULL,NULL,NULL,SL,NULL,NULL
+167858a80b20454b9887df046ac76ff9,ABF,Air Blow Fans (Pty) Ltd,2022/02/15,NULL,NULL,Operational,1,0,NULL,NULL,https://www.airblowfans.co.za,ICC Medical Building,"Irene Corporate Corner, Irene","Centurion, Pretoria",NULL,Gauteng,ZA,+2711452 0726,info@airblowfans.co.za
+1fed37d2b0ea427db8c97d29e6bbc0c9,BOS,Bosveld Mines (Pty) Ltd,2022/02/08,NULL,NULL,Operational,1,0,NULL,NULL,https://www.bosveldmines.co.za,NULL,NULL,NULL,NULL,NULL,AF,NULL,NULL
+22a5dd516eac4d0db7633e0ae0c80bcd,AMT,Applied Mineral Technologies (Pty) Ltd,2022/03/08,NULL,NULL,Operational,1,0,NULL,NULL,https://www.amtec.co.za,NULL,NULL,NULL,NULL,NULL,ZA,+27 13 650 2270,ben@amtec.co.za
+329c394214504acb8e2591d2f6c874df,PETF,Petra Diamonds - Finch Mine,2022/01/21,NULL,NULL,Operational,1,0,NULL,NULL,https://www.petradiamonds.com/our-operations/our-mines/finch,NULL,NULL,NULL,NULL,NULL,AF,NULL,NULL
+3355db77245e4798bce6b05f38a469e7,PROD,Prodiscore,2022/06/13,NULL,NULL,Operational,1,0,NULL,NULL,NULL,NULL,NULL,Emalahleni,1034,Mpumalanga,ZA,NULL,NULL
+36fdcf6865ee4931ac46d0258bd85156,GOL,GoldOre,2022/08/22,NULL,NULL,Operational,1,0,NULL,NULL,https://www.goldore.org,NULL,NULL,NULL,NULL,NULL,ZA,NULL,NULL
+3bbc54663d084f5382f67da225377375,AIO,All In One Engineering (PTY) Ltd,2022/03/02,NULL,NULL,Operational,False,False,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Gauteng,South Africa,NULL,wessel@aio.co.za
+3c952205b25b4915be4f6e84548e3423,TCT,Tower City Trading 174cc,2022/05/21,NULL,NULL,Operational,1,0,NULL,NULL,NULL,20 Forge Road,Spartan,Kempton Park,1619,Gauteng,ZA,+27 11 394 3502,julio@tct174.co.za
+48384ca2e2714705ae54c710be70fd6c,iQ,iQlaser,2022/10/05,NULL,NULL,Operational,0,1,2004/026472/0,4390215228,NULL,NULL,NULL,NULL,NULL,NULL,AF,NULL,NULL
+4c012be7d2ad472293fc2ff9c286265c,METC,Metallurgical Engineering Technology and Construction,2022/06/08,NULL,NULL,Operational,1,0,NULL,NULL,http://www.metcengineering.com,"12 Autumn Street, Edenburg",Sandton,Johannesburg,NULL,Gauteng,ZA,+27 87 808 8862,gerhardtk@metcengineering.com
+54ed61bea345403887dba67344c125d2,TSHU,Tshukudu Surveys,2022/08/10,NULL,NULL,Operational,1,1,0,4730272475,https://www.tshukudusurveys.com,NULL,NULL,NULL,NULL,NULL,AF,NULL,NULL
+576ce2a97e0349e88310812ede566056,CIS,Conveyor and Industrial Supplies (Pty) Ltd,2022/05/21,NULL,NULL,Operational,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,AF,NULL,NULL
+629190a313c340b08c3562a193cd65cd,MRD,Mineral Resource Development  (Pty) Ltd,2022/03/04,NULL,NULL,Operational,1,0,NULL,NULL,https://www.mrdev.co.za,"Sussex Office Park, Block A",473 Lynnwood Road,"Lynnwood, Pretoria",NULL,Gauteng,ZA,+27 12 656 1640,NULL
+66f1afc32bc747628c5c8eeb2b0329ef,SAS,Sasol,2022/07/13,NULL,NULL,Operational,1,0,NULL,NULL,https://www.sasol.com,NULL,NULL,NULL,NULL,NULL,ZA,NULL,NULL
+676d0fa3e447464caff138235ec2e018,MIN,Minplant Enterprises (Pty) Ltd,2022/07/21,NULL,NULL,Operational,1,0,2018/424017/07,4700284567,NULL,7 Kudu Street,NULL,Cullinan,1000,Gauteng,ZA,+27 12 734 0233,NULL
+67729f9c948248a2baa0492a2a29e44b,RAD,Rados International Services SA (Pty) Ltd,2022/01/21,NULL,NULL,Operational,1,0,NULL,NULL,https://www.radosXRF.com,"2nd Floor, 24 Crescent Drive",Melrose Arch,Johannesburg,2076,Gauteng,ZA,27116841259,dave.beek@radosXRF.com
+6bbe091d36c042bc841811cba94cfded,MAIN,Main Electrical Wholesalers (PTY) Ltd,2022/09/26,NULL,NULL,Operational,0,1,1983/006329/07,4110117894,NULL,NULL,NULL,NULL,NULL,NULL,AF,NULL,NULL
+7d16425009d64b288c23640b4caa5fc2,KVM,Kareevlei Mine,2022/01/31,NULL,NULL,Operational,1,0,NULL,NULL,https://www.kareevlei.com,NULL,NULL,NULL,NULL,NULL,ZA,NULL,NULL
+7fe8a266a33b4a7a9bcc363603ea0cb4,PRO,P-Pro Engineering,2022/04/12,NULL,NULL,Operational,1,0,NULL,NULL,https://www.ppro.co.za,NULL,NULL,NULL,NULL,NULL,ZA,+27 11 051 0900,NULL
+81cdf18ffa044293a154961810295934,PETC,Petra Diamonds - Cullinan Mine,2022/01/21,NULL,NULL,Operational,1,0,NULL,NULL,https://www.petradiamonds.com/our-operations/our-mines/cullinan/,NULL,NULL,Cullinan,NULL,Gauteng,ZA,NULL,NULL
+8295d411bb3448b6a3bbef1cc07418c5,VIC,Victor Mining Supplies,2022/07/13,NULL,NULL,Operational,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,ZA,NULL,NULL
+8935bc76065f41dbb3a3f050594c458f,ERA,Rosema Stene,2022/08/19,NULL,NULL,Operational,1,0,1947/027225/07,4550107074,NULL,NULL,NULL,NULL,NULL,NULL,AF,NULL,NULL
+8e5507b6ec4f4948988e7002325dc67e,MR,Murray & Roberts Cementation,2022/10/05,NULL,NULL,Operational,False,False,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Gauteng,South Africa,NULL,NULL
+921e836724d847ad92a8326e86043d0c,TSH,Tshepo-Themba Engineering (Pty) Ltd,2022/05/04,NULL,NULL,Operational,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,ZA,NULL,NULL
+98f16366c8c94b23b77fd030fe60415b,HCE,Holt Consulting Engineers (Pty) Ltd,2022/03/01,NULL,NULL,Operational,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,AF,NULL,NULL
+a1f5869977ac4ab58fcd20e75c83bc2d,BUSV,Bushveld Minerals - Vanchem,2022/01/21,NULL,NULL,Operational,1,0,NULL,NULL,https://www.bushveldminerals.com/,Van Eck Dr,Ferrobank,Emalahleni,1034,Mpumalanga,ZA,27136966001,info@bushveldminerals.com
+a21c421a99004bcfbf32236a02b18652,TECH,Techmatic (Pty) Ltd,2022/02/08,NULL,NULL,Operational,1,0,NULL,NULL,https://www.techmatic.co.za,NULL,NULL,NULL,NULL,NULL,ZA,NULL,NULL
+a6582c02f2554203a3a9ca4189dceace,FPM,Ferrexpo Poltava Mining,2022/01/25,NULL,NULL,Operational,1,0,23517488,1912816023,https://www.ferrexpo.com,Budivelnykiv str. 16,Horishni Plavni,Poltava region,39802,Poltava Region,UA,+38(05348)-75700,pgok@ferrexpo.ua
+adac8c1ec5674bb6ba1a4e73c40f5b49,FJE,F&J Electrical,2022/05/18,NULL,NULL,Operational,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,AF,NULL,NULL
+ae7a768ab6474b6a85ddc4ec815c7042,MULT,MULTOTEC,2022/06/14,NULL,NULL,Operational,False,False,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Gauteng,South Africa,NULL,NULL
+b2e4a047b41f4ba4ad28de53577d6988,SEW,SewTreat,2022/09/14,NULL,NULL,Operational,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,ZA,NULL,NULL
+c0f19526cf584edf822b3ad2f4bf027e,MAX,Max Power Services (Pty) Ltd,2021/12/26,NULL,NULL,Operational,1,1,NULL,NULL,http://www.maxpowerservices.co.za,13 Mercedes Road,Aureus,Randfontein,1760,Gauteng,ZA,27116932229,info@maxpower.co.za
+c122928262f0415fa4fe57846d365eb8,AZOR,Azoriflex (Pty) Ltd,2022/03/02,NULL,NULL,Operational,1,0,NULL,4780267151,NULL,PLOT 14,KRUGER AVE,Lyttleton,NULL,GAUTENG,ZA,NULL,ignus@rvhgroup.co.za
+c304bcd76f2542cf8e5c8d7d690b5753,CDC,CDC Dust Control,2022/01/21,NULL,NULL,Operational,False,False,NULL,NULL,https://cdcdustcontrol.com,39 Lear Rd,Nuffield,Springs,1559,Gauteng,South Africa,27113631543,gavin@cleanair.co.za
+c75b99b237294b51b49029b3a1d2a49a,WES,Westech Process Equipment Africa (Pty) Ltd,2022/03/28,NULL,NULL,Operational,1,0,NULL,NULL,https://www.westech-inc.com,Unit 31 & 32 Wild Fig Business Park,Cranberry Street,"Honeydew, Randburg",NULL,Gauteng,ZA,NULL,NULL
+c7d8f5bcae084d66a139d801f44200d4,ILU,Iluka Resources,2022/02/21,NULL,NULL,Operational,1,0,NULL,NULL,https://www.iluka.com,Minerals Park,3 Inyanga Close,Sunninghil,2157,Gauteng,ZA,NULL,pieter.rossouw@iluka.com
+c8c96f3011fc4a1fa07257ecad8d64df,HIGH,Highveld Structural Mill (Pty) Ltd,2022/01/23,NULL,NULL,Operational,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,AF,NULL,NULL
+cbdb4c38f352474292cbc553b9326de1,HYPE,Hyperion Drilling,2022/08/17,NULL,NULL,Operational,1,0,NULL,NULL,https://www.hyperiondrilling.co.za,NULL,NULL,NULL,NULL,NULL,ZA,084 645 0355,hyperiondrilling@gmail.com
+cd2a0088d11a4e8fb17a79ea2fa3ee16,STR,Structa Konsult,2022/03/25,NULL,NULL,Operational,1,0,NULL,NULL,NULL,Plantech Building,"17 Quintin Brand Street, Persequor Park",Pretoria,NULL,Gauteng,ZA,+27 (0)12 804 4804,NULL
+d03153af463f44619a288544d42960c3,MET,MET63 (Pty) Ltd,2022/01/21,NULL,NULL,Operational,1,0,NULL,NULL,NULL,"Unit 1, Randridge Office Park","2 Ateljee Street, Randpark Ridge",Randburg,2169,Gauteng,ZA,+27 10 600 2140,NULL
+d64f75753e0a4f71b10264d475c65644,OBS,Obsideo Consulting,2022/09/02,NULL,NULL,Operational,1,0,NULL,NULL,NULL,4 Victoria Link,Route 21 Corporate Park,Irene,NULL,Gauteng,ZA,NULL,NULL
+e559a88ef4c0433584714e61cb77e504,HYP,Hypernova LLC,2022/05/03,NULL,NULL,Operational,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,AF,NULL,NULL
+e8271365c6d84bb3bd7b2f8d475c8dae,BHU,Bhubezi Projects (Pty) Ltd,2022/01/21,NULL,NULL,Operational,1,1,NULL,NULL,http://www.bhubezi.co.za,48 Paul Kruger Street,Boksburg North,Boksburg,1459,Gauteng,ZA,27118923107,info@bhubezi.co.za
+e98fe3d7509f4ad6b4c26cef155b9c28,AECI,AECI Mining Chemicals (Pty) Ltd,2022/02/02,NULL,NULL,Operational,1,0,NULL,NULL,https://www.aeciminingchemicals.com,1 Platinum Drive,"Longmeadow Business Estate, Modderfontein",Johannesburg,1645,Gauteng,ZA,27112364300,mining.marketing@aeciworld.com
+ef0f2191860648d1af3ec5bee1263785,ACTOM,John Thompson / Actom,2022/01/21,NULL,NULL,Operational,1,0,NULL,NULL,http://www.johnthompson.co.za,Cnr Judges Avenue and Beyers Naude Dr.,Cresta,Randburg,2118,Gauteng,ZA,27114780456,NULL
+f3e4aec34d634f1893ed1c43890b895b,KRE,Kreuz Mechanical Design and Draughting,2022/08/17,NULL,NULL,Operational,1,0,NULL,NULL,https://www.kreuz.co.za,Mooiplaas Rd,"Pretoria East, Donkerhoek",Pretoria,2,Gauteng,ZA,+27 84 645 0355,info@kreuz.co.za
+fc807cc8b2874d9492405c83da8a4c9d,HIP,Highveld Industrial Park (Pty) Ltd,2022/05/24,NULL,NULL,Operational,1,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,ZA,NULL,NULL

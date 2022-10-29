@@ -33,31 +33,20 @@ class Ui_WelcomeForm(object):
         self.btnLogin.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(0, 255, 255) );\n"
-"\n"
+"         background-color:  rgb(0, 170, 255);\n"
 "     }\n"
 "\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1  rgb(0, 255, 255));\n"
-"     }")
+"")
         self.btnLogin.setObjectName("btnLogin")
         self.btnRegister = QtWidgets.QPushButton(self.logoFrame)
         self.btnRegister.setGeometry(QtCore.QRect(230, 520, 521, 31))
         self.btnRegister.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(0, 255, 255) );\n"
+"         background-color:  rgb(0, 170, 255);\n"
 "\n"
 "     }\n"
-"\n"
-"\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 rgb(0, 255, 255));\n"
-"     }")
+"")
         self.btnRegister.setObjectName("btnRegister")
 
         self.retranslateUi(WelcomeForm)

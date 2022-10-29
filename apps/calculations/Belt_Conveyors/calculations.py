@@ -88,3 +88,31 @@ def specific_data():
     return spec_data
 
 #===================================================================================================#
+def bulk_solids_data_sheet():
+    data = {
+        'BD':           ['Bulk Density', 20, 't/m3'],
+        'SG':           ['Specific Weight', 2.3, ''],
+        'AR':           ['Angle of Repose',35, 'deg'],
+        'EIFA':         ['Effective Internal Friction Angle', 10, 'deg'],
+        'SIFA':         ['Static Internal Friction Angle', 10, 'deg'],
+        'CH':           ['Cohesion',1000, 'mm'],
+        'MOS':          ['Moisture',5, '%'],
+        'PS':           ['Particle Size',1, 'mm'],
+        'SA_ISO':       ['Surge Angle ISO',1, 'deg'],
+        'SA_DIN':       ['Surge Angle DIN',1, 'deg'],
+        'S_':           ['Particle Code', '', ''],
+        'E_':           ['Particle Shape', '', ''],
+        'A_':           ['Abrasive', '', ''],
+        'D_':           ['Dust', '', ''],
+        'SV_':          ['Particle Variation', '', ''],
+        'F_':           ['Flowability','',''],
+        'C_':           ['Corrosiveness','',''],
+        'G_':           ['Tendency Weather','',''],
+
+
+
+
+        
+    }
+
+    return spec_data

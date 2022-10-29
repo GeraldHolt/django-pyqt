@@ -100,7 +100,7 @@ class SANSPlateFlanges(models.Model):
 #------------------------------------------------------------------------------------------------------------------------#
 # Recommended Sole Plate and Plummerblock
 #------------------------------------------------------------------------------------------------------------------------#
-class SolePLatePlummerBlock(models.Model):
+class SolePlatePlummerBlock(models.Model):
     designation = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Designation')
     bearShaftDia = models.CharField(max_length=40,choices = PREFERREDJOURNALSIZES, blank=True, null=True, verbose_name = 'Bearing SHaft Diameter (mm)') 
     plumBlock = models.CharField(max_length=40, blank=True, null=True, verbose_name = 'Plummer Block')
@@ -125,12 +125,24 @@ class SolePLatePlummerBlock(models.Model):
     dimT = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension T')
     dimU = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension U')
     
-    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
         return f"{self.designation}"
 
-
+#------------------------------------------------------------------------------------------------------------------------#
+# Recommended Conveyor Pulley Dimensions
+#------------------------------------------------------------------------------------------------------------------------#
+class ConveyorPulleyDimension(models.Model):
+    beltWidth = models.CharField(max_length=40, blank=False, null=True, unique = True, verbose_name='Belt Width')
+    face_length = models.CharField(max_length=40, blank=True, null=True, verbose_name = 'Face Length')
+    dimA = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension A')
+    dimB = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension C')
+    dimC = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension D')
+    dimD = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension E')
+    dimE = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension F')
+    dimG = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Dimension F1')
+    maxShaftDia = models.CharField(max_length=6, blank=True, null=True, verbose_name = 'Maximum Shaft Diamter')
+    
 #------------------------------------------------------------------------------------------------------------------------#
 # Standard Conveyor Belt Class
 #------------------------------------------------------------------------------------------------------------------------#
@@ -160,8 +172,6 @@ class CarryIdler(models.Model):
     height = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Carry Idler Height (mm)')
     width = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Distance between Trough Idlers (mm)')
     bearingSpec = models.CharField(max_length=10, blank=True, null = True, verbose_name = 'Bearing Specification')
-    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
-
     def __str__(self):
         return f"{self.designation}"
 

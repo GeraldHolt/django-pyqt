@@ -93,15 +93,11 @@ class Ui_LoginForm(object):
         self.btnLogin.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(0, 0, 223) );\n"
+"        background-color:  rgb(0, 170, 255);\n"
 "\n"
 "     }\n"
 "\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
+"")
         self.btnLogin.setObjectName("btnLogin")
         self.lbForgotpass = QtWidgets.QLabel(self.loginBlock)
         self.lbForgotpass.setGeometry(QtCore.QRect(20, 270, 91, 20))

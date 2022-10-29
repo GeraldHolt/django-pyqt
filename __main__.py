@@ -13,8 +13,6 @@ from PyQt5 import QtGui
 from viewManagers.mainWindowManager import MainWindow
 import sys
 
-
-
 def main():
     app = QApplication(sys.argv)
     # app.setAttribute(Qt.AA_UseHighDpiPixmaps)

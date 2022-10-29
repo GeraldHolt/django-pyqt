@@ -31,7 +31,7 @@ class Ui_SignupForm(object):
         self.lbLogo_2 = QtWidgets.QLabel(self.logoFrame)
         self.lbLogo_2.setGeometry(QtCore.QRect(50, 20, 301, 91))
         self.lbLogo_2.setText("")
-        self.lbLogo_2.setPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../resources/assets/HCE-logo.jpg"))
+        self.lbLogo_2.setPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../resources/assets/HCE-logo.png"))
         self.lbLogo_2.setScaledContents(True)
         self.lbLogo_2.setObjectName("lbLogo_2")
         self.registerFrame = QtWidgets.QFrame(SignupForm)
@@ -97,15 +97,11 @@ class Ui_SignupForm(object):
         self.btnRegister.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(0, 0, 223) );\n"
+"         background-color:  rgb(0, 170, 255);\n"
 "\n"
 "     }\n"
 "\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
+" ")
         self.btnRegister.setObjectName("btnRegister")
         self.lbConfirmpass = QtWidgets.QLabel(self.registerBlock)
         self.lbConfirmpass.setGeometry(QtCore.QRect(20, 190, 341, 20))

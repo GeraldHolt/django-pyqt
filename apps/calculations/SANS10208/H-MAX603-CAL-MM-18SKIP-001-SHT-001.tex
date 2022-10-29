@@ -52,7 +52,7 @@ Page \thepage\ of \pageref{LastPage}%
 \vspace*{20pt}%
 \linebreak%
 \begin{large}%
-\textbf{H{-}MAC603}%
+\textbf{H{-}MAX603}%
 \end{large}%
 \vspace*{20pt}%
 \linebreak%
@@ -309,7 +309,7 @@ Winder Trip Acceleration&$a_t$&5&$m/s^2$\\%
 Winding Rope Diameter&$Rope_d$&54&$m/s^2$\\%
 Rope Break Force&$RBF$&2319&$kN$\\%
 Ultimate Tensile Strength&$UTS$&1900&$MPa$\\%
-{[}'Ore Bulk Density', 1950, 'kg/m\^{}3'{]}&$\rho_b$&1950&$kg/m^3$\\%
+Ore Bulk Density&$\rho_b$&1950&$kg/m^3$\\%
 Skip Internal Width&$b$&1557&$mm$\\%
 Skip Internal Depth&$w$&1557&$mm$\\%
 Skip Volume Required&$Vol = R / \rho_b$&9.2&$m^3$\\%
@@ -397,7 +397,7 @@ Skip Self Weight&$G_c$&81943&$N$\\%
 Content Load&$C_y$&176580.0&$N$\\%
 Tail Rope Load&$T$&0&$N$\\%
 Acceleration Load&$A_o = (\alpha_d) a_o (G_c + C_y + T)/g$&42165&$N$\\%
-Acceleration Trip Out Load&$A_t = (\alpha_d) a_t (G_c + C_y + T)/g$&42165&$N$\\%
+Acceleration Trip Out Load&$A_t = (\alpha_d) a_t (G_c + C_y + T)/g$&263530&$N$\\%
 \end{tabular}%
 \end{minipage}%
 \end{flushleft}
@@ -437,7 +437,7 @@ Vertical Friction Load&$F_v = 0.5 H_s$&3895.5&$N$\\%
 Filling Impact Factor in Stationary Position&$\alpha_v$&1.5&\\%
 Load on Tipping Rollers Impact Factor&$\alpha_t$&2&\\%
 Static Load&$R$&176580.0&$N$\\%
-Bridle Transom Load While Filling&$R_d = (\alpha_v)(R) $&27000.0&$N$\\%
+Bridle Transom Load While Filling&$R_d = (\alpha_v)(R)$&27000.0&$N$\\%
 Rock Pressure&$p_o = \rho_b g h$&80.3439&$N/m^2$\\%
 Pressure on the Door&$p_1 = 1 p_o$&80.3&$N/m^2$\\%
 Pressure on the Back of Skip&$p_2 = 0.5 p_o$&40.2&$N/m^2$\\%
@@ -469,16 +469,10 @@ Pressure on the Front and Sides of Skip&$p_4 = 0.2 p_o$&16.1&$N/m^2$\\%
 2 / 533 x 110 CHANNEL (MODIFIED 533 X 210 X 93 UB) WITH TOP AND BOTTOM 20 X 100 PLATE%
 \newline%
 %
-\newline%
-%
 4 / 20 X 100 PLATES (TOP AND BOTTOM)%
 \newline%
 %
-\newline%
-%
 2 / 150 x 150 ANGLE END CONNECTIONS%
-\newline%
-%
 \begin{flushleft}%
 \begin{minipage}{\textwidth}%
 \flushleft%
@@ -495,13 +489,16 @@ Channel Cross Sectional Area&$A=2bt_f + h_w*t_w$&8519.0&$mm^2$\\%
 Channel Centroid Distance&$x_c=(0.5h_wt_w^2 + t_fb^2)/A$&25.0&$mm$\\%
 Channel Second Moment of Area about x{-}x&$I_x=bh^3/12 - b_fh_w^3/12$&335071491.0&$mm^4$\\%
 Channel Second Moment of Area about y{-}y&$I_y=h_wt_w^3/3+2t_fb^3/3 - Ax_c^2)$&8397644.0&$mm^4$\\%
-Double Channel Polar Moment&$J = I_x + I_y$&340973234.0&$mm^4$\\%
+Double Plate Polar Moment&$J = I_x + I_y$&340973234.0&$mm^4$\\%
 Channel Warping Constant&$C_w = (1/144)(t_f^3b^3)+(1/36)(h - t_f/2)^3)t_w^3$&4304577645.0&$mm^6$\\%
 Channel Plastic Section Modulus&$Z_p=bh^2/4 - b_fh_w^2/4$&1521885.0&$mm^3$\\%
 Double Plate Cross Sectional Area&$A = 2(wt_p)$&4400&$mm^2$\\%
 Double Plate Second Moment of Area about x{-}x&$I_x = w/12(H^3-h^3)$&336536567.0&$mm^4$\\%
-Double Channel Second Moment of Area about y{-}y&$I_y = t_pw^3/6$&4436667.0&$mm^4$\\%
+Double Plate Second Moment of Area about y{-}y&$I_y = t_pw^3/6$&4436667.0&$mm^4$\\%
 Double Plate Plastic Section Modulus&$Z_p = 2(wt_p(h-t_p/2)$&2301200.0&$mm^3$\\%
+Combined Second Moment of Area about x{-}x&$I_x$&671608058.0&$mm^3$\\%
+Combined Second Moment of Area about y{-}y&$I_y$&12834311.0&$mm^3$\\%
+Combined Plastic Section Modulus&$Z_p$&3823085.0&$mm^3$\\%
 Plastic Moment&$M_p = Z_pf_y$&1357.2&$kNm$\\%
 Adjusted Plastic Moment&$0.67M_p$&909.3&$kNm$\\%
 Critical Elastic Moment&$M_c = ((\pi^4E^2C_wI_y)/L^4 + (\pi^2EI_yGJ)/L^2)^0.5$&20494.3&$kNm$\\%
@@ -532,9 +529,156 @@ Interaction Check&$M_u/M_r + V_u/V_r < 1$&0.61&$Pass$\\%
 Operation Force&$LC = 1.2G_c + 1.6R$&127.0&$kN$\\%
 Number of Beams&$No.$&2&\\%
 Combined Shear Resistance&$M_r$&4540.0&$kN$\\%
-Ultimate Bending Moment&$M_u = RBF L/4$&54.0&$kN$\\%
-Ultimate Shear Force&$M_u = RBF/2$&64.0&$kN$\\%
+Ultimate Bending Moment&$M_u = (RBF) L/4$&54.0&$kN$\\%
+Ultimate Shear Force&$M_u = (RBF)/2$&64.0&$kN$\\%
 Interaction Check&$M_u/M_r + V_u/V_r < 1$&0.03&$Pass$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}%
+\textbf{Design for Fatigue Loads}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Cycles per Month&$Cycles$&3000&\\%
+Design Life&$Design$&24&$months$\\%
+Total Number of Trips&$Trips$&72000&\\%
+Rock during Filling&$R_d = (\alpha_v)(R)$&27000.0&$N$\\%
+Permanent Load&$G_c = (m_1 + m_3 + m_4)g$&81943&$N$\\%
+Major Cycle Load&$MCL = R_d + 0.25G_c$&47485.75&$N$\\%
+Stress Amplitude&$\sigma_a = 0.5 (MCL) L/(4 Z_p))$&2.65&$MPa$\\%
+Acceleration Cycles Load&$2A_o$&84330&$N$\\%
+Stress Acceleration Increase&$\sigma_b = 0.5 (2 A_o L/(4 Z_p))$&9.4&$MPa$\\%
+Bounding Load&$0.2R$&3600.0&$N$\\%
+Stress Acceleration Increase&$\sigma_c = 0.5 (0.2 R L/(4 Z_p))$&0.4&$MPa$\\%
+Steel Endurance Limit&$S_e$&70&$MPa$\\%
+Interaction Check&$\sigma_a/S_e + \sigma_b/S_e + \sigma_c/S_e < 1$&0.11&$Pass$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\newpage%
+\subsubsection{Bottom Transom}%
+\label{ssubsec:BottomTransom}%
+
+
+\begin{figure}[h!]%
+\includegraphics[width=360px]{Bottom_Transom.jpg}%
+\centering%
+\caption{Bottom Transom Configuration}%
+\centering%
+\end{figure}
+
+%
+\textbf{Material Data}%
+\newline%
+%
+2 / 230 x 90 CHANNEL%
+\newline%
+%
+4 / 20 X 230 PLATES (TOP AND BOTTOM)%
+\newline%
+%
+2 / 100 x 100 ANGLE END CONNECTIONS%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Length of Transom&$L$&1700&$mm$\\%
+Channel Width&$b$&90&$mm$\\%
+Channel Height&$h$&230&$mm$\\%
+Channel Web Thickness&$t_w$&7.5&$mm$\\%
+Channel Flange Thickness&$t_f$&14&$mm$\\%
+Top and Bottom Plate Width&$w$&230&$mm$\\%
+Top and Bottom Plate Thickness&$t_p$&20&$mm$\\%
+Yield Stress&$f_y$&355&$MPa$\\%
+Channel Cross Sectional Area&$A=2bt_f + h_w*t_w$&4035.0&$mm^2$\\%
+Channel Centroid Distance&$x_c=(0.5h_wt_w^2 + t_fb^2)/A$&30.0&$mm$\\%
+Channel Second Moment of Area about x{-}x&$I_x=bh^3/12 - b_fh_w^3/12$&34585945.0&$mm^4$\\%
+Channel Second Moment of Area about y{-}y&$I_y=h_wt_w^3/3+2t_fb^3/3 - Ax_c^2)$&3318071.0&$mm^4$\\%
+Double Plate Polar Moment&$J = I_x + I_y$&184613334.0&$mm^4$\\%
+Channel Warping Constant&$C_w = (1/144)(t_f^3b^3)+(1/36)(h - t_f/2)^3)t_w^3$&143847363.0&$mm^6$\\%
+Channel Plastic Section Modulus&$Z_p=bh^2/4 - b_fh_w^2/4$&348668.0&$mm^3$\\%
+Double Plate Cross Sectional Area&$A = 2(wt_p)$&9200&$mm^2$\\%
+Double Plate Second Moment of Area about x{-}x&$I_x = w/12(H^3-h^3)$&144056667.0&$mm^4$\\%
+Double Plate Second Moment of Area about y{-}y&$I_y = t_pw^3/6$&40556667.0&$mm^4$\\%
+Double Plate Plastic Section Modulus&$Z_p = 2(wt_p(h-t_p/2)$&2024000.0&$mm^3$\\%
+Combined Second Moment of Area about x{-}x&$I_x$&178642612.0&$mm^3$\\%
+Combined Second Moment of Area about y{-}y&$I_y$&43874738.0&$mm^3$\\%
+Combined Plastic Section Modulus&$Z_p$&2372668.0&$mm^3$\\%
+Plastic Moment&$M_p = Z_pf_y$&842.3&$kNm$\\%
+Adjusted Plastic Moment&$0.67M_p$&564.3&$kNm$\\%
+Critical Elastic Moment&$M_c = ((\pi^4E^2C_wI_y)/L^4 + (\pi^2EI_yGJ)/L^2)^0.5$&21605.1&$kNm$\\%
+Factored Moment Resistance&$M_r = 1.15 \phi M_p(1-(0.28M_p/M_c))$&862.3&$kNm$\\%
+Factored Shear Resistance&$Vr = 0.55 \phi A f_y$&2326.0&$kNm$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}%
+\textbf{Design for Emergency Loads}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Rope Break Force&$RBF$&2319&$kN$\\%
+Number of Beams&$No.$&2&\\%
+Combined Shear Resistance&$M_r$&4652.0&$kN$\\%
+Ultimate Bending Moment&$M_u = RBF L/4$&986.0&$kN$\\%
+Ultimate Shear Force&$M_u = RBF/2$&1160.0&$kN$\\%
+Interaction Check&$M_u/M_r + V_u/V_r < 1$&0.82&$Pass$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}
+
+%
+\newpage%
+\subsubsection{Bridle Hangers}%
+\label{ssubsec:BridleHangers}%
+
+
+\begin{figure}[h!]%
+\includegraphics[width=360px]{Bridle.jpg}%
+\centering%
+\caption{Bridle Configuration}%
+\centering%
+\end{figure}
+
+%
+\textbf{Design for Emergency Loads}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Total Cross Sectional Bridle Area&$A_t$&10720&$mm^2$\\%
+Total Net Cross Sectional Bridle Area&$A_e$&10048&$mm$\\%
+Rope Break Force&$RBF$&2319&$kN$\\%
+Tensile Resistance per Channel&$T_r = 0.85 \phi A f_y$&682.0&$N$\\%
+Number of Bridless&$No.$&4&\\%
+Total Tensile Resistance&$T_r$&2728.0&$N$\\%
+Interaction Check&$T_u/T_r < 1$&0.85&$Pass$\\%
+\end{tabular}%
+\end{minipage}%
+\end{flushleft}%
+\newpage%
+\textbf{Design for Fatigue Loads}%
+\begin{flushleft}%
+\begin{minipage}{\textwidth}%
+\flushleft%
+\begin{tabular}{l l l l}%
+Cycles per Month&$Cycles$&3000&\\%
+Design Life&$Design$&24&$months$\\%
+Total Number of Trips&$Trips$&72000&\\%
+Number of Bridle Channels&$N_b$&4&\\%
+Rock during Filling&$R_d = (\alpha_v)(R)$&27000.0&$N$\\%
+Permanent Load&$G_c = (m_1 + m_3 + m_4)g$&81943&$N$\\%
+Major Cycle Load&$MCL = R_d + 0.25G_c$&47485.75&$N$\\%
+Stress Amplitude&$\sigma_a = MCL/(N_b A_n))$&18.9&$MPa$\\%
+Acceleration Cycles Load&$2A_o$&84330&$N$\\%
+Stress Acceleration Increase&$\sigma_b = (2 A_o/(N_b A_n))$&8.4&$MPa$\\%
+Bounding Load&$0.2R$&3600.0&$N$\\%
+Stress Acceleration Increase&$\sigma_c = (0.2 R/(N_b A_n))$&0.4&$MPa$\\%
+Steel Endurance Limit&$S_e$&70&$MPa$\\%
+Interaction Check&$\sigma_a/S_e + \sigma_b/S_e + \sigma_c/S_e < 1$&0.4&$Pass$\\%
 \end{tabular}%
 \end{minipage}%
 \end{flushleft}

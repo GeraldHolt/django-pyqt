@@ -25,31 +25,23 @@ class Ui_SelectWorksorder(object):
         self.btnConfirm.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(43, 200, 7));\n"
+"         background-color:green;\n"
 "    \n"
 "    \n"
 "     }\n"
 "\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
+" ")
         self.btnConfirm.setObjectName("btnConfirm")
         self.btnCancel = QtWidgets.QPushButton(self.frame)
         self.btnCancel.setGeometry(QtCore.QRect(280, 130, 75, 31))
         self.btnCancel.setStyleSheet("    QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 0, 0));\n"
+"         background-color: red;\n"
 "    \n"
 "     }\n"
 "\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
+"")
         self.btnCancel.setObjectName("btnCancel")
         self.label = QtWidgets.QLabel(self.frame)
         self.label.setGeometry(QtCore.QRect(10, 10, 281, 20))

@@ -17,7 +17,7 @@ ECSA = "20020259"
 FILENAME = "H-MAX603-CAL-MM-18SKIP-001-SHT-001"
 CUSTOMER_COMPANY = "Max Power Services (Pty) Ltd"
 PROJECT_NAME = "TUMELA 18 TON SKIP DESIGN"
-PROJECT_NUMBER = "H-MAC603"
+PROJECT_NUMBER = "H-MAX603"
 CUSTOMER = "Herman de Koker"
 EMAIL = "harry@maxpower.co.za"
 
@@ -40,6 +40,9 @@ SKETCH_6 = ["Force_diagram.jpg", "50px", "Properties Diagram"]
 SKETCH_7 = ["plate_load_coef.jpg", "50px", "Slipper Plate Load Coefficient Pb"]
 SKETCH_8 = ["Skip_Discharge.jpg", "50px", "Skip Tipping Configuration"]
 SKETCH_9 = ["Top_Transom.jpg", "50px", "Top Transom Configuration"]
+SKETCH_10 = ["Bottom_Transom.jpg", "50px", "Bottom Transom Configuration"]
+SKETCH_11 = ["Bridle.jpg", "80px", "Bridle Configuration"]
+
 
 
 #SKETCH_2 = "Shaft_Plan.jpg"
@@ -79,11 +82,15 @@ SPEC_3 = "2 / 150 x 150 ANGLE END CONNECTIONS"
 TEXT_4_3_1a = r"""Design for Emergency Load"""
 TEXT_4_3_1b = r"""Load Condition No. 2: Maximum Self Weight in combination with Imposed Skip Load"""
 
+SECTION_4_3_2 = "Bottom Transom"
+SPEC_4 = "2 / 230 x 90 CHANNEL"
+SPEC_5 = "4 / 20 X 230 PLATES (TOP AND BOTTOM)"
+SPEC_6 = "2 / 100 x 100 ANGLE END CONNECTIONS"
 
-SECTION_4_4 = "Bridle Element Design"
-SECTION_4_4_1 = "Top Transom"
-SECTION_4_4_2 = "Bottom Transom"
-SECTION_4_4_3 = "Bridle Hangers"
+
+
+
+SECTION_4_3_3 = "Bridle Hangers"
 
 SECTION_4_5 = "Skip Element Designs"
 SECTION_4_5_1 = "Skip Loads"

@@ -41,16 +41,12 @@
      <string notr="true">   QPushButton {
          border: 1px solid gray;
          border-radius: 10px;
-		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                           stop: 0 #f6f7fa, stop: 1 rgb(43, 200, 7));
+		 background-color:green;
 	
 	
      }
 
- QPushButton:pressed {
-         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                           stop: 0 #dadbde, stop: 1 #f6f7fa);
-     }</string>
+ </string>
     </property>
     <property name="text">
      <string>Confirm</string>
@@ -69,15 +65,11 @@
      <string notr="true">    QPushButton {
          border: 1px solid gray;
          border-radius: 10px;
-		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 0, 0));
+		 background-color: red;
 	
      }
 
- QPushButton:pressed {
-         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                           stop: 0 #dadbde, stop: 1 #f6f7fa);
-     }</string>
+</string>
     </property>
     <property name="text">
      <string>Cancel</string>

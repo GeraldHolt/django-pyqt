@@ -61,7 +61,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../resources/assets/HCE-logo.jpg</pixmap>
+     <pixmap>../resources/assets/HCE-logo.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -231,15 +231,11 @@
       <string notr="true">   QPushButton {
          border: 1px solid gray;
          border-radius: 10px;
-		 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                           stop: 0 #f6f7fa, stop: 1 rgb(0, 0, 223) );
+		 background-color:  rgb(0, 170, 255);
 
      }
 
- QPushButton:pressed {
-         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                           stop: 0 #dadbde, stop: 1 #f6f7fa);
-     }</string>
+ </string>
      </property>
      <property name="text">
       <string>Register</string>

@@ -14,20 +14,23 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_ControlPanel(object):
     def setupUi(self, ControlPanel):
         ControlPanel.setObjectName("ControlPanel")
-        ControlPanel.resize(1540, 963)
+        ControlPanel.setWindowModality(QtCore.Qt.WindowModal)
+        ControlPanel.resize(1613, 857)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(ControlPanel.sizePolicy().hasHeightForWidth())
         ControlPanel.setSizePolicy(sizePolicy)
+        ControlPanel.setBaseSize(QtCore.QSize(0, 0))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../../../../Users/Gerald Holt/.designer/resources/assets/HCE-C.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         ControlPanel.setWindowIcon(icon)
+        ControlPanel.setAnimated(False)
         self.centralwidget = QtWidgets.QWidget(ControlPanel)
         self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
         self.leftMenuContainer = QtWidgets.QWidget(self.centralwidget)
-        self.leftMenuContainer.setGeometry(QtCore.QRect(10, 10, 251, 931))
+        self.leftMenuContainer.setGeometry(QtCore.QRect(10, 10, 251, 831))
         self.leftMenuContainer.setObjectName("leftMenuContainer")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.leftMenuContainer)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -314,7 +317,7 @@ class Ui_ControlPanel(object):
         self.btnUploadWO.setObjectName("btnUploadWO")
         self.verticalLayout_2.addWidget(self.leftMenuSubContainer)
         self.stwMain = QtWidgets.QStackedWidget(self.centralwidget)
-        self.stwMain.setGeometry(QtCore.QRect(270, 10, 1251, 921))
+        self.stwMain.setGeometry(QtCore.QRect(270, 10, 1251, 841))
         self.stwMain.setObjectName("stwMain")
         self.dashboard = QtWidgets.QWidget()
         self.dashboard.setObjectName("dashboard")
@@ -487,7 +490,7 @@ class Ui_ControlPanel(object):
 "     }")
         self.btnDeleteCustomer.setObjectName("btnDeleteCustomer")
         self.tvCustomers = QtWidgets.QTableView(self.customerListContainer)
-        self.tvCustomers.setGeometry(QtCore.QRect(10, 60, 571, 721))
+        self.tvCustomers.setGeometry(QtCore.QRect(10, 60, 571, 711))
         self.tvCustomers.setObjectName("tvCustomers")
         self.customerCRUD = QtWidgets.QFrame(self.customers)
         self.customerCRUD.setGeometry(QtCore.QRect(620, 60, 600, 851))
@@ -948,7 +951,7 @@ class Ui_ControlPanel(object):
 "     }")
         self.btnDeleteContact.setObjectName("btnDeleteContact")
         self.tvContacts = QtWidgets.QTableView(self.contactListContainer)
-        self.tvContacts.setGeometry(QtCore.QRect(10, 60, 971, 721))
+        self.tvContacts.setGeometry(QtCore.QRect(10, 60, 971, 711))
         self.tvContacts.setObjectName("tvContacts")
         self.customerCRUD_2 = QtWidgets.QFrame(self.contacts)
         self.customerCRUD_2.setGeometry(QtCore.QRect(1010, 60, 241, 851))
@@ -1217,7 +1220,7 @@ class Ui_ControlPanel(object):
         self.label_16.setAlignment(QtCore.Qt.AlignCenter)
         self.label_16.setObjectName("label_16")
         self.tabQuotation = QtWidgets.QTabWidget(self.quotations)
-        self.tabQuotation.setGeometry(QtCore.QRect(10, 80, 1241, 331))
+        self.tabQuotation.setGeometry(QtCore.QRect(10, 80, 1241, 321))
         self.tabQuotation.setObjectName("tabQuotation")
         self.register_quote = QtWidgets.QWidget()
         self.register_quote.setObjectName("register_quote")
@@ -1285,32 +1288,24 @@ class Ui_ControlPanel(object):
         self.btnClear_4.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(145, 145, 145) );\n"
+"         background-color:  grey;\n"
 "    \n"
 "    \n"
 "     }\n"
 "\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
+"")
         self.btnClear_4.setObjectName("btnClear_4")
         self.btnNewQuote = QtWidgets.QPushButton(self.register_quote)
         self.btnNewQuote.setGeometry(QtCore.QRect(910, 240, 75, 31))
         self.btnNewQuote.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(43, 200, 7));\n"
+"         background-color:  green;\n"
 "    \n"
 "    \n"
 "     }\n"
 "\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
+"")
         self.btnNewQuote.setObjectName("btnNewQuote")
         self.cbContactName = QtWidgets.QComboBox(self.register_quote)
         self.cbContactName.setGeometry(QtCore.QRect(500, 40, 221, 31))
@@ -1623,16 +1618,12 @@ class Ui_ControlPanel(object):
         self.btnNewQuote_2.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 170, 0));\n"
+"         background-color: yellow;\n"
 "    \n"
 "    \n"
 "     }\n"
 "\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
+"")
         self.btnNewQuote_2.setObjectName("btnNewQuote_2")
         self.tabQuotation.addTab(self.register_quote, "")
         self.scope_included = QtWidgets.QWidget()
@@ -1671,7 +1662,7 @@ class Ui_ControlPanel(object):
         self.accepted_quotations = QtWidgets.QWidget()
         self.accepted_quotations.setObjectName("accepted_quotations")
         self.tvQuotationsAccepted = QtWidgets.QTableView(self.accepted_quotations)
-        self.tvQuotationsAccepted.setGeometry(QtCore.QRect(0, 10, 1231, 441))
+        self.tvQuotationsAccepted.setGeometry(QtCore.QRect(0, 10, 1231, 371))
         self.tvQuotationsAccepted.setObjectName("tvQuotationsAccepted")
         self.tabWidget_2.addTab(self.accepted_quotations, "")
         self.cancelled_quotations = QtWidgets.QWidget()
@@ -1819,16 +1810,12 @@ class Ui_ControlPanel(object):
         self.btnNewQuote_3.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 170, 0));\n"
+"         background-color:  yellow;\n"
 "    \n"
 "    \n"
 "     }\n"
 "\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
+"")
         self.btnNewQuote_3.setObjectName("btnNewQuote_3")
         self.leQuoteDescription_2 = QtWidgets.QLineEdit(self.register_quote_2)
         self.leQuoteDescription_2.setGeometry(QtCore.QRect(0, 100, 721, 31))
@@ -1920,16 +1907,12 @@ class Ui_ControlPanel(object):
         self.btnNewQuote_4.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(43, 200, 7));\n"
+"         background-color:  green;\n"
 "    \n"
 "    \n"
 "     }\n"
 "\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
+"")
         self.btnNewQuote_4.setObjectName("btnNewQuote_4")
         self.tabWorksOrders.addTab(self.register_quote_2, "")
         self.scope_included_2 = QtWidgets.QWidget()
@@ -2405,7 +2388,7 @@ class Ui_ControlPanel(object):
         self.label_22.setAlignment(QtCore.Qt.AlignCenter)
         self.label_22.setObjectName("label_22")
         self.tabDoccontrol = QtWidgets.QTabWidget(self.documentControl)
-        self.tabDoccontrol.setGeometry(QtCore.QRect(0, 60, 1251, 851))
+        self.tabDoccontrol.setGeometry(QtCore.QRect(0, 60, 1251, 771))
         self.tabDoccontrol.setObjectName("tabDoccontrol")
         self.tab_5 = QtWidgets.QWidget()
         self.tab_5.setObjectName("tab_5")
@@ -3397,13 +3380,16 @@ class Ui_ControlPanel(object):
         self.label_25.setAlignment(QtCore.Qt.AlignCenter)
         self.label_25.setObjectName("label_25")
         self.tabTechData = QtWidgets.QTabWidget(self.techData)
-        self.tabTechData.setGeometry(QtCore.QRect(10, 60, 1251, 851))
+        self.tabTechData.setGeometry(QtCore.QRect(20, 50, 1251, 771))
         self.tabTechData.setObjectName("tabTechData")
         self.tabSteelSections = QtWidgets.QWidget()
         self.tabSteelSections.setObjectName("tabSteelSections")
         self.tvSteelTable = QtWidgets.QTableView(self.tabSteelSections)
-        self.tvSteelTable.setGeometry(QtCore.QRect(10, 280, 1221, 531))
+        self.tvSteelTable.setGeometry(QtCore.QRect(0, 280, 1221, 451))
         self.tvSteelTable.setObjectName("tvSteelTable")
+        self.tvSteelTable.horizontalHeader().setDefaultSectionSize(132)
+        self.tvSteelTable.verticalHeader().setVisible(False)
+        self.tvSteelTable.verticalHeader().setHighlightSections(False)
         self.lbCompany_3 = QtWidgets.QLabel(self.tabSteelSections)
         self.lbCompany_3.setGeometry(QtCore.QRect(30, 10, 121, 20))
         font = QtGui.QFont()
@@ -4020,36 +4006,26 @@ class Ui_ControlPanel(object):
         self.lbQuotationHistory_5.setFont(font)
         self.lbQuotationHistory_5.setObjectName("lbQuotationHistory_5")
         self.btnPrintSectionData = QtWidgets.QPushButton(self.tabSteelSections)
-        self.btnPrintSectionData.setGeometry(QtCore.QRect(1150, 220, 75, 31))
+        self.btnPrintSectionData.setGeometry(QtCore.QRect(1114, 220, 101, 31))
         self.btnPrintSectionData.setStyleSheet("   QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(43, 200, 7));\n"
+"         background-color:  green;\n"
 "    \n"
 "    \n"
 "     }\n"
-"\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
+"")
         self.btnPrintSectionData.setObjectName("btnPrintSectionData")
         self.btnUploadSteelData = QtWidgets.QPushButton(self.tabSteelSections)
-        self.btnUploadSteelData.setGeometry(QtCore.QRect(1060, 220, 75, 31))
+        self.btnUploadSteelData.setGeometry(QtCore.QRect(990, 220, 101, 31))
         self.btnUploadSteelData.setStyleSheet("    QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 255, 0));\n"
-"    \n"
+"         background-color:  yellow;\n"
 "    \n"
 "     }\n"
 "\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
+"")
         self.btnUploadSteelData.setObjectName("btnUploadSteelData")
         self.leProfile = QtWidgets.QLineEdit(self.tabSteelSections)
         self.leProfile.setGeometry(QtCore.QRect(30, 30, 61, 31))
@@ -4084,7 +4060,7 @@ class Ui_ControlPanel(object):
         self.lbQuotationHistory_6.setFont(font)
         self.lbQuotationHistory_6.setObjectName("lbQuotationHistory_6")
         self.tvSANSFlangeTable = QtWidgets.QTableView(self.tab_6)
-        self.tvSANSFlangeTable.setGeometry(QtCore.QRect(10, 280, 1221, 531))
+        self.tvSANSFlangeTable.setGeometry(QtCore.QRect(10, 280, 1221, 481))
         self.tvSANSFlangeTable.setObjectName("tvSANSFlangeTable")
         self.leDesignationFlange = QtWidgets.QLineEdit(self.tab_6)
         self.leDesignationFlange.setGeometry(QtCore.QRect(10, 60, 131, 31))
@@ -4369,38 +4345,6 @@ class Ui_ControlPanel(object):
         font.setPointSize(9)
         self.lbCompID_58.setFont(font)
         self.lbCompID_58.setObjectName("lbCompID_58")
-        self.btnImportFlanges = QtWidgets.QPushButton(self.tab_6)
-        self.btnImportFlanges.setGeometry(QtCore.QRect(1150, 220, 75, 31))
-        self.btnImportFlanges.setStyleSheet("   QPushButton {\n"
-"         border: 1px solid gray;\n"
-"         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(43, 200, 7));\n"
-"    \n"
-"    \n"
-"     }\n"
-"\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
-        self.btnImportFlanges.setObjectName("btnImportFlanges")
-        self.btnUpload_2 = QtWidgets.QPushButton(self.tab_6)
-        self.btnUpload_2.setGeometry(QtCore.QRect(1060, 220, 75, 31))
-        self.btnUpload_2.setStyleSheet("    QPushButton {\n"
-"         border: 1px solid gray;\n"
-"         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 255, 0));\n"
-"    \n"
-"    \n"
-"     }\n"
-"\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
-        self.btnUpload_2.setObjectName("btnUpload_2")
         self.lbCompID_59 = QtWidgets.QLabel(self.tab_6)
         self.lbCompID_59.setGeometry(QtCore.QRect(1030, 140, 101, 20))
         font = QtGui.QFont()
@@ -4424,6 +4368,28 @@ class Ui_ControlPanel(object):
 "}")
         self.leFlangeMass.setReadOnly(True)
         self.leFlangeMass.setObjectName("leFlangeMass")
+        self.btnUploadFlanges = QtWidgets.QPushButton(self.tab_6)
+        self.btnUploadFlanges.setGeometry(QtCore.QRect(986, 230, 101, 31))
+        self.btnUploadFlanges.setStyleSheet("    QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"         background-color:  yellow;\n"
+"    \n"
+"     }\n"
+"\n"
+"")
+        self.btnUploadFlanges.setObjectName("btnUploadFlanges")
+        self.btnPrintFlanges = QtWidgets.QPushButton(self.tab_6)
+        self.btnPrintFlanges.setGeometry(QtCore.QRect(1110, 230, 101, 31))
+        self.btnPrintFlanges.setStyleSheet("   QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"         background-color:  green;\n"
+"    \n"
+"    \n"
+"     }\n"
+"")
+        self.btnPrintFlanges.setObjectName("btnPrintFlanges")
         self.tabTechData.addTab(self.tab_6, "")
         self.tab_10 = QtWidgets.QWidget()
         self.tab_10.setObjectName("tab_10")
@@ -4431,6 +4397,220 @@ class Ui_ControlPanel(object):
         self.tab_11 = QtWidgets.QWidget()
         self.tab_11.setObjectName("tab_11")
         self.tabTechData.addTab(self.tab_11, "")
+        self.tab_17 = QtWidgets.QWidget()
+        self.tab_17.setObjectName("tab_17")
+        self.lbCompID_65 = QtWidgets.QLabel(self.tab_17)
+        self.lbCompID_65.setGeometry(QtCore.QRect(130, 0, 131, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompID_65.setFont(font)
+        self.lbCompID_65.setObjectName("lbCompID_65")
+        self.lbCompID_68 = QtWidgets.QLabel(self.tab_17)
+        self.lbCompID_68.setGeometry(QtCore.QRect(1030, 0, 111, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompID_68.setFont(font)
+        self.lbCompID_68.setObjectName("lbCompID_68")
+        self.lbCompID_73 = QtWidgets.QLabel(self.tab_17)
+        self.lbCompID_73.setGeometry(QtCore.QRect(920, 0, 111, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompID_73.setFont(font)
+        self.lbCompID_73.setObjectName("lbCompID_73")
+        self.leMaxShaftSize = QtWidgets.QLineEdit(self.tab_17)
+        self.leMaxShaftSize.setGeometry(QtCore.QRect(670, 30, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.leMaxShaftSize.setFont(font)
+        self.leMaxShaftSize.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leMaxShaftSize.setReadOnly(True)
+        self.leMaxShaftSize.setObjectName("leMaxShaftSize")
+        self.lbCompID_75 = QtWidgets.QLabel(self.tab_17)
+        self.lbCompID_75.setGeometry(QtCore.QRect(810, 0, 91, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompID_75.setFont(font)
+        self.lbCompID_75.setObjectName("lbCompID_75")
+        self.lbCompID_77 = QtWidgets.QLabel(self.tab_17)
+        self.lbCompID_77.setGeometry(QtCore.QRect(440, 0, 101, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompID_77.setFont(font)
+        self.lbCompID_77.setObjectName("lbCompID_77")
+        self.lbCompID_79 = QtWidgets.QLabel(self.tab_17)
+        self.lbCompID_79.setGeometry(QtCore.QRect(670, 0, 111, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompID_79.setFont(font)
+        self.lbCompID_79.setObjectName("lbCompID_79")
+        self.lePullE = QtWidgets.QLineEdit(self.tab_17)
+        self.lePullE.setGeometry(QtCore.QRect(910, 30, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.lePullE.setFont(font)
+        self.lePullE.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.lePullE.setReadOnly(True)
+        self.lePullE.setObjectName("lePullE")
+        self.lePullG = QtWidgets.QLineEdit(self.tab_17)
+        self.lePullG.setGeometry(QtCore.QRect(1020, 30, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.lePullG.setFont(font)
+        self.lePullG.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.lePullG.setReadOnly(True)
+        self.lePullG.setObjectName("lePullG")
+        self.lePulleyFace = QtWidgets.QLineEdit(self.tab_17)
+        self.lePulleyFace.setGeometry(QtCore.QRect(130, 30, 111, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.lePulleyFace.setFont(font)
+        self.lePulleyFace.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.lePulleyFace.setReadOnly(True)
+        self.lePulleyFace.setObjectName("lePulleyFace")
+        self.lbCompany_18 = QtWidgets.QLabel(self.tab_17)
+        self.lbCompany_18.setGeometry(QtCore.QRect(0, 0, 111, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompany_18.setFont(font)
+        self.lbCompany_18.setObjectName("lbCompany_18")
+        self.lePullB = QtWidgets.QLineEdit(self.tab_17)
+        self.lePullB.setGeometry(QtCore.QRect(430, 30, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.lePullB.setFont(font)
+        self.lePullB.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.lePullB.setReadOnly(True)
+        self.lePullB.setObjectName("lePullB")
+        self.lePullD = QtWidgets.QLineEdit(self.tab_17)
+        self.lePullD.setGeometry(QtCore.QRect(800, 30, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.lePullD.setFont(font)
+        self.lePullD.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.lePullD.setReadOnly(True)
+        self.lePullD.setObjectName("lePullD")
+        self.tvSANSFlangeTable_3 = QtWidgets.QTableView(self.tab_17)
+        self.tvSANSFlangeTable_3.setGeometry(QtCore.QRect(0, 390, 1221, 341))
+        self.tvSANSFlangeTable_3.setObjectName("tvSANSFlangeTable_3")
+        self.leBeltWidth = QtWidgets.QLineEdit(self.tab_17)
+        self.leBeltWidth.setGeometry(QtCore.QRect(0, 30, 111, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.leBeltWidth.setFont(font)
+        self.leBeltWidth.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.leBeltWidth.setReadOnly(True)
+        self.leBeltWidth.setObjectName("leBeltWidth")
+        self.lePullC = QtWidgets.QLineEdit(self.tab_17)
+        self.lePullC.setGeometry(QtCore.QRect(540, 30, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.lePullC.setFont(font)
+        self.lePullC.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.lePullC.setReadOnly(True)
+        self.lePullC.setObjectName("lePullC")
+        self.lbCompID_109 = QtWidgets.QLabel(self.tab_17)
+        self.lbCompID_109.setGeometry(QtCore.QRect(550, 0, 101, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbCompID_109.setFont(font)
+        self.lbCompID_109.setObjectName("lbCompID_109")
+        self.label_4 = QtWidgets.QLabel(self.tab_17)
+        self.label_4.setGeometry(QtCore.QRect(10, 120, 341, 221))
+        self.label_4.setText("")
+        self.label_4.setPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../apps/techdata/PULLEY_CENTRES_WIDE.jpg"))
+        self.label_4.setScaledContents(True)
+        self.label_4.setObjectName("label_4")
+        self.lbQuotationHistory_13 = QtWidgets.QLabel(self.tab_17)
+        self.lbQuotationHistory_13.setGeometry(QtCore.QRect(10, 90, 181, 16))
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.lbQuotationHistory_13.setFont(font)
+        self.lbQuotationHistory_13.setObjectName("lbQuotationHistory_13")
+        self.lbQuotationHistory_14 = QtWidgets.QLabel(self.tab_17)
+        self.lbQuotationHistory_14.setGeometry(QtCore.QRect(380, 90, 331, 16))
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.lbQuotationHistory_14.setFont(font)
+        self.lbQuotationHistory_14.setObjectName("lbQuotationHistory_14")
+        self.label_13 = QtWidgets.QLabel(self.tab_17)
+        self.label_13.setGeometry(QtCore.QRect(380, 120, 341, 221))
+        self.label_13.setText("")
+        self.label_13.setPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../apps/techdata/PULLEY_CENTRES_NARROW.jpg"))
+        self.label_13.setScaledContents(True)
+        self.label_13.setObjectName("label_13")
+        self.lbQuotationHistory_15 = QtWidgets.QLabel(self.tab_17)
+        self.lbQuotationHistory_15.setGeometry(QtCore.QRect(0, 370, 591, 16))
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.lbQuotationHistory_15.setFont(font)
+        self.lbQuotationHistory_15.setObjectName("lbQuotationHistory_15")
+        self.lePullA = QtWidgets.QLineEdit(self.tab_17)
+        self.lePullA.setGeometry(QtCore.QRect(320, 30, 101, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.lePullA.setFont(font)
+        self.lePullA.setStyleSheet("QLineEdit {\n"
+" border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}")
+        self.lePullA.setReadOnly(True)
+        self.lePullA.setObjectName("lePullA")
+        self.lbDimA = QtWidgets.QLabel(self.tab_17)
+        self.lbDimA.setGeometry(QtCore.QRect(330, 0, 101, 20))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.lbDimA.setFont(font)
+        self.lbDimA.setObjectName("lbDimA")
+        self.btnUploadSteelData_3 = QtWidgets.QPushButton(self.tab_17)
+        self.btnUploadSteelData_3.setGeometry(QtCore.QRect(976, 80, 101, 31))
+        self.btnUploadSteelData_3.setStyleSheet("    QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"         background-color:  yellow;\n"
+"    \n"
+"     }\n"
+"\n"
+"")
+        self.btnUploadSteelData_3.setObjectName("btnUploadSteelData_3")
+        self.btnPrintSectionData_3 = QtWidgets.QPushButton(self.tab_17)
+        self.btnPrintSectionData_3.setGeometry(QtCore.QRect(1100, 80, 101, 31))
+        self.btnPrintSectionData_3.setStyleSheet("   QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"         background-color:  green;\n"
+"    \n"
+"    \n"
+"     }\n"
+"")
+        self.btnPrintSectionData_3.setObjectName("btnPrintSectionData_3")
+        self.tabTechData.addTab(self.tab_17, "")
         self.tab_4 = QtWidgets.QWidget()
         self.tab_4.setObjectName("tab_4")
         self.lbCompID_70 = QtWidgets.QLabel(self.tab_4)
@@ -4446,7 +4626,7 @@ class Ui_ControlPanel(object):
         self.lbCompany_17.setFont(font)
         self.lbCompany_17.setObjectName("lbCompany_17")
         self.tvConSolePlatBearings = QtWidgets.QTableView(self.tab_4)
-        self.tvConSolePlatBearings.setGeometry(QtCore.QRect(10, 540, 1221, 271))
+        self.tvConSolePlatBearings.setGeometry(QtCore.QRect(10, 470, 1221, 291))
         self.tvConSolePlatBearings.setObjectName("tvConSolePlatBearings")
         self.lbCompID_71 = QtWidgets.QLabel(self.tab_4)
         self.lbCompID_71.setGeometry(QtCore.QRect(220, 0, 121, 20))
@@ -4455,7 +4635,7 @@ class Ui_ControlPanel(object):
         self.lbCompID_71.setFont(font)
         self.lbCompID_71.setObjectName("lbCompID_71")
         self.lePlummer = QtWidgets.QLineEdit(self.tab_4)
-        self.lePlummer.setGeometry(QtCore.QRect(220, 50, 121, 31))
+        self.lePlummer.setGeometry(QtCore.QRect(220, 20, 121, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lePlummer.setFont(font)
@@ -4465,31 +4645,15 @@ class Ui_ControlPanel(object):
 "}")
         self.lePlummer.setReadOnly(True)
         self.lePlummer.setObjectName("lePlummer")
-        self.btnUploadSole = QtWidgets.QPushButton(self.tab_4)
-        self.btnUploadSole.setGeometry(QtCore.QRect(950, 50, 101, 31))
-        self.btnUploadSole.setStyleSheet("    QPushButton {\n"
-"         border: 1px solid gray;\n"
-"         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 255, 0));\n"
-"    \n"
-"    \n"
-"     }\n"
-"\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
-        self.btnUploadSole.setObjectName("btnUploadSole")
         self.lbQuotationHistory_12 = QtWidgets.QLabel(self.tab_4)
-        self.lbQuotationHistory_12.setGeometry(QtCore.QRect(10, 520, 331, 16))
+        self.lbQuotationHistory_12.setGeometry(QtCore.QRect(10, 450, 331, 16))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
         self.lbQuotationHistory_12.setFont(font)
         self.lbQuotationHistory_12.setObjectName("lbQuotationHistory_12")
         self.leDesignationSole = QtWidgets.QLineEdit(self.tab_4)
-        self.leDesignationSole.setGeometry(QtCore.QRect(10, 50, 81, 31))
+        self.leDesignationSole.setGeometry(QtCore.QRect(10, 20, 81, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.leDesignationSole.setFont(font)
@@ -4499,14 +4663,8 @@ class Ui_ControlPanel(object):
 "}")
         self.leDesignationSole.setReadOnly(True)
         self.leDesignationSole.setObjectName("leDesignationSole")
-        self.lbCompID_88 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_88.setGeometry(QtCore.QRect(110, 20, 111, 20))
-        font = QtGui.QFont()
-        font.setPointSize(9)
-        self.lbCompID_88.setFont(font)
-        self.lbCompID_88.setObjectName("lbCompID_88")
         self.leBearDia = QtWidgets.QLineEdit(self.tab_4)
-        self.leBearDia.setGeometry(QtCore.QRect(110, 50, 91, 31))
+        self.leBearDia.setGeometry(QtCore.QRect(110, 20, 91, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.leBearDia.setFont(font)
@@ -4517,7 +4675,7 @@ class Ui_ControlPanel(object):
         self.leBearDia.setReadOnly(True)
         self.leBearDia.setObjectName("leBearDia")
         self.leBearing = QtWidgets.QLineEdit(self.tab_4)
-        self.leBearing.setGeometry(QtCore.QRect(360, 50, 121, 31))
+        self.leBearing.setGeometry(QtCore.QRect(360, 20, 121, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.leBearing.setFont(font)
@@ -4534,7 +4692,7 @@ class Ui_ControlPanel(object):
         self.lbCompID_89.setFont(font)
         self.lbCompID_89.setObjectName("lbCompID_89")
         self.leAdapter = QtWidgets.QLineEdit(self.tab_4)
-        self.leAdapter.setGeometry(QtCore.QRect(500, 50, 121, 31))
+        self.leAdapter.setGeometry(QtCore.QRect(500, 20, 121, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.leAdapter.setFont(font)
@@ -4551,7 +4709,7 @@ class Ui_ControlPanel(object):
         self.lbCompID_90.setFont(font)
         self.lbCompID_90.setObjectName("lbCompID_90")
         self.leLockRing = QtWidgets.QLineEdit(self.tab_4)
-        self.leLockRing.setGeometry(QtCore.QRect(640, 50, 121, 31))
+        self.leLockRing.setGeometry(QtCore.QRect(640, 20, 121, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.leLockRing.setFont(font)
@@ -4568,7 +4726,7 @@ class Ui_ControlPanel(object):
         self.lbCompID_91.setFont(font)
         self.lbCompID_91.setObjectName("lbCompID_91")
         self.leShaftSeal = QtWidgets.QLineEdit(self.tab_4)
-        self.leShaftSeal.setGeometry(QtCore.QRect(780, 50, 121, 31))
+        self.leShaftSeal.setGeometry(QtCore.QRect(780, 20, 121, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.leShaftSeal.setFont(font)
@@ -4585,7 +4743,7 @@ class Ui_ControlPanel(object):
         self.lbCompID_92.setFont(font)
         self.lbCompID_92.setObjectName("lbCompID_92")
         self.lesoleA = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleA.setGeometry(QtCore.QRect(10, 120, 61, 31))
+        self.lesoleA.setGeometry(QtCore.QRect(10, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleA.setFont(font)
@@ -4596,13 +4754,13 @@ class Ui_ControlPanel(object):
         self.lesoleA.setReadOnly(True)
         self.lesoleA.setObjectName("lesoleA")
         self.lbCompID_93 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_93.setGeometry(QtCore.QRect(10, 90, 61, 20))
+        self.lbCompID_93.setGeometry(QtCore.QRect(10, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_93.setFont(font)
         self.lbCompID_93.setObjectName("lbCompID_93")
         self.lesoleC = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleC.setGeometry(QtCore.QRect(80, 120, 61, 31))
+        self.lesoleC.setGeometry(QtCore.QRect(80, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleC.setFont(font)
@@ -4613,13 +4771,13 @@ class Ui_ControlPanel(object):
         self.lesoleC.setReadOnly(True)
         self.lesoleC.setObjectName("lesoleC")
         self.lbCompID_94 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_94.setGeometry(QtCore.QRect(80, 90, 61, 20))
+        self.lbCompID_94.setGeometry(QtCore.QRect(80, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_94.setFont(font)
         self.lbCompID_94.setObjectName("lbCompID_94")
         self.lesoleD = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleD.setGeometry(QtCore.QRect(150, 120, 61, 31))
+        self.lesoleD.setGeometry(QtCore.QRect(150, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleD.setFont(font)
@@ -4630,13 +4788,13 @@ class Ui_ControlPanel(object):
         self.lesoleD.setReadOnly(True)
         self.lesoleD.setObjectName("lesoleD")
         self.lbCompID_95 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_95.setGeometry(QtCore.QRect(150, 90, 61, 20))
+        self.lbCompID_95.setGeometry(QtCore.QRect(150, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_95.setFont(font)
         self.lbCompID_95.setObjectName("lbCompID_95")
         self.lesoleE = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleE.setGeometry(QtCore.QRect(220, 120, 61, 31))
+        self.lesoleE.setGeometry(QtCore.QRect(220, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleE.setFont(font)
@@ -4647,13 +4805,13 @@ class Ui_ControlPanel(object):
         self.lesoleE.setReadOnly(True)
         self.lesoleE.setObjectName("lesoleE")
         self.lbCompID_96 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_96.setGeometry(QtCore.QRect(220, 90, 61, 20))
+        self.lbCompID_96.setGeometry(QtCore.QRect(220, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_96.setFont(font)
         self.lbCompID_96.setObjectName("lbCompID_96")
         self.lesoleF = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleF.setGeometry(QtCore.QRect(290, 120, 61, 31))
+        self.lesoleF.setGeometry(QtCore.QRect(290, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleF.setFont(font)
@@ -4664,13 +4822,13 @@ class Ui_ControlPanel(object):
         self.lesoleF.setReadOnly(True)
         self.lesoleF.setObjectName("lesoleF")
         self.lbCompID_97 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_97.setGeometry(QtCore.QRect(290, 90, 61, 20))
+        self.lbCompID_97.setGeometry(QtCore.QRect(290, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_97.setFont(font)
         self.lbCompID_97.setObjectName("lbCompID_97")
         self.lesoleF1 = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleF1.setGeometry(QtCore.QRect(360, 120, 61, 31))
+        self.lesoleF1.setGeometry(QtCore.QRect(360, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleF1.setFont(font)
@@ -4681,13 +4839,13 @@ class Ui_ControlPanel(object):
         self.lesoleF1.setReadOnly(True)
         self.lesoleF1.setObjectName("lesoleF1")
         self.lbCompID_98 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_98.setGeometry(QtCore.QRect(360, 90, 61, 20))
+        self.lbCompID_98.setGeometry(QtCore.QRect(360, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_98.setFont(font)
         self.lbCompID_98.setObjectName("lbCompID_98")
         self.lesoleG = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleG.setGeometry(QtCore.QRect(430, 120, 61, 31))
+        self.lesoleG.setGeometry(QtCore.QRect(430, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleG.setFont(font)
@@ -4698,13 +4856,13 @@ class Ui_ControlPanel(object):
         self.lesoleG.setReadOnly(True)
         self.lesoleG.setObjectName("lesoleG")
         self.lbCompID_99 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_99.setGeometry(QtCore.QRect(430, 90, 61, 20))
+        self.lbCompID_99.setGeometry(QtCore.QRect(430, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_99.setFont(font)
         self.lbCompID_99.setObjectName("lbCompID_99")
         self.lesoleH = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleH.setGeometry(QtCore.QRect(500, 120, 61, 31))
+        self.lesoleH.setGeometry(QtCore.QRect(500, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleH.setFont(font)
@@ -4715,13 +4873,13 @@ class Ui_ControlPanel(object):
         self.lesoleH.setReadOnly(True)
         self.lesoleH.setObjectName("lesoleH")
         self.lbCompID_100 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_100.setGeometry(QtCore.QRect(500, 90, 61, 20))
+        self.lbCompID_100.setGeometry(QtCore.QRect(500, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_100.setFont(font)
         self.lbCompID_100.setObjectName("lbCompID_100")
         self.lesoleJ = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleJ.setGeometry(QtCore.QRect(570, 120, 61, 31))
+        self.lesoleJ.setGeometry(QtCore.QRect(570, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleJ.setFont(font)
@@ -4732,13 +4890,13 @@ class Ui_ControlPanel(object):
         self.lesoleJ.setReadOnly(True)
         self.lesoleJ.setObjectName("lesoleJ")
         self.lbCompID_101 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_101.setGeometry(QtCore.QRect(570, 90, 61, 20))
+        self.lbCompID_101.setGeometry(QtCore.QRect(570, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_101.setFont(font)
         self.lbCompID_101.setObjectName("lbCompID_101")
         self.lesoleK = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleK.setGeometry(QtCore.QRect(640, 120, 61, 31))
+        self.lesoleK.setGeometry(QtCore.QRect(640, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleK.setFont(font)
@@ -4749,13 +4907,13 @@ class Ui_ControlPanel(object):
         self.lesoleK.setReadOnly(True)
         self.lesoleK.setObjectName("lesoleK")
         self.lbCompID_102 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_102.setGeometry(QtCore.QRect(640, 90, 61, 20))
+        self.lbCompID_102.setGeometry(QtCore.QRect(640, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_102.setFont(font)
         self.lbCompID_102.setObjectName("lbCompID_102")
         self.lesoleL = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleL.setGeometry(QtCore.QRect(710, 120, 61, 31))
+        self.lesoleL.setGeometry(QtCore.QRect(710, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleL.setFont(font)
@@ -4766,13 +4924,13 @@ class Ui_ControlPanel(object):
         self.lesoleL.setReadOnly(True)
         self.lesoleL.setObjectName("lesoleL")
         self.lbCompID_103 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_103.setGeometry(QtCore.QRect(710, 90, 61, 20))
+        self.lbCompID_103.setGeometry(QtCore.QRect(710, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_103.setFont(font)
         self.lbCompID_103.setObjectName("lbCompID_103")
         self.lesoleM = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleM.setGeometry(QtCore.QRect(780, 120, 61, 31))
+        self.lesoleM.setGeometry(QtCore.QRect(780, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleM.setFont(font)
@@ -4783,13 +4941,13 @@ class Ui_ControlPanel(object):
         self.lesoleM.setReadOnly(True)
         self.lesoleM.setObjectName("lesoleM")
         self.lbCompID_104 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_104.setGeometry(QtCore.QRect(780, 90, 61, 20))
+        self.lbCompID_104.setGeometry(QtCore.QRect(780, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_104.setFont(font)
         self.lbCompID_104.setObjectName("lbCompID_104")
         self.lesoleN = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleN.setGeometry(QtCore.QRect(850, 120, 61, 31))
+        self.lesoleN.setGeometry(QtCore.QRect(850, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleN.setFont(font)
@@ -4800,13 +4958,13 @@ class Ui_ControlPanel(object):
         self.lesoleN.setReadOnly(True)
         self.lesoleN.setObjectName("lesoleN")
         self.lbCompID_105 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_105.setGeometry(QtCore.QRect(850, 90, 61, 20))
+        self.lbCompID_105.setGeometry(QtCore.QRect(850, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_105.setFont(font)
         self.lbCompID_105.setObjectName("lbCompID_105")
         self.lesoleS = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleS.setGeometry(QtCore.QRect(920, 120, 61, 31))
+        self.lesoleS.setGeometry(QtCore.QRect(920, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleS.setFont(font)
@@ -4817,13 +4975,13 @@ class Ui_ControlPanel(object):
         self.lesoleS.setReadOnly(True)
         self.lesoleS.setObjectName("lesoleS")
         self.lbCompID_106 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_106.setGeometry(QtCore.QRect(920, 90, 61, 20))
+        self.lbCompID_106.setGeometry(QtCore.QRect(920, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_106.setFont(font)
         self.lbCompID_106.setObjectName("lbCompID_106")
         self.lesoleT = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleT.setGeometry(QtCore.QRect(990, 120, 61, 31))
+        self.lesoleT.setGeometry(QtCore.QRect(990, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleT.setFont(font)
@@ -4834,13 +4992,13 @@ class Ui_ControlPanel(object):
         self.lesoleT.setReadOnly(True)
         self.lesoleT.setObjectName("lesoleT")
         self.lbCompID_107 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_107.setGeometry(QtCore.QRect(990, 90, 61, 20))
+        self.lbCompID_107.setGeometry(QtCore.QRect(990, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_107.setFont(font)
         self.lbCompID_107.setObjectName("lbCompID_107")
         self.lesoleU = QtWidgets.QLineEdit(self.tab_4)
-        self.lesoleU.setGeometry(QtCore.QRect(1060, 120, 61, 31))
+        self.lesoleU.setGeometry(QtCore.QRect(1060, 80, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.lesoleU.setFont(font)
@@ -4851,39 +5009,45 @@ class Ui_ControlPanel(object):
         self.lesoleU.setReadOnly(True)
         self.lesoleU.setObjectName("lesoleU")
         self.lbCompID_108 = QtWidgets.QLabel(self.tab_4)
-        self.lbCompID_108.setGeometry(QtCore.QRect(1060, 90, 61, 20))
+        self.lbCompID_108.setGeometry(QtCore.QRect(1060, 60, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(9)
         self.lbCompID_108.setFont(font)
         self.lbCompID_108.setObjectName("lbCompID_108")
         self.label_7 = QtWidgets.QLabel(self.tab_4)
-        self.label_7.setGeometry(QtCore.QRect(10, 170, 581, 351))
+        self.label_7.setGeometry(QtCore.QRect(10, 120, 561, 321))
         self.label_7.setText("")
         self.label_7.setPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../apps/techdata/SOLE_PLATE_1.jpg"))
         self.label_7.setScaledContents(True)
         self.label_7.setObjectName("label_7")
-        self.btnPrintSole = QtWidgets.QPushButton(self.tab_4)
-        self.btnPrintSole.setGeometry(QtCore.QRect(1060, 50, 101, 31))
-        self.btnPrintSole.setStyleSheet("    QPushButton {\n"
-"         border: 1px solid gray;\n"
-"         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(0, 255, 255));\n"
-"    \n"
-"    \n"
-"     }\n"
-"\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
-        self.btnPrintSole.setObjectName("btnPrintSole")
         self.label_8 = QtWidgets.QLabel(self.tab_4)
-        self.label_8.setGeometry(QtCore.QRect(650, 170, 581, 351))
+        self.label_8.setGeometry(QtCore.QRect(690, 120, 541, 311))
         self.label_8.setText("")
         self.label_8.setPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../apps/techdata/SOLE_PLATE_2.jpg"))
         self.label_8.setScaledContents(True)
         self.label_8.setObjectName("label_8")
+        self.btnUploadSole = QtWidgets.QPushButton(self.tab_4)
+        self.btnUploadSole.setGeometry(QtCore.QRect(966, 20, 101, 31))
+        self.btnUploadSole.setStyleSheet("    QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"         background-color:  yellow;\n"
+"    \n"
+"     }\n"
+"\n"
+"")
+        self.btnUploadSole.setObjectName("btnUploadSole")
+        self.btnPrintSole = QtWidgets.QPushButton(self.tab_4)
+        self.btnPrintSole.setGeometry(QtCore.QRect(1090, 20, 101, 31))
+        self.btnPrintSole.setStyleSheet("   QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"         background-color:  green;\n"
+"    \n"
+"    \n"
+"     }\n"
+"")
+        self.btnPrintSole.setObjectName("btnPrintSole")
         self.tabTechData.addTab(self.tab_4, "")
         self.tab_12 = QtWidgets.QWidget()
         self.tab_12.setObjectName("tab_12")
@@ -4921,43 +5085,11 @@ class Ui_ControlPanel(object):
         font.setPointSize(9)
         self.lbCompID_61.setFont(font)
         self.lbCompID_61.setObjectName("lbCompID_61")
-        self.btnImportMotor = QtWidgets.QPushButton(self.tab_12)
-        self.btnImportMotor.setGeometry(QtCore.QRect(1080, 80, 101, 31))
-        self.btnImportMotor.setStyleSheet("   QPushButton {\n"
-"         border: 1px solid gray;\n"
-"         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(43, 200, 7));\n"
-"    \n"
-"    \n"
-"     }\n"
-"\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
-        self.btnImportMotor.setObjectName("btnImportMotor")
         self.tvIECMotors = QtWidgets.QTableView(self.tab_12)
-        self.tvIECMotors.setGeometry(QtCore.QRect(0, 630, 1221, 171))
+        self.tvIECMotors.setGeometry(QtCore.QRect(10, 520, 1211, 221))
         self.tvIECMotors.setObjectName("tvIECMotors")
-        self.btnUploadMotor = QtWidgets.QPushButton(self.tab_12)
-        self.btnUploadMotor.setGeometry(QtCore.QRect(1080, 30, 101, 31))
-        self.btnUploadMotor.setStyleSheet("    QPushButton {\n"
-"         border: 1px solid gray;\n"
-"         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 255, 0));\n"
-"    \n"
-"    \n"
-"     }\n"
-"\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
-        self.btnUploadMotor.setObjectName("btnUploadMotor")
         self.lbQuotationHistory_7 = QtWidgets.QLabel(self.tab_12)
-        self.lbQuotationHistory_7.setGeometry(QtCore.QRect(10, 610, 181, 16))
+        self.lbQuotationHistory_7.setGeometry(QtCore.QRect(10, 500, 181, 16))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -5185,29 +5317,51 @@ class Ui_ControlPanel(object):
         self.lbCompID_87.setFont(font)
         self.lbCompID_87.setObjectName("lbCompID_87")
         self.label_9 = QtWidgets.QLabel(self.tab_12)
-        self.label_9.setGeometry(QtCore.QRect(10, 130, 471, 241))
+        self.label_9.setGeometry(QtCore.QRect(10, 130, 381, 191))
         self.label_9.setText("")
         self.label_9.setPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../apps/techdata/63-132ML_Motor_Frame_Sizes.jpg"))
         self.label_9.setScaledContents(True)
         self.label_9.setObjectName("label_9")
         self.label_10 = QtWidgets.QLabel(self.tab_12)
-        self.label_10.setGeometry(QtCore.QRect(490, 130, 471, 241))
+        self.label_10.setGeometry(QtCore.QRect(400, 130, 401, 191))
         self.label_10.setText("")
         self.label_10.setPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../apps/techdata/225SM-355ML MOTOR FRAME SIZES.jpg"))
         self.label_10.setScaledContents(True)
         self.label_10.setObjectName("label_10")
         self.label_11 = QtWidgets.QLabel(self.tab_12)
-        self.label_11.setGeometry(QtCore.QRect(120, 380, 471, 241))
+        self.label_11.setGeometry(QtCore.QRect(810, 130, 391, 191))
         self.label_11.setText("")
         self.label_11.setPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../apps/techdata/355A_B MOTOR FRAME SIZES.jpg"))
         self.label_11.setScaledContents(True)
         self.label_11.setObjectName("label_11")
         self.label_12 = QtWidgets.QLabel(self.tab_12)
-        self.label_12.setGeometry(QtCore.QRect(660, 380, 571, 241))
+        self.label_12.setGeometry(QtCore.QRect(400, 330, 421, 181))
         self.label_12.setText("")
         self.label_12.setPixmap(QtGui.QPixmap("C:\\HCEC Dropbox\\HCE-Server\\_EEMS\\forms\\../apps/techdata/FLANGE MOUNTED.jpg"))
         self.label_12.setScaledContents(True)
         self.label_12.setObjectName("label_12")
+        self.btnUploadMotor = QtWidgets.QPushButton(self.tab_12)
+        self.btnUploadMotor.setGeometry(QtCore.QRect(1080, 30, 101, 31))
+        self.btnUploadMotor.setStyleSheet("    QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"         background-color:  yellow;\n"
+"    \n"
+"     }\n"
+"\n"
+"")
+        self.btnUploadMotor.setObjectName("btnUploadMotor")
+        self.btnPrintMotor = QtWidgets.QPushButton(self.tab_12)
+        self.btnPrintMotor.setGeometry(QtCore.QRect(1080, 80, 101, 31))
+        self.btnPrintMotor.setStyleSheet("   QPushButton {\n"
+"         border: 1px solid gray;\n"
+"         border-radius: 10px;\n"
+"         background-color:  green;\n"
+"    \n"
+"    \n"
+"     }\n"
+"")
+        self.btnPrintMotor.setObjectName("btnPrintMotor")
         self.tabTechData.addTab(self.tab_12, "")
         self.stwMain.addWidget(self.techData)
         self.calculations = QtWidgets.QWidget()
@@ -5243,17 +5397,10 @@ class Ui_ControlPanel(object):
         self.btnConvertPDF.setStyleSheet("    QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 );\n"
-"    background-color: rgb(0, 255, 0);\n"
-"    \n"
+"         background-color: green;\n"
 "    \n"
 "     }\n"
-"\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
+"")
         self.btnConvertPDF.setObjectName("btnConvertPDF")
         self.lvBulkFilesLoad = QtWidgets.QListView(self.tabSteelSections_2)
         self.lvBulkFilesLoad.setGeometry(QtCore.QRect(20, 60, 451, 671))
@@ -5273,16 +5420,8 @@ class Ui_ControlPanel(object):
         self.btnUploadFiles.setStyleSheet("    QPushButton {\n"
 "         border: 1px solid gray;\n"
 "         border-radius: 10px;\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #f6f7fa, stop: 1 rgb(255, 255, 0));\n"
-"    \n"
-"    \n"
-"     }\n"
-"\n"
-" QPushButton:pressed {\n"
-"         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                           stop: 0 #dadbde, stop: 1 #f6f7fa);\n"
-"     }")
+"         background-color:  yellow;\n"
+"    }")
         self.btnUploadFiles.setObjectName("btnUploadFiles")
         self.tabCalcTools.addTab(self.tabSteelSections_2, "")
         self.tab_13 = QtWidgets.QWidget()
@@ -6025,7 +6164,7 @@ class Ui_ControlPanel(object):
         self.tabWidget_3.setCurrentIndex(0)
         self.tabWidget.setCurrentIndex(0)
         self.tabDoccontrol.setCurrentIndex(0)
-        self.tabTechData.setCurrentIndex(0)
+        self.tabTechData.setCurrentIndex(6)
         self.tabCalcTools.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(ControlPanel)
 
@@ -6309,19 +6448,32 @@ class Ui_ControlPanel(object):
         self.lbCompID_56.setText(_translate("ControlPanel", "d1 (mm)"))
         self.lbCompID_57.setText(_translate("ControlPanel", "Bolt Holes Centres"))
         self.lbCompID_58.setText(_translate("ControlPanel", "PCD (mm)"))
-        self.btnImportFlanges.setText(_translate("ControlPanel", "Import"))
-        self.btnUpload_2.setText(_translate("ControlPanel", "Upload Detail"))
         self.lbCompID_59.setText(_translate("ControlPanel", "m (kg)"))
         self.lbCompID_60.setText(_translate("ControlPanel", "Flange Mass"))
+        self.btnUploadFlanges.setText(_translate("ControlPanel", "Upload Detail"))
+        self.btnPrintFlanges.setText(_translate("ControlPanel", "Print Detail"))
         self.tabTechData.setTabText(self.tabTechData.indexOf(self.tab_6), _translate("ControlPanel", "SANS 1123 Pipe Flanges"))
         self.tabTechData.setTabText(self.tabTechData.indexOf(self.tab_10), _translate("ControlPanel", "SANS 62 and SANS 719 Pipe Sizes"))
         self.tabTechData.setTabText(self.tabTechData.indexOf(self.tab_11), _translate("ControlPanel", "SANS 1313 Conveyor Idlers"))
+        self.lbCompID_65.setText(_translate("ControlPanel", "Face Length (mm)"))
+        self.lbCompID_68.setText(_translate("ControlPanel", "Dim G (mm)"))
+        self.lbCompID_73.setText(_translate("ControlPanel", "Dim E (mm)"))
+        self.lbCompID_75.setText(_translate("ControlPanel", "Dim D (mm)"))
+        self.lbCompID_77.setText(_translate("ControlPanel", "Dim B (mm)"))
+        self.lbCompID_79.setText(_translate("ControlPanel", "Max. Shaft Dia."))
+        self.lbCompany_18.setText(_translate("ControlPanel", "Belt Width (mm)"))
+        self.lbCompID_109.setText(_translate("ControlPanel", "Dim C (mm)"))
+        self.lbQuotationHistory_13.setText(_translate("ControlPanel", "Pulleys with Chutes (Wide)"))
+        self.lbQuotationHistory_14.setText(_translate("ControlPanel", "Pulleys without Chutes (Narrow)"))
+        self.lbQuotationHistory_15.setText(_translate("ControlPanel", "Standard Pulley Bearing Centres and Dimensions (Independent from Pulley Diameter)"))
+        self.lbDimA.setText(_translate("ControlPanel", "Dim A (mm)"))
+        self.btnUploadSteelData_3.setText(_translate("ControlPanel", "Upload Detail"))
+        self.btnPrintSectionData_3.setText(_translate("ControlPanel", "Print Detail"))
+        self.tabTechData.setTabText(self.tabTechData.indexOf(self.tab_17), _translate("ControlPanel", "Conveyor Pulley Dimensions"))
         self.lbCompID_70.setText(_translate("ControlPanel", "Bearing Diam."))
         self.lbCompany_17.setText(_translate("ControlPanel", "Designation"))
         self.lbCompID_71.setText(_translate("ControlPanel", "Plummer Block"))
-        self.btnUploadSole.setText(_translate("ControlPanel", "Upload Detail"))
         self.lbQuotationHistory_12.setText(_translate("ControlPanel", "Conveyor Pulley Sole Plates and Plummber Blocks"))
-        self.lbCompID_88.setText(_translate("ControlPanel", "(mm)"))
         self.lbCompID_89.setText(_translate("ControlPanel", "Bearing"))
         self.lbCompID_90.setText(_translate("ControlPanel", "Adapter Sleeve"))
         self.lbCompID_91.setText(_translate("ControlPanel", "Lock Ring"))
@@ -6342,12 +6494,11 @@ class Ui_ControlPanel(object):
         self.lbCompID_106.setText(_translate("ControlPanel", "S (mm)"))
         self.lbCompID_107.setText(_translate("ControlPanel", "T (mm)"))
         self.lbCompID_108.setText(_translate("ControlPanel", "U (mm)"))
+        self.btnUploadSole.setText(_translate("ControlPanel", "Upload Detail"))
         self.btnPrintSole.setText(_translate("ControlPanel", "Print Detail"))
         self.tabTechData.setTabText(self.tabTechData.indexOf(self.tab_4), _translate("ControlPanel", "Sole Plates and Housings"))
         self.lbCompany_6.setText(_translate("ControlPanel", "Designation"))
         self.lbCompID_61.setText(_translate("ControlPanel", "Power (kW)"))
-        self.btnImportMotor.setText(_translate("ControlPanel", "Print Data"))
-        self.btnUploadMotor.setText(_translate("ControlPanel", "Upload Detail"))
         self.lbQuotationHistory_7.setText(_translate("ControlPanel", "IEC Motor Sizes"))
         self.lbCompID_63.setText(_translate("ControlPanel", "Number of Poles"))
         self.lbCompID_64.setText(_translate("ControlPanel", "Speed (rpm)"))
@@ -6362,6 +6513,8 @@ class Ui_ControlPanel(object):
         self.lbCompID_82.setText(_translate("ControlPanel", "F/L Torque (Nm)"))
         self.lbCompID_85.setText(_translate("ControlPanel", "L/R Torque (Nm)"))
         self.lbCompID_87.setText(_translate("ControlPanel", "Brake Torq (Nm)"))
+        self.btnUploadMotor.setText(_translate("ControlPanel", "Upload Detail"))
+        self.btnPrintMotor.setText(_translate("ControlPanel", "Print Detail"))
         self.tabTechData.setTabText(self.tabTechData.indexOf(self.tab_12), _translate("ControlPanel", "IEC Electric Motors"))
         self.label_15.setText(_translate("ControlPanel", "CALCULATIONS AND TOOLS"))
         self.lbQuotationHistory_8.setText(_translate("ControlPanel", "Files to be converted"))

@@ -267,7 +267,7 @@ def winder_acceleration_loads():
     A_t = round(alpha_d*a_t*(G_c+C_y+T)/g)
 
     data['A_o = (\\alpha_d) a_o (G_c + C_y + T)/g'] = ['Acceleration Load', A_o,'N' ]
-    data['A_t = (\\alpha_d) a_t (G_c + C_y + T)/g'] = ['Acceleration Trip Out Load', A_o,'N' ]
+    data['A_t = (\\alpha_d) a_t (G_c + C_y + T)/g'] = ['Acceleration Trip Out Load', A_t,'N' ]
 
     return data
 
@@ -331,7 +331,7 @@ def general_skip_loads():
         'Rope_d':                 [gen_data['D_rope'][0], D_rope, 'm/s^2'],
         'RBF':                    [gen_data['RBF'][0], RBF, 'kN'],
         'UTS':                    [gen_data['UTS'][0], UTS, 'MPa'],
-        '\\rho_b':                [gen_data['BD'],BD,'kg/m^3'],
+        '\\rho_b':                [gen_data['BD'][0],BD,'kg/m^3'],
         'b':                      [gen_data['SIW'][0], SIW, 'mm'],
         'w':                      [gen_data['SID'][0], SIW, 'mm'],
         'Vol = R / \\rho_b':      ['Skip Volume Required',Vol_req, 'm^3' ],
@@ -369,7 +369,7 @@ def rock_loads():
         '\\alpha_v':                        ['Filling Impact Factor in Stationary Position',alpha_v,''],
         '\\alpha_t':                        ['Load on Tipping Rollers Impact Factor',alpha_t,''],
         'R':                                ['Static Load', R*g, 'N'],
-        'R_d = (\\alpha_v)(R) ':            ['Bridle Transom Load While Filling', R_d, 'N'],
+        'R_d = (\\alpha_v)(R)':             ['Bridle Transom Load While Filling', R_d, 'N'],
         'p_o = \\rho_b g h':                ['Rock Pressure', p_o, 'N/m^2'],
         'p_1 = 1 p_o':                      ['Pressure on the Door', p_1, 'N/m^2'],
         'p_2 = 0.5 p_o':                    ['Pressure on the Back of Skip', p_2, 'N/m^2'],
@@ -541,9 +541,13 @@ def top_transom():
                 
                 plate['expr_A']:     ['Double Plate Cross Sectional Area', plate['A'], 'mm^2'],
                 plate['expr_I_x']:   ['Double Plate Second Moment of Area about x-x', plate['I_x'], 'mm^4'],
-                plate['expr_I_y']:   ['Double Channel Second Moment of Area about y-y', plate['I_y'], 'mm^4'],
-                plate['expr_J']:     ['Double Channel Polar Moment', plate['J'], 'mm^4'],
+                plate['expr_I_y']:   ['Double Plate Second Moment of Area about y-y', plate['I_y'], 'mm^4'],
+                plate['expr_J']:     ['Double Plate Polar Moment', plate['J'], 'mm^4'],
                 plate['expr_Z_p']:   ['Double Plate Plastic Section Modulus', plate['Z_p'], 'mm^3'],
+
+                'I_x':               ['Combined Second Moment of Area about x-x', I_x, 'mm^3'],
+                'I_y':               ['Combined Second Moment of Area about y-y', I_y, 'mm^3'],
+                'Z_p':               ['Combined Plastic Section Modulus', Z_p, 'mm^3'],
                 
                 expr_Mp:            ['Plastic Moment',M_p,'kNm' ],
                 expr_Mp067:         ['Adjusted Plastic Moment',M_pall,'kNm' ],
@@ -609,8 +613,8 @@ def operationalloads():
     else:
         text = "Fail"
 
-    expr_M_u = 'M_u = RBF L/4'
-    expr_V_u = 'M_u = RBF/2'
+    expr_M_u = 'M_u = (RBF) L/4'
+    expr_V_u = 'M_u = (RBF)/2'
     expr_IC = "M_u/M_r + V_u/V_r < 1"
 
     data = {
@@ -624,3 +628,309 @@ def operationalloads():
     }
 
     return data
+
+#===================================================================================================#
+def fatigue_load_top():
+    gen_data = general_data()
+    rock_load = rock_loads()
+    perm_data = permanent_loads()
+    topt, M_r, V_r = top_transom()
+    acc_forces = winder_acceleration_loads()
+
+    R = gen_data['W_pay'][1]
+    R_d = rock_load['R_d = (\\alpha_v)(R)'][1]
+    G_c = perm_data['G_c = (m_1 + m_3 + m_4)g'][1]
+    Cpm = gen_data['Cycles'][1]
+    A_o = acc_forces['A_o = (\\alpha_d) a_o (G_c + C_y + T)/g'][1]
+    A_t = acc_forces['A_t = (\\alpha_d) a_t (G_c + C_y + T)/g'][1]
+    L = topt['L'][1]
+    Z_p = topt['Z_p'][1]
+    DesignLife = 24 # 24 months
+    NoTrips = Cpm*DesignLife
+    MCL = R_d + 0.25*G_c
+    sigma_a = round(MCL*L/(4*Z_p),1)
+    A_o_f = 2*A_o
+    sigma_b = round(A_o_f*L/(4*Z_p),1)
+    sigma_c = round(0.2*R*L/(4*Z_p),1)
+
+
+
+    expr_R_d = 'R_d = (\\alpha_v)(R)'
+    expr_G_c = 'G_c = (m_1 + m_3 + m_4)g'
+    expr_MCL = 'MCL = R_d + 0.25G_c'
+    expr_sigma_a = '\\sigma_a = 0.5 (MCL) L/(4 Z_p))'
+    expr_sigma_b = '\\sigma_b = 0.5 (2 A_o L/(4 Z_p))'
+    expr_sigma_c = '\\sigma_c = 0.5 (0.2 R L/(4 Z_p))'
+    expr_IC = "\\sigma_a/S_e + \\sigma_b/S_e + \\sigma_c/S_e < 1"
+
+    
+
+    N_beams = 2
+    S_e = 70 
+
+    IC =  round(sigma_a/(N_beams*S_e) + sigma_b/(N_beams*S_e) + sigma_c/(N_beams*S_e),2)
+    if IC < 1:
+        text = "Pass"
+    else:
+        text = "Fail"
+
+    data = {
+        'Cycles':     ['Cycles per Month', Cpm, ''],
+        'Design':     ['Design Life', DesignLife, 'months'],
+        'Trips':      ['Total Number of Trips', NoTrips, ''],
+        expr_R_d:     ['Rock during Filling',R_d, 'N'],
+        expr_G_c:     ['Permanent Load', G_c, 'N'],
+        expr_MCL:     ['Major Cycle Load', MCL, 'N'],
+        expr_sigma_a: ['Stress Amplitude', sigma_a/N_beams, 'MPa'],
+        '2A_o':       ['Acceleration Cycles Load', 2*A_o, 'N'],
+        expr_sigma_b: ['Stress Acceleration Increase', sigma_b, 'MPa'],
+        '0.2R':       ['Bounding Load', 0.2*R, 'N'],
+        expr_sigma_c: ['Stress Acceleration Increase', sigma_c, 'MPa'],
+        'S_e':        ['Steel Endurance Limit', S_e, 'MPa'],
+        expr_IC:      ['Interaction Check', IC, text]    
+    }
+
+    return data
+
+#===================================================================================================#
+def bot_transom():
+    gen_data = general_data()
+    gen_skip = general_skip_loads()
+    perm_data = permanent_loads()
+
+    RBF = gen_data['RBF'][1]
+    L = 1700 # Length of transom
+    E = 200000 # Modulus of Elastisity MPa
+    G = 70000 # Shear Modulus MPa
+    f_y = 355 #Yield Stress MPa
+    t_w = 7.5 # Web Thickness mm
+    t_f = 14 # Flange Thickness mm
+    h = 230 # Beam Height mm
+    b = 90 # Beam Width mm
+    w = 230 # Plate Width mm
+    t_p = 20 # Plate Thickness
+    
+    plate = properties_double_plate(h,w,t_p)
+    prop = properties_channel(b,h,t_w, t_f)
+    Z_p = prop['Z_p']
+    I_x = prop['I_x']
+    I_y = prop['I_y']
+    A= prop['A']
+    J = prop['J']
+    C_w = prop['C_w']
+
+    Z_p_p = plate['Z_p']
+    I_x_p = plate['I_x']
+    I_y_p = plate['I_y']
+    # Z_p_p = 0
+    # I_x_p = 0
+    # I_y_p = 0
+    A_p= plate['A']
+    J_p = plate['J']
+    # A_p = 0
+    # J_p = 0
+
+
+    I_x = I_x + I_x_p
+    I_y = I_y + I_y_p
+    Z_p = Z_p + Z_p_p
+    J = J + J_p
+    A = A + A_p
+
+    M_p = round(Z_p*f_y/1000**2,1)
+    M_pall = round(0.67*M_p,1)
+    pi = math.pi
+    M_cr = math.sqrt(((pi**4)*(E**2)*C_w*I_y)/L**4 + ((pi**2)*E*I_y*G*J)/L**2)
+    M_c = round((M_cr/1000**2),1)
+    if M_c > M_pall:
+        M_r = round(1.15*0.9*M_p*(1-(0.28*M_p/M_c)),1)
+        expr_M_r = 'M_r = 1.15 \\phi M_p(1-(0.28M_p/M_c))'
+    else:
+        M_r = round(0.9*M_p,1)
+        expr_M_r = 'M_r = \\phi M_p'
+    V_r = round(0.55*0.9*A*f_y/1000,0)
+
+    expr_V_r = 'Vr = 0.55 \\phi A f_y'
+    expr_Mp = 'M_p = Z_pf_y'
+    expr_Mp067 = '0.67M_p'
+    expr_Mc = 'M_c = ((\\pi^4E^2C_wI_y)/L^4 + (\\pi^2EI_yGJ)/L^2)^0.5'
+
+
+
+    data = {    
+                'L':                ['Length of Transom', L, 'mm'],
+                'b':                ['Channel Width', b, 'mm'],
+                'h':                ['Channel Height', h, 'mm'],
+                't_w':              ['Channel Web Thickness', t_w, 'mm'],
+                't_f':              ['Channel Flange Thickness', t_f, 'mm'],
+                'w':                ['Top and Bottom Plate Width',w, 'mm'],
+                't_p':              ['Top and Bottom Plate Thickness', t_p, 'mm'],
+                'f_y':              ['Yield Stress', f_y, 'MPa'],
+                prop['expr_A']:     ['Channel Cross Sectional Area', prop['A'], 'mm^2'],
+                prop['expr_x_c']:   ['Channel Centroid Distance', prop['x_c'], 'mm'],
+                prop['expr_I_x']:   ['Channel Second Moment of Area about x-x', prop['I_x'], 'mm^4'],
+                prop['expr_I_y']:   ['Channel Second Moment of Area about y-y', prop['I_y'], 'mm^4'],
+                prop['expr_J']:     ['Channel Polar Moment', prop['J'], 'mm^4'],
+                prop['expr_C_w']:   ['Channel Warping Constant', prop['C_w'], 'mm^6'],
+                prop['expr_Z_p']:   ['Channel Plastic Section Modulus', prop['Z_p'], 'mm^3'],
+                
+                plate['expr_A']:     ['Double Plate Cross Sectional Area', plate['A'], 'mm^2'],
+                plate['expr_I_x']:   ['Double Plate Second Moment of Area about x-x', plate['I_x'], 'mm^4'],
+                plate['expr_I_y']:   ['Double Plate Second Moment of Area about y-y', plate['I_y'], 'mm^4'],
+                plate['expr_J']:     ['Double Plate Polar Moment', plate['J'], 'mm^4'],
+                plate['expr_Z_p']:   ['Double Plate Plastic Section Modulus', plate['Z_p'], 'mm^3'],
+
+                'I_x':               ['Combined Second Moment of Area about x-x', I_x, 'mm^3'],
+                'I_y':               ['Combined Second Moment of Area about y-y', I_y, 'mm^3'],
+                'Z_p':               ['Combined Plastic Section Modulus', Z_p, 'mm^3'],
+                
+                expr_Mp:            ['Plastic Moment',M_p,'kNm' ],
+                expr_Mp067:         ['Adjusted Plastic Moment',M_pall,'kNm' ],
+                expr_Mc:            ['Critical Elastic Moment', M_c, 'kNm'],
+                expr_M_r:           ['Factored Moment Resistance', M_r, 'kNm'],
+                expr_V_r:           ['Factored Shear Resistance', V_r, 'kNm']
+    }
+
+    return data, M_r, V_r
+
+#===================================================================================================#
+def emergencyloads_bot():
+    bott, M_r, V_r = bot_transom()
+    gen_data = general_data()
+
+    RBF = gen_data['RBF'][1]
+    L = bott['L'][1]
+    N_beams = 2
+
+    M_u = round(RBF*L/4000,0)
+    V_u = round(RBF/2,0)
+    IC =  round(M_u/(N_beams*M_r) + V_u/(N_beams*V_r),2)
+    if IC < 1:
+        text = "Pass"
+    else:
+        text = "Fail"
+
+    expr_M_u = 'M_u = RBF L/4'
+    expr_V_u = 'M_u = RBF/2'
+    expr_IC = "M_u/M_r + V_u/V_r < 1"
+
+    data = {
+        'RBF':            ['Rope Break Force', RBF, 'kN'],
+        'No.':            ['Number of Beams', N_beams, ''],
+        'M_r':            ['Combined Bending Resistance', N_beams*M_r, 'kN'],
+        'M_r':            ['Combined Shear Resistance', N_beams*V_r, 'kN'],
+        expr_M_u:         ['Ultimate Bending Moment', M_u, 'kN'],
+        expr_V_u:         ['Ultimate Shear Force', V_u, 'kN'],
+        expr_IC:          ['Interaction Check', IC, text]              
+    }
+
+    return data
+
+
+#===================================================================================================#
+def bridle():
+    gen_data = general_data()
+    gen_skip = general_skip_loads()
+    perm_data = permanent_loads()
+
+    RBF = gen_data['RBF'][1]
+    E = 200000 # Modulus of Elastisity MPa
+    G = 70000 # Shear Modulus MPa
+    f_y = 355 #Yield Stress MPa
+
+    A = 2680
+    t_w = 7
+    bolt_hole = 24
+    A_n = A - bolt_hole*t_w
+    N_bridles = 4
+
+    T_u = RBF
+    T_r = round((0.85*0.9*A_n*f_y)/1000,0)
+
+    IC =  round(T_u/(N_bridles*T_r),2)
+    if IC < 1:
+        text = "Pass"
+    else:
+        text = "Fail"
+
+    expr_IC = "T_u/T_r < 1"
+    expr_T_r = 'T_r = 0.85 \\phi A f_y'
+
+    data = {    
+                'A_t':              ['Total Cross Sectional Bridle Area',round(N_bridles*A,0), 'mm^2'],
+                'A_e':              ['Total Net Cross Sectional Bridle Area', round(N_bridles*A_n,0), 'mm'],
+                'RBF':              ['Rope Break Force', RBF, 'kN'],
+                expr_T_r:           ['Tensile Resistance per Channel',T_r,'N' ],
+                'No.':              ['Number of Bridless', N_bridles, ''],
+                'T_r':              ['Total Tensile Resistance',round(N_bridles*T_r,0), 'N'],
+                expr_IC:            ['Interaction Check', IC, text] 
+    }
+
+    return data, T_r
+
+#===================================================================================================#
+def fatigue_load_bridle():
+    gen_data = general_data()
+    rock_load = rock_loads()
+    perm_data = permanent_loads()
+    topt, M_r, V_r = top_transom()
+    acc_forces = winder_acceleration_loads()
+
+    R = gen_data['W_pay'][1]
+    R_d = rock_load['R_d = (\\alpha_v)(R)'][1]
+    G_c = perm_data['G_c = (m_1 + m_3 + m_4)g'][1]
+    Cpm = gen_data['Cycles'][1]
+    A_o = acc_forces['A_o = (\\alpha_d) a_o (G_c + C_y + T)/g'][1]
+    A_t = acc_forces['A_t = (\\alpha_d) a_t (G_c + C_y + T)/g'][1]
+
+    # 180 x channels
+    A = 2680
+    t_w = 7
+    bolt_hole = 24
+    A_n = A - bolt_hole*t_w
+    N_bridles = 4
+
+    DesignLife = 24 # 24 months
+    NoTrips = Cpm*DesignLife
+    MCL = R_d + 0.25*G_c
+    sigma_a = round(MCL/A_n,1)
+    A_o_f = 2*A_o
+    sigma_b = round(A_o_f/(N_bridles*A_n),1)
+    sigma_c = round(0.2*R/(N_bridles*A_n),1)
+
+    expr_R_d = 'R_d = (\\alpha_v)(R)'
+    expr_G_c = 'G_c = (m_1 + m_3 + m_4)g'
+    expr_MCL = 'MCL = R_d + 0.25G_c'
+    expr_sigma_a = '\\sigma_a = MCL/(N_b A_n))'
+    expr_sigma_b = '\\sigma_b = (2 A_o/(N_b A_n))'
+    expr_sigma_c = '\\sigma_c = (0.2 R/(N_b A_n))'
+    expr_IC = "\\sigma_a/S_e + \\sigma_b/S_e + \\sigma_c/S_e < 1"
+
+    S_e = 70 
+
+    IC =  round((sigma_a/S_e) + (sigma_b/S_e) + (sigma_c/S_e),2)
+    if IC < 1:
+        text = "Pass"
+    else:
+        text = "Fail"
+
+    data = {
+        'Cycles':     ['Cycles per Month', Cpm, ''],
+        'Design':     ['Design Life', DesignLife, 'months'],
+        'Trips':      ['Total Number of Trips', NoTrips, ''],
+        'N_b':        ['Number of Bridle Channels', N_bridles, ''],
+        expr_R_d:     ['Rock during Filling',R_d, 'N'],
+        expr_G_c:     ['Permanent Load', G_c, 'N'],
+        expr_MCL:     ['Major Cycle Load', MCL, 'N'],
+        expr_sigma_a: ['Stress Amplitude', sigma_a, 'MPa'],
+        '2A_o':       ['Acceleration Cycles Load', 2*A_o, 'N'],
+        expr_sigma_b: ['Stress Acceleration Increase', sigma_b, 'MPa'],
+        '0.2R':       ['Bounding Load', 0.2*R, 'N'],
+        expr_sigma_c: ['Stress Acceleration Increase', sigma_c, 'MPa'],
+        'S_e':        ['Steel Endurance Limit', S_e, 'MPa'],
+        expr_IC:      ['Interaction Check', IC, text]    
+    }
+
+    return data
+
+#===================================================================================================#

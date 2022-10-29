@@ -402,12 +402,9 @@ def main():
                 subsubsec7.append('\n')
                 subsubsec7.append(SPEC_1)
                 subsubsec7.append('\n')
-                subsubsec7.append('\n')
                 subsubsec7.append(SPEC_2)
                 subsubsec7.append('\n')
-                subsubsec7.append('\n')
                 subsubsec7.append(SPEC_3)
-                subsubsec7.append('\n')
                 with subsubsec7.create(FlushLeft()) as left:
                         d, e, f = top_transom()
                         with left.create(MiniPage(align='l')) as tab:
@@ -452,6 +449,114 @@ def main():
                                     else:
                                         unit = ""
                                     table.add_row(descrip, symbol, value, unit)  
+
+                subsubsec7.append(bold("Design for Fatigue Loads"))
+                with subsubsec7.create(FlushLeft()) as left:
+                        d = fatigue_load_top()
+                        with left.create(MiniPage(align='l')) as tab:
+                            with tab.create(Tabular('l l l l')) as table:
+                                for k,v in d.items():
+                                    descrip = v[0]
+                                    symbol = (Math(inline = True, data = [k], escape = False))
+                                    value = v[1]
+                                    if v[2] != "":
+                                        unit = (Math(inline = True, data = [v[2]], escape = False))
+                                    else:
+                                        unit = ""
+                                    table.add_row(descrip, symbol, value, unit)  
+            subsec4.append(NewPage())
+            with subsec4.create(Subsubsection(SECTION_4_3_2)) as subsubsec8:
+                with subsubsec8.create(Figure(position='h!')) as fig:
+                    fig.append(StandAloneGraphic(
+                            image_options="width=360px",
+                            filename=fix_filename(SKETCH_10[0])
+                            ))
+                    fig.append(Command('centering'))
+                    fig.add_caption(SKETCH_10[2])
+                    fig.append(Command('centering'))
+
+
+                subsubsec8.append(bold("Material Data"))
+                subsubsec8.append('\n')
+                subsubsec8.append(SPEC_4)
+                subsubsec8.append('\n')
+                subsubsec8.append(SPEC_5)
+                subsubsec8.append('\n')
+                subsubsec8.append(SPEC_6)
+                with subsubsec8.create(FlushLeft()) as left:
+                        d, e, f = bot_transom()
+                        with left.create(MiniPage(align='l')) as tab:
+                            with tab.create(Tabular('l l l l')) as table:
+                                for k,v in d.items():
+                                    descrip = v[0]
+                                    symbol = (Math(inline = True, data = [k], escape = False))
+                                    value = v[1]
+                                    if v[2] != "":
+                                        unit = (Math(inline = True, data = [v[2]], escape = False))
+                                    else:
+                                        unit = ""
+                                    table.add_row(descrip, symbol, value, unit)  
+
+                subsubsec8.append(bold("Design for Emergency Loads"))
+                with subsubsec8.create(FlushLeft()) as left:
+                        d = emergencyloads_bot()
+                        with left.create(MiniPage(align='l')) as tab:
+                            with tab.create(Tabular('l l l l')) as table:
+                                for k,v in d.items():
+                                    descrip = v[0]
+                                    symbol = (Math(inline = True, data = [k], escape = False))
+                                    value = v[1]
+                                    if v[2] != "":
+                                        unit = (Math(inline = True, data = [v[2]], escape = False))
+                                    else:
+                                        unit = ""
+                                    table.add_row(descrip, symbol, value, unit)  
+                
+            subsec4.append(NewPage())
+            with subsec4.create(Subsubsection(SECTION_4_3_3)) as subsubsec9:
+                with subsubsec9.create(Figure(position='h!')) as fig:
+                    fig.append(StandAloneGraphic(
+                            image_options="width=360px",
+                            filename=fix_filename(SKETCH_11[0])
+                            ))
+                    fig.append(Command('centering'))
+                    fig.add_caption(SKETCH_11[2])
+                    fig.append(Command('centering'))
+
+                subsubsec9.append(bold("Design for Emergency Loads"))
+                with subsubsec9.create(FlushLeft()) as left:
+                        d, b  = bridle()
+                        with left.create(MiniPage(align='l')) as tab:
+                            with tab.create(Tabular('l l l l')) as table:
+                                for k,v in d.items():
+                                    descrip = v[0]
+                                    symbol = (Math(inline = True, data = [k], escape = False))
+                                    value = v[1]
+                                    if v[2] != "":
+                                        unit = (Math(inline = True, data = [v[2]], escape = False))
+                                    else:
+                                        unit = ""
+                                    table.add_row(descrip, symbol, value, unit) 
+                                    
+                subsec4.append(NewPage())
+                subsec4.append(bold("Design for Fatigue Loads"))
+                with subsubsec9.create(FlushLeft()) as left:
+                        d  = fatigue_load_bridle()
+                        with left.create(MiniPage(align='l')) as tab:
+                            with tab.create(Tabular('l l l l')) as table:
+                                for k,v in d.items():
+                                    descrip = v[0]
+                                    symbol = (Math(inline = True, data = [k], escape = False))
+                                    value = v[1]
+                                    if v[2] != "":
+                                        unit = (Math(inline = True, data = [v[2]], escape = False))
+                                    else:
+                                        unit = ""
+                                    table.add_row(descrip, symbol, value, unit) 
+
+                
+                
+                
 
 
         doc.append(NewPage())   

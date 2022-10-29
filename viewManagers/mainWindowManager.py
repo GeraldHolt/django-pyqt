@@ -495,6 +495,7 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
            
         
         self.btnUploadSteelData.clicked.connect(self.uploadSteelSections)
+        #self.btnPrintSteelSection.clicked.connect(self.printDocument)
 
 
     # Load SANS 1123 Pipe Flanges
@@ -525,7 +526,7 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
         else:
             print("No data yet")  
 
-        self.btnImportFlanges.clicked.connect(self.importSANSPlateFlanges)
+        #self.btnPrintFlanges.clicked.connect(self.printDocument)
         
     # Load IED Motor Flanges
         data = IECElectricalMotors.objects.all().values_list(
@@ -555,10 +556,10 @@ class ControlPanel(QMainWindow, Ui_ControlPanel):
         else:
             print("No data yet")  
 
-        self.btnImportFlanges.clicked.connect(self.importIECMotorDetails)
+        #self.btnPrintFlanges.clicked.connect(self.printDocument)
 
     # Load ConveyorSolePlatesBearings
-        data = SolePLatePlummerBlock.objects.all().values_list('designation', 'bearShaftDia','plumBlock','bearing','adapterSleeve','lockRing','seal','dimA','dimC','dimD', 'dimE','dimF', 'dimF1','dimG','dimH','dimJ','dimK','dimL','dimM', 'dimN', 'dimS', 'dimT', 'dimU')
+        data = SolePlatePlummerBlock.objects.all().values_list('designation', 'bearShaftDia','plumBlock','bearing','adapterSleeve','lockRing','seal','dimA','dimC','dimD', 'dimE','dimF', 'dimF1','dimG','dimH','dimJ','dimK','dimL','dimM', 'dimN', 'dimS', 'dimT', 'dimU')
         headers = ["Designation", "Shaft Dia.", "Plummer", "Bearing", "Adapter", "Lock Ring", "Seals", "A", "C", "D", "E", "F", "F1", "G", "H", "J", "K", "L", "M", "N", "S", "T", "U"]
         if data:
             self.tableModel4 = TableModel(data, headers)
@@ -809,6 +810,14 @@ class MainWindow(QtWidgets.QStackedWidget):
         qr.moveCenter(cp)
         self.move(qr.topLeft())
 
+    def location_on_the_screen(self):
+        ag = QDesktopWidget().availableGeometry()
+        sg = QDesktopWidget().screenGeometry()
+        widget = self.geometry()
+        x = ag.width() - widget.width()
+        y = 2 * ag.height() - sg.height() - widget.height()
+        self.move(x, y)
+
     def goto_login(self):
         self.setFixedSize(410, 644)
         self.center()
@@ -829,10 +838,9 @@ class MainWindow(QtWidgets.QStackedWidget):
         self.signup_screen.btnRegister.clicked.connect(self.signup)
         
     def goto_control_panel(self): 
-        # self.setFixedSize(1540, 963)
+        self.location_on_the_screen()
         self.setCurrentIndex(self.indexOf(self.control_screen)) 
-
-
+        
     def login(self):
         username = self.login_screen.leUserName.text()
         password = self.login_screen.lePassword.text()

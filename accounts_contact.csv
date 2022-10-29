@@ -1,0 +1,68 @@
+lastName,firstName,contactEmail,jobTitle,contactBusPhone,contactMobile,id,companyName_id,contID,date_of_birth
+Dyason,Bruce,bruce@minplant.co.za,Director,+27 12 734 0233,+27 82 579 0726,00c181d17f004d8c8816bb5c2a28de52,676d0fa3e447464caff138235ec2e018,BD1,NULL
+Botha,Quentin,quentin.botha@iluka.com,NULL,NULL,NULL,0dca86bb7e244d1f98d329c80b0f92e7,c7d8f5bcae084d66a139d801f44200d4,QB1,NULL
+van der Westhuizen,Ernust,evdwsurvey@gmail.com,Land Surveyor,NULL,+27844422262,0f7ead7ad273474db10f199786fdf91e,54ed61bea345403887dba67344c125d2,EW1,NULL
+Khangale,Prince,princekhangale@techmatic.co.za,Director,NULL,NULL,13bc153deb0048fda0934641db125567,a21c421a99004bcfbf32236a02b18652,PK1,NULL
+Clarke,Chris,chris@rosema.co.za,Plant Manager,NULL,+2783450-3958,143a81db963942809c8cafc776ae74fe,8935bc76065f41dbb3a3f050594c458f,CC1,NULL
+Pretorius,Gerard,GerardP@johnthompson.co.za,General Manager,+27 11 478-9771,+27 82 823-3115,1bdf9f5d906643648c533b5852e79381,ef0f2191860648d1af3ec5bee1263785,GH1,NULL
+Claase,Juan,NULL,NULL,NULL,NULL,21a6df7c63b144abb3bead4d1a67d36e,66f1afc32bc747628c5c8eeb2b0329ef,JC1,NULL
+Khoza,Thembi,projects@airblowfans.co.za,Project Manager,+27 81 503 7364,NULL,251c523ee57744ad81f15bdfaa318429,167858a80b20454b9887df046ac76ff9,TK1,NULL
+Jagarnath,Verushka,Verushka.Jagarnath@aeciworld.com,Project Manager,+27169739664,+27765479249,2b7a19fcbcb9471cb7d683f90dbac308,e98fe3d7509f4ad6b4c26cef155b9c28,VJ1,NULL
+Repsold,Leon,Leon.Repsold@bushveldvanchem.com,Project Manager,+27136966001,+27824578296,2cffddc631fe4f4a8f8a554af5a44448,a1f5869977ac4ab58fcd20e75c83bc2d,LP1,NULL
+Jacobs,Danie,danie@cisjhb.co.za,Draughtman,+27 11 306 3100,NULL,3099fc220add4543bda08b38260f07e3,576ce2a97e0349e88310812ede566056,DJ1,NULL
+Reichert,Gerhard,gerhardr@highveldsm.co.za,Plant Engineer,NULL,NULL,3254bb2e71dc4f15ab5ac933ca769568,c8c96f3011fc4a1fa07257ecad8d64df,GR1,NULL
+Swanepoel,Ruark,NULL,Project Manager,NULL,NULL,33c73e3cf80c4a45a22e3dbcb92877e7,ef0f2191860648d1af3ec5bee1263785,RS1,NULL
+Cronje,Jean Pierre,Jp.Cronje@olm.bz,Project Manager,+27411100423,+27824729705,33ce08e601f84d18a79c83c3f43b2c9a,064e504fdaac4927a6bafe614a440b09,JC2,NULL
+Paxton,Brian,brian@slfc.co.za,Sales,+27117929249,079887949,35d398d8db4e449fa76de002587e9e18,079f18541a6a4a25839622d4af4c2813,BP1,NULL
+Potgieter,JT,jt@sewtreat.co.za,Owner,+27 13 590 6683,+27 83 682 3205,37067c75558049e486494319f874ab46,3355db77245e4798bce6b05f38a469e7,JP1,NULL
+Barros,Carlos,carlosb@multotec.com,Drawing Office Manager – Cyclones & Pumps,+27 (0) 11 923 6104,+27 (0) 83 348 1054,41dc1034c06d4fefa0539d1090162110,ae7a768ab6474b6a85ddc4ec815c7042,CB1,NULL
+Beek,Dave,dave.beek@radosXRF.com,Managing Director,+27116841259,+27823743302,43f3530536d94de0b3b26ccd8cc5d56f,67729f9c948248a2baa0492a2a29e44b,DB1,NULL
+Bester,Jacques,jacques@structakonsult.co.za,Principle Mechanical Engineer,+27 (0) 12 804 4804,NULL,45251262435245b18fa547d70646a920,cd2a0088d11a4e8fb17a79ea2fa3ee16,JB1,NULL
+Pretorius,Leon,NULL,Director,NULL,+27 82 870 0484,4868de28f7d54696a9caf09863306713,8295d411bb3448b6a3bbef1cc07418c5,LP2,NULL
+Beukes,Phillip,philip.beukes@sierra-rutile.com,Project Engineer,NULL,+2323094 8365,4bf66762151342419e77c58143103335,15699a9a4a034d8486fe848cb6e7394d,PB1,NULL
+Hetzel,Stephan,drawings@maxpower.co.za,Technical and Design Draughtsman,+27116932229,+27832636883,4d76ddf56a6049e199627ce8bbdec37c,c0f19526cf584edf822b3ad2f4bf027e,SH1,NULL
+Lessing,Bernard,NULL,Drawing Office Manager,NULL,NULL,4f311cc87f9242bbaf02bc2c60a1ddfa,81cdf18ffa044293a154961810295934,BL1,NULL
+De Koker,Pierre,info@maxpower.co.za,Director,+27116932229,+27832636883,4ff60959bc574f92b3b3f33a28d13539,c0f19526cf584edf822b3ad2f4bf027e,PD1,NULL
+Pholoba,Nkosinathi,nkosinathip@bhubezi.co.za,Project Engineer,011 892 3107,+27 76 574 8135,503e63b14526488088c08f21c68bd54f,e8271365c6d84bb3bd7b2f8d475c8dae,NP1,NULL
+Prinsloo,Willem,willem.hyperiondrilling@gmail.com,Draughtman,NULL,+27 84 645 0355,51b98e67045145dcabb5997dfe5fa8a4,cbdb4c38f352474292cbc553b9326de1,WP2,NULL
+Prinsloo,Willem,willem@kreuz.co.za,Director,+27 84 645 0355,+27 84 645 0355,51f6734525384f64a0c4f91fdb4c98a9,f3e4aec34d634f1893ed1c43890b895b,WP1,NULL
+Olivier,Erich,erich.olivier@petradiamonds.com,Draughtman,+27 53 385 2111,NULL,523e849b02ff48829550936ee3e0f0da,329c394214504acb8e2591d2f6c874df,EO1,NULL
+Rossouw,Pieter,pieter.rossouw@iluka.com,Project Manager,NULL,NULL,5756fe7523234e9a96deddc218feaa90,c7d8f5bcae084d66a139d801f44200d4,PR1,NULL
+Du Plooy,Jan,jan@fje.co.za,Site Foreman,NULL,0746022975,5779718e8c8c4e0681e77aab9cfdf5ee,adac8c1ec5674bb6ba1a4e73c40f5b49,JD1,NULL
+Malina,Maya,maya.malina@mine.ferrexpo.com,Procurement Strategy Specialist,+380534874339,NULL,5ae0f549a4164b24b98d3cf9807895b8,a6582c02f2554203a3a9ca4189dceace,MM1,NULL
+Mostert,Wessel,wessel@aio.co.za,Workshop Manager,NULL,0790942676,7011109c94f74f16a3b37f4f44be50b1,3bbc54663d084f5382f67da225377375,WM1,NULL
+Morrison,George,NULL,NULL,NULL,NULL,71cd9e1d0d2447459219ee3617ca07c8,d64f75753e0a4f71b10264d475c65644,GM1,NULL
+Du Toit,Brett,brett@kareevlei.com,Senior Plant Manager,NULL,+27782091639,7220f4702df64a2986cd0451de23d8ce,7d16425009d64b288c23640b4caa5fc2,BD2,NULL
+Singh,Adrian,adrian@goldore.org,Director,NULL,NULL,796c1d61412a4f919f0cf0e44b8a5bda,36fdcf6865ee4931ac46d0258bd85156,AS1,NULL
+Mabunda,Aphas,aphas@airblowfans.co.za,Senior Engineer & Welding Specialist,+27114250326,+27780118419,85d0d5f9bab14e5aad56f5763bc50170,167858a80b20454b9887df046ac76ff9,AM1,NULL
+De Koker,Herman,harry@maxpower.co.za,Director,+27116932229,+27714728851,877d1d1ad5cf44648f1cf98af2d437c1,c0f19526cf584edf822b3ad2f4bf027e,HD1,NULL
+Marais,Johan,johanmarais@met63.com,Project Manager,NULL,NULL,889fbbb3927f4a4c91dacab54c396a3d,d03153af463f44619a288544d42960c3,JM1,NULL
+Coetzee,Andries,Andries Coetzee andriescoetzee@met63.com,Project Engineer,+27 76 174 1658,+27 76 174 1658,8ad72d8cae7243ccae18972f0f365699,d03153af463f44619a288544d42960c3,AC1,2000/01/01
+Fourie,Christine,info@bhubezi.co.za,Section Leader,+27118923107,+27828525109,8c5d14b27a8e475892a25fddf38dd7ce,e8271365c6d84bb3bd7b2f8d475c8dae,CF1,NULL
+Condon,Cherice,cherice@mainelect.co.za,Admininstration,27116836800,0824516357,94dd0f51e9ea40a1905d9a3976c54e93,6bbe091d36c042bc841811cba94cfded,CC2,NULL
+Baily,Richard,NULL,NULL,NULL,NULL,9ecaf622266247199e19b85e4b1d800c,a21c421a99004bcfbf32236a02b18652,RB1,NULL
+Human,Pierre,pierre@bosveldmines.co.za,Mine Manager,+2782653372,+2782653372,a783858beca74213bfee1f7e4b3e59cf,1fed37d2b0ea427db8c97d29e6bbc0c9,PH1,NULL
+Potgieter,JT,jt@sewtreat.co.za,Draughtman,NULL,NULL,ad7deda834f64b0f8032155192dc86cc,b2e4a047b41f4ba4ad28de53577d6988,JP2,NULL
+Rheeder,Johan,johanr@mrdev.co.za,Designer,+27 12 656 1640,NULL,ad836148e09a46cb846311221386b87e,629190a313c340b08c3562a193cd65cd,JR1,NULL
+Van Eden,Donovan,DonovanV@johnthompson.co.za,Project Engineer,+27114789798,+27835621292,b26bf3971e5d444a81bbfadbcc4a7396,ef0f2191860648d1af3ec5bee1263785,DE1,NULL
+Hopkins,Raymond,raymondh@cleanair.co.za,Project Engineer,+27113631543,+27828251155,b4011ee66154469ab2b23e1cb68e16df,c304bcd76f2542cf8e5c8d7d690b5753,RH1,NULL
+Du Plessis,Gerrit,NULL,Project Engineer,NULL,+27 83 964 2193,bcaeedc7afe4479cab59943cdbb56185,e559a88ef4c0433584714e61cb77e504,GD1,NULL
+Quaye,Seth,seth@macpartnersltd.com,Director,+233244322119,+233302541525,cc855286ccba484790597a296cd73ec2,153784b7967748398fdc618a001feb00,SQ1,NULL
+Van Heerden,Eben,EbenV@johnthompson.co.za,Project Engineer,+27114780456,+27834377980,cf18a055d82b4106be20d97c2a286638,ef0f2191860648d1af3ec5bee1263785,EH1,NULL
+Page,Pieter,Pieter@obsideo-consulting.com,Design Office Manager,NULL,NULL,cf904fdae33e4daba96ee3ea10a2ce77,d64f75753e0a4f71b10264d475c65644,PP1,NULL
+De Figueiredo,Carlos,carlos@hipark.co.za,Project Engineer,NULL,NULL,d03c36950195437cb67e6ce70ce66b39,fc807cc8b2874d9492405c83da8a4c9d,CD1,NULL
+Marais,Neels,neelsm@multotec.com,Procurement Officer,+27 11 923 6298,+27 83 372 1381,d3f4e6f049934e81bcccc063e1f51e56,10fbf2b4b7b7415686ae3abe15d88ce2,NM1,NULL
+Engelbrecht,Andre,AndreE@johnthompson.co.za,Engineering Manager,NULL,+27 83 644 1839,d5bb8ba40d164f15b3e5d400249b2121,ef0f2191860648d1af3ec5bee1263785,AE1,2000/01/01
+Chainho,Julio,julio@tct174.co.za,NULL,+27 11 394 3502,NULL,d74eefa38eb640739058a5ddeec137bb,3c952205b25b4915be4f6e84548e3423,JC3,NULL
+Martins,Jose,jose@airblowfans.co.za,NULL,+27 11 452 0726,+27 79 691 6592,dc662db243ea48859426b5d93582a4fc,167858a80b20454b9887df046ac76ff9,JS1,NULL
+Van Der Merwe,Ben,ben@amtec.co.za,Operations Director,+27 13 650 2270,+27 79 019 5999,deda799c742f4f3eacc870fb551c22dc,22a5dd516eac4d0db7633e0ae0c80bcd,BV1,NULL
+Crowhurst,Terry,t.crowhurst@tshepo-themba.co.za,Technical director,NULL,NULL,df21ec07658b4fc9acd58c9bca98444a,921e836724d847ad92a8326e86043d0c,TC1,NULL
+Sanders,Mark,NULL,NULL,NULL,NULL,e414940de584443b9dd6b1104f037d3e,66f1afc32bc747628c5c8eeb2b0329ef,MS1,NULL
+Roulstone,Rogan,roganroulstone@met63.com,Process Manager,NULL,NULL,e6a21ff34a2a49e3a5a42f3313621aaa,d03153af463f44619a288544d42960c3,RR1,NULL
+Calitz,Nico,nico.calitz@murrob.com,Divisional Maintenance Manager,+27112015157,+27694330200,e969a4b146114dc1bdccf850735d7404,8e5507b6ec4f4948988e7002325dc67e,NC1,NULL
+Breytenbach,Jacques,jacquesb@bhubezi.co.za,Project Engineer,+27118923107,+27764531619,eb4ae739440b48e08f2049fdf43caf8e,e8271365c6d84bb3bd7b2f8d475c8dae,JB2,NULL
+Fourie,JJ,jj@ppro.co.za,Project Manager,0110510900,0823253121,f0dc7811ccb64fb1a213fda348fae92f,7fe8a266a33b4a7a9bcc363603ea0cb4,JF1,NULL
+Barnard,Marco,marco@ppro.co.za,Draughtman and Technical Assistant,+27 11 051 0900,+27 82 783 4365,f6a4f0c730c240dab5a38c897424cf83,7fe8a266a33b4a7a9bcc363603ea0cb4,MB1,NULL
+Grace,David,NULL,Sales Director,NULL,NULL,f85cba6e8f7c4c9c80d19ce6d7b5aa9a,079f18541a6a4a25839622d4af4c2813,DG1,NULL
+Kirchner,Gerhardt,gerhardtk@metcengineering.com,Project Engineer,+27 87 808 8862,+27 83 694 7057,f952ce0c327745b286a25ad935e5b03b,4c012be7d2ad472293fc2ff9c286265c,GK1,NULL
+Storm,Ignus,ignus@rvhgroup.co.za,NULL,NULL,0732599099,fcb8162cb34f444db5a89c6b2a1ffc08,c122928262f0415fa4fe57846d365eb8,IS1,NULL
